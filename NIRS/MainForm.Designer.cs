@@ -34,13 +34,6 @@
             this.файлБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавлениеЗаписейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.таблицыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.факультетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.кафедрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.специальностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.группыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.руководителиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.студентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помошьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
@@ -148,6 +141,7 @@
             this.tabPage2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nirsDataSetMain)).BeginInit();
@@ -173,7 +167,6 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлБДToolStripMenuItem,
-            this.таблицыToolStripMenuItem,
             this.помошьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -195,7 +188,6 @@
             this.добавлениеЗаписейToolStripMenuItem.Name = "добавлениеЗаписейToolStripMenuItem";
             this.добавлениеЗаписейToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.добавлениеЗаписейToolStripMenuItem.Text = "Добавление записей";
-            this.добавлениеЗаписейToolStripMenuItem.Visible = false;
             this.добавлениеЗаписейToolStripMenuItem.Click += new System.EventHandler(this.AddRecord_ToolStripMenuItem_Click);
             // 
             // Exit_ToolStripMenuItem
@@ -204,62 +196,6 @@
             this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.Exit_ToolStripMenuItem.Text = "Выход";
             this.Exit_ToolStripMenuItem.Click += new System.EventHandler(this.Exit_ToolStripMenuItem_Click);
-            // 
-            // таблицыToolStripMenuItem
-            // 
-            this.таблицыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.факультетыToolStripMenuItem,
-            this.кафедрыToolStripMenuItem,
-            this.специальностиToolStripMenuItem,
-            this.группыToolStripMenuItem,
-            this.руководителиToolStripMenuItem,
-            this.студентыToolStripMenuItem});
-            this.таблицыToolStripMenuItem.Name = "таблицыToolStripMenuItem";
-            this.таблицыToolStripMenuItem.Size = new System.Drawing.Size(63, 20);
-            this.таблицыToolStripMenuItem.Text = "Таблицы";
-            this.таблицыToolStripMenuItem.Visible = false;
-            // 
-            // факультетыToolStripMenuItem
-            // 
-            this.факультетыToolStripMenuItem.Name = "факультетыToolStripMenuItem";
-            this.факультетыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.факультетыToolStripMenuItem.Text = "Факультеты";
-            this.факультетыToolStripMenuItem.Click += new System.EventHandler(this.факультетыToolStripMenuItem_Click);
-            // 
-            // кафедрыToolStripMenuItem
-            // 
-            this.кафедрыToolStripMenuItem.Name = "кафедрыToolStripMenuItem";
-            this.кафедрыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.кафедрыToolStripMenuItem.Text = "Кафедры";
-            this.кафедрыToolStripMenuItem.Click += new System.EventHandler(this.кафедрыToolStripMenuItem_Click);
-            // 
-            // специальностиToolStripMenuItem
-            // 
-            this.специальностиToolStripMenuItem.Name = "специальностиToolStripMenuItem";
-            this.специальностиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.специальностиToolStripMenuItem.Text = "Специальности";
-            this.специальностиToolStripMenuItem.Click += new System.EventHandler(this.специальностиToolStripMenuItem_Click);
-            // 
-            // группыToolStripMenuItem
-            // 
-            this.группыToolStripMenuItem.Name = "группыToolStripMenuItem";
-            this.группыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.группыToolStripMenuItem.Text = "Группы";
-            this.группыToolStripMenuItem.Click += new System.EventHandler(this.группыToolStripMenuItem_Click);
-            // 
-            // руководителиToolStripMenuItem
-            // 
-            this.руководителиToolStripMenuItem.Name = "руководителиToolStripMenuItem";
-            this.руководителиToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.руководителиToolStripMenuItem.Text = "Руководители";
-            this.руководителиToolStripMenuItem.Click += new System.EventHandler(this.руководителиToolStripMenuItem_Click);
-            // 
-            // студентыToolStripMenuItem
-            // 
-            this.студентыToolStripMenuItem.Name = "студентыToolStripMenuItem";
-            this.студентыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.студентыToolStripMenuItem.Text = "Студенты";
-            this.студентыToolStripMenuItem.Click += new System.EventHandler(this.студентыToolStripMenuItem_Click);
             // 
             // помошьToolStripMenuItem
             // 
@@ -471,10 +407,11 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Location = new System.Drawing.Point(0, 235);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(618, 212);
+            this.tabControl1.Size = new System.Drawing.Size(658, 418);
             this.tabControl1.TabIndex = 4;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -485,7 +422,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(610, 186);
+            this.tabPage1.Size = new System.Drawing.Size(650, 417);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Факультеты";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -496,7 +433,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(610, 186);
+            this.tabPage2.Size = new System.Drawing.Size(650, 392);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Кафедры";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -508,7 +445,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(610, 186);
+            this.tabPage3.Size = new System.Drawing.Size(650, 392);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Специальности";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -519,17 +456,18 @@
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(610, 186);
+            this.tabPage4.Size = new System.Drawing.Size(650, 392);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Группы";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.mentorDataGridView);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(610, 186);
+            this.tabPage5.Size = new System.Drawing.Size(650, 392);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Руководители";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -541,7 +479,7 @@
             this.tabPage6.Location = new System.Drawing.Point(4, 22);
             this.tabPage6.Name = "tabPage6";
             this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(610, 186);
+            this.tabPage6.Size = new System.Drawing.Size(650, 392);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Студенты";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -553,7 +491,7 @@
             this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
             this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(610, 186);
+            this.tabPage7.Size = new System.Drawing.Size(650, 392);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Научные работы";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -590,6 +528,7 @@
             this.divisionBindingNavigator.BindingSource = this.divisionBindingSource;
             this.divisionBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.divisionBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.divisionBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.divisionBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -603,7 +542,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.divisionBindingNavigatorSaveItem});
-            this.divisionBindingNavigator.Location = new System.Drawing.Point(0, 24);
+            this.divisionBindingNavigator.Location = new System.Drawing.Point(0, 442);
             this.divisionBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.divisionBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.divisionBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -717,9 +656,10 @@
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewTextBoxColumn12});
             this.divisionDataGridView.DataSource = this.divisionBindingSource;
-            this.divisionDataGridView.Location = new System.Drawing.Point(103, 6);
+            this.divisionDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.divisionDataGridView.Location = new System.Drawing.Point(3, 3);
             this.divisionDataGridView.Name = "divisionDataGridView";
-            this.divisionDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.divisionDataGridView.Size = new System.Drawing.Size(644, 386);
             this.divisionDataGridView.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn10
@@ -757,9 +697,10 @@
             this.dataGridViewTextBoxColumn32,
             this.dataGridViewTextBoxColumn33});
             this.facultyDataGridView.DataSource = this.facultyBindingSource;
-            this.facultyDataGridView.Location = new System.Drawing.Point(70, 42);
+            this.facultyDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.facultyDataGridView.Location = new System.Drawing.Point(3, 3);
             this.facultyDataGridView.Name = "facultyDataGridView";
-            this.facultyDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.facultyDataGridView.Size = new System.Drawing.Size(644, 411);
             this.facultyDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn32
@@ -792,9 +733,10 @@
             this.dataGridViewTextBoxColumn35,
             this.dataGridViewTextBoxColumn36});
             this.groupDataGridView.DataSource = this.groupBindingSource;
-            this.groupDataGridView.Location = new System.Drawing.Point(139, 6);
+            this.groupDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupDataGridView.Location = new System.Drawing.Point(3, 3);
             this.groupDataGridView.Name = "groupDataGridView";
-            this.groupDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.groupDataGridView.Size = new System.Drawing.Size(644, 386);
             this.groupDataGridView.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn34
@@ -834,9 +776,10 @@
             this.dataGridViewTextBoxColumn39,
             this.dataGridViewTextBoxColumn40});
             this.specDataGridView.DataSource = this.specBindingSource;
-            this.specDataGridView.Location = new System.Drawing.Point(38, 6);
+            this.specDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.specDataGridView.Location = new System.Drawing.Point(3, 3);
             this.specDataGridView.Name = "specDataGridView";
-            this.specDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.specDataGridView.Size = new System.Drawing.Size(644, 386);
             this.specDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn37
@@ -886,9 +829,10 @@
             this.dataGridViewTextBoxColumn47,
             this.dataGridViewTextBoxColumn48});
             this.mentorDataGridView.DataSource = this.mentorBindingSource;
-            this.mentorDataGridView.Location = new System.Drawing.Point(185, 83);
+            this.mentorDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mentorDataGridView.Location = new System.Drawing.Point(3, 3);
             this.mentorDataGridView.Name = "mentorDataGridView";
-            this.mentorDataGridView.Size = new System.Drawing.Size(418, 106);
+            this.mentorDataGridView.Size = new System.Drawing.Size(644, 386);
             this.mentorDataGridView.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn41
@@ -961,9 +905,10 @@
             this.dataGridViewTextBoxColumn54,
             this.dataGridViewTextBoxColumn55});
             this.studentDataGridView.DataSource = this.studentBindingSource;
-            this.studentDataGridView.Location = new System.Drawing.Point(184, 62);
+            this.studentDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.studentDataGridView.Location = new System.Drawing.Point(3, 3);
             this.studentDataGridView.Name = "studentDataGridView";
-            this.studentDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.studentDataGridView.Size = new System.Drawing.Size(644, 386);
             this.studentDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn49
@@ -1027,9 +972,10 @@
             this.dataGridViewTextBoxColumn58,
             this.dataGridViewTextBoxColumn59});
             this.worksDataGridView.DataSource = this.worksBindingSource;
-            this.worksDataGridView.Location = new System.Drawing.Point(96, 15);
+            this.worksDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.worksDataGridView.Location = new System.Drawing.Point(3, 3);
             this.worksDataGridView.Name = "worksDataGridView";
-            this.worksDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.worksDataGridView.Size = new System.Drawing.Size(644, 386);
             this.worksDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn56
@@ -1061,9 +1007,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(658, 467);
-            this.Controls.Add(this.mentorDataGridView);
-            this.Controls.Add(this.divisionBindingNavigator);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.divisionBindingNavigator);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
@@ -1076,6 +1021,7 @@
             this.tabPage2.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nirsDataSetMain)).EndInit();
@@ -1109,13 +1055,6 @@
         private System.Windows.Forms.ToolStripMenuItem Exit_ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem помошьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem оПрограммеToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem таблицыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem факультетыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem кафедрыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem специальностиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem группыToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem руководителиToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem студентыToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
         private System.Windows.Forms.ToolStripButton toolStripButton9;

@@ -38,7 +38,7 @@ namespace NIRS_DB.Structs
         
         public Group()
         {
-
+            tableName = "group";
         }
 
         public override ActiveRecord Find(DBCriteria crit)
@@ -56,7 +56,7 @@ namespace NIRS_DB.Structs
             string query = "";
             if (id == 0)
             {
-                query = "INSERT INTO `" + tableName + "` VALUES(null," + div_id + ","+Code+");";
+                query = "INSERT INTO `" + tableName + "` VALUES(null," + div_id + ",'"+Code+"');";
             }
             else
             {

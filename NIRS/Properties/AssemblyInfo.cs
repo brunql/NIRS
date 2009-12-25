@@ -6,7 +6,12 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("NIRS")]
-[assembly: AssemblyDescription("Клиент для базы данных НИРС")]
+[assembly: AssemblyDescription("Клиент для базы данных НИРС.\r\n" +
+        "Разработчики:\r\n" +
+        "  Шатохин Михаил\r\n" +
+        "  Кисель Василий\r\n" +
+        "  Шилин Алексей\r\n"
+    )]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("КубГТУ")]
 [assembly: AssemblyProduct("NIRS DataBase Client")]

@@ -7,15 +7,15 @@ namespace NIRS_DB.Structs
 	
 	public class Division:ActiveRecord
 	{
-		
-		private int id;
+
+        private int id = 0;
 
         public int Id
         {
             get { return id; }
         }
 
-		private string name;
+		private string name = "aaa";
 
         public string Name
         {
@@ -59,7 +59,7 @@ namespace NIRS_DB.Structs
             string query = "";
             if (id == 0)
             {
-                query = "INSERT INTO `" + tableName + "` VALUES(null,\"" + name + "\","+fac_id+");";
+                query = "INSERT INTO `" + tableName + "` VALUES(null," + fac_id + ",'" + name + "');";
             }
             else
             {

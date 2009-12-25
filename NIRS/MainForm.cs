@@ -16,8 +16,8 @@ namespace NIRS
     {
         AboutBox about_box = new AboutBox();
         DataView dvTable = new DataView();
-        //string connection_string = "Server=localhost;Port=3306;Database=nirs;Uid=root;Pwd=;";
-        //MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
+        string connection_string = "Server=localhost;Port=3306;Database=nirs;Uid=root;Pwd=;";
+        MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
 
         public static void SelectAllFromAndAdd(string table_name, DataGridView dataView, object tempDataTable)
         {
@@ -37,24 +37,24 @@ namespace NIRS
         {
             InitializeComponent();
 
-            //DBSettings dbs = new DBSettings();
-            //dbs.database = "nirs";
-            //dbs.host = "localhost";
-            //dbs.port = "3306";
-            //dbs.pwd = "";
-            //dbs.user = "root";
+            DBSettings dbs = new DBSettings();
+            dbs.database = "nirs";
+            dbs.host = "localhost";
+            dbs.port = "3306";
+            dbs.pwd = "";
+            dbs.user = "root";
 
-            //DBConnection.Connection(dbs);
+            DBConnection.Connection(dbs);
 
-            //mySqlConnection = new MySqlConnection(connection_string);
+            mySqlConnection = new MySqlConnection(connection_string);
 
             tabControl1_SelectedIndexChanged(null, null);
         }
 
         private void AddRecord_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //addSomeOne addsmone = new addSomeOne();
-            //addsmone.ShowDialog();
+            addSomeOne addsmone = new addSomeOne();
+            addsmone.ShowDialog();
         }
 
         private void Exit_ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -157,7 +157,6 @@ namespace NIRS
             this.Validate();
             this.divisionBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.nirsDataSetMain);
-
         }
 
         private void divisionBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)

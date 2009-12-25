@@ -23,6 +23,11 @@ namespace NIRS_DB.Structs
         }
 
         private int div_id;
+        public int DivisionId
+        {
+            get { return div_id; }
+            set { div_id = value; }
+        }
 
         private Division div;
 
@@ -47,7 +52,7 @@ namespace NIRS_DB.Structs
 		
 		public Specialization()
 		{
-			
+            tableName = "spec";
 		}
 
         public override ActiveRecord Find(DBCriteria crit)
@@ -65,7 +70,7 @@ namespace NIRS_DB.Structs
             string query = "";
             if (id == 0)
             {
-                query = "INSERT INTO `" + tableName + "` VALUES(null,\"" + name + "\",\""+code+"\",\""+ name +"\");";
+                query = "INSERT INTO `" + tableName + "` VALUES(null,\"" + div_id + "\",\""+code+"\",\""+ name +"\");";
             }
             else
             {
