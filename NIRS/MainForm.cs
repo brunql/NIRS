@@ -126,30 +126,30 @@ namespace NIRS
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //switch (tabControl1.SelectedTab.Text)
-            //{
-            //    case "Факультеты":
-            //        divisionBindingNavigator.BindingSource = facultyBindingSource;
-            //        break;
-            //    case "Кафедры":
-            //        divisionBindingNavigator.BindingSource = divisionBindingSource;
-            //        break;
-            //    case "Специальности":
-            //        divisionBindingNavigator.BindingSource = specBindingSource;
-            //        break;
-            //    case "Группы":
-            //        divisionBindingNavigator.BindingSource = groupBindingSource;
-            //        break;
-            //    case "Руководители":
-            //        divisionBindingNavigator.BindingSource = mentorBindingSource;
-            //        break;
-            //    case "Студенты":
-            //        divisionBindingNavigator.BindingSource = studentBindingSource;
-            //        break;
-            //    case "Научные работы":
-            //        divisionBindingNavigator.BindingSource = worksBindingSource;
-            //        break;
-            //}
+            switch (tabControl1.SelectedTab.Text)
+            {
+                case "Факультеты":
+                    divisionBindingNavigator.BindingSource = facultyBindingSource;
+                    break;
+                case "Кафедры":
+                    divisionBindingNavigator.BindingSource = divisionBindingSource;
+                    break;
+                case "Специальности":
+                    divisionBindingNavigator.BindingSource = specBindingSource;
+                    break;
+                case "Группы":
+                    divisionBindingNavigator.BindingSource = groupBindingSource;
+                    break;
+                case "Руководители":
+                    divisionBindingNavigator.BindingSource = mentorBindingSource;
+                    break;
+                case "Студенты":
+                    divisionBindingNavigator.BindingSource = studentBindingSource;
+                    break;
+                case "Научные работы":
+                    divisionBindingNavigator.BindingSource = worksBindingSource;
+                    break;
+            }
         }
 
         private void divisionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
