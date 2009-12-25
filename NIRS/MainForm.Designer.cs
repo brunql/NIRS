@@ -62,53 +62,31 @@
             this.toolStripButton49 = new System.Windows.Forms.ToolStripButton();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.tabPage6 = new System.Windows.Forms.TabPage();
-            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.facultyDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facultyBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nirsDataSetMain = new NIRS.nirsDataSetMain();
-            this.divisionBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.divisionTableAdapter = new NIRS.nirsDataSetMainTableAdapters.divisionTableAdapter();
-            this.tableAdapterManager = new NIRS.nirsDataSetMainTableAdapters.TableAdapterManager();
-            this.divisionBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.divisionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.divisionDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.facultyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.facultyTableAdapter = new NIRS.nirsDataSetMainTableAdapters.facultyTableAdapter();
-            this.facultyDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.groupTableAdapter = new NIRS.nirsDataSetMainTableAdapters.groupTableAdapter();
-            this.groupDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.specTableAdapter = new NIRS.nirsDataSetMainTableAdapters.specTableAdapter();
+            this.divisionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage3 = new System.Windows.Forms.TabPage();
             this.specDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mentorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.mentorTableAdapter = new NIRS.nirsDataSetMainTableAdapters.mentorTableAdapter();
+            this.specBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.groupDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage5 = new System.Windows.Forms.TabPage();
             this.mentorDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -118,8 +96,8 @@
             this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.studentTableAdapter = new NIRS.nirsDataSetMainTableAdapters.studentTableAdapter();
+            this.mentorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage6 = new System.Windows.Forms.TabPage();
             this.studentDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -128,39 +106,61 @@
             this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.worksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.worksTableAdapter = new NIRS.nirsDataSetMainTableAdapters.worksTableAdapter();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tabPage7 = new System.Windows.Forms.TabPage();
             this.worksDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.worksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.divisionTableAdapter = new NIRS.nirsDataSetMainTableAdapters.divisionTableAdapter();
+            this.tableAdapterManager = new NIRS.nirsDataSetMainTableAdapters.TableAdapterManager();
+            this.facultyTableAdapter = new NIRS.nirsDataSetMainTableAdapters.facultyTableAdapter();
+            this.groupTableAdapter = new NIRS.nirsDataSetMainTableAdapters.groupTableAdapter();
+            this.mentorTableAdapter = new NIRS.nirsDataSetMainTableAdapters.mentorTableAdapter();
+            this.specTableAdapter = new NIRS.nirsDataSetMainTableAdapters.specTableAdapter();
+            this.studentTableAdapter = new NIRS.nirsDataSetMainTableAdapters.studentTableAdapter();
+            this.worksTableAdapter = new NIRS.nirsDataSetMainTableAdapters.worksTableAdapter();
+            this.divisionBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.divisionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
-            this.tabPage3.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage5.SuspendLayout();
-            this.tabPage6.SuspendLayout();
-            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.facultyDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facultyBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nirsDataSetMain)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.divisionDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divisionBindingSource)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.specDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specBindingSource)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
+            this.tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.mentorDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mentorBindingSource)).BeginInit();
+            this.tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            this.tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.worksDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.worksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divisionBindingNavigator)).BeginInit();
             this.divisionBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.divisionDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facultyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facultyDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.specBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.specDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mentorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mentorDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.worksBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.worksDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -208,7 +208,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.About_ToolStripMenuItem_Click);
             // 
@@ -407,7 +407,6 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -422,10 +421,47 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(650, 417);
+            this.tabPage1.Size = new System.Drawing.Size(650, 392);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Факультеты";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // facultyDataGridView
+            // 
+            this.facultyDataGridView.AutoGenerateColumns = false;
+            this.facultyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.facultyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn32,
+            this.dataGridViewTextBoxColumn33});
+            this.facultyDataGridView.DataSource = this.facultyBindingSource;
+            this.facultyDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.facultyDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.facultyDataGridView.Name = "facultyDataGridView";
+            this.facultyDataGridView.Size = new System.Drawing.Size(644, 386);
+            this.facultyDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn32.HeaderText = "id";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn33.HeaderText = "name";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            // 
+            // facultyBindingSource
+            // 
+            this.facultyBindingSource.DataMember = "faculty";
+            this.facultyBindingSource.DataSource = this.nirsDataSetMain;
+            // 
+            // nirsDataSetMain
+            // 
+            this.nirsDataSetMain.DataSetName = "nirsDataSetMain";
+            this.nirsDataSetMain.Locale = new System.Globalization.CultureInfo("");
+            this.nirsDataSetMain.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPage2
             // 
@@ -437,215 +473,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Кафедры";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.AutoScroll = true;
-            this.tabPage3.Controls.Add(this.specDataGridView);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(650, 392);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Специальности";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.groupDataGridView);
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage4.Size = new System.Drawing.Size(650, 392);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Группы";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
-            // tabPage5
-            // 
-            this.tabPage5.Controls.Add(this.mentorDataGridView);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
-            this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(650, 392);
-            this.tabPage5.TabIndex = 4;
-            this.tabPage5.Text = "Руководители";
-            this.tabPage5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage6
-            // 
-            this.tabPage6.AutoScroll = true;
-            this.tabPage6.Controls.Add(this.studentDataGridView);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
-            this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage6.Size = new System.Drawing.Size(650, 392);
-            this.tabPage6.TabIndex = 5;
-            this.tabPage6.Text = "Студенты";
-            this.tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // tabPage7
-            // 
-            this.tabPage7.AutoScroll = true;
-            this.tabPage7.Controls.Add(this.worksDataGridView);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
-            this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage7.Size = new System.Drawing.Size(650, 392);
-            this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Научные работы";
-            this.tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // nirsDataSetMain
-            // 
-            this.nirsDataSetMain.DataSetName = "nirsDataSetMain";
-            this.nirsDataSetMain.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // divisionBindingSource
-            // 
-            this.divisionBindingSource.DataMember = "division";
-            this.divisionBindingSource.DataSource = this.nirsDataSetMain;
-            // 
-            // divisionTableAdapter
-            // 
-            this.divisionTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.divisionTableAdapter = this.divisionTableAdapter;
-            this.tableAdapterManager.facultyTableAdapter = this.facultyTableAdapter;
-            this.tableAdapterManager.groupTableAdapter = this.groupTableAdapter;
-            this.tableAdapterManager.mentorTableAdapter = this.mentorTableAdapter;
-            this.tableAdapterManager.specTableAdapter = this.specTableAdapter;
-            this.tableAdapterManager.studentTableAdapter = this.studentTableAdapter;
-            this.tableAdapterManager.UpdateOrder = NIRS.nirsDataSetMainTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.worksTableAdapter = this.worksTableAdapter;
-            // 
-            // divisionBindingNavigator
-            // 
-            this.divisionBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.divisionBindingNavigator.BindingSource = this.divisionBindingSource;
-            this.divisionBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.divisionBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.divisionBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.divisionBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bindingNavigatorMoveFirstItem,
-            this.bindingNavigatorMovePreviousItem,
-            this.bindingNavigatorSeparator,
-            this.bindingNavigatorPositionItem,
-            this.bindingNavigatorCountItem,
-            this.bindingNavigatorSeparator1,
-            this.bindingNavigatorMoveNextItem,
-            this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem,
-            this.divisionBindingNavigatorSaveItem});
-            this.divisionBindingNavigator.Location = new System.Drawing.Point(0, 442);
-            this.divisionBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.divisionBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.divisionBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.divisionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.divisionBindingNavigator.Name = "divisionBindingNavigator";
-            this.divisionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.divisionBindingNavigator.Size = new System.Drawing.Size(658, 25);
-            this.divisionBindingNavigator.TabIndex = 5;
-            this.divisionBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorMoveFirstItem
-            // 
-            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
-            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
-            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMoveFirstItem.Text = "Move first";
-            // 
-            // bindingNavigatorMovePreviousItem
-            // 
-            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
-            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
-            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
-            // 
-            // bindingNavigatorSeparator
-            // 
-            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorPositionItem
-            // 
-            this.bindingNavigatorPositionItem.AccessibleName = "Position";
-            this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 21);
-            this.bindingNavigatorPositionItem.Text = "0";
-            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
-            // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 13);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorSeparator1
-            // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorMoveNextItem
-            // 
-            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
-            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
-            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorMoveNextItem.Text = "Move next";
-            // 
-            // bindingNavigatorMoveLastItem
-            // 
-            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
-            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
-            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorMoveLastItem.Text = "Move last";
-            // 
-            // bindingNavigatorSeparator2
-            // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 6);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 20);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // divisionBindingNavigatorSaveItem
-            // 
-            this.divisionBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.divisionBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("divisionBindingNavigatorSaveItem.Image")));
-            this.divisionBindingNavigatorSaveItem.Name = "divisionBindingNavigatorSaveItem";
-            this.divisionBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 23);
-            this.divisionBindingNavigatorSaveItem.Text = "Save Data";
-            this.divisionBindingNavigatorSaveItem.Click += new System.EventHandler(this.divisionBindingNavigatorSaveItem_Click_1);
             // 
             // divisionDataGridView
             // 
@@ -680,91 +507,22 @@
             this.dataGridViewTextBoxColumn12.HeaderText = "name";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
-            // facultyBindingSource
+            // divisionBindingSource
             // 
-            this.facultyBindingSource.DataMember = "faculty";
-            this.facultyBindingSource.DataSource = this.nirsDataSetMain;
+            this.divisionBindingSource.DataMember = "division";
+            this.divisionBindingSource.DataSource = this.nirsDataSetMain;
             // 
-            // facultyTableAdapter
+            // tabPage3
             // 
-            this.facultyTableAdapter.ClearBeforeFill = true;
-            // 
-            // facultyDataGridView
-            // 
-            this.facultyDataGridView.AutoGenerateColumns = false;
-            this.facultyDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.facultyDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn32,
-            this.dataGridViewTextBoxColumn33});
-            this.facultyDataGridView.DataSource = this.facultyBindingSource;
-            this.facultyDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.facultyDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.facultyDataGridView.Name = "facultyDataGridView";
-            this.facultyDataGridView.Size = new System.Drawing.Size(644, 411);
-            this.facultyDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn32.HeaderText = "id";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn33.HeaderText = "name";
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            // 
-            // groupBindingSource
-            // 
-            this.groupBindingSource.DataMember = "group";
-            this.groupBindingSource.DataSource = this.nirsDataSetMain;
-            // 
-            // groupTableAdapter
-            // 
-            this.groupTableAdapter.ClearBeforeFill = true;
-            // 
-            // groupDataGridView
-            // 
-            this.groupDataGridView.AutoGenerateColumns = false;
-            this.groupDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.groupDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn34,
-            this.dataGridViewTextBoxColumn35,
-            this.dataGridViewTextBoxColumn36});
-            this.groupDataGridView.DataSource = this.groupBindingSource;
-            this.groupDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.groupDataGridView.Name = "groupDataGridView";
-            this.groupDataGridView.Size = new System.Drawing.Size(644, 386);
-            this.groupDataGridView.TabIndex = 5;
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn34.HeaderText = "id";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "div_id";
-            this.dataGridViewTextBoxColumn35.HeaderText = "div_id";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.DataPropertyName = "code";
-            this.dataGridViewTextBoxColumn36.HeaderText = "code";
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            // 
-            // specBindingSource
-            // 
-            this.specBindingSource.DataMember = "spec";
-            this.specBindingSource.DataSource = this.nirsDataSetMain;
-            // 
-            // specTableAdapter
-            // 
-            this.specTableAdapter.ClearBeforeFill = true;
+            this.tabPage3.AutoScroll = true;
+            this.tabPage3.Controls.Add(this.specDataGridView);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(650, 392);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Специальности";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // specDataGridView
             // 
@@ -806,14 +564,70 @@
             this.dataGridViewTextBoxColumn40.HeaderText = "name";
             this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
             // 
-            // mentorBindingSource
+            // specBindingSource
             // 
-            this.mentorBindingSource.DataMember = "mentor";
-            this.mentorBindingSource.DataSource = this.nirsDataSetMain;
+            this.specBindingSource.DataMember = "spec";
+            this.specBindingSource.DataSource = this.nirsDataSetMain;
             // 
-            // mentorTableAdapter
+            // tabPage4
             // 
-            this.mentorTableAdapter.ClearBeforeFill = true;
+            this.tabPage4.Controls.Add(this.groupDataGridView);
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(650, 392);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Группы";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // groupDataGridView
+            // 
+            this.groupDataGridView.AutoGenerateColumns = false;
+            this.groupDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.groupDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn34,
+            this.dataGridViewTextBoxColumn35,
+            this.dataGridViewTextBoxColumn36});
+            this.groupDataGridView.DataSource = this.groupBindingSource;
+            this.groupDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.groupDataGridView.Name = "groupDataGridView";
+            this.groupDataGridView.Size = new System.Drawing.Size(644, 386);
+            this.groupDataGridView.TabIndex = 5;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn34.HeaderText = "id";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "div_id";
+            this.dataGridViewTextBoxColumn35.HeaderText = "div_id";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.DataPropertyName = "code";
+            this.dataGridViewTextBoxColumn36.HeaderText = "code";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            // 
+            // groupBindingSource
+            // 
+            this.groupBindingSource.DataMember = "group";
+            this.groupBindingSource.DataSource = this.nirsDataSetMain;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.mentorDataGridView);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(650, 392);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Руководители";
+            this.tabPage5.UseVisualStyleBackColor = true;
             // 
             // mentorDataGridView
             // 
@@ -883,14 +697,22 @@
             this.dataGridViewTextBoxColumn48.HeaderText = "div_id";
             this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
             // 
-            // studentBindingSource
+            // mentorBindingSource
             // 
-            this.studentBindingSource.DataMember = "student";
-            this.studentBindingSource.DataSource = this.nirsDataSetMain;
+            this.mentorBindingSource.DataMember = "mentor";
+            this.mentorBindingSource.DataSource = this.nirsDataSetMain;
             // 
-            // studentTableAdapter
+            // tabPage6
             // 
-            this.studentTableAdapter.ClearBeforeFill = true;
+            this.tabPage6.AutoScroll = true;
+            this.tabPage6.Controls.Add(this.studentDataGridView);
+            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage6.Size = new System.Drawing.Size(650, 392);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Студенты";
+            this.tabPage6.UseVisualStyleBackColor = true;
             // 
             // studentDataGridView
             // 
@@ -953,14 +775,22 @@
             this.dataGridViewTextBoxColumn55.HeaderText = "born";
             this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
             // 
-            // worksBindingSource
+            // studentBindingSource
             // 
-            this.worksBindingSource.DataMember = "works";
-            this.worksBindingSource.DataSource = this.nirsDataSetMain;
+            this.studentBindingSource.DataMember = "student";
+            this.studentBindingSource.DataSource = this.nirsDataSetMain;
             // 
-            // worksTableAdapter
+            // tabPage7
             // 
-            this.worksTableAdapter.ClearBeforeFill = true;
+            this.tabPage7.AutoScroll = true;
+            this.tabPage7.Controls.Add(this.worksDataGridView);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage7.Size = new System.Drawing.Size(650, 392);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Научные работы";
+            this.tabPage7.UseVisualStyleBackColor = true;
             // 
             // worksDataGridView
             // 
@@ -1002,6 +832,176 @@
             this.dataGridViewTextBoxColumn59.HeaderText = "desc";
             this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
             // 
+            // worksBindingSource
+            // 
+            this.worksBindingSource.DataMember = "works";
+            this.worksBindingSource.DataSource = this.nirsDataSetMain;
+            // 
+            // divisionTableAdapter
+            // 
+            this.divisionTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.divisionTableAdapter = this.divisionTableAdapter;
+            this.tableAdapterManager.facultyTableAdapter = this.facultyTableAdapter;
+            this.tableAdapterManager.groupTableAdapter = this.groupTableAdapter;
+            this.tableAdapterManager.mentorTableAdapter = this.mentorTableAdapter;
+            this.tableAdapterManager.specTableAdapter = this.specTableAdapter;
+            this.tableAdapterManager.studentTableAdapter = this.studentTableAdapter;
+            this.tableAdapterManager.UpdateOrder = NIRS.nirsDataSetMainTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.worksTableAdapter = this.worksTableAdapter;
+            // 
+            // facultyTableAdapter
+            // 
+            this.facultyTableAdapter.ClearBeforeFill = true;
+            // 
+            // groupTableAdapter
+            // 
+            this.groupTableAdapter.ClearBeforeFill = true;
+            // 
+            // mentorTableAdapter
+            // 
+            this.mentorTableAdapter.ClearBeforeFill = true;
+            // 
+            // specTableAdapter
+            // 
+            this.specTableAdapter.ClearBeforeFill = true;
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
+            // 
+            // worksTableAdapter
+            // 
+            this.worksTableAdapter.ClearBeforeFill = true;
+            // 
+            // divisionBindingNavigator
+            // 
+            this.divisionBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.divisionBindingNavigator.BindingSource = this.divisionBindingSource;
+            this.divisionBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.divisionBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.divisionBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.divisionBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem,
+            this.divisionBindingNavigatorSaveItem});
+            this.divisionBindingNavigator.Location = new System.Drawing.Point(0, 442);
+            this.divisionBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.divisionBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.divisionBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.divisionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.divisionBindingNavigator.Name = "divisionBindingNavigator";
+            this.divisionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.divisionBindingNavigator.Size = new System.Drawing.Size(658, 25);
+            this.divisionBindingNavigator.TabIndex = 5;
+            this.divisionBindingNavigator.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 21);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // divisionBindingNavigatorSaveItem
+            // 
+            this.divisionBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.divisionBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("divisionBindingNavigatorSaveItem.Image")));
+            this.divisionBindingNavigatorSaveItem.Name = "divisionBindingNavigatorSaveItem";
+            this.divisionBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.divisionBindingNavigatorSaveItem.Text = "Save Data";
+            this.divisionBindingNavigatorSaveItem.Click += new System.EventHandler(this.divisionBindingNavigatorSaveItem_Click_1);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1018,30 +1018,30 @@
             this.menuStrip1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage5.ResumeLayout(false);
-            this.tabPage6.ResumeLayout(false);
-            this.tabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.facultyDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facultyBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nirsDataSetMain)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.divisionDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.divisionBindingSource)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.specDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specBindingSource)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
+            this.tabPage5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.mentorDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mentorBindingSource)).EndInit();
+            this.tabPage6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.studentDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
+            this.tabPage7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.worksDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.worksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.divisionBindingNavigator)).EndInit();
             this.divisionBindingNavigator.ResumeLayout(false);
             this.divisionBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.divisionDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facultyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facultyDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.specBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.specDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mentorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mentorDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.worksBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.worksDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

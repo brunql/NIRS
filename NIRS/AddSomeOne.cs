@@ -122,19 +122,10 @@ namespace NIRS
         private void addSomeOne_Load(object sender, EventArgs e)
         {
             MainForm.SelectAllFromAndAdd("faculty", dataViewAddedFaculty, new nirsDataSetMain.facultyDataTable());
-            //dataViewAddedFaculty.Columns.RemoveAt(0);
-
             MainForm.SelectAllFromAndAdd("division", dataViewAddedDivision, new nirsDataSetMain.divisionDataTable());
-            //dataViewAddedDivision.Columns.RemoveAt(0);
-
             MainForm.SelectAllFromAndAdd("spec", dataViewAddedSpec, new nirsDataSetMain.specDataTable());
-            //dataViewAddedSpec.Columns.RemoveAt(0);
-
             MainForm.SelectAllFromAndAdd("group", dataViewAddedGroup, new nirsDataSetMain.groupDataTable());
-            //dataViewAddedGroup.Columns.RemoveAt(0);
-
             MainForm.SelectAllFromAndAdd("faculty", dataViewDivisionFaculty, new nirsDataSetMain.facultyDataTable());
-            //dataViewDivisionFaculty.Columns.RemoveAt(0);
             MainForm.SelectAllFromAndAdd("division", dataViewSpecDivision, new nirsDataSetMain.divisionDataTable());
             MainForm.SelectAllFromAndAdd("spec", dataViewGroupSpec, new nirsDataSetMain.specDataTable());
         }
@@ -145,13 +136,9 @@ namespace NIRS
             div.Name = txtAddDivision.Text;
             div.FacId = (int)dataViewDivisionFaculty.CurrentRow.Cells["id"].Value;
             div.Save();
-
-
+            
             MainForm.SelectAllFromAndAdd("division", dataViewAddedDivision, new nirsDataSetMain.divisionDataTable());
-            //dataViewAddedDivision.Columns.RemoveAt(0);
-
             MainForm.SelectAllFromAndAdd("faculty", dataViewDivisionFaculty, new nirsDataSetMain.facultyDataTable());
-            //dataViewDivisionFaculty.Columns.RemoveAt(0);
         }
 
         private void AddSpec_Click(object sender, EventArgs e)
@@ -163,10 +150,7 @@ namespace NIRS
             spec.Save();
 
             MainForm.SelectAllFromAndAdd("spec", dataViewAddedSpec, new nirsDataSetMain.specDataTable());
-            //dataViewAddedSpec.Columns.RemoveAt(0);
-
             MainForm.SelectAllFromAndAdd("division", dataViewSpecDivision, new nirsDataSetMain.divisionDataTable());
-            // TODO: добавить кафедру и код специальности
         }
 
         private void btnAddGroup_Click(object sender, EventArgs e)

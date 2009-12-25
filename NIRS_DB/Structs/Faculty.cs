@@ -44,7 +44,7 @@ namespace NIRS_DB.Structs
             string query = "";
             if (id == 0)
             {
-                 query = "INSERT INTO `" + tableName + "` VALUES(null,\"" + name +"\");";
+                 query = "INSERT INTO `" + tableName + "` VALUES(null,\"" +name+ "\");";
             }
             else
             {

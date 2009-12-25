@@ -29,13 +29,13 @@ namespace NIRS
             ((DataTable)tempDataTable).Load(mcmd.ExecuteReader());
             t.Table = (DataTable)tempDataTable;
             dataView.DataSource = t;
-            
         }
 
 
         public MainForm()
         {
             InitializeComponent();
+            
 
             DBSettings dbs = new DBSettings();
             dbs.database = "nirs";
@@ -65,38 +65,6 @@ namespace NIRS
         private void About_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             about_box.ShowDialog();
-        }
-
-        private void факультетыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //SelectAllFromAndAdd("faculty", dataGridViewMain, new nirsDataSet.facultyDataTable());
-        }
-
-        private void кафедрыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            
-
-            //SelectAllFromAndAdd("division", dataGridViewMain, new nirsDataSet.divisionDataTable());
-        }
-
-        private void специальностиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //SelectAllFromAndAdd("spec", dataGridViewMain, new nirsDataSet.specDataTable());
-        }
-
-        private void группыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //SelectAllFromAndAdd("group", dataGridViewMain, new nirsDataSet.groupDataTable());
-        }
-
-        private void руководителиToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //SelectAllFromAndAdd("mentor", dataGridViewMain, new nirsDataSet.mentorDataTable());
-        }
-
-        private void студентыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            //SelectAllFromAndAdd("student", dataGridViewMain, new nirsDataSet.studentDataTable());
         }
 
         private void MainForm_Load(object sender, EventArgs e)
