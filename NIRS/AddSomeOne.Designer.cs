@@ -99,7 +99,7 @@
             this.lblKurs = new System.Windows.Forms.Label();
             this.cmbStudentKurs = new System.Windows.Forms.ComboBox();
             this.lblSpecialize = new System.Windows.Forms.Label();
-            this.cmbSpetialize = new System.Windows.Forms.ComboBox();
+            this.cmbStudentSpetialize = new System.Windows.Forms.ComboBox();
             this.cmbStudentFaculty = new System.Windows.Forms.ComboBox();
             this.lblFaculty = new System.Windows.Forms.Label();
             this.lblSecondName = new System.Windows.Forms.Label();
@@ -126,6 +126,9 @@
             this.lbTheme = new System.Windows.Forms.Label();
             this.txtStudentYearsNIR = new System.Windows.Forms.TextBox();
             this.lbYearInNirs = new System.Windows.Forms.Label();
+            this.nirsDataSetMain = new NIRS.nirsDataSetMain();
+            this.dataViewAddedMentor = new System.Windows.Forms.DataGridView();
+            this.label33 = new System.Windows.Forms.Label();
             this.AddFuculty.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewAddedFaculty)).BeginInit();
@@ -143,6 +146,8 @@
             this.dataStudentReal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nirsDataSetMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewAddedMentor)).BeginInit();
             this.SuspendLayout();
             // 
             // AddFuculty
@@ -510,6 +515,9 @@
             // 
             // dataMentor
             // 
+            this.dataMentor.AutoScroll = true;
+            this.dataMentor.Controls.Add(this.label33);
+            this.dataMentor.Controls.Add(this.dataViewAddedMentor);
             this.dataMentor.Controls.Add(this.cbMentorDivision);
             this.dataMentor.Controls.Add(this.label14);
             this.dataMentor.Controls.Add(this.btnAddMentor);
@@ -715,7 +723,7 @@
             this.tabPage1.Controls.Add(this.lblKurs);
             this.tabPage1.Controls.Add(this.cmbStudentKurs);
             this.tabPage1.Controls.Add(this.lblSpecialize);
-            this.tabPage1.Controls.Add(this.cmbSpetialize);
+            this.tabPage1.Controls.Add(this.cmbStudentSpetialize);
             this.tabPage1.Controls.Add(this.cmbStudentFaculty);
             this.tabPage1.Controls.Add(this.lblFaculty);
             this.tabPage1.Controls.Add(this.lblSecondName);
@@ -731,14 +739,17 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Личные данные";
             this.tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Enter += new System.EventHandler(this.tabPage1_Enter);
             // 
             // cmbStudentDivision
             // 
+            this.cmbStudentDivision.Enabled = false;
             this.cmbStudentDivision.FormattingEnabled = true;
             this.cmbStudentDivision.Location = new System.Drawing.Point(173, 143);
             this.cmbStudentDivision.Name = "cmbStudentDivision";
             this.cmbStudentDivision.Size = new System.Drawing.Size(166, 21);
             this.cmbStudentDivision.TabIndex = 74;
+            this.cmbStudentDivision.SelectedIndexChanged += new System.EventHandler(this.cmbStudentDivision_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -767,6 +778,7 @@
             // 
             // cmbStudentGroup
             // 
+            this.cmbStudentGroup.Enabled = false;
             this.cmbStudentGroup.Items.AddRange(new object[] {
             "1",
             "2",
@@ -774,7 +786,7 @@
             "4",
             "5",
             "Аспирант"});
-            this.cmbStudentGroup.Location = new System.Drawing.Point(173, 225);
+            this.cmbStudentGroup.Location = new System.Drawing.Point(173, 197);
             this.cmbStudentGroup.Name = "cmbStudentGroup";
             this.cmbStudentGroup.Size = new System.Drawing.Size(166, 21);
             this.cmbStudentGroup.TabIndex = 70;
@@ -782,7 +794,7 @@
             // ckbMoney
             // 
             this.ckbMoney.AutoSize = true;
-            this.ckbMoney.Location = new System.Drawing.Point(69, 279);
+            this.ckbMoney.Location = new System.Drawing.Point(69, 251);
             this.ckbMoney.Name = "ckbMoney";
             this.ckbMoney.Size = new System.Drawing.Size(203, 17);
             this.ckbMoney.TabIndex = 68;
@@ -793,7 +805,7 @@
             // txtStudentGrant
             // 
             this.txtStudentGrant.Enabled = false;
-            this.txtStudentGrant.Location = new System.Drawing.Point(278, 277);
+            this.txtStudentGrant.Location = new System.Drawing.Point(278, 249);
             this.txtStudentGrant.Name = "txtStudentGrant";
             this.txtStudentGrant.Size = new System.Drawing.Size(237, 20);
             this.txtStudentGrant.TabIndex = 67;
@@ -801,7 +813,7 @@
             // lblStudingForm
             // 
             this.lblStudingForm.AutoSize = true;
-            this.lblStudingForm.Location = new System.Drawing.Point(66, 253);
+            this.lblStudingForm.Location = new System.Drawing.Point(66, 225);
             this.lblStudingForm.Name = "lblStudingForm";
             this.lblStudingForm.Size = new System.Drawing.Size(93, 13);
             this.lblStudingForm.TabIndex = 66;
@@ -812,7 +824,7 @@
             this.cmbStudentBudget.Items.AddRange(new object[] {
             "Бюджет",
             "СКЦ"});
-            this.cmbStudentBudget.Location = new System.Drawing.Point(173, 250);
+            this.cmbStudentBudget.Location = new System.Drawing.Point(173, 222);
             this.cmbStudentBudget.Name = "cmbStudentBudget";
             this.cmbStudentBudget.Size = new System.Drawing.Size(166, 21);
             this.cmbStudentBudget.TabIndex = 65;
@@ -820,7 +832,7 @@
             // lblGroup
             // 
             this.lblGroup.AutoSize = true;
-            this.lblGroup.Location = new System.Drawing.Point(109, 224);
+            this.lblGroup.Location = new System.Drawing.Point(109, 196);
             this.lblGroup.Name = "lblGroup";
             this.lblGroup.Size = new System.Drawing.Size(42, 13);
             this.lblGroup.TabIndex = 64;
@@ -829,14 +841,16 @@
             // lblKurs
             // 
             this.lblKurs.AutoSize = true;
-            this.lblKurs.Location = new System.Drawing.Point(120, 200);
+            this.lblKurs.Location = new System.Drawing.Point(120, 343);
             this.lblKurs.Name = "lblKurs";
             this.lblKurs.Size = new System.Drawing.Size(31, 13);
             this.lblKurs.TabIndex = 63;
             this.lblKurs.Text = "Курс";
+            this.lblKurs.Visible = false;
             // 
             // cmbStudentKurs
             // 
+            this.cmbStudentKurs.Enabled = false;
             this.cmbStudentKurs.Items.AddRange(new object[] {
             "1",
             "2",
@@ -844,11 +858,11 @@
             "4",
             "5",
             "Аспирант"});
-            this.cmbStudentKurs.Location = new System.Drawing.Point(173, 197);
+            this.cmbStudentKurs.Location = new System.Drawing.Point(173, 340);
             this.cmbStudentKurs.Name = "cmbStudentKurs";
             this.cmbStudentKurs.Size = new System.Drawing.Size(166, 21);
             this.cmbStudentKurs.TabIndex = 62;
-            this.cmbStudentKurs.SelectedIndexChanged += new System.EventHandler(this.cmbStudentKurs_SelectedIndexChanged);
+            this.cmbStudentKurs.Visible = false;
             // 
             // lblSpecialize
             // 
@@ -859,15 +873,17 @@
             this.lblSpecialize.TabIndex = 59;
             this.lblSpecialize.Text = "Специальность";
             // 
-            // cmbSpetialize
+            // cmbStudentSpetialize
             // 
-            this.cmbSpetialize.Items.AddRange(new object[] {
+            this.cmbStudentSpetialize.Enabled = false;
+            this.cmbStudentSpetialize.Items.AddRange(new object[] {
             "ПО",
             "НЕПО"});
-            this.cmbSpetialize.Location = new System.Drawing.Point(173, 170);
-            this.cmbSpetialize.Name = "cmbSpetialize";
-            this.cmbSpetialize.Size = new System.Drawing.Size(166, 21);
-            this.cmbSpetialize.TabIndex = 58;
+            this.cmbStudentSpetialize.Location = new System.Drawing.Point(173, 170);
+            this.cmbStudentSpetialize.Name = "cmbStudentSpetialize";
+            this.cmbStudentSpetialize.Size = new System.Drawing.Size(166, 21);
+            this.cmbStudentSpetialize.TabIndex = 58;
+            this.cmbStudentSpetialize.SelectedIndexChanged += new System.EventHandler(this.cmbStudentSpetialize_SelectedIndexChanged);
             // 
             // cmbStudentFaculty
             // 
@@ -878,6 +894,7 @@
             this.cmbStudentFaculty.Name = "cmbStudentFaculty";
             this.cmbStudentFaculty.Size = new System.Drawing.Size(166, 21);
             this.cmbStudentFaculty.TabIndex = 57;
+            this.cmbStudentFaculty.SelectedIndexChanged += new System.EventHandler(this.cmbStudentFaculty_SelectedIndexChanged);
             // 
             // lblFaculty
             // 
@@ -962,6 +979,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "НИР студента";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Enter += new System.EventHandler(this.tabPage2_Enter);
             // 
             // cmbStudentMentor
             // 
@@ -1104,6 +1122,28 @@
             this.lbYearInNirs.TabIndex = 69;
             this.lbYearInNirs.Text = "Сколько лет занимается НИР";
             // 
+            // nirsDataSetMain
+            // 
+            this.nirsDataSetMain.DataSetName = "nirsDataSetMain";
+            this.nirsDataSetMain.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataViewAddedMentor
+            // 
+            this.dataViewAddedMentor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataViewAddedMentor.Location = new System.Drawing.Point(8, 306);
+            this.dataViewAddedMentor.Name = "dataViewAddedMentor";
+            this.dataViewAddedMentor.Size = new System.Drawing.Size(544, 159);
+            this.dataViewAddedMentor.TabIndex = 49;
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Location = new System.Drawing.Point(8, 290);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(151, 13);
+            this.label33.TabIndex = 50;
+            this.label33.Text = "Добавленные руководители";
+            // 
             // addSomeOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1140,6 +1180,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nirsDataSetMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewAddedMentor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1174,7 +1216,7 @@
         private System.Windows.Forms.Label lblKurs;
         private System.Windows.Forms.ComboBox cmbStudentKurs;
         private System.Windows.Forms.Label lblSpecialize;
-        private System.Windows.Forms.ComboBox cmbSpetialize;
+        private System.Windows.Forms.ComboBox cmbStudentSpetialize;
         private System.Windows.Forms.ComboBox cmbStudentFaculty;
         private System.Windows.Forms.Label lblFaculty;
         private System.Windows.Forms.Label lblSecondName;
@@ -1244,6 +1286,9 @@
         private System.Windows.Forms.DataGridView dataViewGroupSpec;
         private System.Windows.Forms.TextBox txtAddSpecFullName;
         private System.Windows.Forms.Label label32;
+        private nirsDataSetMain nirsDataSetMain;
+        private System.Windows.Forms.DataGridView dataViewAddedMentor;
+        private System.Windows.Forms.Label label33;
     }
 }
 

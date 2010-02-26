@@ -82,8 +82,18 @@ namespace NIRS_DB.Structs
         }
 
 		private int mentor_id;
+        public int MentorId
+        {
+            get { return mentor_id; }
+            set { mentor_id = value; }
+        }
 
 		private int division_id;
+        public int DivisionId
+        {
+            get { return division_id; }
+            set { division_id = value; }
+        }
         private Division division;
 
 
@@ -99,6 +109,11 @@ namespace NIRS_DB.Structs
 
 
         private int group_id;
+        public int GroupId
+        {
+            get { return group_id; }
+            set { group_id = value; }
+        }
         private Group group;
 
         public Group Group
@@ -113,7 +128,7 @@ namespace NIRS_DB.Structs
 		
 		public Student()
 		{
-			
+            tableName = "student";
 		}
 
         public override ActiveRecord Find(DBCriteria crit)
@@ -132,7 +147,7 @@ namespace NIRS_DB.Structs
             if (id == 0)
             {
                 query = "INSERT INTO `" + tableName + "` VALUES(null,\"" + name + "\",\"" + surname + 
-					"\",\"" + fatherName + "\"," + group_id + "," + mentor_id + ",\"" + born.ToString() + "\");"; 
+					"\",\"" + fatherName + "\"," + group_id + "," + mentor_id + ",\"" + born.Year + "-" + born.Month + "-" + born.Day + "\");"; 
             }
             else
             {

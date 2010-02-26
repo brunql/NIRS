@@ -63,7 +63,5 @@ namespace NIRS_DB
             command.ExecuteNonQuery();       
 		}
 		#endregion
-		
-		
 	}
 }

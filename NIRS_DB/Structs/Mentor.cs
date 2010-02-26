@@ -62,6 +62,11 @@ namespace NIRS_DB.Structs
         }
 
         private int div_id;
+        public int DivisionId
+        {
+            get { return div_id; }
+            set { div_id = value; }
+        }
 
 		private Division div;
 

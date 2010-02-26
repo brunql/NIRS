@@ -21,15 +21,6 @@ namespace NIRS
             InitializeComponent();
         }
 
-        private void cmbFaculty_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // TODO: обновить кафедры
-        }
-
-        private void cmbStudentKurs_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // TODO: обновить специальности
-        }
 
         private void ckbMoney_CheckedChanged(object sender, EventArgs e)
         {
@@ -43,16 +34,18 @@ namespace NIRS
             ment.Name = txtMentorName.Text;
             ment.Surname = txtMentorSurname.Text;
             ment.FatherName = txtMentorFathername.Text;
-            //if ((Division)cbMentorDivision.SelectedItem == null)
-            //{
-            //    MessageBox.Show("Кафедра не выбрана");
-            //    return;
-            //}
-            //ment.Division = (Division)cbMentorDivision.SelectedItem;
+            if ((iamfrommaycop)cbMentorDivision.SelectedItem == null)
+            {
+                MessageBox.Show("Кафедра не выбрана");
+                return;
+            }
+            ment.DivisionId = ((iamfrommaycop)cbMentorDivision.SelectedItem).Id;
             ment.AcademicRank = txtMentorAcademicRank.Text;
             ment.Degree = txtMentorDegree.Text;
             ment.Work = txtMentorWork.Text;
             ment.Save();
+
+            MainForm.SelectAllFromAndAdd("mentor", dataViewAddedMentor, new nirsDataSetMain.mentorDataTable());
 
             DialogResult result = MessageBox.Show("Руководитель добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
@@ -64,6 +57,7 @@ namespace NIRS
                 txtMentorDegree.Text = "";
                 txtMentorAcademicRank.Text = "";
             }
+
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
@@ -74,25 +68,25 @@ namespace NIRS
             stuff.FatherName = txtStudentFathername.Text;
             try
             {
-                stuff.Born = Convert.ToDateTime(txtStudentBirthdayDate);
+                stuff.Born = Convert.ToDateTime(txtStudentBirthdayDate.Text);
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Проверьте правильность ввода даты рождения. " + ex.Message);
                 return;
             }
-            if ((Group)cmbStudentGroup.SelectedItem == null)
+            if (cmbStudentGroup.SelectedItem == null)
             {
                 MessageBox.Show("Группа не выбрана");
                 return;
             }
-            stuff.Group = (Group)cmbStudentGroup.SelectedItem;
-            if ((Mentor)cmbStudentMentor.SelectedItem == null)
+            stuff.GroupId = (cmbStudentGroup.SelectedItem as iamfrommaycop).Id;
+            if (cmbStudentMentor.SelectedItem == null)
             {
                 MessageBox.Show("Руководитель не выбран");
                 return;
             }
-            stuff.Mentor = (Mentor)cmbStudentMentor.SelectedItem;
+            stuff.MentorId = (cmbStudentMentor.SelectedItem as iamfrommaycop).Id;
             stuff.Save();
 
             DialogResult result = MessageBox.Show("Студент добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
@@ -128,6 +122,16 @@ namespace NIRS
             MainForm.SelectAllFromAndAdd("faculty", dataViewDivisionFaculty, new nirsDataSetMain.facultyDataTable());
             MainForm.SelectAllFromAndAdd("division", dataViewSpecDivision, new nirsDataSetMain.divisionDataTable());
             MainForm.SelectAllFromAndAdd("spec", dataViewGroupSpec, new nirsDataSetMain.specDataTable());
+            MainForm.SelectAllFromAndAdd("mentor", dataViewAddedMentor, new nirsDataSetMain.mentorDataTable());
+            //cbMentorDivision.Items.Clear();
+
+            for (int i = dataViewSpecDivision.Rows.Count - 1 - 1; i >= 0; i-- )
+            {
+                iamfrommaycop iam = new iamfrommaycop();
+                iam.Id = (int)dataViewSpecDivision.Rows[i].Cells["id"].Value;
+                iam.Name = dataViewSpecDivision.Rows[i].Cells["name"].Value.ToString();
+                cbMentorDivision.Items.Add(iam);
+            }
         }
 
         private void AddDivision_Click(object sender, EventArgs e)
@@ -162,6 +166,97 @@ namespace NIRS
 
             MainForm.SelectAllFromAndAdd("group", dataViewAddedGroup, new nirsDataSetMain.groupDataTable());
             MainForm.SelectAllFromAndAdd("spec", dataViewGroupSpec, new nirsDataSetMain.specDataTable());
+        }
+
+
+        private void tabPage1_Enter(object sender, EventArgs e)
+        {
+            iamfrommaycop.FillComboBox(dataViewAddedFaculty, cmbStudentFaculty);
+            // todo: load mentors to cmbStudentMentors
+            //iamfrommaycop.FillComboBox(dataViewAddedDivision, cmbStudentDivision);
+            //iamfrommaycop.FillComboBox(dataViewAddedGroup, cmbStudentGroup);
+            //iamfrommaycop.FillComboBox(dat
+            for (int i = dataViewSpecDivision.Rows.Count - 1 - 1; i >= 0; i--)
+            {
+                iamfrommaycop iam = new iamfrommaycop();
+                iam.Id = (int)dataViewSpecDivision.Rows[i].Cells["id"].Value;
+                iam.Name = dataViewSpecDivision.Rows[i].Cells["name"].Value.ToString();
+                cbMentorDivision.Items.Add(iam);
+            }
+        }
+
+        private void cmbStudentFaculty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbStudentDivision.Enabled = true;
+            iamfrommaycop.FillComboBoxWithCmp(dataViewAddedDivision, cmbStudentDivision,"name", "fac_id", (cmbStudentFaculty.SelectedItem as iamfrommaycop).Id);
+        }
+
+        private void cmbStudentDivision_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbStudentSpetialize.Enabled = true;
+            iamfrommaycop.FillComboBoxWithCmp(dataViewAddedSpec, cmbStudentSpetialize, "name", "div_id", (cmbStudentDivision.SelectedItem as iamfrommaycop).Id);
+        }
+
+        private void cmbStudentSpetialize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbStudentGroup.Enabled = true;
+            iamfrommaycop.FillComboBoxWithCmp(dataViewAddedGroup, cmbStudentGroup, "code", "div_id", (cmbStudentDivision.SelectedItem as iamfrommaycop).Id);
+        }
+
+        private void tabPage2_Enter(object sender, EventArgs e)
+        {
+            iamfrommaycop.FillComboBox_SPECIAL_FOR_MENTOR_REWRITE_ME(dataViewAddedMentor, cmbStudentMentor);
+        }
+    }
+
+    class iamfrommaycop
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
+
+        public static void FillComboBox(DataGridView dtvw, ComboBox cb)
+        {
+            cb.Items.Clear();
+            for (int i = dtvw.Rows.Count - 1 - 1; i >= 0; i--)
+            {
+                iamfrommaycop iam = new iamfrommaycop();
+                iam.Id = (int)dtvw.Rows[i].Cells["id"].Value;
+                iam.Name = dtvw.Rows[i].Cells["name"].Value.ToString();
+                cb.Items.Add(iam);
+            }
+        }
+
+        public static void FillComboBox_SPECIAL_FOR_MENTOR_REWRITE_ME(DataGridView dtvw, ComboBox cb)
+        {
+            cb.Items.Clear();
+            for (int i = dtvw.Rows.Count - 1 - 1; i >= 0; i--)
+            {
+                iamfrommaycop iam = new iamfrommaycop();
+                iam.Id = (int)dtvw.Rows[i].Cells["id"].Value;
+                iam.Name = dtvw.Rows[i].Cells["name"].Value.ToString() +" "+
+                    dtvw.Rows[i].Cells["surname"].Value.ToString() + " "+
+                    dtvw.Rows[i].Cells["fathername"].Value.ToString();
+                cb.Items.Add(iam);
+            }
+        }
+
+        public static void FillComboBoxWithCmp(DataGridView dtvw, ComboBox cb, string col_name, string thatCmp, int idCmp)
+        {
+            cb.Items.Clear();
+            for (int i = dtvw.Rows.Count - 1 - 1; i >= 0; i--)
+            {
+                if ((int)dtvw.Rows[i].Cells[thatCmp].Value == idCmp)
+                {
+                    iamfrommaycop iam = new iamfrommaycop();
+                    iam.Id = (int)dtvw.Rows[i].Cells["id"].Value;
+                    iam.Name = dtvw.Rows[i].Cells[col_name].Value.ToString();
+                    cb.Items.Add(iam);
+                }
+            }
         }
     }
 }

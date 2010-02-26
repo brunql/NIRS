@@ -36,6 +36,7 @@
             this.Exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помошьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.экспортВWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
@@ -135,6 +136,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.divisionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.sfd = new System.Windows.Forms.SaveFileDialog();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -167,7 +169,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлБДToolStripMenuItem,
-            this.помошьToolStripMenuItem});
+            this.помошьToolStripMenuItem,
+            this.экспортВWordToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(658, 24);
@@ -180,20 +183,20 @@
             this.добавлениеЗаписейToolStripMenuItem,
             this.Exit_ToolStripMenuItem});
             this.файлБДToolStripMenuItem.Name = "файлБДToolStripMenuItem";
-            this.файлБДToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.файлБДToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.файлБДToolStripMenuItem.Text = "Файл";
             // 
             // добавлениеЗаписейToolStripMenuItem
             // 
             this.добавлениеЗаписейToolStripMenuItem.Name = "добавлениеЗаписейToolStripMenuItem";
-            this.добавлениеЗаписейToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.добавлениеЗаписейToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.добавлениеЗаписейToolStripMenuItem.Text = "Добавление записей";
             this.добавлениеЗаписейToolStripMenuItem.Click += new System.EventHandler(this.AddRecord_ToolStripMenuItem_Click);
             // 
             // Exit_ToolStripMenuItem
             // 
             this.Exit_ToolStripMenuItem.Name = "Exit_ToolStripMenuItem";
-            this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
+            this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.Exit_ToolStripMenuItem.Text = "Выход";
             this.Exit_ToolStripMenuItem.Click += new System.EventHandler(this.Exit_ToolStripMenuItem_Click);
             // 
@@ -202,15 +205,22 @@
             this.помошьToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.оПрограммеToolStripMenuItem});
             this.помошьToolStripMenuItem.Name = "помошьToolStripMenuItem";
-            this.помошьToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.помошьToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
             this.помошьToolStripMenuItem.Text = "Помошь";
             // 
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.About_ToolStripMenuItem_Click);
+            // 
+            // экспортВWordToolStripMenuItem
+            // 
+            this.экспортВWordToolStripMenuItem.Name = "экспортВWordToolStripMenuItem";
+            this.экспортВWordToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
+            this.экспортВWordToolStripMenuItem.Text = "Экспорт в Word";
+            this.экспортВWordToolStripMenuItem.Click += new System.EventHandler(this.exportToWordToolStripMenuItem_Click);
             // 
             // toolStripButton8
             // 
@@ -920,7 +930,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(36, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
             // 
@@ -1001,6 +1011,10 @@
             this.divisionBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
             this.divisionBindingNavigatorSaveItem.Text = "Save Data";
             this.divisionBindingNavigatorSaveItem.Click += new System.EventHandler(this.divisionBindingNavigatorSaveItem_Click_1);
+            // 
+            // sfd
+            // 
+            this.sfd.Filter = "Word document (*.doc)|*.doc";
             // 
             // MainForm
             // 
@@ -1167,6 +1181,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn48;
         private NIRS.nirsDataSetMainTableAdapters.studentTableAdapter studentTableAdapter;
         private System.Windows.Forms.BindingSource studentBindingSource;
+        private NIRS.nirsDataSetMainTableAdapters.worksTableAdapter worksTableAdapter;
+        private System.Windows.Forms.BindingSource worksBindingSource;
+        private System.Windows.Forms.DataGridView worksDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn56;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn57;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn58;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn59;
         private System.Windows.Forms.DataGridView studentDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn49;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn50;
@@ -1175,12 +1196,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn53;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn54;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn55;
-        private NIRS.nirsDataSetMainTableAdapters.worksTableAdapter worksTableAdapter;
-        private System.Windows.Forms.BindingSource worksBindingSource;
-        private System.Windows.Forms.DataGridView worksDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn56;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn57;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn58;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn59;
+        private System.Windows.Forms.ToolStripMenuItem экспортВWordToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog sfd;
     }
 }
