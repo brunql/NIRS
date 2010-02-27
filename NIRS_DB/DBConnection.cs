@@ -60,8 +60,16 @@ namespace NIRS_DB
 		{
             MySqlCommand command = new MySqlCommand(query, _dbc._conn);
             command.CommandText = query;
-            command.ExecuteNonQuery();       
+            command.ExecuteNonQuery();
 		}
+
+        public static MySqlDataReader ExecuteReader(string query)
+        {
+            MySqlCommand command = new MySqlCommand(query, _dbc._conn);
+            command.CommandText = query;
+            return command.ExecuteReader();
+        }
+
 		#endregion
 	}
 }

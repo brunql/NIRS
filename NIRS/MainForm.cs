@@ -16,18 +16,12 @@ namespace NIRS
     public partial class MainForm : Form
     {
         AboutBox about_box = new AboutBox();
-        DataView dvTable = new DataView();
-        string connection_string = "Server=localhost;Port=3306;Database=nirs;Uid=root;Pwd=;";
-        MySql.Data.MySqlClient.MySqlConnection mySqlConnection;
+        //DataView dvTable = new DataView();
 
         public static void SelectAllFromAndAdd(string table_name, DataGridView dataView, object tempDataTable)
         {
             DataView t = new DataView();
-            string connection_string = "Server=localhost;Port=3306;Database=nirs;Uid=root;Pwd=;";
-            MySql.Data.MySqlClient.MySqlConnection mc = new MySqlConnection(connection_string);
-            mc.Open();
-            MySqlCommand mcmd = new MySqlCommand("SELECT * FROM `" + table_name + "` ORDER BY `id`;", mc);
-            ((DataTable)tempDataTable).Load(mcmd.ExecuteReader());
+            ((DataTable)tempDataTable).Load(DBConnection.ExecuteReader("SELECT * FROM `" + table_name + "` ORDER BY `id`;"));
             t.Table = (DataTable)tempDataTable;
             dataView.DataSource = t;
         }
@@ -46,8 +40,6 @@ namespace NIRS
             dbs.user = "root";
 
             DBConnection.Connection(dbs);
-
-            mySqlConnection = new MySqlConnection(connection_string);
 
             tabControl1_SelectedIndexChanged(null, null);
         }

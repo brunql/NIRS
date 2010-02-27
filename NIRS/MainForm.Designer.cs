@@ -64,65 +64,18 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.facultyDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.facultyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.nirsDataSetMain = new NIRS.nirsDataSetMain();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.divisionDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.divisionBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.specDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.mentorDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mentorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage6 = new System.Windows.Forms.TabPage();
             this.studentDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPage7 = new System.Windows.Forms.TabPage();
             this.worksDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.worksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.divisionTableAdapter = new NIRS.nirsDataSetMainTableAdapters.divisionTableAdapter();
-            this.tableAdapterManager = new NIRS.nirsDataSetMainTableAdapters.TableAdapterManager();
-            this.facultyTableAdapter = new NIRS.nirsDataSetMainTableAdapters.facultyTableAdapter();
-            this.groupTableAdapter = new NIRS.nirsDataSetMainTableAdapters.groupTableAdapter();
-            this.mentorTableAdapter = new NIRS.nirsDataSetMainTableAdapters.mentorTableAdapter();
-            this.specTableAdapter = new NIRS.nirsDataSetMainTableAdapters.specTableAdapter();
-            this.studentTableAdapter = new NIRS.nirsDataSetMainTableAdapters.studentTableAdapter();
-            this.worksTableAdapter = new NIRS.nirsDataSetMainTableAdapters.worksTableAdapter();
             this.divisionBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
@@ -137,32 +90,79 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.divisionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.facultyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nirsDataSetMain = new NIRS.nirsDataSetMain();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.divisionBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.specBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn45 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn46 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn47 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mentorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn49 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn50 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn56 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn57 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn58 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn59 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.worksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.divisionTableAdapter = new NIRS.nirsDataSetMainTableAdapters.divisionTableAdapter();
+            this.tableAdapterManager = new NIRS.nirsDataSetMainTableAdapters.TableAdapterManager();
+            this.facultyTableAdapter = new NIRS.nirsDataSetMainTableAdapters.facultyTableAdapter();
+            this.groupTableAdapter = new NIRS.nirsDataSetMainTableAdapters.groupTableAdapter();
+            this.mentorTableAdapter = new NIRS.nirsDataSetMainTableAdapters.mentorTableAdapter();
+            this.specTableAdapter = new NIRS.nirsDataSetMainTableAdapters.specTableAdapter();
+            this.studentTableAdapter = new NIRS.nirsDataSetMainTableAdapters.studentTableAdapter();
+            this.worksTableAdapter = new NIRS.nirsDataSetMainTableAdapters.worksTableAdapter();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.facultyDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facultyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nirsDataSetMain)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.divisionDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.divisionBindingSource)).BeginInit();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.specDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.specBindingSource)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mentorDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mentorBindingSource)).BeginInit();
             this.tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.studentDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
             this.tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.worksDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.worksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divisionBindingNavigator)).BeginInit();
             this.divisionBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.facultyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nirsDataSetMain)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.divisionBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mentorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.worksBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -450,29 +450,6 @@
             this.facultyDataGridView.Size = new System.Drawing.Size(644, 386);
             this.facultyDataGridView.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn32.HeaderText = "id";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn33.HeaderText = "name";
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            // 
-            // facultyBindingSource
-            // 
-            this.facultyBindingSource.DataMember = "faculty";
-            this.facultyBindingSource.DataSource = this.nirsDataSetMain;
-            // 
-            // nirsDataSetMain
-            // 
-            this.nirsDataSetMain.DataSetName = "nirsDataSetMain";
-            this.nirsDataSetMain.Locale = new System.Globalization.CultureInfo("");
-            this.nirsDataSetMain.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.divisionDataGridView);
@@ -498,29 +475,6 @@
             this.divisionDataGridView.Name = "divisionDataGridView";
             this.divisionDataGridView.Size = new System.Drawing.Size(644, 386);
             this.divisionDataGridView.TabIndex = 5;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn10.HeaderText = "id";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "fac_id";
-            this.dataGridViewTextBoxColumn11.HeaderText = "fac_id";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn12.HeaderText = "name";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // divisionBindingSource
-            // 
-            this.divisionBindingSource.DataMember = "division";
-            this.divisionBindingSource.DataSource = this.nirsDataSetMain;
             // 
             // tabPage3
             // 
@@ -550,35 +504,6 @@
             this.specDataGridView.Size = new System.Drawing.Size(644, 386);
             this.specDataGridView.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn37
-            // 
-            this.dataGridViewTextBoxColumn37.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn37.HeaderText = "id";
-            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            // 
-            // dataGridViewTextBoxColumn38
-            // 
-            this.dataGridViewTextBoxColumn38.DataPropertyName = "div_id";
-            this.dataGridViewTextBoxColumn38.HeaderText = "div_id";
-            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
-            // 
-            // dataGridViewTextBoxColumn39
-            // 
-            this.dataGridViewTextBoxColumn39.DataPropertyName = "code";
-            this.dataGridViewTextBoxColumn39.HeaderText = "code";
-            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
-            // 
-            // dataGridViewTextBoxColumn40
-            // 
-            this.dataGridViewTextBoxColumn40.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn40.HeaderText = "name";
-            this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
-            // 
-            // specBindingSource
-            // 
-            this.specBindingSource.DataMember = "spec";
-            this.specBindingSource.DataSource = this.nirsDataSetMain;
-            // 
             // tabPage4
             // 
             this.tabPage4.Controls.Add(this.groupDataGridView);
@@ -604,29 +529,6 @@
             this.groupDataGridView.Name = "groupDataGridView";
             this.groupDataGridView.Size = new System.Drawing.Size(644, 386);
             this.groupDataGridView.TabIndex = 5;
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn34.HeaderText = "id";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "div_id";
-            this.dataGridViewTextBoxColumn35.HeaderText = "div_id";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.DataPropertyName = "code";
-            this.dataGridViewTextBoxColumn36.HeaderText = "code";
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            // 
-            // groupBindingSource
-            // 
-            this.groupBindingSource.DataMember = "group";
-            this.groupBindingSource.DataSource = this.nirsDataSetMain;
             // 
             // tabPage5
             // 
@@ -659,59 +561,6 @@
             this.mentorDataGridView.Size = new System.Drawing.Size(644, 386);
             this.mentorDataGridView.TabIndex = 5;
             // 
-            // dataGridViewTextBoxColumn41
-            // 
-            this.dataGridViewTextBoxColumn41.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn41.HeaderText = "id";
-            this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
-            // 
-            // dataGridViewTextBoxColumn42
-            // 
-            this.dataGridViewTextBoxColumn42.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn42.HeaderText = "name";
-            this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
-            // 
-            // dataGridViewTextBoxColumn43
-            // 
-            this.dataGridViewTextBoxColumn43.DataPropertyName = "surname";
-            this.dataGridViewTextBoxColumn43.HeaderText = "surname";
-            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
-            // 
-            // dataGridViewTextBoxColumn44
-            // 
-            this.dataGridViewTextBoxColumn44.DataPropertyName = "fathername";
-            this.dataGridViewTextBoxColumn44.HeaderText = "fathername";
-            this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
-            // 
-            // dataGridViewTextBoxColumn45
-            // 
-            this.dataGridViewTextBoxColumn45.DataPropertyName = "work";
-            this.dataGridViewTextBoxColumn45.HeaderText = "work";
-            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
-            // 
-            // dataGridViewTextBoxColumn46
-            // 
-            this.dataGridViewTextBoxColumn46.DataPropertyName = "acrank";
-            this.dataGridViewTextBoxColumn46.HeaderText = "acrank";
-            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
-            // 
-            // dataGridViewTextBoxColumn47
-            // 
-            this.dataGridViewTextBoxColumn47.DataPropertyName = "degree";
-            this.dataGridViewTextBoxColumn47.HeaderText = "degree";
-            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
-            // 
-            // dataGridViewTextBoxColumn48
-            // 
-            this.dataGridViewTextBoxColumn48.DataPropertyName = "div_id";
-            this.dataGridViewTextBoxColumn48.HeaderText = "div_id";
-            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
-            // 
-            // mentorBindingSource
-            // 
-            this.mentorBindingSource.DataMember = "mentor";
-            this.mentorBindingSource.DataSource = this.nirsDataSetMain;
-            // 
             // tabPage6
             // 
             this.tabPage6.AutoScroll = true;
@@ -743,53 +592,6 @@
             this.studentDataGridView.Size = new System.Drawing.Size(644, 386);
             this.studentDataGridView.TabIndex = 0;
             // 
-            // dataGridViewTextBoxColumn49
-            // 
-            this.dataGridViewTextBoxColumn49.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn49.HeaderText = "id";
-            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
-            // 
-            // dataGridViewTextBoxColumn50
-            // 
-            this.dataGridViewTextBoxColumn50.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn50.HeaderText = "name";
-            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
-            // 
-            // dataGridViewTextBoxColumn51
-            // 
-            this.dataGridViewTextBoxColumn51.DataPropertyName = "surname";
-            this.dataGridViewTextBoxColumn51.HeaderText = "surname";
-            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
-            // 
-            // dataGridViewTextBoxColumn52
-            // 
-            this.dataGridViewTextBoxColumn52.DataPropertyName = "fathername";
-            this.dataGridViewTextBoxColumn52.HeaderText = "fathername";
-            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
-            // 
-            // dataGridViewTextBoxColumn53
-            // 
-            this.dataGridViewTextBoxColumn53.DataPropertyName = "group_id";
-            this.dataGridViewTextBoxColumn53.HeaderText = "group_id";
-            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
-            // 
-            // dataGridViewTextBoxColumn54
-            // 
-            this.dataGridViewTextBoxColumn54.DataPropertyName = "mentor_id";
-            this.dataGridViewTextBoxColumn54.HeaderText = "mentor_id";
-            this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
-            // 
-            // dataGridViewTextBoxColumn55
-            // 
-            this.dataGridViewTextBoxColumn55.DataPropertyName = "born";
-            this.dataGridViewTextBoxColumn55.HeaderText = "born";
-            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
-            // 
-            // studentBindingSource
-            // 
-            this.studentBindingSource.DataMember = "student";
-            this.studentBindingSource.DataSource = this.nirsDataSetMain;
-            // 
             // tabPage7
             // 
             this.tabPage7.AutoScroll = true;
@@ -817,75 +619,6 @@
             this.worksDataGridView.Name = "worksDataGridView";
             this.worksDataGridView.Size = new System.Drawing.Size(644, 386);
             this.worksDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn56
-            // 
-            this.dataGridViewTextBoxColumn56.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn56.HeaderText = "id";
-            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
-            // 
-            // dataGridViewTextBoxColumn57
-            // 
-            this.dataGridViewTextBoxColumn57.DataPropertyName = "student_id";
-            this.dataGridViewTextBoxColumn57.HeaderText = "student_id";
-            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
-            // 
-            // dataGridViewTextBoxColumn58
-            // 
-            this.dataGridViewTextBoxColumn58.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn58.HeaderText = "name";
-            this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
-            // 
-            // dataGridViewTextBoxColumn59
-            // 
-            this.dataGridViewTextBoxColumn59.DataPropertyName = "desc";
-            this.dataGridViewTextBoxColumn59.HeaderText = "desc";
-            this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
-            // 
-            // worksBindingSource
-            // 
-            this.worksBindingSource.DataMember = "works";
-            this.worksBindingSource.DataSource = this.nirsDataSetMain;
-            // 
-            // divisionTableAdapter
-            // 
-            this.divisionTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.divisionTableAdapter = this.divisionTableAdapter;
-            this.tableAdapterManager.facultyTableAdapter = this.facultyTableAdapter;
-            this.tableAdapterManager.groupTableAdapter = this.groupTableAdapter;
-            this.tableAdapterManager.mentorTableAdapter = this.mentorTableAdapter;
-            this.tableAdapterManager.specTableAdapter = this.specTableAdapter;
-            this.tableAdapterManager.studentTableAdapter = this.studentTableAdapter;
-            this.tableAdapterManager.UpdateOrder = NIRS.nirsDataSetMainTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            this.tableAdapterManager.worksTableAdapter = this.worksTableAdapter;
-            // 
-            // facultyTableAdapter
-            // 
-            this.facultyTableAdapter.ClearBeforeFill = true;
-            // 
-            // groupTableAdapter
-            // 
-            this.groupTableAdapter.ClearBeforeFill = true;
-            // 
-            // mentorTableAdapter
-            // 
-            this.mentorTableAdapter.ClearBeforeFill = true;
-            // 
-            // specTableAdapter
-            // 
-            this.specTableAdapter.ClearBeforeFill = true;
-            // 
-            // studentTableAdapter
-            // 
-            this.studentTableAdapter.ClearBeforeFill = true;
-            // 
-            // worksTableAdapter
-            // 
-            this.worksTableAdapter.ClearBeforeFill = true;
             // 
             // divisionBindingNavigator
             // 
@@ -1016,6 +749,273 @@
             // 
             this.sfd.Filter = "Word document (*.doc)|*.doc";
             // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn32.HeaderText = "id";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            // 
+            // dataGridViewTextBoxColumn33
+            // 
+            this.dataGridViewTextBoxColumn33.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn33.HeaderText = "name";
+            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
+            // 
+            // facultyBindingSource
+            // 
+            this.facultyBindingSource.DataMember = "faculty";
+            this.facultyBindingSource.DataSource = this.nirsDataSetMain;
+            // 
+            // nirsDataSetMain
+            // 
+            this.nirsDataSetMain.DataSetName = "nirsDataSetMain";
+            this.nirsDataSetMain.Locale = new System.Globalization.CultureInfo("");
+            this.nirsDataSetMain.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn10.HeaderText = "id";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "fac_id";
+            this.dataGridViewTextBoxColumn11.HeaderText = "fac_id";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn12.HeaderText = "name";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // divisionBindingSource
+            // 
+            this.divisionBindingSource.DataMember = "division";
+            this.divisionBindingSource.DataSource = this.nirsDataSetMain;
+            // 
+            // dataGridViewTextBoxColumn37
+            // 
+            this.dataGridViewTextBoxColumn37.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn37.HeaderText = "id";
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            // 
+            // dataGridViewTextBoxColumn38
+            // 
+            this.dataGridViewTextBoxColumn38.DataPropertyName = "div_id";
+            this.dataGridViewTextBoxColumn38.HeaderText = "div_id";
+            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            // 
+            // dataGridViewTextBoxColumn39
+            // 
+            this.dataGridViewTextBoxColumn39.DataPropertyName = "code";
+            this.dataGridViewTextBoxColumn39.HeaderText = "code";
+            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
+            // 
+            // dataGridViewTextBoxColumn40
+            // 
+            this.dataGridViewTextBoxColumn40.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn40.HeaderText = "name";
+            this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
+            // 
+            // specBindingSource
+            // 
+            this.specBindingSource.DataMember = "spec";
+            this.specBindingSource.DataSource = this.nirsDataSetMain;
+            // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn34.HeaderText = "id";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "div_id";
+            this.dataGridViewTextBoxColumn35.HeaderText = "div_id";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.DataPropertyName = "code";
+            this.dataGridViewTextBoxColumn36.HeaderText = "code";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            // 
+            // groupBindingSource
+            // 
+            this.groupBindingSource.DataMember = "group";
+            this.groupBindingSource.DataSource = this.nirsDataSetMain;
+            // 
+            // dataGridViewTextBoxColumn41
+            // 
+            this.dataGridViewTextBoxColumn41.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn41.HeaderText = "id";
+            this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
+            // 
+            // dataGridViewTextBoxColumn42
+            // 
+            this.dataGridViewTextBoxColumn42.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn42.HeaderText = "name";
+            this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
+            // 
+            // dataGridViewTextBoxColumn43
+            // 
+            this.dataGridViewTextBoxColumn43.DataPropertyName = "surname";
+            this.dataGridViewTextBoxColumn43.HeaderText = "surname";
+            this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
+            // 
+            // dataGridViewTextBoxColumn44
+            // 
+            this.dataGridViewTextBoxColumn44.DataPropertyName = "fathername";
+            this.dataGridViewTextBoxColumn44.HeaderText = "fathername";
+            this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
+            // 
+            // dataGridViewTextBoxColumn45
+            // 
+            this.dataGridViewTextBoxColumn45.DataPropertyName = "work";
+            this.dataGridViewTextBoxColumn45.HeaderText = "work";
+            this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
+            // 
+            // dataGridViewTextBoxColumn46
+            // 
+            this.dataGridViewTextBoxColumn46.DataPropertyName = "acrank";
+            this.dataGridViewTextBoxColumn46.HeaderText = "acrank";
+            this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
+            // 
+            // dataGridViewTextBoxColumn47
+            // 
+            this.dataGridViewTextBoxColumn47.DataPropertyName = "degree";
+            this.dataGridViewTextBoxColumn47.HeaderText = "degree";
+            this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
+            // 
+            // dataGridViewTextBoxColumn48
+            // 
+            this.dataGridViewTextBoxColumn48.DataPropertyName = "div_id";
+            this.dataGridViewTextBoxColumn48.HeaderText = "div_id";
+            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
+            // 
+            // mentorBindingSource
+            // 
+            this.mentorBindingSource.DataMember = "mentor";
+            this.mentorBindingSource.DataSource = this.nirsDataSetMain;
+            // 
+            // dataGridViewTextBoxColumn49
+            // 
+            this.dataGridViewTextBoxColumn49.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn49.HeaderText = "id";
+            this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
+            // 
+            // dataGridViewTextBoxColumn50
+            // 
+            this.dataGridViewTextBoxColumn50.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn50.HeaderText = "name";
+            this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
+            // 
+            // dataGridViewTextBoxColumn51
+            // 
+            this.dataGridViewTextBoxColumn51.DataPropertyName = "surname";
+            this.dataGridViewTextBoxColumn51.HeaderText = "surname";
+            this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
+            // 
+            // dataGridViewTextBoxColumn52
+            // 
+            this.dataGridViewTextBoxColumn52.DataPropertyName = "fathername";
+            this.dataGridViewTextBoxColumn52.HeaderText = "fathername";
+            this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
+            // 
+            // dataGridViewTextBoxColumn53
+            // 
+            this.dataGridViewTextBoxColumn53.DataPropertyName = "group_id";
+            this.dataGridViewTextBoxColumn53.HeaderText = "group_id";
+            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
+            // 
+            // dataGridViewTextBoxColumn54
+            // 
+            this.dataGridViewTextBoxColumn54.DataPropertyName = "mentor_id";
+            this.dataGridViewTextBoxColumn54.HeaderText = "mentor_id";
+            this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
+            // 
+            // dataGridViewTextBoxColumn55
+            // 
+            this.dataGridViewTextBoxColumn55.DataPropertyName = "born";
+            this.dataGridViewTextBoxColumn55.HeaderText = "born";
+            this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
+            // 
+            // studentBindingSource
+            // 
+            this.studentBindingSource.DataMember = "student";
+            this.studentBindingSource.DataSource = this.nirsDataSetMain;
+            // 
+            // dataGridViewTextBoxColumn56
+            // 
+            this.dataGridViewTextBoxColumn56.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn56.HeaderText = "id";
+            this.dataGridViewTextBoxColumn56.Name = "dataGridViewTextBoxColumn56";
+            // 
+            // dataGridViewTextBoxColumn57
+            // 
+            this.dataGridViewTextBoxColumn57.DataPropertyName = "student_id";
+            this.dataGridViewTextBoxColumn57.HeaderText = "student_id";
+            this.dataGridViewTextBoxColumn57.Name = "dataGridViewTextBoxColumn57";
+            // 
+            // dataGridViewTextBoxColumn58
+            // 
+            this.dataGridViewTextBoxColumn58.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn58.HeaderText = "name";
+            this.dataGridViewTextBoxColumn58.Name = "dataGridViewTextBoxColumn58";
+            // 
+            // dataGridViewTextBoxColumn59
+            // 
+            this.dataGridViewTextBoxColumn59.DataPropertyName = "desc";
+            this.dataGridViewTextBoxColumn59.HeaderText = "desc";
+            this.dataGridViewTextBoxColumn59.Name = "dataGridViewTextBoxColumn59";
+            // 
+            // worksBindingSource
+            // 
+            this.worksBindingSource.DataMember = "works";
+            this.worksBindingSource.DataSource = this.nirsDataSetMain;
+            // 
+            // divisionTableAdapter
+            // 
+            this.divisionTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.divisionTableAdapter = this.divisionTableAdapter;
+            this.tableAdapterManager.facultyTableAdapter = this.facultyTableAdapter;
+            this.tableAdapterManager.groupTableAdapter = this.groupTableAdapter;
+            this.tableAdapterManager.mentorTableAdapter = this.mentorTableAdapter;
+            this.tableAdapterManager.specTableAdapter = this.specTableAdapter;
+            this.tableAdapterManager.studentTableAdapter = this.studentTableAdapter;
+            this.tableAdapterManager.UpdateOrder = NIRS.nirsDataSetMainTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.tableAdapterManager.worksTableAdapter = this.worksTableAdapter;
+            // 
+            // facultyTableAdapter
+            // 
+            this.facultyTableAdapter.ClearBeforeFill = true;
+            // 
+            // groupTableAdapter
+            // 
+            this.groupTableAdapter.ClearBeforeFill = true;
+            // 
+            // mentorTableAdapter
+            // 
+            this.mentorTableAdapter.ClearBeforeFill = true;
+            // 
+            // specTableAdapter
+            // 
+            this.specTableAdapter.ClearBeforeFill = true;
+            // 
+            // studentTableAdapter
+            // 
+            this.studentTableAdapter.ClearBeforeFill = true;
+            // 
+            // worksTableAdapter
+            // 
+            this.worksTableAdapter.ClearBeforeFill = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1033,29 +1033,29 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.facultyDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.facultyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nirsDataSetMain)).EndInit();
             this.tabPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.divisionDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.divisionBindingSource)).EndInit();
             this.tabPage3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.specDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.specBindingSource)).EndInit();
             this.tabPage4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mentorDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.mentorBindingSource)).EndInit();
             this.tabPage6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.studentDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
             this.tabPage7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.worksDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.worksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.divisionBindingNavigator)).EndInit();
             this.divisionBindingNavigator.ResumeLayout(false);
             this.divisionBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.facultyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nirsDataSetMain)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.divisionBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.specBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mentorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.studentBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.worksBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
