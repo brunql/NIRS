@@ -21,7 +21,9 @@ namespace NIRS
         public static void SelectAllFromAndAdd(string table_name, DataGridView dataView, object tempDataTable)
         {
             DataView t = new DataView();
-            ((DataTable)tempDataTable).Load(DBConnection.ExecuteReader("SELECT * FROM `" + table_name + "` ORDER BY `id`;"));
+            ((DataTable)tempDataTable).Load(
+                            DBConnection.ExecuteReader("SELECT * FROM `" + table_name + "` ORDER BY `id`;")
+                );
             t.Table = (DataTable)tempDataTable;
             dataView.DataSource = t;
         }
@@ -66,23 +68,36 @@ namespace NIRS
             UpdateAllDataGridView();
         }
 
+        private void LoadSummaryDataGridTable()
+        {
+            DataView t = new DataView();
+            DataTable tempDataTable = new DataTable();
+            tempDataTable.Load(
+                    DBConnection.ExecuteReader(
+                    @"SELECT CONCAT(s.name,' ', s.surname, ' ', s.fathername) `Студент`, s.born `Дата рождения`,
+                        g.code `Группа`,
+                        CONCAT(m.name,' ', m.surname, ' ', m.fathername) `Научный руководитель`
+                    FROM `student` s
+                        JOIN `group` g ON s.group_id = g.id
+                        JOIN `mentor` m ON s.mentor_id = m.id;"
+                    )
+                 );
+            summaryDataGridView.DataSource = tempDataTable;
+        }
+
         private void UpdateAllDataGridView()
         {
             try
             {
-                // TODO: This line of code loads data into the 'nirsDataSetMain.works' table. You can move, or remove it, as needed.
+                LoadSummaryDataGridTable();
+
+
                 this.worksTableAdapter.Fill(this.nirsDataSetMain.works);
-                // TODO: This line of code loads data into the 'nirsDataSetMain.student' table. You can move, or remove it, as needed.
                 this.studentTableAdapter.Fill(this.nirsDataSetMain.student);
-                // TODO: This line of code loads data into the 'nirsDataSetMain.mentor' table. You can move, or remove it, as needed.
                 this.mentorTableAdapter.Fill(this.nirsDataSetMain.mentor);
-                // TODO: This line of code loads data into the 'nirsDataSetMain.spec' table. You can move, or remove it, as needed.
                 this.specTableAdapter.Fill(this.nirsDataSetMain.spec);
-                // TODO: This line of code loads data into the 'nirsDataSetMain.group' table. You can move, or remove it, as needed.
                 this.groupTableAdapter.Fill(this.nirsDataSetMain.group);
-                // TODO: This line of code loads data into the 'nirsDataSetMain.faculty' table. You can move, or remove it, as needed.
                 this.facultyTableAdapter.Fill(this.nirsDataSetMain.faculty);
-                // TODO: This line of code loads data into the 'nirsDataSetMain.division' table. You can move, or remove it, as needed.
                 this.divisionTableAdapter.Fill(this.nirsDataSetMain.division);
             }
             catch(Exception ex)
