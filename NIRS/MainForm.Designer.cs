@@ -90,6 +90,8 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.divisionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.sfd = new System.Windows.Forms.SaveFileDialog();
+            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.подключениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.facultyBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -169,8 +171,9 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлБДToolStripMenuItem,
-            this.помошьToolStripMenuItem,
-            this.экспортВWordToolStripMenuItem});
+            this.настройкиToolStripMenuItem,
+            this.экспортВWordToolStripMenuItem,
+            this.помошьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(658, 24);
@@ -211,7 +214,7 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.About_ToolStripMenuItem_Click);
             // 
@@ -749,6 +752,21 @@
             // 
             this.sfd.Filter = "Word document (*.doc)|*.doc";
             // 
+            // настройкиToolStripMenuItem
+            // 
+            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.подключениеToolStripMenuItem});
+            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.настройкиToolStripMenuItem.Text = "Настройки";
+            // 
+            // подключениеToolStripMenuItem
+            // 
+            this.подключениеToolStripMenuItem.Name = "подключениеToolStripMenuItem";
+            this.подключениеToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.подключениеToolStripMenuItem.Text = "Подключение";
+            this.подключениеToolStripMenuItem.Click += new System.EventHandler(this.подключениеToolStripMenuItem_Click);
+            // 
             // dataGridViewTextBoxColumn32
             // 
             this.dataGridViewTextBoxColumn32.DataPropertyName = "id";
@@ -1198,5 +1216,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn55;
         private System.Windows.Forms.ToolStripMenuItem экспортВWordToolStripMenuItem;
         private System.Windows.Forms.SaveFileDialog sfd;
+        private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem подключениеToolStripMenuItem;
     }
 }

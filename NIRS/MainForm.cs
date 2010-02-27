@@ -199,5 +199,11 @@ namespace NIRS
                 System.Diagnostics.Process.Start(sfd.FileName);
             }
         }
+
+        private void подключениеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SettingsConnectionForm scf = new SettingsConnectionForm();
+            scf.ShowDialog();
+        }
     }
 }

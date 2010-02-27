@@ -9,8 +9,6 @@ using System.Threading;
 
 namespace NIRS_DB
 {
-	
-	
 	public class DBConnection
 	{
 		#region Vars
@@ -40,6 +38,9 @@ namespace NIRS_DB
 		#endregion
 		
 		#region Public Functions
+
+        public static DBSettings InstalledSettings { get; private set; }
+
 		public static void Connection(DBSettings settings)
 		{
 			string connection_string = "Server=" + settings.host + ";Port=" + settings.port +";Database=" + settings.database +
@@ -48,12 +49,14 @@ namespace NIRS_DB
 			try
 			{
 				conn.Open();
+                _dbc = new DBConnection(conn);
+                InstalledSettings = settings;
 			}
 			catch (MySqlException ex)
 			{
-				Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.ToString());
+                throw;
 			}
-            _dbc = new DBConnection(conn);
 		}
 		
 		public static void Request(string query)
