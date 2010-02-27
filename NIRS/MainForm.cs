@@ -157,9 +157,15 @@ namespace NIRS
             this.tableAdapterManager.UpdateAll(this.nirsDataSetMain);
         }
 
-        private void exportToWordToolStripMenuItem_Click(object sender, EventArgs e)
+        private void connectionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (sfd.ShowDialog() == DialogResult.OK)
+            SettingsConnectionForm scf = new SettingsConnectionForm();
+            scf.ShowDialog();
+        }
+
+        private void exportToWordToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
             {
                 Gios.Word.WordDocument rd = new WordDocument(WordDocumentFormat.A4);
 
@@ -183,7 +189,7 @@ namespace NIRS
                 rt.Rows[1][2].WriteLine("NIRS Project");
                 rt.Rows[1][2].WriteLine("KubSTU Developers Team");
                 rt.Rows[1][2].SetBorders(Color.Black, 1, true, true, true, true);
-                
+
                 rt.Rows[4][0].SetFont(bold);
                 rt.Rows[4][0].ColSpan = 4;
                 rt.Rows[4][0].WriteLine();
@@ -212,16 +218,11 @@ namespace NIRS
                 rd.Write("Copyright © 2010 by NIRS Project, KubSTU Dev Team");
                 rd.FooterEnd();
 
+                rd.SaveToFile(saveFileDialog.FileName);
 
-                rd.SaveToFile(sfd.FileName);
-                System.Diagnostics.Process.Start(sfd.FileName);
+                if (startWordAfterExportToolStripMenuItem.Checked)
+                    System.Diagnostics.Process.Start(saveFileDialog.FileName);
             }
-        }
-
-        private void подключениеToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            SettingsConnectionForm scf = new SettingsConnectionForm();
-            scf.ShowDialog();
         }
     }
 }

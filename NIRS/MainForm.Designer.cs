@@ -34,10 +34,11 @@
             this.файлБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавлениеЗаписейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.Exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exportToWordToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.подключениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.редактированиеДанныхToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.экспортВWordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.startWordAfterExportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помошьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
@@ -89,6 +90,11 @@
             this.dataGridViewTextBoxColumn40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.specBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageGroups = new System.Windows.Forms.TabPage();
+            this.groupDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabPageMentors = new System.Windows.Forms.TabPage();
             this.mentorDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -130,7 +136,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.divisionBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.sfd = new System.Windows.Forms.SaveFileDialog();
+            this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
             this.tableAdapterManager = new NIRS.nirsDataSetMainTableAdapters.TableAdapterManager();
             this.mentorTableAdapter = new NIRS.nirsDataSetMainTableAdapters.mentorTableAdapter();
             this.specTableAdapter = new NIRS.nirsDataSetMainTableAdapters.specTableAdapter();
@@ -140,12 +146,8 @@
             this.divisionTableAdapter = new NIRS.nirsDataSetMainTableAdapters.divisionTableAdapter();
             this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupTableAdapter = new NIRS.nirsDataSetMainTableAdapters.groupTableAdapter();
-            this.groupDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn62 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn63 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPageSummary.SuspendLayout();
@@ -161,6 +163,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.specDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.specBindingSource)).BeginInit();
             this.tabPageGroups.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
             this.tabPageMentors.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mentorDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mentorBindingSource)).BeginInit();
@@ -172,8 +176,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.worksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.divisionBindingNavigator)).BeginInit();
             this.divisionBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -181,11 +183,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлБДToolStripMenuItem,
             this.настройкиToolStripMenuItem,
-            this.экспортВWordToolStripMenuItem,
             this.помошьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(661, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(629, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -193,6 +194,8 @@
             // 
             this.файлБДToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавлениеЗаписейToolStripMenuItem,
+            this.exportToWordToolStripMenuItem1,
+            this.toolStripSeparator1,
             this.Exit_ToolStripMenuItem});
             this.файлБДToolStripMenuItem.Name = "файлБДToolStripMenuItem";
             this.файлБДToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
@@ -212,11 +215,19 @@
             this.Exit_ToolStripMenuItem.Text = "Выход";
             this.Exit_ToolStripMenuItem.Click += new System.EventHandler(this.Exit_ToolStripMenuItem_Click);
             // 
+            // exportToWordToolStripMenuItem1
+            // 
+            this.exportToWordToolStripMenuItem1.Name = "exportToWordToolStripMenuItem1";
+            this.exportToWordToolStripMenuItem1.Size = new System.Drawing.Size(188, 22);
+            this.exportToWordToolStripMenuItem1.Text = "Экспорт в Word";
+            this.exportToWordToolStripMenuItem1.Click += new System.EventHandler(this.exportToWordToolStripMenuItem1_Click);
+            // 
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.подключениеToolStripMenuItem,
-            this.редактированиеДанныхToolStripMenuItem});
+            this.редактированиеДанныхToolStripMenuItem,
+            this.startWordAfterExportToolStripMenuItem});
             this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
             this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.настройкиToolStripMenuItem.Text = "Настройки";
@@ -224,22 +235,22 @@
             // подключениеToolStripMenuItem
             // 
             this.подключениеToolStripMenuItem.Name = "подключениеToolStripMenuItem";
-            this.подключениеToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.подключениеToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.подключениеToolStripMenuItem.Text = "Подключение";
-            this.подключениеToolStripMenuItem.Click += new System.EventHandler(this.подключениеToolStripMenuItem_Click);
+            this.подключениеToolStripMenuItem.Click += new System.EventHandler(this.connectionsToolStripMenuItem_Click);
             // 
             // редактированиеДанныхToolStripMenuItem
             // 
             this.редактированиеДанныхToolStripMenuItem.Name = "редактированиеДанныхToolStripMenuItem";
-            this.редактированиеДанныхToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.редактированиеДанныхToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
             this.редактированиеДанныхToolStripMenuItem.Text = "Редактирование данных";
             // 
-            // экспортВWordToolStripMenuItem
+            // startWordAfterExportToolStripMenuItem
             // 
-            this.экспортВWordToolStripMenuItem.Name = "экспортВWordToolStripMenuItem";
-            this.экспортВWordToolStripMenuItem.Size = new System.Drawing.Size(105, 20);
-            this.экспортВWordToolStripMenuItem.Text = "Экспорт в Word";
-            this.экспортВWordToolStripMenuItem.Click += new System.EventHandler(this.exportToWordToolStripMenuItem_Click);
+            this.startWordAfterExportToolStripMenuItem.CheckOnClick = true;
+            this.startWordAfterExportToolStripMenuItem.Name = "startWordAfterExportToolStripMenuItem";
+            this.startWordAfterExportToolStripMenuItem.Size = new System.Drawing.Size(250, 22);
+            this.startWordAfterExportToolStripMenuItem.Text = "Запускать Word после экспорта";
             // 
             // помошьToolStripMenuItem
             // 
@@ -456,7 +467,7 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 24);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(661, 437);
+            this.tabControl1.Size = new System.Drawing.Size(629, 198);
             this.tabControl1.TabIndex = 4;
             this.tabControl1.SelectedIndexChanged += new System.EventHandler(this.tabControl1_SelectedIndexChanged);
             // 
@@ -466,7 +477,7 @@
             this.tabPageSummary.Location = new System.Drawing.Point(4, 22);
             this.tabPageSummary.Name = "tabPageSummary";
             this.tabPageSummary.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSummary.Size = new System.Drawing.Size(653, 411);
+            this.tabPageSummary.Size = new System.Drawing.Size(621, 172);
             this.tabPageSummary.TabIndex = 7;
             this.tabPageSummary.Text = "Сводная таблица";
             this.tabPageSummary.UseVisualStyleBackColor = true;
@@ -481,7 +492,7 @@
             this.summaryDataGridView.Location = new System.Drawing.Point(3, 3);
             this.summaryDataGridView.Name = "summaryDataGridView";
             this.summaryDataGridView.ReadOnly = true;
-            this.summaryDataGridView.Size = new System.Drawing.Size(647, 405);
+            this.summaryDataGridView.Size = new System.Drawing.Size(615, 166);
             this.summaryDataGridView.TabIndex = 0;
             // 
             // tabPageFaculty
@@ -491,7 +502,7 @@
             this.tabPageFaculty.Location = new System.Drawing.Point(4, 22);
             this.tabPageFaculty.Name = "tabPageFaculty";
             this.tabPageFaculty.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageFaculty.Size = new System.Drawing.Size(653, 411);
+            this.tabPageFaculty.Size = new System.Drawing.Size(621, 172);
             this.tabPageFaculty.TabIndex = 0;
             this.tabPageFaculty.Text = "Факультеты";
             this.tabPageFaculty.UseVisualStyleBackColor = true;
@@ -508,7 +519,7 @@
             this.facultyDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.facultyDataGridView.Location = new System.Drawing.Point(3, 3);
             this.facultyDataGridView.Name = "facultyDataGridView";
-            this.facultyDataGridView.Size = new System.Drawing.Size(647, 405);
+            this.facultyDataGridView.Size = new System.Drawing.Size(615, 166);
             this.facultyDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn32
@@ -546,7 +557,7 @@
             this.tabPageDivision.Location = new System.Drawing.Point(4, 22);
             this.tabPageDivision.Name = "tabPageDivision";
             this.tabPageDivision.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageDivision.Size = new System.Drawing.Size(653, 411);
+            this.tabPageDivision.Size = new System.Drawing.Size(621, 172);
             this.tabPageDivision.TabIndex = 1;
             this.tabPageDivision.Text = "Кафедры";
             this.tabPageDivision.UseVisualStyleBackColor = true;
@@ -564,7 +575,7 @@
             this.divisionDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.divisionDataGridView.Location = new System.Drawing.Point(3, 3);
             this.divisionDataGridView.Name = "divisionDataGridView";
-            this.divisionDataGridView.Size = new System.Drawing.Size(647, 405);
+            this.divisionDataGridView.Size = new System.Drawing.Size(615, 166);
             this.divisionDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn10
@@ -603,7 +614,7 @@
             this.tabPageSpecialize.Location = new System.Drawing.Point(4, 22);
             this.tabPageSpecialize.Name = "tabPageSpecialize";
             this.tabPageSpecialize.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSpecialize.Size = new System.Drawing.Size(653, 411);
+            this.tabPageSpecialize.Size = new System.Drawing.Size(621, 172);
             this.tabPageSpecialize.TabIndex = 2;
             this.tabPageSpecialize.Text = "Специальности";
             this.tabPageSpecialize.UseVisualStyleBackColor = true;
@@ -622,7 +633,7 @@
             this.specDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.specDataGridView.Location = new System.Drawing.Point(3, 3);
             this.specDataGridView.Name = "specDataGridView";
-            this.specDataGridView.Size = new System.Drawing.Size(647, 405);
+            this.specDataGridView.Size = new System.Drawing.Size(615, 166);
             this.specDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn37
@@ -664,10 +675,48 @@
             this.tabPageGroups.Location = new System.Drawing.Point(4, 22);
             this.tabPageGroups.Name = "tabPageGroups";
             this.tabPageGroups.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageGroups.Size = new System.Drawing.Size(653, 411);
+            this.tabPageGroups.Size = new System.Drawing.Size(621, 172);
             this.tabPageGroups.TabIndex = 3;
             this.tabPageGroups.Text = "Группы";
             this.tabPageGroups.UseVisualStyleBackColor = true;
+            // 
+            // groupDataGridView
+            // 
+            this.groupDataGridView.AutoGenerateColumns = false;
+            this.groupDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.groupDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn35,
+            this.dataGridViewTextBoxColumn62,
+            this.dataGridViewTextBoxColumn63});
+            this.groupDataGridView.DataSource = this.groupBindingSource;
+            this.groupDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupDataGridView.Location = new System.Drawing.Point(3, 3);
+            this.groupDataGridView.Name = "groupDataGridView";
+            this.groupDataGridView.Size = new System.Drawing.Size(615, 166);
+            this.groupDataGridView.TabIndex = 0;
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "id";
+            this.dataGridViewTextBoxColumn35.HeaderText = "id";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            // 
+            // dataGridViewTextBoxColumn62
+            // 
+            this.dataGridViewTextBoxColumn62.DataPropertyName = "code";
+            this.dataGridViewTextBoxColumn62.HeaderText = "code";
+            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
+            // 
+            // dataGridViewTextBoxColumn63
+            // 
+            this.dataGridViewTextBoxColumn63.DataPropertyName = "spec_id";
+            this.dataGridViewTextBoxColumn63.HeaderText = "spec_id";
+            this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
+            // 
+            // groupBindingSource
+            // 
+            this.groupBindingSource.DataMember = "group";
+            this.groupBindingSource.DataSource = this.nirsDataSetMain;
             // 
             // tabPageMentors
             // 
@@ -675,7 +724,7 @@
             this.tabPageMentors.Location = new System.Drawing.Point(4, 22);
             this.tabPageMentors.Name = "tabPageMentors";
             this.tabPageMentors.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageMentors.Size = new System.Drawing.Size(653, 411);
+            this.tabPageMentors.Size = new System.Drawing.Size(621, 172);
             this.tabPageMentors.TabIndex = 4;
             this.tabPageMentors.Text = "Руководители";
             this.tabPageMentors.UseVisualStyleBackColor = true;
@@ -698,7 +747,7 @@
             this.mentorDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mentorDataGridView.Location = new System.Drawing.Point(3, 3);
             this.mentorDataGridView.Name = "mentorDataGridView";
-            this.mentorDataGridView.Size = new System.Drawing.Size(647, 405);
+            this.mentorDataGridView.Size = new System.Drawing.Size(615, 166);
             this.mentorDataGridView.TabIndex = 5;
             // 
             // dataGridViewTextBoxColumn41
@@ -769,7 +818,7 @@
             this.tabPageStudents.Location = new System.Drawing.Point(4, 22);
             this.tabPageStudents.Name = "tabPageStudents";
             this.tabPageStudents.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageStudents.Size = new System.Drawing.Size(653, 411);
+            this.tabPageStudents.Size = new System.Drawing.Size(621, 172);
             this.tabPageStudents.TabIndex = 5;
             this.tabPageStudents.Text = "Студенты";
             this.tabPageStudents.UseVisualStyleBackColor = true;
@@ -791,7 +840,7 @@
             this.studentDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.studentDataGridView.Location = new System.Drawing.Point(3, 3);
             this.studentDataGridView.Name = "studentDataGridView";
-            this.studentDataGridView.Size = new System.Drawing.Size(647, 405);
+            this.studentDataGridView.Size = new System.Drawing.Size(615, 166);
             this.studentDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn49
@@ -855,7 +904,7 @@
             this.tabPageWorks.Location = new System.Drawing.Point(4, 22);
             this.tabPageWorks.Name = "tabPageWorks";
             this.tabPageWorks.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageWorks.Size = new System.Drawing.Size(653, 411);
+            this.tabPageWorks.Size = new System.Drawing.Size(621, 172);
             this.tabPageWorks.TabIndex = 6;
             this.tabPageWorks.Text = "Научные работы";
             this.tabPageWorks.UseVisualStyleBackColor = true;
@@ -874,7 +923,7 @@
             this.worksDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.worksDataGridView.Location = new System.Drawing.Point(3, 3);
             this.worksDataGridView.Name = "worksDataGridView";
-            this.worksDataGridView.Size = new System.Drawing.Size(647, 405);
+            this.worksDataGridView.Size = new System.Drawing.Size(615, 166);
             this.worksDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn56
@@ -929,14 +978,14 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.divisionBindingNavigatorSaveItem});
-            this.divisionBindingNavigator.Location = new System.Drawing.Point(0, 461);
+            this.divisionBindingNavigator.Location = new System.Drawing.Point(0, 222);
             this.divisionBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.divisionBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.divisionBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.divisionBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.divisionBindingNavigator.Name = "divisionBindingNavigator";
             this.divisionBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.divisionBindingNavigator.Size = new System.Drawing.Size(661, 25);
+            this.divisionBindingNavigator.Size = new System.Drawing.Size(629, 25);
             this.divisionBindingNavigator.TabIndex = 5;
             this.divisionBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -1034,9 +1083,9 @@
             this.divisionBindingNavigatorSaveItem.Text = "Save Data";
             this.divisionBindingNavigatorSaveItem.Click += new System.EventHandler(this.divisionBindingNavigatorSaveItem_Click_1);
             // 
-            // sfd
+            // saveFileDialog
             // 
-            this.sfd.Filter = "Word document (*.doc)|*.doc";
+            this.saveFileDialog.Filter = "Word document (*.doc)|*.doc";
             // 
             // tableAdapterManager
             // 
@@ -1086,53 +1135,20 @@
             this.dataGridViewTextBoxColumn36.HeaderText = "code";
             this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
             // 
-            // groupBindingSource
-            // 
-            this.groupBindingSource.DataMember = "group";
-            this.groupBindingSource.DataSource = this.nirsDataSetMain;
-            // 
             // groupTableAdapter
             // 
             this.groupTableAdapter.ClearBeforeFill = true;
             // 
-            // groupDataGridView
+            // toolStripSeparator1
             // 
-            this.groupDataGridView.AutoGenerateColumns = false;
-            this.groupDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.groupDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn35,
-            this.dataGridViewTextBoxColumn62,
-            this.dataGridViewTextBoxColumn63});
-            this.groupDataGridView.DataSource = this.groupBindingSource;
-            this.groupDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupDataGridView.Location = new System.Drawing.Point(3, 3);
-            this.groupDataGridView.Name = "groupDataGridView";
-            this.groupDataGridView.Size = new System.Drawing.Size(647, 405);
-            this.groupDataGridView.TabIndex = 0;
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "id";
-            this.dataGridViewTextBoxColumn35.HeaderText = "id";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            // 
-            // dataGridViewTextBoxColumn62
-            // 
-            this.dataGridViewTextBoxColumn62.DataPropertyName = "code";
-            this.dataGridViewTextBoxColumn62.HeaderText = "code";
-            this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
-            // 
-            // dataGridViewTextBoxColumn63
-            // 
-            this.dataGridViewTextBoxColumn63.DataPropertyName = "spec_id";
-            this.dataGridViewTextBoxColumn63.HeaderText = "spec_id";
-            this.dataGridViewTextBoxColumn63.Name = "dataGridViewTextBoxColumn63";
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(185, 6);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(661, 486);
+            this.ClientSize = new System.Drawing.Size(629, 247);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.divisionBindingNavigator);
             this.Controls.Add(this.menuStrip1);
@@ -1156,6 +1172,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.specDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.specBindingSource)).EndInit();
             this.tabPageGroups.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
             this.tabPageMentors.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.mentorDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mentorBindingSource)).EndInit();
@@ -1168,8 +1186,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.divisionBindingNavigator)).EndInit();
             this.divisionBindingNavigator.ResumeLayout(false);
             this.divisionBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1293,8 +1309,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn53;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn54;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn55;
-        private System.Windows.Forms.ToolStripMenuItem экспортВWordToolStripMenuItem;
-        private System.Windows.Forms.SaveFileDialog sfd;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog;
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem подключениеToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem редактированиеДанныхToolStripMenuItem;
@@ -1322,5 +1337,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn62;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn63;
+        private System.Windows.Forms.ToolStripMenuItem startWordAfterExportToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exportToWordToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
     }
 }
