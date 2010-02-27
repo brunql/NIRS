@@ -8,67 +8,16 @@ namespace NIRS_DB.Structs
 	
 	public class Mentor : ActiveRecord
 	{
-		private int id;
-
-        public int Id
-        {
-            get { return id; }
-        }
-
-		private string name;
-
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-
-        private string surname;
-
-        public string Surname
-        {
-            get { return surname; }
-            set { surname = value; }
-        }
-
-        private string fartherName;
-
-        public string FatherName
-        {
-            get { return fartherName; }
-            set { fartherName = value; }
-        }
-
-        private string work;
-
-        public string Work
-        {
-            get { return work; }
-            set { work = value; }
-        }
-
-        private string degree;
-        public string Degree
-        {
-            get { return degree; }
-            set { degree = value; }
-        }
-
-        private string academic_rank;
-        public string AcademicRank
-        {
-            get { return academic_rank; }
-            set { academic_rank = value; }
-        }
-
-        private int div_id;
-        public int DivisionId
-        {
-            get { return div_id; }
-            set { div_id = value; }
-        }
-
-		private Division div;
+        public int Id { get; private set; }
+        public string Name { get; set; }
+        public string Surname { get; set; }
+        public string FatherName { get; set; }
+        public string Work { get; set; }
+        public string Degree { get; set; }
+        public string AcademicRank { get; set; }
+        public int DivisionId { get; set; }
+		
+        private Division div;
 
         public Division Division
         {
@@ -76,7 +25,7 @@ namespace NIRS_DB.Structs
             set 
             {
                 div = value;
-                div_id = value.Id;
+                DivisionId = value.Id;
             }
         }
 
@@ -100,17 +49,20 @@ namespace NIRS_DB.Structs
         public override void Save()
         {
             string query = "";
-            if (id == 0)
+            if (Id == 0)
             {
-                query = "INSERT INTO `" + tableName + "` VALUES(null,\"" + name + "\",\"" + surname + 
-					"\",\"" + fartherName + "\",\"" + work + "\",\"" + academic_rank + "\",\"" + degree + "\"," + div_id +
-						");";
+                query = string.Format(
+                    "INSERT INTO `{0}`" +
+                    "VALUES(null, \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\", \"{6}\", {7});",
+                    tableName, 
+                    Name, Surname, FatherName, Work, AcademicRank, Degree, DivisionId);
             }
             else
             {
-                query = "UPDATE `" + tableName + "` `name`=\"" + name + "\", `surname`=\"" + surname + "\", `fathername`=\"" + fartherName + 
-					"\",  `work`=\"" + work + "\", `arank`=\"" + academic_rank + "\", `degree`=\"" + degree + "\", `div_id`="+div_id + 					
-                    " WHERE `id`=" + id + ";";
+                throw new NotImplementedException();
+                //query = "UPDATE `" + tableName + "` `name`=\"" + name + "\", `surname`=\"" + surname + "\", `fathername`=\"" + fartherName + 
+                //    "\",  `work`=\"" + work + "\", `arank`=\"" + academic_rank + "\", `degree`=\"" + degree + "\", `div_id`="+div_id + 					
+                //    " WHERE `id`=" + id + ";";
             }
 
             MakeRequest(query);

@@ -6,8 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+
 using NIRS_DB;
-using NIRS_DB.Structs;
 using MySql.Data.MySqlClient;
 
 
@@ -30,20 +30,20 @@ namespace NIRS
 
         private void btnAddMentor_Click(object sender, EventArgs e)
         {
-            Mentor ment = new Mentor();
-            ment.Name = txtMentorName.Text;
-            ment.Surname = txtMentorSurname.Text;
-            ment.FatherName = txtMentorFathername.Text;
             if ((ComboBoxKiller)cbMentorDivision.SelectedItem == null)
             {
                 MessageBox.Show("Кафедра не выбрана");
                 return;
             }
-            ment.DivisionId = ((ComboBoxKiller)cbMentorDivision.SelectedItem).Id;
-            ment.AcademicRank = txtMentorAcademicRank.Text;
-            ment.Degree = txtMentorDegree.Text;
-            ment.Work = txtMentorWork.Text;
-            ment.Save();
+
+            InsertStuff.InsertMentor(txtMentorName.Text,
+                txtMentorSurname.Text,
+                txtStudentFathername.Text,
+                txtMentorWork.Text,
+                txtMentorAcademicRank.Text,
+                txtMentorDegree.Text,
+                ((ComboBoxKiller)cbMentorDivision.SelectedItem).Id
+                );
 
             MainForm.SelectAllFromAndAdd("mentor", dataViewAddedMentor, new nirsDataSetMain.mentorDataTable());
 
@@ -68,29 +68,21 @@ namespace NIRS
 
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
-            Student stuff = new Student();
             try
             {
-                if (txtStudentName.Text.Trim() != "")
-                    stuff.Name = txtStudentName.Text;
-                else
-                    ShowError("имя");
-                if (txtStudentSurname.Text.Trim() != "")
-                    stuff.Surname = txtStudentSurname.Text;
-                else
-                    ShowError("фамилия");
-                if (txtStudentFathername.Text.Trim() != "")
-                    stuff.FatherName = txtStudentFathername.Text;
-                else
-                    ShowError("отчество");
+                if (txtStudentName.Text.Trim() == "") ShowError("имя");
+                if (txtStudentSurname.Text.Trim() == "") ShowError("фамилия");
+                if (txtStudentFathername.Text.Trim() == "") ShowError("отчество");
             }
             catch // if error show only one error message and return
             {
                 return; 
             }
+
+            DateTime birthdate = new DateTime();
             try
             {
-                stuff.Born = Convert.ToDateTime(txtStudentBirthdayDate.Text);
+                birthdate = Convert.ToDateTime(txtStudentBirthdayDate.Text);
             }
             catch (FormatException)
             {
@@ -102,14 +94,24 @@ namespace NIRS
                 MessageBox.Show("Группа не выбрана");
                 return;
             }
-            stuff.GroupId = (cmbStudentGroup.SelectedItem as ComboBoxKiller).Id;
+            
             if (cmbStudentMentor.SelectedItem == null)
             {
                 MessageBox.Show("Руководитель не выбран");
                 return;
             }
-            stuff.MentorId = (cmbStudentMentor.SelectedItem as ComboBoxKiller).Id;
-            stuff.Save();
+
+
+            InsertStuff.InsertStudent(
+                txtStudentName.Text,
+                txtStudentSurname.Text,
+                txtStudentFathername.Text,
+                (cmbStudentGroup.SelectedItem as ComboBoxKiller).Id,
+                (cmbStudentMentor.SelectedItem as ComboBoxKiller).Id,
+                birthdate
+                );
+
+
 
             DialogResult result = MessageBox.Show("Студент добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
@@ -127,9 +129,7 @@ namespace NIRS
 
         private void btnFacultyAdded_Click(object sender, EventArgs e)
         {
-            Faculty fac = new Faculty();
-            fac.Name = txtAddFaculty.Text;
-            fac.Save();
+            InsertStuff.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
 
             MainForm.SelectAllFromAndAdd("faculty", dataViewAddedFaculty, new nirsDataSetMain.facultyDataTable());
             MainForm.SelectAllFromAndAdd("faculty", dataViewDivisionFaculty, new nirsDataSetMain.facultyDataTable());
@@ -158,10 +158,11 @@ namespace NIRS
 
         private void AddDivision_Click(object sender, EventArgs e)
         {
-            Division div = new Division();
-            div.Name = txtAddDivision.Text;
-            div.FacId = (int)dataViewDivisionFaculty.CurrentRow.Cells["id"].Value;
-            div.Save();
+            InsertStuff.InsertDivision(
+                (int)dataViewDivisionFaculty.CurrentRow.Cells["id"].Value,
+                txtAddDivision.Text,
+                txtAddDivisionFullName.Text
+                );
             
             MainForm.SelectAllFromAndAdd("division", dataViewAddedDivision, new nirsDataSetMain.divisionDataTable());
             MainForm.SelectAllFromAndAdd("faculty", dataViewDivisionFaculty, new nirsDataSetMain.facultyDataTable());
@@ -169,22 +170,23 @@ namespace NIRS
 
         private void AddSpec_Click(object sender, EventArgs e)
         {
-            Specialization spec = new Specialization();
-            spec.Name = txtAddSpecFullName.Text;
-            spec.Code = txtAddSpec.Text;
-            spec.DivisionId = (int)dataViewSpecDivision.CurrentRow.Cells["id"].Value;
-            spec.Save();
+            InsertStuff.InsertSpecialize(
+                (int)dataViewSpecDivision.CurrentRow.Cells["id"].Value,
+                txtAddSpec.Text,
+                txtAddSpecFullName.Text
+                );
 
             MainForm.SelectAllFromAndAdd("spec", dataViewAddedSpec, new nirsDataSetMain.specDataTable());
             MainForm.SelectAllFromAndAdd("division", dataViewSpecDivision, new nirsDataSetMain.divisionDataTable());
+            MainForm.SelectAllFromAndAdd("spec", dataViewGroupSpec, new nirsDataSetMain.specDataTable());
         }
 
         private void btnAddGroup_Click(object sender, EventArgs e)
         {
-            Group group = new Group();
-            group.DivisionId = (int)dataViewGroupSpec.CurrentRow.Cells["id"].Value;
-            group.Code = txtAddGroupCode.Text;
-            group.Save();
+            InsertStuff.InsertGroup(
+                (int)dataViewGroupSpec.CurrentRow.Cells["id"].Value,
+                txtAddGroupCode.Text
+                );
 
             MainForm.SelectAllFromAndAdd("group", dataViewAddedGroup, new nirsDataSetMain.groupDataTable());
             MainForm.SelectAllFromAndAdd("spec", dataViewGroupSpec, new nirsDataSetMain.specDataTable());
@@ -222,7 +224,7 @@ namespace NIRS
         private void cmbStudentSpetialize_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbStudentGroup.Enabled = true;
-            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedGroup, cmbStudentGroup, "code", "div_id", (cmbStudentDivision.SelectedItem as ComboBoxKiller).Id);
+            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedGroup, cmbStudentGroup, "code", "spec_id", (cmbStudentDivision.SelectedItem as ComboBoxKiller).Id);
         }
 
         private void tabPage2_Enter(object sender, EventArgs e)

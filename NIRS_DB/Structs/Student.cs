@@ -1,162 +1,67 @@
 
-using System;
-using System.Collections.Generic;
+//using System;
+//using System.Collections.Generic;
 
-namespace NIRS_DB.Structs
-{
+//namespace NIRS_DB.Structs
+//{
 	
 	
-	public class Student : ActiveRecord
-	{
-		private int id;
+//    public class Student : ActiveRecord
+//    {
+//        public int Id { get; private set; }
+//        public string Name { get; set; }
+//        public string Surname { get; set; }
+//        public string FatherName { get; set; }
+//        //public int Age
+//        //{
+//        //    get { return 0; }
+//        //    set { }
+//        //}
+//        public DateTime Born { get; set; }
+//        public int Year { get; set; } // what is this?
+
+//        public List<ScienceWork> ScienceWorks { get; set; }
+//        public Mentor Mentor { get; set; }
+//        public Division Division { get; set; }
+//        public Group Group { get; set; }		
 		
-		public int Id
-		{
-			get { return id; }	
-		}
-		
-		private string name;
+//        public Student()
+//        {
+//            tableName = "student";
+//        }
 
-		public string Name
-		{
-			get {return name;}
-            set { name = value; }
-		}
-		
-		private string surname;
+//        public override ActiveRecord Find(DBCriteria crit)
+//        {
+//            throw new NotImplementedException();
+//        }
 
-        public string Surname
-        {
-            get { return surname; }
-            set { surname = value; }
-        }
+//        public override void Delete(int id)
+//        {
+//            throw new NotImplementedException();
+//        }
 
-		private string fatherName;
+//        public override void Save()
+//        {
+//            string query = "";
+//            if (Id == 0)
+//            {
+//                query = string.Format(
+//                    "INSERT INTO `{0}` " +
+//                    "VALUES (null, {1}, \"{2}\", \"{3}\");",
+//                    tableName,
+//                    Name, Surname, FatherName, Group.Id,, Code, Name);
 
-        public string FatherName
-        {
-            get { return fatherName; }
-            set { fatherName = value; }
-        }
+//                query = "INSERT INTO `" + tableName + "` VALUES(null,\"" + name + "\",\"" + surname + 
+//                    "\",\"" + fatherName + "\"," + group_id + "," + mentor_id + ",\"" + born.Year + "-" + born.Month + "-" + born.Day + "\");"; 
+//            }
+//            else
+//            {
+//                query = "UPDATE `" + tableName + "` `name`=\"" + name + "\", `surname`=\"" + surname + "\", `fathername`=\"" + fatherName + 
+//                    "\", `group_id`=" + group_id + ",`mentor_id`=" + mentor_id + ",`born`=\"" + born.ToString() + "\"" +
+//                    " WHERE `id`=" + id + ";";
+//            }
 
-        public int Age
-        {
-            get { return 0; }
-            set { }
-        }
-
-        private DateTime born;
-
-        public DateTime Born
-        {
-            get { return born; }
-            set { born = value; }
-        }
-
-		private int year;
-
-        public int Year
-        {
-            get { return year; }
-            set { year = value; }
-        }
-
-		private List<ScienceWork> works;
-
-        public List<ScienceWork> ScienceWorks
-        {
-            get { return works; }
-            set { works = value; }
-        }
-
-		private Mentor mentor;
-
-        public Mentor Mentor
-        {
-            get { return mentor; }
-            set
-            {
-                mentor = value;
-                mentor_id = value.Id;
-            }
-        }
-
-		private int mentor_id;
-        public int MentorId
-        {
-            get { return mentor_id; }
-            set { mentor_id = value; }
-        }
-
-		private int division_id;
-        public int DivisionId
-        {
-            get { return division_id; }
-            set { division_id = value; }
-        }
-        private Division division;
-
-
-        public Division Division
-        {
-            get { return division; }
-            set
-            {
-                division = value;
-                division_id = value.Id;
-            }
-        }
-
-
-        private int group_id;
-        public int GroupId
-        {
-            get { return group_id; }
-            set { group_id = value; }
-        }
-        private Group group;
-
-        public Group Group
-        {
-            get { return group; }
-            set
-            {
-                group = value;
-                group_id = value.Id;
-            }
-        }
-		
-		public Student()
-		{
-            tableName = "student";
-		}
-
-        public override ActiveRecord Find(DBCriteria crit)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Delete(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public override void Save()
-        {
-            string query = "";
-            if (id == 0)
-            {
-                query = "INSERT INTO `" + tableName + "` VALUES(null,\"" + name + "\",\"" + surname + 
-					"\",\"" + fatherName + "\"," + group_id + "," + mentor_id + ",\"" + born.Year + "-" + born.Month + "-" + born.Day + "\");"; 
-            }
-            else
-            {
-                query = "UPDATE `" + tableName + "` `name`=\"" + name + "\", `surname`=\"" + surname + "\", `fathername`=\"" + fatherName + 
-					"\", `group_id`=" + group_id + ",`mentor_id`=" + mentor_id + ",`born`=\"" + born.ToString() + "\"" +
-                    " WHERE `id`=" + id + ";";
-            }
-
-            MakeRequest(query);
-        }
-	}
-}
+//            MakeRequest(query);
+//        }
+//    }
+//}

@@ -20,11 +20,13 @@ namespace NIRS
 
         public static void SelectAllFromAndAdd(string table_name, DataGridView dataView, object tempDataTable)
         {
-            DataView t = new DataView();
-            ((DataTable)tempDataTable).Load(
+            DataTable t = new DataTable();
+            //DataView t = new DataView();
+            //((DataTable)tempDataTable)
+            t.Load(
                             DBConnection.ExecuteReader("SELECT * FROM `" + table_name + "` ORDER BY `id`;")
                 );
-            t.Table = (DataTable)tempDataTable;
+            //t.Table = (DataTable)tempDataTable;
             dataView.DataSource = t;
         }
 
@@ -74,42 +76,43 @@ namespace NIRS
             DataTable tempDataTable = new DataTable();
             tempDataTable.Load(
                     DBConnection.ExecuteReader(
-                    @"SELECT CONCAT(s.name,' ', s.surname, ' ', s.fathername) `Студент`, s.born `Дата рождения`,
+                    @"SELECT CONCAT(s.name,' ',s.fathername, ' ', s.surname) `Студент`, s.born `Дата рождения`,
+                        f.name `Факультет`,
+                        d.name `Кафедра`,
+                        spec.name `Специальность`,
                         g.code `Группа`,
-                        CONCAT(m.name,' ', m.surname, ' ', m.fathername) `Научный руководитель`
+                        CONCAT(m.name, ' ', m.fathername, ' ', m.surname) `Научный руководитель`
                     FROM `student` s
                         JOIN `group` g ON s.group_id = g.id
-                        JOIN `mentor` m ON s.mentor_id = m.id;"
+                        JOIN `spec` spec ON g.spec_id = spec.id
+                        JOIN `mentor` m ON s.mentor_id = m.id
+                        JOIN `division` d ON spec.div_id = d.id
+                        JOIN `faculty` f ON d.fac_id = f.id;"
                     )
                  );
             summaryDataGridView.DataSource = tempDataTable;
+            
         }
 
         private void UpdateAllDataGridView()
         {
-            try
-            {
+            //try
+            //{
                 LoadSummaryDataGridTable();
 
-
+                this.groupTableAdapter.Fill(this.nirsDataSetMain.group);
                 this.worksTableAdapter.Fill(this.nirsDataSetMain.works);
                 this.studentTableAdapter.Fill(this.nirsDataSetMain.student);
                 this.mentorTableAdapter.Fill(this.nirsDataSetMain.mentor);
                 this.specTableAdapter.Fill(this.nirsDataSetMain.spec);
-                this.groupTableAdapter.Fill(this.nirsDataSetMain.group);
                 this.facultyTableAdapter.Fill(this.nirsDataSetMain.faculty);
                 this.divisionTableAdapter.Fill(this.nirsDataSetMain.division);
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                Close();
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //divisionBindingNavigator.BindingSource = facultyBindingSource;
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+            //    Close();
+            //}
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)

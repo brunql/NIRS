@@ -7,49 +7,11 @@ namespace NIRS_DB.Structs
 	
 	public class Specialization : ActiveRecord
 	{
-        private int id;
-
-        public int Id
-        {
-            get { return id; }
-        }
-
-        private string name;
-
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-
-        private int div_id;
-        public int DivisionId
-        {
-            get { return div_id; }
-            set { div_id = value; }
-        }
-
-        private Division div;
-
-        public Division Division
-        {
-            get { return div; }
-            set
-            {
-                div = value;
-                div_id = value.Id;
-            }
-        }
-		
-		private string code;
-		
-		public string Code
-		{
-			get { return code; }
-			set { code = value;}
-		}
-
-		
+        public int Id { get; private set; }
+        public Division Division { get; set; }
+        public string Code { get; set; }
+        public string Name { get; set; }
+        		
 		public Specialization()
 		{
             tableName = "spec";
@@ -68,16 +30,21 @@ namespace NIRS_DB.Structs
         public override void Save()
         {
             string query = "";
-            if (id == 0)
+            if (Id == 0)
             {
-                query = "INSERT INTO `" + tableName + "` VALUES(null,\"" + div_id + "\",\""+code+"\",\""+ name +"\");";
+                query = string.Format(
+                    "INSERT INTO `{0}` " +
+                    "VALUES (null, {1}, \"{2}\", \"{3}\");",
+                    tableName,
+                    Division.Id, Code, Name);
             }
             else
             {
-                query = "UPDATE `" + tableName + "` `name`=\"" + name + "\",`code`=\"" + code +
-					"\",`div_id`=" + div_id 					
-					+ 
-                    " WHERE `id`=" + id + ";";
+                throw new NotImplementedException();
+                //query = "UPDATE `" + tableName + "` `name`=\"" + name + "\",`code`=\"" + code +
+                //    "\",`div_id`=" + div_id 					
+                //    + 
+                //    " WHERE `id`=" + id + ";";
             }
 
             MakeRequest(query);

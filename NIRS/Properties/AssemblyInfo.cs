@@ -8,14 +8,14 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("NIRS")]
 [assembly: AssemblyDescription("Клиент для базы данных НИРС.\r\n" +
         "Разработчики:\r\n" +
-        "  Шатохин Михаил\r\n" +
         "  Кисель Василий\r\n" +
-        "  Шилин Алексей\r\n"
+        "  Шилин Алексей\r\n" +
+        "  Шатохин Михаил\r\n"
     )]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("КубГТУ")]
-[assembly: AssemblyProduct("NIRS DataBase Client")]
-[assembly: AssemblyCopyright("Copyright © 2009")]
+[assembly: AssemblyProduct("NIRS MySQL DataBase Client")]
+[assembly: AssemblyCopyright("Copyleft © 2009 - 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -36,6 +36,5 @@ using System.Runtime.InteropServices;
 //
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
-// [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.0.*")]
-[assembly: AssemblyFileVersion("1.2.0.*")]
+[assembly: AssemblyVersion("1.4.7.*")]
+[assembly: AssemblyFileVersion("1.4.7.*")]

@@ -7,22 +7,10 @@ namespace NIRS_DB.Structs
 {
     public class Group : ActiveRecord
     {
-        private int id;
-
-        public int Id
-        {
-            get { return id; }
-            set { id = value; }
-        }
-
+        public int Id { get; private set; }
         public string Code { get; set; }
+        public int DivisionId { get; set; }
 
-        private int div_id;
-        public int DivisionId
-        {
-            get { return div_id; }
-            set { div_id = value; }
-        }
 
         private Division division;
 
@@ -32,7 +20,7 @@ namespace NIRS_DB.Structs
             set
             {
                 division = value;
-                div_id = value.Id;
+                DivisionId = value.Id;
             }
         }
         
@@ -54,14 +42,15 @@ namespace NIRS_DB.Structs
         public override void Save()
         {
             string query = "";
-            if (id == 0)
+            if (Id == 0)
             {
-                query = "INSERT INTO `" + tableName + "` VALUES(null," + div_id + ",'"+Code+"');";
+                query = string.Format("INSERT INTO `{0}` VALUES(null, {1}, '{2}');", tableName, DivisionId, Code);
             }
             else
             {
-                query = "UPDATE `" + tableName + "` `div_id`=" + div_id + ",`year`=" + Code + 
-                    " WHERE `id`=" + id + ";";
+                throw new NotImplementedException();
+                //query = "UPDATE `" + tableName + "` `div_id`=" + div_id + ",`year`=" + Code + 
+                //    " WHERE `id`=" + id + ";";
             }
 
             MakeRequest(query);

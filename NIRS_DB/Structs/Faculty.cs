@@ -7,23 +7,11 @@ namespace NIRS_DB.Structs
 	
 	public class Faculty : ActiveRecord
 	{
-		
-     
+        public int Id { get; private set; }
+        public string Name { get; set; }
+        public string FullName { get; set; }
 
-		private int id;
-        public int Id
-        {
-            get { return id; }
-        }
 
-		private string name;
-
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-			
 		public Faculty()
 		{
             tableName = "faculty";
@@ -42,13 +30,14 @@ namespace NIRS_DB.Structs
         public override void Save()
         {
             string query = "";
-            if (id == 0)
+            if (Id == 0)
             {
-                 query = "INSERT INTO `" + tableName + "` VALUES(null,\"" +name+ "\");";
+                query = string.Format("INSERT INTO `{0}` VALUES( null, \"{1}\", \"{2}\" );", tableName, Name, FullName);
             }
             else
             {
-                query = "UPDATE `" + tableName + "` `name`=\"" + name +"\" WHERE `id`=" + id + ";";
+                throw new NotImplementedException();
+                //query = "UPDATE `" + tableName + "` `name`=\"" + name +"\" WHERE `id`=" + id + ";";
             }
 
             MakeRequest(query);

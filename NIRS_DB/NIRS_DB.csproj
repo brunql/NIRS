@@ -53,14 +53,7 @@
     <Compile Include="DBConnection.cs" />
     <Compile Include="DBSettings.cs" />
     <Compile Include="DBCriteria.cs" />
-    <Compile Include="Structs\Division.cs" />
-    <Compile Include="Structs\Faculty.cs" />
-    <Compile Include="Structs\Group.cs" />
-    <Compile Include="Structs\Mentor.cs" />
-    <Compile Include="Structs\Student.cs" />
-    <Compile Include="Structs\ScienceWork.cs" />
-    <Compile Include="Structs\Specialization.cs" />
-    <Compile Include="Structs\ActiveRecord.cs" />
+    <Compile Include="InsertStuff.cs" />
     <Compile Include="DBQueryBuilder.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

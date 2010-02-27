@@ -5,26 +5,11 @@ namespace NIRS_DB.Structs
 {
 	
 	
-	public class Division:ActiveRecord
+	public class Division : ActiveRecord
 	{
-
-        private int id = 0;
-
-        public int Id
-        {
-            get { return id; }
-        }
-
-		private string name = "aaa";
-
-        public string Name
-        {
-            get { return name; }
-            set { name = value; }
-        }
-         
-        private int fac_id;
-        public int FacId { get { return fac_id; } set { fac_id = value; } }
+        public int Id { get; private set; }
+        public string Name { get; set; }
+        public int FacId { get; set; }
 
 		private Faculty fac;
 
@@ -34,7 +19,7 @@ namespace NIRS_DB.Structs
             set 
             { 
                 fac = value;
-                fac_id = value.Id;
+                FacId = value.Id;
             }
         }
         		
@@ -57,14 +42,15 @@ namespace NIRS_DB.Structs
 		public override void Save ()
 		{
             string query = "";
-            if (id == 0)
+            if (Id == 0)
             {
-                query = "INSERT INTO `" + tableName + "` VALUES(null," + fac_id + ",'" + name.ToString()+ "');";
+                query = string.Format("INSERT INTO `{0}` VALUES(null, {1}, '{2}');", tableName, FacId, Name);
             }
             else
             {
-                query = "UPDATE `" + tableName + "` `name`=\"" + name + "\",`fac_id`=" + fac_id + 
-                    " WHERE `id`=" + id + ";";
+                throw new NotImplementedException();
+                //query = "UPDATE `" + tableName + "` `name`=\"" + name + "\",`fac_id`=" + fac_id + 
+                //    " WHERE `id`=" + id + ";";
             }
 
             MakeRequest(query);
