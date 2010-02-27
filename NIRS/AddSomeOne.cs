@@ -34,12 +34,12 @@ namespace NIRS
             ment.Name = txtMentorName.Text;
             ment.Surname = txtMentorSurname.Text;
             ment.FatherName = txtMentorFathername.Text;
-            if ((iamfrommaycop)cbMentorDivision.SelectedItem == null)
+            if ((ComboBoxKiller)cbMentorDivision.SelectedItem == null)
             {
                 MessageBox.Show("Кафедра не выбрана");
                 return;
             }
-            ment.DivisionId = ((iamfrommaycop)cbMentorDivision.SelectedItem).Id;
+            ment.DivisionId = ((ComboBoxKiller)cbMentorDivision.SelectedItem).Id;
             ment.AcademicRank = txtMentorAcademicRank.Text;
             ment.Degree = txtMentorDegree.Text;
             ment.Work = txtMentorWork.Text;
@@ -60,19 +60,41 @@ namespace NIRS
 
         }
 
+        private void ShowError(string text)
+        {
+            MessageBox.Show("Проверьте правильность ввода данных: " + text, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            throw new NullReferenceException();
+        }
+
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             Student stuff = new Student();
-            stuff.Name = txtStudentName.Text;
-            stuff.Surname = txtStudentSurname.Text;
-            stuff.FatherName = txtStudentFathername.Text;
+            try
+            {
+                if (txtStudentName.Text.Trim() != "")
+                    stuff.Name = txtStudentName.Text;
+                else
+                    ShowError("имя");
+                if (txtStudentSurname.Text.Trim() != "")
+                    stuff.Surname = txtStudentSurname.Text;
+                else
+                    ShowError("фамилия");
+                if (txtStudentFathername.Text.Trim() != "")
+                    stuff.FatherName = txtStudentFathername.Text;
+                else
+                    ShowError("отчество");
+            }
+            catch // if error show only one error message and return
+            {
+                return; 
+            }
             try
             {
                 stuff.Born = Convert.ToDateTime(txtStudentBirthdayDate.Text);
             }
-            catch (Exception ex)
+            catch (FormatException)
             {
-                MessageBox.Show("Проверьте правильность ввода даты рождения. " + ex.Message);
+                MessageBox.Show("Проверьте правильность ввода даты рождения.");
                 return;
             }
             if (cmbStudentGroup.SelectedItem == null)
@@ -80,13 +102,13 @@ namespace NIRS
                 MessageBox.Show("Группа не выбрана");
                 return;
             }
-            stuff.GroupId = (cmbStudentGroup.SelectedItem as iamfrommaycop).Id;
+            stuff.GroupId = (cmbStudentGroup.SelectedItem as ComboBoxKiller).Id;
             if (cmbStudentMentor.SelectedItem == null)
             {
                 MessageBox.Show("Руководитель не выбран");
                 return;
             }
-            stuff.MentorId = (cmbStudentMentor.SelectedItem as iamfrommaycop).Id;
+            stuff.MentorId = (cmbStudentMentor.SelectedItem as ComboBoxKiller).Id;
             stuff.Save();
 
             DialogResult result = MessageBox.Show("Студент добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
@@ -127,7 +149,7 @@ namespace NIRS
 
             for (int i = dataViewSpecDivision.Rows.Count - 1 - 1; i >= 0; i-- )
             {
-                iamfrommaycop iam = new iamfrommaycop();
+                ComboBoxKiller iam = new ComboBoxKiller();
                 iam.Id = (int)dataViewSpecDivision.Rows[i].Cells["id"].Value;
                 iam.Name = dataViewSpecDivision.Rows[i].Cells["name"].Value.ToString();
                 cbMentorDivision.Items.Add(iam);
@@ -171,14 +193,14 @@ namespace NIRS
 
         private void tabPage1_Enter(object sender, EventArgs e)
         {
-            iamfrommaycop.FillComboBox(dataViewAddedFaculty, cmbStudentFaculty);
+            ComboBoxKiller.FillComboBox(dataViewAddedFaculty, cmbStudentFaculty);
             // todo: load mentors to cmbStudentMentors
-            //iamfrommaycop.FillComboBox(dataViewAddedDivision, cmbStudentDivision);
-            //iamfrommaycop.FillComboBox(dataViewAddedGroup, cmbStudentGroup);
-            //iamfrommaycop.FillComboBox(dat
+            //ComboBoxKiller.FillComboBox(dataViewAddedDivision, cmbStudentDivision);
+            //ComboBoxKiller.FillComboBox(dataViewAddedGroup, cmbStudentGroup);
+            //ComboBoxKiller.FillComboBox(dat
             for (int i = dataViewSpecDivision.Rows.Count - 1 - 1; i >= 0; i--)
             {
-                iamfrommaycop iam = new iamfrommaycop();
+                ComboBoxKiller iam = new ComboBoxKiller();
                 iam.Id = (int)dataViewSpecDivision.Rows[i].Cells["id"].Value;
                 iam.Name = dataViewSpecDivision.Rows[i].Cells["name"].Value.ToString();
                 cbMentorDivision.Items.Add(iam);
@@ -188,28 +210,28 @@ namespace NIRS
         private void cmbStudentFaculty_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbStudentDivision.Enabled = true;
-            iamfrommaycop.FillComboBoxWithCmp(dataViewAddedDivision, cmbStudentDivision,"name", "fac_id", (cmbStudentFaculty.SelectedItem as iamfrommaycop).Id);
+            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedDivision, cmbStudentDivision,"name", "fac_id", (cmbStudentFaculty.SelectedItem as ComboBoxKiller).Id);
         }
 
         private void cmbStudentDivision_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbStudentSpetialize.Enabled = true;
-            iamfrommaycop.FillComboBoxWithCmp(dataViewAddedSpec, cmbStudentSpetialize, "name", "div_id", (cmbStudentDivision.SelectedItem as iamfrommaycop).Id);
+            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedSpec, cmbStudentSpetialize, "name", "div_id", (cmbStudentDivision.SelectedItem as ComboBoxKiller).Id);
         }
 
         private void cmbStudentSpetialize_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbStudentGroup.Enabled = true;
-            iamfrommaycop.FillComboBoxWithCmp(dataViewAddedGroup, cmbStudentGroup, "code", "div_id", (cmbStudentDivision.SelectedItem as iamfrommaycop).Id);
+            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedGroup, cmbStudentGroup, "code", "div_id", (cmbStudentDivision.SelectedItem as ComboBoxKiller).Id);
         }
 
         private void tabPage2_Enter(object sender, EventArgs e)
         {
-            iamfrommaycop.FillComboBox_SPECIAL_FOR_MENTOR_REWRITE_ME(dataViewAddedMentor, cmbStudentMentor);
+            ComboBoxKiller.FillComboBox_mentor(dataViewAddedMentor, cmbStudentMentor);
         }
     }
 
-    class iamfrommaycop
+    class ComboBoxKiller
     {
         public int Id { get; set; }
         public string Name { get; set; }
@@ -223,19 +245,19 @@ namespace NIRS
             cb.Items.Clear();
             for (int i = dtvw.Rows.Count - 1 - 1; i >= 0; i--)
             {
-                iamfrommaycop iam = new iamfrommaycop();
+                ComboBoxKiller iam = new ComboBoxKiller();
                 iam.Id = (int)dtvw.Rows[i].Cells["id"].Value;
                 iam.Name = dtvw.Rows[i].Cells["name"].Value.ToString();
                 cb.Items.Add(iam);
             }
         }
 
-        public static void FillComboBox_SPECIAL_FOR_MENTOR_REWRITE_ME(DataGridView dtvw, ComboBox cb)
+        public static void FillComboBox_mentor(DataGridView dtvw, ComboBox cb)
         {
             cb.Items.Clear();
             for (int i = dtvw.Rows.Count - 1 - 1; i >= 0; i--)
             {
-                iamfrommaycop iam = new iamfrommaycop();
+                ComboBoxKiller iam = new ComboBoxKiller();
                 iam.Id = (int)dtvw.Rows[i].Cells["id"].Value;
                 iam.Name = dtvw.Rows[i].Cells["name"].Value.ToString() +" "+
                     dtvw.Rows[i].Cells["surname"].Value.ToString() + " "+
@@ -251,7 +273,7 @@ namespace NIRS
             {
                 if ((int)dtvw.Rows[i].Cells[thatCmp].Value == idCmp)
                 {
-                    iamfrommaycop iam = new iamfrommaycop();
+                    ComboBoxKiller iam = new ComboBoxKiller();
                     iam.Id = (int)dtvw.Rows[i].Cells["id"].Value;
                     iam.Name = dtvw.Rows[i].Cells[col_name].Value.ToString();
                     cb.Items.Add(iam);
