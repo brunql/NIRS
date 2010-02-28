@@ -16,17 +16,13 @@ namespace NIRS
     public partial class MainForm : Form
     {
         AboutBox about_box = new AboutBox();
-        //DataView dvTable = new DataView();
-
+        
         public static void SelectAllFromAndAdd(string table_name, DataGridView dataView, object tempDataTable)
         {
             DataTable t = new DataTable();
-            //DataView t = new DataView();
-            //((DataTable)tempDataTable)
             t.Load(
-                            DBConnection.ExecuteReader("SELECT * FROM `" + table_name + "` ORDER BY `id`;")
+                    DBConnection.ExecuteReader("SELECT * FROM `" + table_name + "` ORDER BY `id`;")
                 );
-            //t.Table = (DataTable)tempDataTable;
             dataView.DataSource = t;
         }
 
@@ -35,7 +31,6 @@ namespace NIRS
         {
             InitializeComponent();
             
-
             DBSettings dbs = new DBSettings();
             dbs.database = "nirs";
             dbs.host = "localhost";
@@ -45,7 +40,7 @@ namespace NIRS
 
             DBConnection.Connection(dbs);
 
-            tabControl1_SelectedIndexChanged(null, null);
+            tabControlMain_SelectedIndexChanged(null, null);
         }
 
         private void AddRecord_ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -67,6 +62,8 @@ namespace NIRS
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'nirsDataSetMain.works' table. You can move, or remove it, as needed.
+            this.worksTableAdapter.Fill(this.nirsDataSetMain.works);
             UpdateAllDataGridView();
         }
 
@@ -98,15 +95,15 @@ namespace NIRS
         {
             //try
             //{
-                LoadSummaryDataGridTable();
+            LoadSummaryDataGridTable();
+            this.groupTableAdapter.Fill(this.nirsDataSetMain.group);
+            this.worksTableAdapter.Fill(this.nirsDataSetMain.works);
+            this.studentTableAdapter.Fill(this.nirsDataSetMain.student);
+            this.mentorTableAdapter.Fill(this.nirsDataSetMain.mentor);
+            this.specTableAdapter.Fill(this.nirsDataSetMain.spec);
+            this.facultyTableAdapter.Fill(this.nirsDataSetMain.faculty);
+            this.divisionTableAdapter.Fill(this.nirsDataSetMain.division);
 
-                this.groupTableAdapter.Fill(this.nirsDataSetMain.group);
-                this.worksTableAdapter.Fill(this.nirsDataSetMain.works);
-                this.studentTableAdapter.Fill(this.nirsDataSetMain.student);
-                this.mentorTableAdapter.Fill(this.nirsDataSetMain.mentor);
-                this.specTableAdapter.Fill(this.nirsDataSetMain.spec);
-                this.facultyTableAdapter.Fill(this.nirsDataSetMain.faculty);
-                this.divisionTableAdapter.Fill(this.nirsDataSetMain.division);
             //}
             //catch(Exception ex)
             //{
@@ -115,9 +112,9 @@ namespace NIRS
             //}
         }
 
-        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (tabControl1.SelectedTab.Text)
+            switch (tabControlMain.SelectedTab.Text)
             {
                 case "Факультеты":
                     divisionBindingNavigator.BindingSource = facultyBindingSource;
@@ -140,21 +137,31 @@ namespace NIRS
                 case "Научные работы":
                     divisionBindingNavigator.BindingSource = worksBindingSource;
                     break;
+                default:
+                    divisionBindingNavigator.BindingSource = null;
+                    //MessageBox.Show(tabControlMain.SelectedTab.Text);
+                    break;
             }
+            // resize the column once, but allow the ussers to change it.
+            this.summaryDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            this.groupDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            this.worksDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            this.studentDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            this.mentorDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            this.specDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            this.facultyDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            this.divisionDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void divisionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            this.Validate();
-            this.divisionBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.nirsDataSetMain);
-        }
-
-        private void divisionBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.divisionBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.nirsDataSetMain);
+            if (this.divisionBindingNavigator.BindingSource != null)
+            {
+                this.Validate();
+                this.divisionBindingNavigator.BindingSource.EndEdit();
+                this.tableAdapterManager.UpdateAll(this.nirsDataSetMain);
+                UpdateAllDataGridView();
+            }
         }
 
         private void connectionsToolStripMenuItem_Click(object sender, EventArgs e)

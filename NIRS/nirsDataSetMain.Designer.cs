@@ -2264,6 +2264,8 @@ namespace NIRS {
             
             private global::System.Data.DataColumn columndesc;
             
+            private global::System.Data.DataColumn columnmentor_id;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public worksDataTable() {
                 this.TableName = "works";
@@ -2323,6 +2325,13 @@ namespace NIRS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn mentor_idColumn {
+                get {
+                    return this.columnmentor_id;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -2351,13 +2360,14 @@ namespace NIRS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public worksRow AddworksRow(int student_id, string name, string desc) {
+            public worksRow AddworksRow(int student_id, string name, string desc, uint mentor_id) {
                 worksRow rowworksRow = ((worksRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         student_id,
                         name,
-                        desc};
+                        desc,
+                        mentor_id};
                 rowworksRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowworksRow);
                 return rowworksRow;
@@ -2387,6 +2397,7 @@ namespace NIRS {
                 this.columnstudent_id = base.Columns["student_id"];
                 this.columnname = base.Columns["name"];
                 this.columndesc = base.Columns["desc"];
+                this.columnmentor_id = base.Columns["mentor_id"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2399,6 +2410,8 @@ namespace NIRS {
                 base.Columns.Add(this.columnname);
                 this.columndesc = new global::System.Data.DataColumn("desc", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndesc);
+                this.columnmentor_id = new global::System.Data.DataColumn("mentor_id", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnmentor_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -2411,6 +2424,7 @@ namespace NIRS {
                 this.columnname.MaxLength = 150;
                 this.columndesc.AllowDBNull = false;
                 this.columndesc.MaxLength = 21845;
+                this.columnmentor_id.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3104,6 +3118,16 @@ namespace NIRS {
                 }
                 set {
                     this[this.tableworks.descColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public uint mentor_id {
+                get {
+                    return ((uint)(this[this.tableworks.mentor_idColumn]));
+                }
+                set {
+                    this[this.tableworks.mentor_idColumn] = value;
                 }
             }
             
@@ -6259,11 +6283,13 @@ namespace NIRS.nirsDataSetMainTableAdapters {
             tableMapping.ColumnMappings.Add("student_id", "student_id");
             tableMapping.ColumnMappings.Add("name", "name");
             tableMapping.ColumnMappings.Add("desc", "desc");
+            tableMapping.ColumnMappings.Add("mentor_id", "mentor_id");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
             this._adapter.DeleteCommand.CommandText = "DELETE FROM `nirs`.`works` WHERE ((`id` = @Original_id) AND (`student_id` = @Orig" +
-                "inal_student_id) AND (`name` = @Original_name))";
+                "inal_student_id) AND (`name` = @Original_name) AND (`mentor_id` = @Original_ment" +
+                "or_id))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@Original_id";
@@ -6289,10 +6315,18 @@ namespace NIRS.nirsDataSetMainTableAdapters {
             param.SourceColumn = "name";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Original_mentor_id";
+            param.DbType = global::System.Data.DbType.UInt32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
+            param.IsNullable = true;
+            param.SourceColumn = "mentor_id";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO `nirs`.`works` (`student_id`, `name`, `desc`) VALUES (@student_id, @n" +
-                "ame, @desc)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO `nirs`.`works` (`student_id`, `name`, `desc`, `mentor_id`) VALUES (@s" +
+                "tudent_id, @name, @desc, @mentor_id)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@student_id";
@@ -6314,11 +6348,19 @@ namespace NIRS.nirsDataSetMainTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "desc";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@mentor_id";
+            param.DbType = global::System.Data.DbType.UInt32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
+            param.IsNullable = true;
+            param.SourceColumn = "mentor_id";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE `nirs`.`works` SET `student_id` = @student_id, `name` = @name, `desc` = @d" +
-                "esc WHERE ((`id` = @Original_id) AND (`student_id` = @Original_student_id) AND (" +
-                "`name` = @Original_name))";
+                "esc, `mentor_id` = @mentor_id WHERE ((`id` = @Original_id) AND (`student_id` = @" +
+                "Original_student_id) AND (`name` = @Original_name) AND (`mentor_id` = @Original_" +
+                "mentor_id))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@student_id";
@@ -6339,6 +6381,13 @@ namespace NIRS.nirsDataSetMainTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
             param.IsNullable = true;
             param.SourceColumn = "desc";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@mentor_id";
+            param.DbType = global::System.Data.DbType.UInt32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
+            param.IsNullable = true;
+            param.SourceColumn = "mentor_id";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@Original_id";
@@ -6364,6 +6413,14 @@ namespace NIRS.nirsDataSetMainTableAdapters {
             param.SourceColumn = "name";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Original_mentor_id";
+            param.DbType = global::System.Data.DbType.UInt32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
+            param.IsNullable = true;
+            param.SourceColumn = "mentor_id";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6377,7 +6434,7 @@ namespace NIRS.nirsDataSetMainTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT `id`, `student_id`, `name`, `desc` FROM `nirs`.`works`";
+            this._commandCollection[0].CommandText = "SELECT id, student_id, name, `desc`, mentor_id FROM works";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -6431,7 +6488,7 @@ namespace NIRS.nirsDataSetMainTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_id, int Original_student_id, string Original_name) {
+        public virtual int Delete(int Original_id, int Original_student_id, string Original_name, uint Original_mentor_id) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_student_id));
             if ((Original_name == null)) {
@@ -6440,6 +6497,7 @@ namespace NIRS.nirsDataSetMainTableAdapters {
             else {
                 this.Adapter.DeleteCommand.Parameters[2].Value = ((string)(Original_name));
             }
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((uint)(Original_mentor_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6459,7 +6517,7 @@ namespace NIRS.nirsDataSetMainTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(int student_id, string name, string desc) {
+        public virtual int Insert(int student_id, string name, string desc, uint mentor_id) {
             this.Adapter.InsertCommand.Parameters[0].Value = ((int)(student_id));
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
@@ -6473,6 +6531,7 @@ namespace NIRS.nirsDataSetMainTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[2].Value = ((string)(desc));
             }
+            this.Adapter.InsertCommand.Parameters[3].Value = ((uint)(mentor_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -6492,7 +6551,7 @@ namespace NIRS.nirsDataSetMainTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(int student_id, string name, string desc, int Original_id, int Original_student_id, string Original_name) {
+        public virtual int Update(int student_id, string name, string desc, uint mentor_id, int Original_id, int Original_student_id, string Original_name, uint Original_mentor_id) {
             this.Adapter.UpdateCommand.Parameters[0].Value = ((int)(student_id));
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
@@ -6506,14 +6565,16 @@ namespace NIRS.nirsDataSetMainTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(desc));
             }
-            this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(Original_id));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_student_id));
+            this.Adapter.UpdateCommand.Parameters[3].Value = ((uint)(mentor_id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_id));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_student_id));
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_name));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_name));
             }
+            this.Adapter.UpdateCommand.Parameters[7].Value = ((uint)(Original_mentor_id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
