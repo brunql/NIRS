@@ -132,14 +132,14 @@
             this.dataGridViewTextBoxColumn51 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn52 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewComboBoxStudentGroupId = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn54 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewComboBoxStudentMentorId = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn55 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.studentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewComboBoxWorksStudentId = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.dataGridViewComboBoxWorksMentorId = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn48 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn53 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewComboBoxWorksMentorId = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.worksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tableAdapterManager = new NIRS.nirsDataSetMainTableAdapters.TableAdapterManager();
             this.mentorTableAdapter = new NIRS.nirsDataSetMainTableAdapters.mentorTableAdapter();
@@ -661,7 +661,7 @@
             this.dataGridViewTextBoxColumn51,
             this.dataGridViewTextBoxColumn52,
             this.dataGridViewComboBoxStudentGroupId,
-            this.dataGridViewTextBoxColumn54,
+            this.dataGridViewComboBoxStudentMentorId,
             this.dataGridViewTextBoxColumn55});
             this.studentDataGridView.DataSource = this.studentBindingSource;
             this.studentDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -685,6 +685,7 @@
             // divisionBindingNavigator
             // 
             this.divisionBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.divisionBindingNavigator.BindingSource = this.divisionBindingSource;
             this.divisionBindingNavigator.CountItem = this.bindingNavigatorCountItem;
             this.divisionBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
             this.divisionBindingNavigator.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -829,9 +830,9 @@
             this.worksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn11,
             this.dataGridViewComboBoxWorksStudentId,
+            this.dataGridViewComboBoxWorksMentorId,
             this.dataGridViewTextBoxColumn48,
-            this.dataGridViewTextBoxColumn53,
-            this.dataGridViewComboBoxWorksMentorId});
+            this.dataGridViewTextBoxColumn53});
             this.worksDataGridView.DataSource = this.worksBindingSource;
             this.worksDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.worksDataGridView.Location = new System.Drawing.Point(3, 3);
@@ -844,17 +845,18 @@
             this.dataGridViewTextBoxColumn32.DataPropertyName = "id";
             this.dataGridViewTextBoxColumn32.HeaderText = "id";
             this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.dataGridViewTextBoxColumn32.Visible = false;
             // 
             // dataGridViewTextBoxColumn33
             // 
             this.dataGridViewTextBoxColumn33.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn33.HeaderText = "name";
+            this.dataGridViewTextBoxColumn33.HeaderText = "Факультет";
             this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
             // 
             // dataGridViewTextBoxColumn60
             // 
             this.dataGridViewTextBoxColumn60.DataPropertyName = "fullname";
-            this.dataGridViewTextBoxColumn60.HeaderText = "fullname";
+            this.dataGridViewTextBoxColumn60.HeaderText = "Полное имя факультета";
             this.dataGridViewTextBoxColumn60.Name = "dataGridViewTextBoxColumn60";
             // 
             // facultyBindingSource
@@ -873,6 +875,7 @@
             this.dataGridViewTextBoxColumn10.DataPropertyName = "id";
             this.dataGridViewTextBoxColumn10.HeaderText = "id";
             this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.Visible = false;
             this.dataGridViewTextBoxColumn10.Width = 40;
             // 
             // dataGridViewComboBoxColumnDivisionFacId
@@ -880,7 +883,7 @@
             this.dataGridViewComboBoxColumnDivisionFacId.DataPropertyName = "fac_id";
             this.dataGridViewComboBoxColumnDivisionFacId.DataSource = this.facultyBindingSource;
             this.dataGridViewComboBoxColumnDivisionFacId.DisplayMember = "name";
-            this.dataGridViewComboBoxColumnDivisionFacId.HeaderText = "fac_id";
+            this.dataGridViewComboBoxColumnDivisionFacId.HeaderText = "Факультет";
             this.dataGridViewComboBoxColumnDivisionFacId.Name = "dataGridViewComboBoxColumnDivisionFacId";
             this.dataGridViewComboBoxColumnDivisionFacId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewComboBoxColumnDivisionFacId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -890,14 +893,14 @@
             // dataGridViewTextBoxColumn12
             // 
             this.dataGridViewTextBoxColumn12.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn12.HeaderText = "name";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Кафедра";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             this.dataGridViewTextBoxColumn12.Width = 58;
             // 
             // dataGridViewTextBoxColumn61
             // 
             this.dataGridViewTextBoxColumn61.DataPropertyName = "fullname";
-            this.dataGridViewTextBoxColumn61.HeaderText = "fullname";
+            this.dataGridViewTextBoxColumn61.HeaderText = "Полное имя кафедры";
             this.dataGridViewTextBoxColumn61.Name = "dataGridViewTextBoxColumn61";
             this.dataGridViewTextBoxColumn61.Width = 71;
             // 
@@ -911,6 +914,7 @@
             this.dataGridViewTextBoxColumn37.DataPropertyName = "id";
             this.dataGridViewTextBoxColumn37.HeaderText = "id";
             this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.Visible = false;
             this.dataGridViewTextBoxColumn37.Width = 40;
             // 
             // dataGridViewComboBoxSpecDivId
@@ -918,7 +922,7 @@
             this.dataGridViewComboBoxSpecDivId.DataPropertyName = "div_id";
             this.dataGridViewComboBoxSpecDivId.DataSource = this.divisionBindingSource;
             this.dataGridViewComboBoxSpecDivId.DisplayMember = "name";
-            this.dataGridViewComboBoxSpecDivId.HeaderText = "div_id";
+            this.dataGridViewComboBoxSpecDivId.HeaderText = "Кафедра";
             this.dataGridViewComboBoxSpecDivId.Name = "dataGridViewComboBoxSpecDivId";
             this.dataGridViewComboBoxSpecDivId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewComboBoxSpecDivId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -928,14 +932,14 @@
             // dataGridViewTextBoxColumn39
             // 
             this.dataGridViewTextBoxColumn39.DataPropertyName = "code";
-            this.dataGridViewTextBoxColumn39.HeaderText = "code";
+            this.dataGridViewTextBoxColumn39.HeaderText = "Код специальности";
             this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
             this.dataGridViewTextBoxColumn39.Width = 56;
             // 
             // dataGridViewTextBoxColumn40
             // 
             this.dataGridViewTextBoxColumn40.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn40.HeaderText = "name";
+            this.dataGridViewTextBoxColumn40.HeaderText = "Имя специальности";
             this.dataGridViewTextBoxColumn40.Name = "dataGridViewTextBoxColumn40";
             this.dataGridViewTextBoxColumn40.Width = 58;
             // 
@@ -949,6 +953,7 @@
             this.dataGridViewTextBoxColumn35.DataPropertyName = "id";
             this.dataGridViewTextBoxColumn35.HeaderText = "id";
             this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.Visible = false;
             this.dataGridViewTextBoxColumn35.Width = 40;
             // 
             // dataGridViewComboBoxGroupSpecId
@@ -956,7 +961,7 @@
             this.dataGridViewComboBoxGroupSpecId.DataPropertyName = "spec_id";
             this.dataGridViewComboBoxGroupSpecId.DataSource = this.specBindingSource;
             this.dataGridViewComboBoxGroupSpecId.DisplayMember = "code";
-            this.dataGridViewComboBoxGroupSpecId.HeaderText = "spec_id";
+            this.dataGridViewComboBoxGroupSpecId.HeaderText = "Специальность";
             this.dataGridViewComboBoxGroupSpecId.Name = "dataGridViewComboBoxGroupSpecId";
             this.dataGridViewComboBoxGroupSpecId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewComboBoxGroupSpecId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -966,7 +971,7 @@
             // dataGridViewTextBoxColumn62
             // 
             this.dataGridViewTextBoxColumn62.DataPropertyName = "code";
-            this.dataGridViewTextBoxColumn62.HeaderText = "code";
+            this.dataGridViewTextBoxColumn62.HeaderText = "Код группы";
             this.dataGridViewTextBoxColumn62.Name = "dataGridViewTextBoxColumn62";
             this.dataGridViewTextBoxColumn62.Width = 56;
             // 
@@ -980,26 +985,27 @@
             this.dataGridViewTextBoxColumn41.DataPropertyName = "id";
             this.dataGridViewTextBoxColumn41.HeaderText = "id";
             this.dataGridViewTextBoxColumn41.Name = "dataGridViewTextBoxColumn41";
+            this.dataGridViewTextBoxColumn41.Visible = false;
             this.dataGridViewTextBoxColumn41.Width = 40;
             // 
             // dataGridViewTextBoxColumn42
             // 
             this.dataGridViewTextBoxColumn42.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn42.HeaderText = "name";
+            this.dataGridViewTextBoxColumn42.HeaderText = "Имя";
             this.dataGridViewTextBoxColumn42.Name = "dataGridViewTextBoxColumn42";
             this.dataGridViewTextBoxColumn42.Width = 58;
             // 
             // dataGridViewTextBoxColumn43
             // 
             this.dataGridViewTextBoxColumn43.DataPropertyName = "surname";
-            this.dataGridViewTextBoxColumn43.HeaderText = "surname";
+            this.dataGridViewTextBoxColumn43.HeaderText = "Фамилия";
             this.dataGridViewTextBoxColumn43.Name = "dataGridViewTextBoxColumn43";
             this.dataGridViewTextBoxColumn43.Width = 72;
             // 
             // dataGridViewTextBoxColumn44
             // 
             this.dataGridViewTextBoxColumn44.DataPropertyName = "fathername";
-            this.dataGridViewTextBoxColumn44.HeaderText = "fathername";
+            this.dataGridViewTextBoxColumn44.HeaderText = "Отчество";
             this.dataGridViewTextBoxColumn44.Name = "dataGridViewTextBoxColumn44";
             this.dataGridViewTextBoxColumn44.Width = 85;
             // 
@@ -1008,7 +1014,7 @@
             this.dataGridViewComboBoxMentorDivId.DataPropertyName = "div_id";
             this.dataGridViewComboBoxMentorDivId.DataSource = this.divisionBindingSource;
             this.dataGridViewComboBoxMentorDivId.DisplayMember = "name";
-            this.dataGridViewComboBoxMentorDivId.HeaderText = "div_id";
+            this.dataGridViewComboBoxMentorDivId.HeaderText = "Кафедра";
             this.dataGridViewComboBoxMentorDivId.Name = "dataGridViewComboBoxMentorDivId";
             this.dataGridViewComboBoxMentorDivId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewComboBoxMentorDivId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
@@ -1018,21 +1024,21 @@
             // dataGridViewTextBoxColumn45
             // 
             this.dataGridViewTextBoxColumn45.DataPropertyName = "work";
-            this.dataGridViewTextBoxColumn45.HeaderText = "work";
+            this.dataGridViewTextBoxColumn45.HeaderText = "Место работы";
             this.dataGridViewTextBoxColumn45.Name = "dataGridViewTextBoxColumn45";
             this.dataGridViewTextBoxColumn45.Width = 55;
             // 
             // dataGridViewTextBoxColumn46
             // 
             this.dataGridViewTextBoxColumn46.DataPropertyName = "acrank";
-            this.dataGridViewTextBoxColumn46.HeaderText = "acrank";
+            this.dataGridViewTextBoxColumn46.HeaderText = "Ученое звание";
             this.dataGridViewTextBoxColumn46.Name = "dataGridViewTextBoxColumn46";
             this.dataGridViewTextBoxColumn46.Width = 65;
             // 
             // dataGridViewTextBoxColumn47
             // 
             this.dataGridViewTextBoxColumn47.DataPropertyName = "degree";
-            this.dataGridViewTextBoxColumn47.HeaderText = "degree";
+            this.dataGridViewTextBoxColumn47.HeaderText = "Ученая степень";
             this.dataGridViewTextBoxColumn47.Name = "dataGridViewTextBoxColumn47";
             this.dataGridViewTextBoxColumn47.Width = 65;
             // 
@@ -1046,26 +1052,27 @@
             this.dataGridViewTextBoxColumn49.DataPropertyName = "id";
             this.dataGridViewTextBoxColumn49.HeaderText = "id";
             this.dataGridViewTextBoxColumn49.Name = "dataGridViewTextBoxColumn49";
+            this.dataGridViewTextBoxColumn49.Visible = false;
             this.dataGridViewTextBoxColumn49.Width = 40;
             // 
             // dataGridViewTextBoxColumn50
             // 
             this.dataGridViewTextBoxColumn50.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn50.HeaderText = "name";
+            this.dataGridViewTextBoxColumn50.HeaderText = "Имя";
             this.dataGridViewTextBoxColumn50.Name = "dataGridViewTextBoxColumn50";
             this.dataGridViewTextBoxColumn50.Width = 58;
             // 
             // dataGridViewTextBoxColumn51
             // 
             this.dataGridViewTextBoxColumn51.DataPropertyName = "surname";
-            this.dataGridViewTextBoxColumn51.HeaderText = "surname";
+            this.dataGridViewTextBoxColumn51.HeaderText = "Фамилия";
             this.dataGridViewTextBoxColumn51.Name = "dataGridViewTextBoxColumn51";
             this.dataGridViewTextBoxColumn51.Width = 72;
             // 
             // dataGridViewTextBoxColumn52
             // 
             this.dataGridViewTextBoxColumn52.DataPropertyName = "fathername";
-            this.dataGridViewTextBoxColumn52.HeaderText = "fathername";
+            this.dataGridViewTextBoxColumn52.HeaderText = "Отчество";
             this.dataGridViewTextBoxColumn52.Name = "dataGridViewTextBoxColumn52";
             this.dataGridViewTextBoxColumn52.Width = 85;
             // 
@@ -1074,24 +1081,29 @@
             this.dataGridViewComboBoxStudentGroupId.DataPropertyName = "group_id";
             this.dataGridViewComboBoxStudentGroupId.DataSource = this.groupBindingSource;
             this.dataGridViewComboBoxStudentGroupId.DisplayMember = "code";
-            this.dataGridViewComboBoxStudentGroupId.HeaderText = "group_id";
+            this.dataGridViewComboBoxStudentGroupId.HeaderText = "Группа";
             this.dataGridViewComboBoxStudentGroupId.Name = "dataGridViewComboBoxStudentGroupId";
             this.dataGridViewComboBoxStudentGroupId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewComboBoxStudentGroupId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewComboBoxStudentGroupId.ValueMember = "id";
             this.dataGridViewComboBoxStudentGroupId.Width = 73;
             // 
-            // dataGridViewTextBoxColumn54
+            // dataGridViewComboBoxStudentMentorId
             // 
-            this.dataGridViewTextBoxColumn54.DataPropertyName = "mentor_id";
-            this.dataGridViewTextBoxColumn54.HeaderText = "mentor_id";
-            this.dataGridViewTextBoxColumn54.Name = "dataGridViewTextBoxColumn54";
-            this.dataGridViewTextBoxColumn54.Width = 78;
+            this.dataGridViewComboBoxStudentMentorId.DataPropertyName = "mentor_id";
+            this.dataGridViewComboBoxStudentMentorId.DataSource = this.mentorBindingSource;
+            this.dataGridViewComboBoxStudentMentorId.DisplayMember = "surname";
+            this.dataGridViewComboBoxStudentMentorId.HeaderText = "Руководитель";
+            this.dataGridViewComboBoxStudentMentorId.Name = "dataGridViewComboBoxStudentMentorId";
+            this.dataGridViewComboBoxStudentMentorId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewComboBoxStudentMentorId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewComboBoxStudentMentorId.ValueMember = "id";
+            this.dataGridViewComboBoxStudentMentorId.Width = 78;
             // 
             // dataGridViewTextBoxColumn55
             // 
             this.dataGridViewTextBoxColumn55.DataPropertyName = "born";
-            this.dataGridViewTextBoxColumn55.HeaderText = "born";
+            this.dataGridViewTextBoxColumn55.HeaderText = "Дата рождения";
             this.dataGridViewTextBoxColumn55.Name = "dataGridViewTextBoxColumn55";
             this.dataGridViewTextBoxColumn55.Width = 53;
             // 
@@ -1105,40 +1117,41 @@
             this.dataGridViewTextBoxColumn11.DataPropertyName = "id";
             this.dataGridViewTextBoxColumn11.HeaderText = "id";
             this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.Visible = false;
             // 
             // dataGridViewComboBoxWorksStudentId
             // 
             this.dataGridViewComboBoxWorksStudentId.DataPropertyName = "student_id";
             this.dataGridViewComboBoxWorksStudentId.DataSource = this.studentBindingSource;
             this.dataGridViewComboBoxWorksStudentId.DisplayMember = "surname";
-            this.dataGridViewComboBoxWorksStudentId.HeaderText = "student_id";
+            this.dataGridViewComboBoxWorksStudentId.HeaderText = "Студент";
             this.dataGridViewComboBoxWorksStudentId.Name = "dataGridViewComboBoxWorksStudentId";
             this.dataGridViewComboBoxWorksStudentId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewComboBoxWorksStudentId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewComboBoxWorksStudentId.ValueMember = "id";
-            // 
-            // dataGridViewTextBoxColumn48
-            // 
-            this.dataGridViewTextBoxColumn48.DataPropertyName = "name";
-            this.dataGridViewTextBoxColumn48.HeaderText = "name";
-            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
-            // 
-            // dataGridViewTextBoxColumn53
-            // 
-            this.dataGridViewTextBoxColumn53.DataPropertyName = "desc";
-            this.dataGridViewTextBoxColumn53.HeaderText = "desc";
-            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
             // 
             // dataGridViewComboBoxWorksMentorId
             // 
             this.dataGridViewComboBoxWorksMentorId.DataPropertyName = "mentor_id";
             this.dataGridViewComboBoxWorksMentorId.DataSource = this.mentorBindingSource;
             this.dataGridViewComboBoxWorksMentorId.DisplayMember = "surname";
-            this.dataGridViewComboBoxWorksMentorId.HeaderText = "mentor_id";
+            this.dataGridViewComboBoxWorksMentorId.HeaderText = "Руководитель";
             this.dataGridViewComboBoxWorksMentorId.Name = "dataGridViewComboBoxWorksMentorId";
             this.dataGridViewComboBoxWorksMentorId.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewComboBoxWorksMentorId.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewComboBoxWorksMentorId.ValueMember = "id";
+            // 
+            // dataGridViewTextBoxColumn48
+            // 
+            this.dataGridViewTextBoxColumn48.DataPropertyName = "name";
+            this.dataGridViewTextBoxColumn48.HeaderText = "Название работы";
+            this.dataGridViewTextBoxColumn48.Name = "dataGridViewTextBoxColumn48";
+            // 
+            // dataGridViewTextBoxColumn53
+            // 
+            this.dataGridViewTextBoxColumn53.DataPropertyName = "desc";
+            this.dataGridViewTextBoxColumn53.HeaderText = "Описание работы";
+            this.dataGridViewTextBoxColumn53.Name = "dataGridViewTextBoxColumn53";
             // 
             // worksBindingSource
             // 
@@ -1345,6 +1358,8 @@
         private System.Windows.Forms.BindingSource facultyBindingSource;
         private NIRS.nirsDataSetMainTableAdapters.facultyTableAdapter facultyTableAdapter;
         private System.Windows.Forms.DataGridView facultyDataGridView;
+        private System.Windows.Forms.BindingSource worksBindingSource;
+        private NIRS.nirsDataSetMainTableAdapters.worksTableAdapter worksTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn60;
@@ -1372,15 +1387,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn51;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn52;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxStudentGroupId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn54;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxStudentMentorId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn55;
-        private System.Windows.Forms.BindingSource worksBindingSource;
-        private NIRS.nirsDataSetMainTableAdapters.worksTableAdapter worksTableAdapter;
         private System.Windows.Forms.DataGridView worksDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxWorksStudentId;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxWorksMentorId;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn48;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn53;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewComboBoxWorksMentorId;
     }
 }

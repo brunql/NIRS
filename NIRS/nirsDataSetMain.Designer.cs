@@ -53,6 +53,8 @@ namespace NIRS {
         
         private global::System.Data.DataRelation relationgroup_spec;
         
+        private global::System.Data.DataRelation relationworks_mentor;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -340,6 +342,7 @@ namespace NIRS {
             this.relationstudent_mentor = this.Relations["student_mentor"];
             this.relationworks_student = this.Relations["works_student"];
             this.relationgroup_spec = this.Relations["group_spec"];
+            this.relationworks_mentor = this.Relations["works_mentor"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -391,6 +394,10 @@ namespace NIRS {
                         this.tablegroup.spec_idColumn}, new global::System.Data.DataColumn[] {
                         this.tablespec.idColumn}, false);
             this.Relations.Add(this.relationgroup_spec);
+            this.relationworks_mentor = new global::System.Data.DataRelation("works_mentor", new global::System.Data.DataColumn[] {
+                        this.tableworks.mentor_idColumn}, new global::System.Data.DataColumn[] {
+                        this.tablementor.idColumn}, false);
+            this.Relations.Add(this.relationworks_mentor);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2360,7 +2367,7 @@ namespace NIRS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public worksRow AddworksRow(int student_id, string name, string desc, uint mentor_id) {
+            public worksRow AddworksRow(int student_id, string name, string desc, int mentor_id) {
                 worksRow rowworksRow = ((worksRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2410,7 +2417,7 @@ namespace NIRS {
                 base.Columns.Add(this.columnname);
                 this.columndesc = new global::System.Data.DataColumn("desc", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndesc);
-                this.columnmentor_id = new global::System.Data.DataColumn("mentor_id", typeof(uint), null, global::System.Data.MappingType.Element);
+                this.columnmentor_id = new global::System.Data.DataColumn("mentor_id", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnmentor_id);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
@@ -2867,6 +2874,16 @@ namespace NIRS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public worksRow worksRow {
+                get {
+                    return ((worksRow)(this.GetParentRow(this.Table.ParentRelations["works_mentor"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["works_mentor"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public divisionRow[] GetdivisionRows() {
                 if ((this.Table.ChildRelations["mentor_division"] == null)) {
                     return new divisionRow[0];
@@ -3122,9 +3139,9 @@ namespace NIRS {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public uint mentor_id {
+            public int mentor_id {
                 get {
-                    return ((uint)(this[this.tableworks.mentor_idColumn]));
+                    return ((int)(this[this.tableworks.mentor_idColumn]));
                 }
                 set {
                     this[this.tableworks.mentor_idColumn] = value;
@@ -3138,6 +3155,16 @@ namespace NIRS {
                 }
                 else {
                     return ((studentRow[])(base.GetChildRows(this.Table.ChildRelations["works_student"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public mentorRow[] GetmentorRows() {
+                if ((this.Table.ChildRelations["works_mentor"] == null)) {
+                    return new mentorRow[0];
+                }
+                else {
+                    return ((mentorRow[])(base.GetChildRows(this.Table.ChildRelations["works_mentor"])));
                 }
             }
         }
