@@ -172,64 +172,8 @@ namespace NIRS
 
         private void exportToWordToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
-            {
-                Gios.Word.WordDocument rd = new WordDocument(WordDocumentFormat.A4);
-
-                Font bold = new Font("Helvetica", 12, FontStyle.Bold);
-                Font regular = new Font("Helvetica", 12, FontStyle.Regular);
-                rd.SetFont(bold);
-                rd.SetTextAlign(WordTextAlign.Left);
-                WordTable rt = rd.NewTable(regular, Color.Black, 7, 4, 0);
-                rt.SetColumnsWidth(new int[] { 50, 9, 40, 1 });
-                //foreach (WordCell rc in rt.Cells) rc.SetBorders(Color.Black,1,true,true,true,true);
-
-                rt.SetContentAlignment(ContentAlignment.TopCenter);
-                rt.Rows[0].SetRowHeight(300);
-                rt.Rows[1].SetRowHeight(1400);
-                rt.Rows[0][0].RowSpan = 3;
-                //rt.Rows[0][0].SetContentAlignment(ContentAlignment.MiddleCenter);
-                //rt.Rows[0][0].PutImage(@"..\..\cp.jpg", 70);
-                rt.Rows[1][2].SetCellPadding(100);
-                rt.Rows[1][2].SetContentAlignment(ContentAlignment.MiddleLeft);
-                rt.Rows[1][2].SetFont(new Font("Helvetica", 9, FontStyle.Bold));
-                rt.Rows[1][2].WriteLine("NIRS Project");
-                rt.Rows[1][2].WriteLine("KubSTU Developers Team");
-                rt.Rows[1][2].SetBorders(Color.Black, 1, true, true, true, true);
-
-                rt.Rows[4][0].SetFont(bold);
-                rt.Rows[4][0].ColSpan = 4;
-                rt.Rows[4][0].WriteLine();
-                rt.Rows[4][0].WriteLine("This is test word document\n\n");
-
-                WordCell body = rt.Rows[6][0];
-                body.ColSpan = 4;
-                body.SetFont(bold);
-                body.WriteLine("Word .NET:");
-                body.WriteLine();
-                body.SetFont(regular);
-                body.WriteLine("A complete library in c# for generating Word Documents using the Rich Text Format Specification!");
-                body.WriteLine();
-                body.WriteLine();
-                body.SetFont(bold);
-                body.Write("Add here results.\n");
-                body.SetFont(regular);
-                body.WriteLine("Here will be table with students...\n");
-
-                rt.SaveToDocument(10000, 0);
-                rd.SetPageNumbering(155);
-
-                rd.FooterStart();
-                rd.SetTextAlign(WordTextAlign.Center);
-                rd.SetFont(new Font("Verdana", 8, FontStyle.Regular));
-                rd.Write("Copyright © 2010 by NIRS Project, KubSTU Dev Team");
-                rd.FooterEnd();
-
-                rd.SaveToFile(saveFileDialog.FileName);
-
-                if (startWordAfterExportToolStripMenuItem.Checked)
-                    System.Diagnostics.Process.Start(saveFileDialog.FileName);
-            }
+            SettingsWordExportForm swef = new SettingsWordExportForm();
+            swef.ShowDialog();
         }
     }
 }

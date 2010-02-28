@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIRS", "NIRS\NIRS.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIRS_DB", "NIRS_DB\NIRS_DB.csproj", "{FBA83269-62A8-4159-B647-541BDA616D56}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{63078217-D7D2-4C2B-8A2A-37CA6147193C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{FBA83269-62A8-4159-B647-541BDA616D56}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FBA83269-62A8-4159-B647-541BDA616D56}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FBA83269-62A8-4159-B647-541BDA616D56}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63078217-D7D2-4C2B-8A2A-37CA6147193C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63078217-D7D2-4C2B-8A2A-37CA6147193C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63078217-D7D2-4C2B-8A2A-37CA6147193C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63078217-D7D2-4C2B-8A2A-37CA6147193C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

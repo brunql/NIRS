@@ -101,6 +101,9 @@
     <EmbeddedResource Include="SettingsConnectionForm.resx">
       <DependentUpon>SettingsConnectionForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SettingsWordExportForm.resx">
+      <DependentUpon>SettingsWordExportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
@@ -133,6 +136,12 @@
     </Compile>
     <Compile Include="SettingsConnectionForm.designer.cs">
       <DependentUpon>SettingsConnectionForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SettingsWordExportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SettingsWordExportForm.Designer.cs">
+      <DependentUpon>SettingsWordExportForm.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
