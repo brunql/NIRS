@@ -26,11 +26,11 @@ namespace NIRS
             }
             else
             {
-                txtHost.Text = DBConnection.DefaultSettings.host;
-                txtPort.Text = DBConnection.DefaultSettings.port;
-                txtUser.Text = DBConnection.DefaultSettings.user;
-                txtPassword.Text = DBConnection.DefaultSettings.pwd;
-                txtDB.Text = DBConnection.DefaultSettings.database;
+                txtHost.Text = DBSettings.DefaultSettings.host;
+                txtPort.Text = DBSettings.DefaultSettings.port;
+                txtUser.Text = DBSettings.DefaultSettings.user;
+                txtPassword.Text = DBSettings.DefaultSettings.pwd;
+                txtDB.Text = DBSettings.DefaultSettings.database;
             }
         }
 

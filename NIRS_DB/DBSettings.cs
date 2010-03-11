@@ -13,6 +13,16 @@ namespace NIRS_DB
 		public string pwd;
 		public string database;
 
+        private static DBSettings defaultSettings = new DBSettings(
+                    "localhost",
+                    "3306",
+                    "root",
+                    "",
+                    "nirs"
+                );
+
+        public static DBSettings DefaultSettings { get { return defaultSettings; } }
+
         public DBSettings(string host,
             string port,
             string user,
