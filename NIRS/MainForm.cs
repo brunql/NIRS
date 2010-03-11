@@ -37,8 +37,19 @@ namespace NIRS
             dbs.port = "3306";
             dbs.pwd = "";
             dbs.user = "root";
-
-            DBConnection.Connection(dbs);
+            try
+            {
+                DBConnection.Connection(dbs);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                SettingsConnectionForm scf = new SettingsConnectionForm();
+                if (scf.ShowDialog() == DialogResult.Cancel)
+                {
+                    Environment.Exit(93);
+                }
+            }
 
             tabControlMain_SelectedIndexChanged(null, null);
         }
@@ -58,12 +69,11 @@ namespace NIRS
         private void About_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             about_box.ShowDialog();
+            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'nirsDataSetMain.works' table. You can move, or remove it, as needed.
-            this.worksTableAdapter.Fill(this.nirsDataSetMain.works);
             UpdateAllDataGridView();
         }
 

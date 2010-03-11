@@ -24,6 +24,14 @@ namespace NIRS
                 txtPassword.Text = "";
                 txtDB.Text = DBConnection.InstalledSettings.database;
             }
+            else
+            {
+                txtHost.Text = "localhost";
+                txtPort.Text = "3306";
+                txtUser.Text = "root";
+                txtPassword.Text = "";
+                txtDB.Text = "nirs";
+            }
         }
 
         private void btnOK_Click(object sender, EventArgs e)

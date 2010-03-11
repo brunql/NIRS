@@ -2,6 +2,7 @@
 using System;
 using MySql;
 using MySql.Data;
+using MySql.Data.Types;
 using MySql.Data.MySqlClient;
 using System.Threading;
 #endregion
@@ -30,6 +31,7 @@ namespace NIRS_DB
 		
 		private void Check()
 		{
+            
 			if (_dbc == null)
 			{
 				throw new Exception("Not connected to database");	
