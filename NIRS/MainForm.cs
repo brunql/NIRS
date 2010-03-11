@@ -31,15 +31,9 @@ namespace NIRS
         {
             InitializeComponent();
             
-            DBSettings dbs = new DBSettings();
-            dbs.database = "nirs";
-            dbs.host = "localhost";
-            dbs.port = "3306";
-            dbs.pwd = "";
-            dbs.user = "root";
             try
             {
-                DBConnection.Connection(dbs);
+                DBConnection.ConnectionWithDefaultSettings();
             }
             catch (Exception ex)
             {

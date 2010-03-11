@@ -21,32 +21,33 @@ namespace NIRS
                 txtHost.Text = DBConnection.InstalledSettings.host;
                 txtPort.Text = DBConnection.InstalledSettings.port;
                 txtUser.Text = DBConnection.InstalledSettings.user;
-                txtPassword.Text = "";
+                txtPassword.Text = DBConnection.InstalledSettings.pwd;
                 txtDB.Text = DBConnection.InstalledSettings.database;
             }
             else
             {
-                txtHost.Text = "localhost";
-                txtPort.Text = "3306";
-                txtUser.Text = "root";
-                txtPassword.Text = "";
-                txtDB.Text = "nirs";
+                txtHost.Text = DBConnection.DefaultSettings.host;
+                txtPort.Text = DBConnection.DefaultSettings.port;
+                txtUser.Text = DBConnection.DefaultSettings.user;
+                txtPassword.Text = DBConnection.DefaultSettings.pwd;
+                txtDB.Text = DBConnection.DefaultSettings.database;
             }
         }
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            DBSettings dbsettings = new DBSettings();
-            dbsettings.host = txtHost.Text;
-            dbsettings.port = txtPort.Text;
-            dbsettings.user = txtUser.Text;
-            dbsettings.pwd = txtPassword.Text;
-            dbsettings.database = txtDB.Text;
+            DBSettings dbsettings = new DBSettings(
+                txtHost.Text,
+                txtPort.Text,
+                txtUser.Text,
+                txtPassword.Text,
+                txtDB.Text
+            );
 
             try
             {
                 DBConnection.Connection(dbsettings);
-                Close();
+                this.Close();
             }
             catch (Exception ex)
             {

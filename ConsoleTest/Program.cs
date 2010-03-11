@@ -14,15 +14,7 @@ namespace ConsoleTest
     {
         static void Main(string[] args)
         {
-            DBSettings dbs = new DBSettings();
-            dbs.database = "nirs";
-            dbs.host = "localhost";
-            dbs.port = "3306";
-            dbs.pwd = "";
-            dbs.user = "root";
-
-            DBConnection.Connection(dbs);
-
+            DBConnection.ConnectionWithDefaultSettings();
 
             string pathToFile = @"C:\Users\Миха\Documents\test.doc";
 

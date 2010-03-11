@@ -42,6 +42,14 @@ namespace NIRS_DB
 		#region Public Functions
 
         public static DBSettings InstalledSettings { get; private set; }
+        public static DBSettings DefaultSettings = 
+            new DBSettings(
+                "localhost",
+                "3306",
+                "root",
+                "",
+                "nirs"
+            );
 
 		public static void Connection(DBSettings settings)
 		{
@@ -60,6 +68,24 @@ namespace NIRS_DB
                 throw;
 			}
 		}
+
+        public static void ConnectionWithDefaultSettings()
+        {
+            string connection_string = "Server=" + DefaultSettings.host + ";Port=" + DefaultSettings.port + ";Database=" + DefaultSettings.database +
+                ";Uid=" + DefaultSettings.user + ";Pwd=" + DefaultSettings.pwd + ";";
+            MySqlConnection conn = new MySqlConnection(connection_string);
+            try
+            {
+                conn.Open();
+                _dbc = new DBConnection(conn);
+                InstalledSettings = DefaultSettings;
+            }
+            catch (MySqlException ex)
+            {
+                Console.WriteLine(ex.ToString());
+                throw;
+            }
+        }
 		
 		public static void Request(string query)
 		{
