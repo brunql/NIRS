@@ -39,6 +39,8 @@
             this.label17 = new System.Windows.Forms.Label();
             this.btnAddFaculty = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.txtAddDivisionFullName = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.dataViewDivisionFaculty = new System.Windows.Forms.DataGridView();
             this.label25 = new System.Windows.Forms.Label();
@@ -129,8 +131,6 @@
             this.txtStudentYearsNIR = new System.Windows.Forms.TextBox();
             this.lbYearInNirs = new System.Windows.Forms.Label();
             this.nirsDataSetMain = new NIRS.nirsDataSetMain();
-            this.txtAddDivisionFullName = new System.Windows.Forms.TextBox();
-            this.label35 = new System.Windows.Forms.Label();
             this.AddFuculty.SuspendLayout();
             this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewAddedFaculty)).BeginInit();
@@ -272,6 +272,22 @@
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Кафедра";
             this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // txtAddDivisionFullName
+            // 
+            this.txtAddDivisionFullName.Location = new System.Drawing.Point(266, 69);
+            this.txtAddDivisionFullName.Name = "txtAddDivisionFullName";
+            this.txtAddDivisionFullName.Size = new System.Drawing.Size(236, 20);
+            this.txtAddDivisionFullName.TabIndex = 60;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(129, 72);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(117, 13);
+            this.label35.TabIndex = 59;
+            this.label35.Text = "Полное имя кафедры";
             // 
             // label26
             // 
@@ -630,9 +646,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(110, 215);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(89, 13);
+            this.label7.Size = new System.Drawing.Size(83, 13);
             this.label7.TabIndex = 44;
-            this.label7.Text = "Учённое звание";
+            this.label7.Text = "Учёное звание";
             // 
             // txtMentorDegree
             // 
@@ -646,9 +662,9 @@
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(105, 189);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 13);
+            this.label6.Size = new System.Drawing.Size(88, 13);
             this.label6.TabIndex = 42;
-            this.label6.Text = "Учённая степень";
+            this.label6.Text = "Учёная степень";
             // 
             // txtMentorWork
             // 
@@ -1137,22 +1153,6 @@
             // 
             this.nirsDataSetMain.DataSetName = "nirsDataSetMain";
             this.nirsDataSetMain.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // txtAddDivisionFullName
-            // 
-            this.txtAddDivisionFullName.Location = new System.Drawing.Point(266, 69);
-            this.txtAddDivisionFullName.Name = "txtAddDivisionFullName";
-            this.txtAddDivisionFullName.Size = new System.Drawing.Size(236, 20);
-            this.txtAddDivisionFullName.TabIndex = 60;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(129, 72);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(117, 13);
-            this.label35.TabIndex = 59;
-            this.label35.Text = "Полное имя кафедры";
             // 
             // addSomeOne
             // 

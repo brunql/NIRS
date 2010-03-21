@@ -1,6 +1,6 @@
 ﻿namespace NIRS
 {
-    partial class FindStudentDialogForm
+    partial class FindMentorDialogForm
     {
         /// <summary>
         /// Required designer variable.
@@ -33,22 +33,22 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblSecondName = new System.Windows.Forms.Label();
             this.lblFaculty = new System.Windows.Forms.Label();
-            this.lblSpecialize = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.lblGroup = new System.Windows.Forms.Label();
-            this.txtStudentName = new System.Windows.Forms.TextBox();
-            this.txtStudentFathername = new System.Windows.Forms.TextBox();
-            this.txtStudentSurname = new System.Windows.Forms.TextBox();
+            this.txtMentorName = new System.Windows.Forms.TextBox();
+            this.txtMentorFathername = new System.Windows.Forms.TextBox();
+            this.txtMentortSurname = new System.Windows.Forms.TextBox();
             this.txtFaculty = new System.Windows.Forms.TextBox();
             this.txtDivision = new System.Windows.Forms.TextBox();
-            this.txtSpec = new System.Windows.Forms.TextBox();
-            this.txtGroup = new System.Windows.Forms.TextBox();
+            this.txtAcademDegree = new System.Windows.Forms.TextBox();
             this.labelCaption = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonFind = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
+            this.lblRank = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtAcademRank = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -64,21 +64,21 @@
             this.tableLayoutPanel1.Controls.Add(this.lblFirstName, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblSecondName, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblFaculty, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lblSpecialize, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.lblRank, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label15, 0, 5);
-            this.tableLayoutPanel1.Controls.Add(this.lblGroup, 0, 7);
-            this.tableLayoutPanel1.Controls.Add(this.txtStudentName, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.txtStudentFathername, 1, 3);
-            this.tableLayoutPanel1.Controls.Add(this.txtStudentSurname, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.txtMentorName, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this.txtMentorFathername, 1, 3);
+            this.tableLayoutPanel1.Controls.Add(this.txtMentortSurname, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtFaculty, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtDivision, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtSpec, 1, 6);
-            this.tableLayoutPanel1.Controls.Add(this.txtGroup, 1, 7);
+            this.tableLayoutPanel1.Controls.Add(this.txtAcademDegree, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.labelCaption, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.txtAcademRank, 1, 8);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 8);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 9;
+            this.tableLayoutPanel1.RowCount = 10;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -87,7 +87,8 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(410, 241);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -135,17 +136,6 @@
             this.lblFaculty.Text = "Факультет";
             this.lblFaculty.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblSpecialize
-            // 
-            this.lblSpecialize.AutoSize = true;
-            this.lblSpecialize.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblSpecialize.Location = new System.Drawing.Point(3, 160);
-            this.lblSpecialize.Name = "lblSpecialize";
-            this.lblSpecialize.Size = new System.Drawing.Size(199, 26);
-            this.lblSpecialize.TabIndex = 84;
-            this.lblSpecialize.Text = "Специальность";
-            this.lblSpecialize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // label15
             // 
             this.label15.AutoSize = true;
@@ -157,40 +147,29 @@
             this.label15.Text = "Кафедра";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // lblGroup
+            // txtMentorName
             // 
-            this.lblGroup.AutoSize = true;
-            this.lblGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblGroup.Location = new System.Drawing.Point(3, 186);
-            this.lblGroup.Name = "lblGroup";
-            this.lblGroup.Size = new System.Drawing.Size(199, 26);
-            this.lblGroup.TabIndex = 85;
-            this.lblGroup.Text = "Группа";
-            this.lblGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.txtMentorName.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMentorName.Location = new System.Drawing.Point(208, 33);
+            this.txtMentorName.Name = "txtMentorName";
+            this.txtMentorName.Size = new System.Drawing.Size(199, 20);
+            this.txtMentorName.TabIndex = 1;
             // 
-            // txtStudentName
+            // txtMentorFathername
             // 
-            this.txtStudentName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtStudentName.Location = new System.Drawing.Point(208, 33);
-            this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(199, 20);
-            this.txtStudentName.TabIndex = 1;
+            this.txtMentorFathername.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMentorFathername.Location = new System.Drawing.Point(208, 85);
+            this.txtMentorFathername.Name = "txtMentorFathername";
+            this.txtMentorFathername.Size = new System.Drawing.Size(199, 20);
+            this.txtMentorFathername.TabIndex = 3;
             // 
-            // txtStudentFathername
+            // txtMentortSurname
             // 
-            this.txtStudentFathername.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtStudentFathername.Location = new System.Drawing.Point(208, 85);
-            this.txtStudentFathername.Name = "txtStudentFathername";
-            this.txtStudentFathername.Size = new System.Drawing.Size(199, 20);
-            this.txtStudentFathername.TabIndex = 3;
-            // 
-            // txtStudentSurname
-            // 
-            this.txtStudentSurname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtStudentSurname.Location = new System.Drawing.Point(208, 59);
-            this.txtStudentSurname.Name = "txtStudentSurname";
-            this.txtStudentSurname.Size = new System.Drawing.Size(199, 20);
-            this.txtStudentSurname.TabIndex = 2;
+            this.txtMentortSurname.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMentortSurname.Location = new System.Drawing.Point(208, 59);
+            this.txtMentortSurname.Name = "txtMentortSurname";
+            this.txtMentortSurname.Size = new System.Drawing.Size(199, 20);
+            this.txtMentortSurname.TabIndex = 2;
             // 
             // txtFaculty
             // 
@@ -208,21 +187,13 @@
             this.txtDivision.Size = new System.Drawing.Size(199, 20);
             this.txtDivision.TabIndex = 5;
             // 
-            // txtSpec
+            // txtAcademDegree
             // 
-            this.txtSpec.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtSpec.Location = new System.Drawing.Point(208, 163);
-            this.txtSpec.Name = "txtSpec";
-            this.txtSpec.Size = new System.Drawing.Size(199, 20);
-            this.txtSpec.TabIndex = 6;
-            // 
-            // txtGroup
-            // 
-            this.txtGroup.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtGroup.Location = new System.Drawing.Point(208, 189);
-            this.txtGroup.Name = "txtGroup";
-            this.txtGroup.Size = new System.Drawing.Size(199, 20);
-            this.txtGroup.TabIndex = 7;
+            this.txtAcademDegree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAcademDegree.Location = new System.Drawing.Point(208, 163);
+            this.txtAcademDegree.Name = "txtAcademDegree";
+            this.txtAcademDegree.Size = new System.Drawing.Size(199, 20);
+            this.txtAcademDegree.TabIndex = 6;
             // 
             // labelCaption
             // 
@@ -234,7 +205,7 @@
             this.labelCaption.Name = "labelCaption";
             this.labelCaption.Size = new System.Drawing.Size(404, 30);
             this.labelCaption.TabIndex = 94;
-            this.labelCaption.Text = "Выборка студентов по следующим критериям:";
+            this.labelCaption.Text = "Поиск среди научных руководителей по следующим критериям:";
             this.labelCaption.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // groupBox1
@@ -298,15 +269,45 @@
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
             // 
-            // FindStudentDialogForm
+            // lblRank
+            // 
+            this.lblRank.AutoSize = true;
+            this.lblRank.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblRank.Location = new System.Drawing.Point(3, 160);
+            this.lblRank.Name = "lblRank";
+            this.lblRank.Size = new System.Drawing.Size(199, 26);
+            this.lblRank.TabIndex = 84;
+            this.lblRank.Text = "Учёная степень";
+            this.lblRank.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 186);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(199, 26);
+            this.label1.TabIndex = 95;
+            this.label1.Text = "Учёное звание";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtAcademRank
+            // 
+            this.txtAcademRank.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAcademRank.Location = new System.Drawing.Point(208, 189);
+            this.txtAcademRank.Name = "txtAcademRank";
+            this.txtAcademRank.Size = new System.Drawing.Size(199, 20);
+            this.txtAcademRank.TabIndex = 7;
+            // 
+            // FindMentorDialogForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 315);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
-            this.Name = "FindStudentDialogForm";
-            this.Text = "Поиск среди студентов";
+            this.Name = "FindMentorDialogForm";
+            this.Text = "Поиск среди научных руководителей";
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -324,20 +325,20 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Button buttonFind;
         private System.Windows.Forms.Button buttonCancel;
-        private System.Windows.Forms.Label lblSpecialize;
-        private System.Windows.Forms.TextBox txtStudentFathername;
-        private System.Windows.Forms.TextBox txtStudentSurname;
+        private System.Windows.Forms.TextBox txtMentorFathername;
+        private System.Windows.Forms.TextBox txtMentortSurname;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label lblGroup;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.Label lblFaculty;
         private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.TextBox txtStudentName;
+        private System.Windows.Forms.TextBox txtMentorName;
         private System.Windows.Forms.Label lblSecondName;
         private System.Windows.Forms.TextBox txtFaculty;
         private System.Windows.Forms.TextBox txtDivision;
-        private System.Windows.Forms.TextBox txtSpec;
-        private System.Windows.Forms.TextBox txtGroup;
+        private System.Windows.Forms.TextBox txtAcademDegree;
         private System.Windows.Forms.Label labelCaption;
+        private System.Windows.Forms.Label lblRank;
+        private System.Windows.Forms.TextBox txtAcademRank;
+        private System.Windows.Forms.Label label1;
     }
 }

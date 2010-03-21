@@ -33,6 +33,9 @@
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.файлБДToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.добавлениеЗаписейToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.поискToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.студентToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.руководительToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportToWordToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -147,9 +150,6 @@
             this.groupTableAdapter = new NIRS.nirsDataSetMainTableAdapters.groupTableAdapter();
             this.facultyTableAdapter = new NIRS.nirsDataSetMainTableAdapters.facultyTableAdapter();
             this.worksTableAdapter = new NIRS.nirsDataSetMainTableAdapters.worksTableAdapter();
-            this.поискToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.студентToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.руководительToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.tabControlMain.SuspendLayout();
             this.tabPageSummary.SuspendLayout();
@@ -210,6 +210,29 @@
             this.добавлениеЗаписейToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.добавлениеЗаписейToolStripMenuItem.Text = "Добавление записей";
             this.добавлениеЗаписейToolStripMenuItem.Click += new System.EventHandler(this.AddRecord_ToolStripMenuItem_Click);
+            // 
+            // поискToolStripMenuItem
+            // 
+            this.поискToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.студентToolStripMenuItem,
+            this.руководительToolStripMenuItem});
+            this.поискToolStripMenuItem.Name = "поискToolStripMenuItem";
+            this.поискToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.поискToolStripMenuItem.Text = "Поиск";
+            // 
+            // студентToolStripMenuItem
+            // 
+            this.студентToolStripMenuItem.Name = "студентToolStripMenuItem";
+            this.студентToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.студентToolStripMenuItem.Text = "Студент";
+            this.студентToolStripMenuItem.Click += new System.EventHandler(this.студентToolStripMenuItem_Click);
+            // 
+            // руководительToolStripMenuItem
+            // 
+            this.руководительToolStripMenuItem.Name = "руководительToolStripMenuItem";
+            this.руководительToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.руководительToolStripMenuItem.Text = "Руководитель";
+            this.руководительToolStripMenuItem.Click += new System.EventHandler(this.руководительToolStripMenuItem_Click);
             // 
             // exportToWordToolStripMenuItem1
             // 
@@ -1168,28 +1191,6 @@
             // worksTableAdapter
             // 
             this.worksTableAdapter.ClearBeforeFill = true;
-            // 
-            // поискToolStripMenuItem
-            // 
-            this.поискToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.студентToolStripMenuItem,
-            this.руководительToolStripMenuItem});
-            this.поискToolStripMenuItem.Name = "поискToolStripMenuItem";
-            this.поискToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.поискToolStripMenuItem.Text = "Поиск";
-            // 
-            // студентToolStripMenuItem
-            // 
-            this.студентToolStripMenuItem.Name = "студентToolStripMenuItem";
-            this.студентToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.студентToolStripMenuItem.Text = "Студент";
-            this.студентToolStripMenuItem.Click += new System.EventHandler(this.студентToolStripMenuItem_Click);
-            // 
-            // руководительToolStripMenuItem
-            // 
-            this.руководительToolStripMenuItem.Name = "руководительToolStripMenuItem";
-            this.руководительToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.руководительToolStripMenuItem.Text = "Руководитель";
             // 
             // MainForm
             // 

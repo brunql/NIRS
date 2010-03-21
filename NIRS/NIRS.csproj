@@ -66,6 +66,12 @@
     <Compile Include="AddSomeOne.Designer.cs">
       <DependentUpon>AddSomeOne.cs</DependentUpon>
     </Compile>
+    <Compile Include="FindMentorDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindMentorDialogForm.Designer.cs">
+      <DependentUpon>FindMentorDialogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FindStudentDialogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,9 @@
     <EmbeddedResource Include="AddSomeOne.resx">
       <DependentUpon>AddSomeOne.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindMentorDialogForm.resx">
+      <DependentUpon>FindMentorDialogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindStudentDialogForm.resx">
       <DependentUpon>FindStudentDialogForm.cs</DependentUpon>

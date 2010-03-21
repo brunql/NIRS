@@ -189,5 +189,15 @@ namespace NIRS
                 this.summaryDataGridView.DataSource = FindStudentDialogForm.Result;
             }
         }
+
+        private void руководительToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FindMentorDialogForm fmdf = new FindMentorDialogForm();
+            fmdf.ShowDialog();
+            if (FindMentorDialogForm.Result != null)
+            {
+                this.summaryDataGridView.DataSource = FindMentorDialogForm.Result;
+            }
+        }
     }
 }
