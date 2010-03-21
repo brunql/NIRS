@@ -179,5 +179,15 @@ namespace NIRS
             SettingsWordExportForm swef = new SettingsWordExportForm();
             swef.ShowDialog();
         }
+
+        private void студентToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FindStudentDialogForm fsdf = new FindStudentDialogForm();
+            fsdf.ShowDialog();
+            if (FindStudentDialogForm.Result != null)
+            {
+                this.summaryDataGridView.DataSource = FindStudentDialogForm.Result;
+            }
+        }
     }
 }
