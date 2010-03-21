@@ -49,6 +49,8 @@
             this.lblRank = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtAcademRank = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtWork = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -64,21 +66,23 @@
             this.tableLayoutPanel1.Controls.Add(this.lblFirstName, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.lblSecondName, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.lblFaculty, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.lblRank, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.label15, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.txtMentorName, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtMentorFathername, 1, 3);
             this.tableLayoutPanel1.Controls.Add(this.txtMentortSurname, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.txtFaculty, 1, 4);
             this.tableLayoutPanel1.Controls.Add(this.txtDivision, 1, 5);
-            this.tableLayoutPanel1.Controls.Add(this.txtAcademDegree, 1, 6);
             this.tableLayoutPanel1.Controls.Add(this.labelCaption, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.txtAcademRank, 1, 8);
-            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.txtWork, 1, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.label1, 0, 9);
+            this.tableLayoutPanel1.Controls.Add(this.lblRank, 0, 8);
+            this.tableLayoutPanel1.Controls.Add(this.txtAcademRank, 1, 9);
+            this.tableLayoutPanel1.Controls.Add(this.txtAcademDegree, 1, 8);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 10;
+            this.tableLayoutPanel1.RowCount = 11;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -88,6 +92,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(410, 241);
             this.tableLayoutPanel1.TabIndex = 0;
@@ -190,7 +195,7 @@
             // txtAcademDegree
             // 
             this.txtAcademDegree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAcademDegree.Location = new System.Drawing.Point(208, 163);
+            this.txtAcademDegree.Location = new System.Drawing.Point(208, 189);
             this.txtAcademDegree.Name = "txtAcademDegree";
             this.txtAcademDegree.Size = new System.Drawing.Size(199, 20);
             this.txtAcademDegree.TabIndex = 6;
@@ -273,7 +278,7 @@
             // 
             this.lblRank.AutoSize = true;
             this.lblRank.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRank.Location = new System.Drawing.Point(3, 160);
+            this.lblRank.Location = new System.Drawing.Point(3, 186);
             this.lblRank.Name = "lblRank";
             this.lblRank.Size = new System.Drawing.Size(199, 26);
             this.lblRank.TabIndex = 84;
@@ -284,9 +289,9 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 186);
+            this.label1.Location = new System.Drawing.Point(3, 212);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 26);
+            this.label1.Size = new System.Drawing.Size(199, 20);
             this.label1.TabIndex = 95;
             this.label1.Text = "Учёное звание";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -294,10 +299,29 @@
             // txtAcademRank
             // 
             this.txtAcademRank.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAcademRank.Location = new System.Drawing.Point(208, 189);
+            this.txtAcademRank.Location = new System.Drawing.Point(208, 215);
             this.txtAcademRank.Name = "txtAcademRank";
             this.txtAcademRank.Size = new System.Drawing.Size(199, 20);
             this.txtAcademRank.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 160);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(199, 26);
+            this.label2.TabIndex = 96;
+            this.label2.Text = "Работа";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtWork
+            // 
+            this.txtWork.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtWork.Location = new System.Drawing.Point(208, 163);
+            this.txtWork.Name = "txtWork";
+            this.txtWork.Size = new System.Drawing.Size(199, 20);
+            this.txtWork.TabIndex = 97;
             // 
             // FindMentorDialogForm
             // 
@@ -340,5 +364,7 @@
         private System.Windows.Forms.Label lblRank;
         private System.Windows.Forms.TextBox txtAcademRank;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtWork;
+        private System.Windows.Forms.Label label2;
     }
 }

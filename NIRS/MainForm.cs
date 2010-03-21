@@ -16,7 +16,10 @@ namespace NIRS
     public partial class MainForm : Form
     {
         AboutBox about_box = new AboutBox();
-        
+
+        public static DataTable SummaryTable { get; set; }
+
+
         public static void SelectAllFromAndAdd(string table_name, DataGridView dataView, object tempDataTable)
         {
             DataTable t = new DataTable();
@@ -74,8 +77,8 @@ namespace NIRS
         private void LoadSummaryDataGridTable()
         {
             DataView t = new DataView();
-            DataTable tempDataTable = new DataTable();
-            tempDataTable.Load(
+            SummaryTable = new DataTable();
+            SummaryTable.Load(
                     DBConnection.ExecuteReader(
                     @"SELECT CONCAT(s.name,' ',s.fathername, ' ', s.surname) `Студент`, s.born `Дата рождения`,
                         f.name `Факультет`,
@@ -91,7 +94,7 @@ namespace NIRS
                         JOIN `faculty` f ON d.fac_id = f.id;"
                     )
                  );
-            summaryDataGridView.DataSource = tempDataTable;
+            summaryDataGridView.DataSource = SummaryTable;
             
         }
 
@@ -177,6 +180,7 @@ namespace NIRS
         private void exportToWordToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             SettingsWordExportForm swef = new SettingsWordExportForm();
+            SettingsWordExportForm.ShowMe = SummaryTable;
             swef.ShowDialog();
         }
 
@@ -186,7 +190,9 @@ namespace NIRS
             fsdf.ShowDialog();
             if (FindStudentDialogForm.Result != null)
             {
+                this.summaryDataGridView.DataSource = null;
                 this.summaryDataGridView.DataSource = FindStudentDialogForm.Result;
+                SummaryTable = FindStudentDialogForm.Result;
             }
         }
 
@@ -196,7 +202,9 @@ namespace NIRS
             fmdf.ShowDialog();
             if (FindMentorDialogForm.Result != null)
             {
+                this.summaryDataGridView.DataSource = null;
                 this.summaryDataGridView.DataSource = FindMentorDialogForm.Result;
+                SummaryTable = FindMentorDialogForm.Result;
             }
         }
     }

@@ -33,6 +33,7 @@ namespace NIRS
                         @"SELECT CONCAT(m.name,' ',m.fathername, ' ', m.surname) `Научный руководитель`,
                         f.name `Факультет`,
                         d.name `Кафедра`,
+                        m.work `Работа`,
                         m.acrank `Учёное звание`,
                         m.degree `Учёная степень`
                     FROM `mentor` m
@@ -43,13 +44,15 @@ namespace NIRS
                         m.surname LIKE '%{2}%' AND
                         f.name LIKE '%{3}%' AND
                         d.name LIKE '%{4}%' AND
-                        m.acrank LIKE '%{5}%' AND
-                        m.degree LIKE '%{6}%';",
+                        m.work LIKE '%{5}%' AND
+                        m.acrank LIKE '%{6}%' AND
+                        m.degree LIKE '%{7}%';",
                               txtMentorName.Text.Replace('\'',' '),
                               txtMentorFathername.Text.Replace('\'', ' '),
                               txtMentortSurname.Text.Replace('\'', ' '),
                               txtFaculty.Text.Replace('\'', ' '),
                               txtDivision.Text.Replace('\'', ' '),
+                              txtWork.Text.Replace('\'', ' '),
                               txtAcademRank.Text.Replace('\'', ' '),
                               txtAcademDegree.Text.Replace('\'', ' '))
                         )
