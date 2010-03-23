@@ -32,8 +32,6 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.txtAddFacultyFullName = new System.Windows.Forms.TextBox();
             this.label34 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.dataViewAddedFaculty = new System.Windows.Forms.DataGridView();
             this.label18 = new System.Windows.Forms.Label();
             this.txtAddFacultyName = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
@@ -130,10 +128,8 @@
             this.lbTheme = new System.Windows.Forms.Label();
             this.txtStudentYearsNIR = new System.Windows.Forms.TextBox();
             this.lbYearInNirs = new System.Windows.Forms.Label();
-            this.nirsDataSetMain = new NIRS.nirsDataSetMain();
             this.AddFuculty.SuspendLayout();
             this.tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataViewAddedFaculty)).BeginInit();
             this.tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewDivisionFaculty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewAddedDivision)).BeginInit();
@@ -149,7 +145,6 @@
             this.dataStudentReal.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nirsDataSetMain)).BeginInit();
             this.SuspendLayout();
             // 
             // AddFuculty
@@ -171,8 +166,6 @@
             // 
             this.tabPage3.Controls.Add(this.txtAddFacultyFullName);
             this.tabPage3.Controls.Add(this.label34);
-            this.tabPage3.Controls.Add(this.label31);
-            this.tabPage3.Controls.Add(this.dataViewAddedFaculty);
             this.tabPage3.Controls.Add(this.label18);
             this.tabPage3.Controls.Add(this.txtAddFacultyName);
             this.tabPage3.Controls.Add(this.label17);
@@ -200,23 +193,6 @@
             this.label34.Size = new System.Drawing.Size(130, 13);
             this.label34.TabIndex = 60;
             this.label34.Text = "Полное имя факультета";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(3, 121);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(107, 13);
-            this.label31.TabIndex = 59;
-            this.label31.Text = "Факультеты в базе";
-            // 
-            // dataViewAddedFaculty
-            // 
-            this.dataViewAddedFaculty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewAddedFaculty.Location = new System.Drawing.Point(3, 137);
-            this.dataViewAddedFaculty.Name = "dataViewAddedFaculty";
-            this.dataViewAddedFaculty.Size = new System.Drawing.Size(546, 330);
-            this.dataViewAddedFaculty.TabIndex = 52;
             // 
             // label18
             // 
@@ -1149,11 +1125,6 @@
             this.lbYearInNirs.TabIndex = 69;
             this.lbYearInNirs.Text = "Сколько лет занимается НИР";
             // 
-            // nirsDataSetMain
-            // 
-            this.nirsDataSetMain.DataSetName = "nirsDataSetMain";
-            this.nirsDataSetMain.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // addSomeOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1168,7 +1139,6 @@
             this.AddFuculty.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataViewAddedFaculty)).EndInit();
             this.tabPage4.ResumeLayout(false);
             this.tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewDivisionFaculty)).EndInit();
@@ -1191,7 +1161,6 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nirsDataSetMain)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1270,7 +1239,6 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox txtAddDivision;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.DataGridView dataViewAddedFaculty;
         private System.Windows.Forms.TabPage dataSpec;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtAddSpec;
@@ -1288,7 +1256,6 @@
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.DataGridView dataViewSpecDivision;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.DataGridView dataViewGroupSpec;

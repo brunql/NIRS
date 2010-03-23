@@ -10,6 +10,7 @@ using MySql.Data.MySqlClient;
 
 using Gios.Word;
 using NIRS_DB;
+using NIRS_database;
 
 namespace NIRS
 {
@@ -53,9 +54,10 @@ namespace NIRS
 
         private void AddRecord_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            addSomeOne addsmone = new addSomeOne();
-            addsmone.ShowDialog();
-            UpdateAllDataGridView();
+            MessageBox.Show("Not implemented, yet.");
+            //addSomeOne addsmone = new addSomeOne();
+            //addsmone.ShowDialog();
+            //UpdateAllDataGridView();
         }
 
         private void Exit_ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,14 +105,7 @@ namespace NIRS
             //try
             //{
             LoadSummaryDataGridTable();
-            this.groupTableAdapter.Fill(this.nirsDataSetMain.group);
-            this.worksTableAdapter.Fill(this.nirsDataSetMain.works);
-            this.studentTableAdapter.Fill(this.nirsDataSetMain.student);
-            this.mentorTableAdapter.Fill(this.nirsDataSetMain.mentor);
-            this.specTableAdapter.Fill(this.nirsDataSetMain.spec);
-            this.facultyTableAdapter.Fill(this.nirsDataSetMain.faculty);
-            this.divisionTableAdapter.Fill(this.nirsDataSetMain.division);
-
+            
             //}
             //catch(Exception ex)
             //{
@@ -121,35 +116,6 @@ namespace NIRS
 
         private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //switch (tabControlMain.SelectedTab.Text)
-            //{
-            //    case "Факультеты":
-            //        divisionBindingNavigator.BindingSource = facultyBindingSource;
-            //        break;
-            //    case "Кафедры":
-            //        divisionBindingNavigator.BindingSource = divisionBindingSource;
-            //        break;
-            //    case "Специальности":
-            //        divisionBindingNavigator.BindingSource = specBindingSource;
-            //        break;
-            //    case "Группы":
-            //        divisionBindingNavigator.BindingSource = groupBindingSource;
-            //        break;
-            //    case "Руководители":
-            //        divisionBindingNavigator.BindingSource = mentorBindingSource;
-            //        break;
-            //    case "Студенты":
-            //        divisionBindingNavigator.BindingSource = studentBindingSource;
-            //        break;
-            //    case "Научные работы":
-            //        divisionBindingNavigator.BindingSource = worksBindingSource;
-            //        break;
-            //    default:
-            //        divisionBindingNavigator.BindingSource = null;
-            //        //MessageBox.Show(tabControlMain.SelectedTab.Text);
-            //        break;
-            //}
-            // resize the column once, but allow the ussers to change it.
             this.summaryDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
@@ -189,5 +155,16 @@ namespace NIRS
                 SummaryTable = FindMentorDialogForm.Result;
             }
         }
+
+        private void факультетыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new faculty_windows()).Show();
+        }
+
+        private void кафедрыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new division_windows()).Show();
+        }
+
     }
 }

@@ -121,6 +121,7 @@ namespace nirs_viewer
 			adapter_works = new MySqlDataAdapter(select_works_string, NIRS_MySqlConnection);
 			adapter_works.Fill(NIRS_DataSet, "works");
 			command_builder_works = new MySqlCommandBuilder(adapter_works);
+            
 			
 			foreach(DataTable table in NIRS_DataSet.Tables)
 			{
