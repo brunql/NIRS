@@ -43,10 +43,10 @@ namespace NIRS_database
 			this.dataGridView_division = new System.Windows.Forms.DataGridView();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.facidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-			this.bind_faculty_helpful = new nirs_viewer.bind();
+            this.bind_faculty_helpful = new NIRS_Viewer.bind();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.bind_division = new nirs_viewer.bind();
+            this.bind_division = new NIRS_Viewer.bind();
 			this.tools.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_division)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bind_faculty_helpful)).BeginInit();
@@ -160,12 +160,12 @@ namespace NIRS_database
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private nirs_viewer.bind bind_faculty_helpful;
+		private NIRS_Viewer.bind bind_faculty_helpful;
 		private System.Windows.Forms.ToolStripButton toolsStepBack;
 		private System.Windows.Forms.ToolStrip tools;
 		private System.Windows.Forms.ToolStripButton toolStripFixed;
 		private System.Windows.Forms.DataGridView dataGridView_division;
-		private nirs_viewer.bind bind_division;
+        private NIRS_Viewer.bind bind_division;
 		private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewComboBoxColumn facidDataGridViewTextBoxColumn;

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIRS_DB", "NIRS_DB\NIRS_DB.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTest", "ConsoleTest\ConsoleTest.csproj", "{63078217-D7D2-4C2B-8A2A-37CA6147193C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "nirs_viewer_test", "nirs_viewer_test\nirs_viewer_test.csproj", "{C0561EE8-5DCA-44D6-B33A-2ED1A2143C31}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NIRS_Viewer", "NIRS_Viewer\NIRS_Viewer.csproj", "{C0561EE8-5DCA-44D6-B33A-2ED1A2143C31}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

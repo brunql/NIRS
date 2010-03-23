@@ -52,14 +52,14 @@ namespace NIRS_database
 			this.dataGridView_division = new System.Windows.Forms.DataGridView();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.facidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-			this.bind_father_faculty = new nirs_viewer.bind();
+            this.bind_father_faculty = new NIRS_Viewer.bind();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.contextMenuStrip_division = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.удалитьВыбранныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.bind_division = new nirs_viewer.bind();
-			this.bind_division_spec_helpful = new nirs_viewer.bind();
-			this.bind_division_mentor_helpful = new nirs_viewer.bind();
+            this.bind_division = new NIRS_Viewer.bind();
+            this.bind_division_spec_helpful = new NIRS_Viewer.bind();
+            this.bind_division_mentor_helpful = new NIRS_Viewer.bind();
 			this.tools.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_division)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bind_father_faculty)).BeginInit();
@@ -258,10 +258,10 @@ namespace NIRS_database
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
-		private nirs_viewer.bind bind_father_faculty;
+        private NIRS_Viewer.bind bind_father_faculty;
 		private System.Windows.Forms.DataGridViewComboBoxColumn facidDataGridViewTextBoxColumn;
-		private nirs_viewer.bind bind_division_spec_helpful;
-		private nirs_viewer.bind bind_division_mentor_helpful;
+        private NIRS_Viewer.bind bind_division_spec_helpful;
+        private NIRS_Viewer.bind bind_division_mentor_helpful;
 		private System.Windows.Forms.ToolStripMenuItem удалитьВыбранныеToolStripMenuItem;
 		private System.Windows.Forms.ContextMenuStrip contextMenuStrip_division;
 		private System.Windows.Forms.DataGridView dataGridView_division;
@@ -273,7 +273,7 @@ namespace NIRS_database
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripComboBox toolsFindIn;
 		private System.Windows.Forms.ToolStripTextBox toolsFindIt;
-		private nirs_viewer.bind bind_division;
+        private NIRS_Viewer.bind bind_division;
 		private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;

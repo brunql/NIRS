@@ -10,7 +10,7 @@ using System;
 using System.Data;
 using MySql.Data.MySqlClient;
 
-namespace nirs_viewer
+namespace NIRS_Viewer
 {
 	/// <summary>
 	/// Description of config.

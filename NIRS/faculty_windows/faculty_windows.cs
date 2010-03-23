@@ -21,14 +21,7 @@ namespace NIRS_database
 	{
 		public faculty_windows()
 		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
 			InitializeComponent();
-			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 		}
 		
 		void DataGridView_faculty_RowsWillRemoved()
@@ -98,6 +91,7 @@ namespace NIRS_database
 					toolsFindIn.Items.Add(new strings_container(column.ColumnName, (string)column.Caption.Clone()));
 				}
 			}
+            dataGridView_faculty.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 		}
 		
 		void ToolsFindItKeyUp(object sender, KeyEventArgs e)

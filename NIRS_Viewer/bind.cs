@@ -9,7 +9,7 @@
 using System;
 using System.Data;
 
-namespace nirs_viewer
+namespace NIRS_Viewer
 {
 	/// <summary>
 	/// Description of bind.
@@ -18,7 +18,7 @@ namespace nirs_viewer
 	{
 		static bind()
 		{
-			nirs_viewer.config.Initialize("server=localhost; port=3306; user id=root; password=; database=nirs; CHARACTER SET=utf8");
+            NIRS_Viewer.config.Initialize("server=localhost; port=3306; user id=root; password=; database=nirs; CHARACTER SET=utf8");
 		}
 		
 		public bind()

@@ -49,8 +49,8 @@ namespace NIRS_database
 			this.acrankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.degreeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dividDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-			this.bind_division_helpful = new nirs_viewer.bind();
-			this.bind_mentor = new nirs_viewer.bind();
+			this.bind_division_helpful = new NIRS_Viewer.bind();
+			this.bind_mentor = new NIRS_Viewer.bind();
 			this.tools.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.dataGridView_mentor)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.bind_division_helpful)).BeginInit();
@@ -199,12 +199,12 @@ namespace NIRS_database
 		private System.Windows.Forms.DataGridViewTextBoxColumn workDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn fathernameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
-		private nirs_viewer.bind bind_division_helpful;
+        private NIRS_Viewer.bind bind_division_helpful;
 		private System.Windows.Forms.ToolStripButton toolsStepBack;
 		private System.Windows.Forms.ToolStrip tools;
 		private System.Windows.Forms.ToolStripButton toolStripFixed;
 		private System.Windows.Forms.DataGridView dataGridView_mentor;
-		private nirs_viewer.bind bind_mentor;
+        private NIRS_Viewer.bind bind_mentor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewComboBoxColumn facidDataGridViewTextBoxColumn;

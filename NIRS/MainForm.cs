@@ -73,7 +73,7 @@ namespace NIRS
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            UpdateAllDataGridView();
+            LoadSummaryDataGridTable();
         }
 
         private void LoadSummaryDataGridTable()
@@ -100,19 +100,6 @@ namespace NIRS
             
         }
 
-        private void UpdateAllDataGridView()
-        {
-            //try
-            //{
-            LoadSummaryDataGridTable();
-            
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //    Close();
-            //}
-        }
 
         private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {

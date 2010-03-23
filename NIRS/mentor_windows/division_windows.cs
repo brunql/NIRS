@@ -21,14 +21,7 @@ namespace NIRS_database
 	{
 		public division_windows()
 		{
-			//
-			// The InitializeComponent() call is required for Windows Forms designer support.
-			//
 			InitializeComponent();
-			
-			//
-			// TODO: Add constructor code after the InitializeComponent() call.
-			//
 		}
 		
 		void DataGridView_division_RowsWillRemoved()
@@ -107,8 +100,8 @@ namespace NIRS_database
 					toolsFindIn.Items.Add(new strings_container(column.ColumnName, (string)column.Caption.Clone()));
 				}
 			}
-			
-			DataGridView_divisionResize(null, null);
+
+            dataGridView_division.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 		}
 		
 		void ToolsFindItKeyUp(object sender, KeyEventArgs e)
@@ -144,15 +137,7 @@ namespace NIRS_database
 		
 		void DataGridView_divisionResize(object sender, EventArgs e)
 		{
-            dataGridView_division.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            //visible_column_width = (dataGridView_division.Width - 50)/ visible_column_count;
-            //foreach(DataGridViewColumn DGVcolumn in dataGridView_division.Columns)
-            //{
-            //    if(DGVcolumn.Visible)
-            //    {
-            //        DGVcolumn.Width = visible_column_width;
-            //    }
-            //}
+            //dataGridView_division.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 		}
 	}
 }

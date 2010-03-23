@@ -54,9 +54,9 @@
             // 
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлБДToolStripMenuItem,
+            this.редактированиеToolStripMenuItem,
             this.настройкиToolStripMenuItem,
-            this.помошьToolStripMenuItem,
-            this.редактированиеToolStripMenuItem});
+            this.помошьToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
             this.menuStripMain.Size = new System.Drawing.Size(694, 24);
@@ -78,8 +78,8 @@
             // добавлениеЗаписейToolStripMenuItem
             // 
             this.добавлениеЗаписейToolStripMenuItem.Name = "добавлениеЗаписейToolStripMenuItem";
-            this.добавлениеЗаписейToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
-            this.добавлениеЗаписейToolStripMenuItem.Text = "Добавление записей";
+            this.добавлениеЗаписейToolStripMenuItem.Size = new System.Drawing.Size(314, 22);
+            this.добавлениеЗаписейToolStripMenuItem.Text = "<Добавление записей> см редактирование";
             this.добавлениеЗаписейToolStripMenuItem.Click += new System.EventHandler(this.AddRecord_ToolStripMenuItem_Click);
             // 
             // поискToolStripMenuItem
