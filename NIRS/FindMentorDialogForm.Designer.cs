@@ -39,18 +39,18 @@
             this.txtMentortSurname = new System.Windows.Forms.TextBox();
             this.txtFaculty = new System.Windows.Forms.TextBox();
             this.txtDivision = new System.Windows.Forms.TextBox();
-            this.txtAcademDegree = new System.Windows.Forms.TextBox();
             this.labelCaption = new System.Windows.Forms.Label();
+            this.txtWork = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblRank = new System.Windows.Forms.Label();
+            this.txtAcademRank = new System.Windows.Forms.TextBox();
+            this.txtAcademDegree = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonFind = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.lblRank = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtAcademRank = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.txtWork = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -192,14 +192,6 @@
             this.txtDivision.Size = new System.Drawing.Size(199, 20);
             this.txtDivision.TabIndex = 5;
             // 
-            // txtAcademDegree
-            // 
-            this.txtAcademDegree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAcademDegree.Location = new System.Drawing.Point(208, 189);
-            this.txtAcademDegree.Name = "txtAcademDegree";
-            this.txtAcademDegree.Size = new System.Drawing.Size(199, 20);
-            this.txtAcademDegree.TabIndex = 6;
-            // 
             // labelCaption
             // 
             this.labelCaption.AutoSize = true;
@@ -212,6 +204,63 @@
             this.labelCaption.TabIndex = 94;
             this.labelCaption.Text = "Поиск среди научных руководителей по следующим критериям:";
             this.labelCaption.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtWork
+            // 
+            this.txtWork.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtWork.Location = new System.Drawing.Point(208, 163);
+            this.txtWork.Name = "txtWork";
+            this.txtWork.Size = new System.Drawing.Size(199, 20);
+            this.txtWork.TabIndex = 97;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label2.Location = new System.Drawing.Point(3, 160);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(199, 26);
+            this.label2.TabIndex = 96;
+            this.label2.Text = "Работа";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Location = new System.Drawing.Point(3, 212);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(199, 20);
+            this.label1.TabIndex = 95;
+            this.label1.Text = "Учёное звание";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // lblRank
+            // 
+            this.lblRank.AutoSize = true;
+            this.lblRank.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblRank.Location = new System.Drawing.Point(3, 186);
+            this.lblRank.Name = "lblRank";
+            this.lblRank.Size = new System.Drawing.Size(199, 26);
+            this.lblRank.TabIndex = 84;
+            this.lblRank.Text = "Учёная степень";
+            this.lblRank.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtAcademRank
+            // 
+            this.txtAcademRank.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAcademRank.Location = new System.Drawing.Point(208, 215);
+            this.txtAcademRank.Name = "txtAcademRank";
+            this.txtAcademRank.Size = new System.Drawing.Size(199, 20);
+            this.txtAcademRank.TabIndex = 7;
+            // 
+            // txtAcademDegree
+            // 
+            this.txtAcademDegree.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAcademDegree.Location = new System.Drawing.Point(208, 189);
+            this.txtAcademDegree.Name = "txtAcademDegree";
+            this.txtAcademDegree.Size = new System.Drawing.Size(199, 20);
+            this.txtAcademDegree.TabIndex = 6;
             // 
             // groupBox1
             // 
@@ -273,55 +322,6 @@
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // lblRank
-            // 
-            this.lblRank.AutoSize = true;
-            this.lblRank.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblRank.Location = new System.Drawing.Point(3, 186);
-            this.lblRank.Name = "lblRank";
-            this.lblRank.Size = new System.Drawing.Size(199, 26);
-            this.lblRank.TabIndex = 84;
-            this.lblRank.Text = "Учёная степень";
-            this.lblRank.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label1.Location = new System.Drawing.Point(3, 212);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 20);
-            this.label1.TabIndex = 95;
-            this.label1.Text = "Учёное звание";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtAcademRank
-            // 
-            this.txtAcademRank.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAcademRank.Location = new System.Drawing.Point(208, 215);
-            this.txtAcademRank.Name = "txtAcademRank";
-            this.txtAcademRank.Size = new System.Drawing.Size(199, 20);
-            this.txtAcademRank.TabIndex = 7;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label2.Location = new System.Drawing.Point(3, 160);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(199, 26);
-            this.label2.TabIndex = 96;
-            this.label2.Text = "Работа";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // txtWork
-            // 
-            this.txtWork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtWork.Location = new System.Drawing.Point(208, 163);
-            this.txtWork.Name = "txtWork";
-            this.txtWork.Size = new System.Drawing.Size(199, 20);
-            this.txtWork.TabIndex = 97;
             // 
             // FindMentorDialogForm
             // 

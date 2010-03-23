@@ -1294,7 +1294,6 @@
         private System.Windows.Forms.DataGridView dataViewGroupSpec;
         private System.Windows.Forms.TextBox txtAddSpecFullName;
         private System.Windows.Forms.Label label32;
-        private nirsDataSetMain nirsDataSetMain;
         private System.Windows.Forms.DataGridView dataViewAddedMentor;
         private System.Windows.Forms.Label label33;
         private System.Windows.Forms.TextBox txtAddFacultyFullName;

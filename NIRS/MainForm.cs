@@ -121,54 +121,36 @@ namespace NIRS
 
         private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (tabControlMain.SelectedTab.Text)
-            {
-                case "Факультеты":
-                    divisionBindingNavigator.BindingSource = facultyBindingSource;
-                    break;
-                case "Кафедры":
-                    divisionBindingNavigator.BindingSource = divisionBindingSource;
-                    break;
-                case "Специальности":
-                    divisionBindingNavigator.BindingSource = specBindingSource;
-                    break;
-                case "Группы":
-                    divisionBindingNavigator.BindingSource = groupBindingSource;
-                    break;
-                case "Руководители":
-                    divisionBindingNavigator.BindingSource = mentorBindingSource;
-                    break;
-                case "Студенты":
-                    divisionBindingNavigator.BindingSource = studentBindingSource;
-                    break;
-                case "Научные работы":
-                    divisionBindingNavigator.BindingSource = worksBindingSource;
-                    break;
-                default:
-                    divisionBindingNavigator.BindingSource = null;
-                    //MessageBox.Show(tabControlMain.SelectedTab.Text);
-                    break;
-            }
+            //switch (tabControlMain.SelectedTab.Text)
+            //{
+            //    case "Факультеты":
+            //        divisionBindingNavigator.BindingSource = facultyBindingSource;
+            //        break;
+            //    case "Кафедры":
+            //        divisionBindingNavigator.BindingSource = divisionBindingSource;
+            //        break;
+            //    case "Специальности":
+            //        divisionBindingNavigator.BindingSource = specBindingSource;
+            //        break;
+            //    case "Группы":
+            //        divisionBindingNavigator.BindingSource = groupBindingSource;
+            //        break;
+            //    case "Руководители":
+            //        divisionBindingNavigator.BindingSource = mentorBindingSource;
+            //        break;
+            //    case "Студенты":
+            //        divisionBindingNavigator.BindingSource = studentBindingSource;
+            //        break;
+            //    case "Научные работы":
+            //        divisionBindingNavigator.BindingSource = worksBindingSource;
+            //        break;
+            //    default:
+            //        divisionBindingNavigator.BindingSource = null;
+            //        //MessageBox.Show(tabControlMain.SelectedTab.Text);
+            //        break;
+            //}
             // resize the column once, but allow the ussers to change it.
             this.summaryDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            this.groupDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            this.worksDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            this.studentDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            this.mentorDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            this.specDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            this.facultyDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-            this.divisionDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
-        }
-
-        private void divisionBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            if (this.divisionBindingNavigator.BindingSource != null)
-            {
-                this.Validate();
-                this.divisionBindingNavigator.BindingSource.EndEdit();
-                this.tableAdapterManager.UpdateAll(this.nirsDataSetMain);
-                UpdateAllDataGridView();
-            }
         }
 
         private void connectionsToolStripMenuItem_Click(object sender, EventArgs e)
