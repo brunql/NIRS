@@ -94,10 +94,13 @@ namespace NIRS_database
             //visible_column_count = 0;
 			foreach(DataColumn column in bind_division.current_DataTable.Columns)
 			{
-				if(column.ColumnMapping != MappingType.Hidden)
+                if(column.ColumnMapping != MappingType.Hidden)
 				{
                     //visible_column_count++;
-					toolsFindIn.Items.Add(new strings_container(column.ColumnName, (string)column.Caption.Clone()));
+                    if (!column.ColumnName.ToLower().Contains("id"))
+                    {
+                        toolsFindIn.Items.Add(new strings_container(column.ColumnName, (string)column.Caption.Clone()));
+                    }
 				}
 			}
 
@@ -119,7 +122,7 @@ namespace NIRS_database
 					default : 
 									bind_division.Filter =
 										((strings_container)toolsFindIn.SelectedItem).value +
-										" LIKE '" + toolsFindIt + "*'";
+										" LIKE '" + toolsFindIt.Text + "*'";
 									break;
 				}
 			}

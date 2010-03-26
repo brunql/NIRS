@@ -45,8 +45,6 @@ namespace NIRS
                 ((ComboBoxKiller)cbMentorDivision.SelectedItem).Id
                 );
 
-            MainForm.SelectAllFromAndAdd("mentor", dataViewAddedMentor, new nirsDataSetMain.mentorDataTable());
-
             DialogResult result = MessageBox.Show("Руководитель добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
@@ -101,7 +99,6 @@ namespace NIRS
                 return;
             }
 
-
             InsertStuff.InsertStudent(
                 txtStudentName.Text,
                 txtStudentSurname.Text,
@@ -130,23 +127,10 @@ namespace NIRS
         private void btnFacultyAdded_Click(object sender, EventArgs e)
         {
             InsertStuff.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
-
-            MainForm.SelectAllFromAndAdd("faculty", dataViewAddedFaculty, new nirsDataSetMain.facultyDataTable());
-            MainForm.SelectAllFromAndAdd("faculty", dataViewDivisionFaculty, new nirsDataSetMain.facultyDataTable());
         }
 
         private void addSomeOne_Load(object sender, EventArgs e)
         {
-            MainForm.SelectAllFromAndAdd("faculty", dataViewAddedFaculty, new nirsDataSetMain.facultyDataTable());
-            MainForm.SelectAllFromAndAdd("division", dataViewAddedDivision, new nirsDataSetMain.divisionDataTable());
-            MainForm.SelectAllFromAndAdd("spec", dataViewAddedSpec, new nirsDataSetMain.specDataTable());
-            MainForm.SelectAllFromAndAdd("group", dataViewAddedGroup, new nirsDataSetMain.groupDataTable());
-            MainForm.SelectAllFromAndAdd("faculty", dataViewDivisionFaculty, new nirsDataSetMain.facultyDataTable());
-            MainForm.SelectAllFromAndAdd("division", dataViewSpecDivision, new nirsDataSetMain.divisionDataTable());
-            MainForm.SelectAllFromAndAdd("spec", dataViewGroupSpec, new nirsDataSetMain.specDataTable());
-            MainForm.SelectAllFromAndAdd("mentor", dataViewAddedMentor, new nirsDataSetMain.mentorDataTable());
-            //cbMentorDivision.Items.Clear();
-
             for (int i = dataViewSpecDivision.Rows.Count - 1 - 1; i >= 0; i-- )
             {
                 ComboBoxKiller iam = new ComboBoxKiller();
@@ -163,9 +147,6 @@ namespace NIRS
                 txtAddDivision.Text,
                 txtAddDivisionFullName.Text
                 );
-            
-            MainForm.SelectAllFromAndAdd("division", dataViewAddedDivision, new nirsDataSetMain.divisionDataTable());
-            MainForm.SelectAllFromAndAdd("faculty", dataViewDivisionFaculty, new nirsDataSetMain.facultyDataTable());
         }
 
         private void AddSpec_Click(object sender, EventArgs e)
@@ -175,10 +156,6 @@ namespace NIRS
                 txtAddSpec.Text,
                 txtAddSpecFullName.Text
                 );
-
-            MainForm.SelectAllFromAndAdd("spec", dataViewAddedSpec, new nirsDataSetMain.specDataTable());
-            MainForm.SelectAllFromAndAdd("division", dataViewSpecDivision, new nirsDataSetMain.divisionDataTable());
-            MainForm.SelectAllFromAndAdd("spec", dataViewGroupSpec, new nirsDataSetMain.specDataTable());
         }
 
         private void btnAddGroup_Click(object sender, EventArgs e)
@@ -187,15 +164,12 @@ namespace NIRS
                 (int)dataViewGroupSpec.CurrentRow.Cells["id"].Value,
                 txtAddGroupCode.Text
                 );
-
-            MainForm.SelectAllFromAndAdd("group", dataViewAddedGroup, new nirsDataSetMain.groupDataTable());
-            MainForm.SelectAllFromAndAdd("spec", dataViewGroupSpec, new nirsDataSetMain.specDataTable());
         }
 
 
         private void tabPage1_Enter(object sender, EventArgs e)
         {
-            ComboBoxKiller.FillComboBox(dataViewAddedFaculty, cmbStudentFaculty);
+            ComboBoxKiller.FillComboBox(dataGridViewFaculty, cmbStudentFaculty);
             // todo: load mentors to cmbStudentMentors
             //ComboBoxKiller.FillComboBox(dataViewAddedDivision, cmbStudentDivision);
             //ComboBoxKiller.FillComboBox(dataViewAddedGroup, cmbStudentGroup);
@@ -231,6 +205,7 @@ namespace NIRS
         {
             ComboBoxKiller.FillComboBox_mentor(dataViewAddedMentor, cmbStudentMentor);
         }
+
     }
 
     class ComboBoxKiller
