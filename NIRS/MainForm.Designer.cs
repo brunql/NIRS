@@ -37,15 +37,15 @@
             this.exportToWordToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.Exit_ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.редактированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.факультетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.кафедрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.подключениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помошьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.summaryDataGridView = new System.Windows.Forms.DataGridView();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.редактированиеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.факультетыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.кафедрыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.summaryDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -78,8 +78,8 @@
             // добавлениеЗаписейToolStripMenuItem
             // 
             this.добавлениеЗаписейToolStripMenuItem.Name = "добавлениеЗаписейToolStripMenuItem";
-            this.добавлениеЗаписейToolStripMenuItem.Size = new System.Drawing.Size(314, 22);
-            this.добавлениеЗаписейToolStripMenuItem.Text = "<Добавление записей> см редактирование";
+            this.добавлениеЗаписейToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
+            this.добавлениеЗаписейToolStripMenuItem.Text = "Добавление записей";
             this.добавлениеЗаписейToolStripMenuItem.Click += new System.EventHandler(this.AddRecord_ToolStripMenuItem_Click);
             // 
             // поискToolStripMenuItem
@@ -123,6 +123,29 @@
             this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(188, 22);
             this.Exit_ToolStripMenuItem.Text = "Выход";
             this.Exit_ToolStripMenuItem.Click += new System.EventHandler(this.Exit_ToolStripMenuItem_Click);
+            // 
+            // редактированиеToolStripMenuItem
+            // 
+            this.редактированиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.факультетыToolStripMenuItem,
+            this.кафедрыToolStripMenuItem});
+            this.редактированиеToolStripMenuItem.Name = "редактированиеToolStripMenuItem";
+            this.редактированиеToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
+            this.редактированиеToolStripMenuItem.Text = "Редактирование";
+            // 
+            // факультетыToolStripMenuItem
+            // 
+            this.факультетыToolStripMenuItem.Name = "факультетыToolStripMenuItem";
+            this.факультетыToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.факультетыToolStripMenuItem.Text = "Факультеты";
+            this.факультетыToolStripMenuItem.Click += new System.EventHandler(this.факультетыToolStripMenuItem_Click);
+            // 
+            // кафедрыToolStripMenuItem
+            // 
+            this.кафедрыToolStripMenuItem.Name = "кафедрыToolStripMenuItem";
+            this.кафедрыToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.кафедрыToolStripMenuItem.Text = "Кафедры";
+            this.кафедрыToolStripMenuItem.Click += new System.EventHandler(this.кафедрыToolStripMenuItem_Click);
             // 
             // настройкиToolStripMenuItem
             // 
@@ -169,29 +192,6 @@
             // saveFileDialog
             // 
             this.saveFileDialog.Filter = "Word document (*.doc)|*.doc";
-            // 
-            // редактированиеToolStripMenuItem
-            // 
-            this.редактированиеToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.факультетыToolStripMenuItem,
-            this.кафедрыToolStripMenuItem});
-            this.редактированиеToolStripMenuItem.Name = "редактированиеToolStripMenuItem";
-            this.редактированиеToolStripMenuItem.Size = new System.Drawing.Size(108, 20);
-            this.редактированиеToolStripMenuItem.Text = "Редактирование";
-            // 
-            // факультетыToolStripMenuItem
-            // 
-            this.факультетыToolStripMenuItem.Name = "факультетыToolStripMenuItem";
-            this.факультетыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.факультетыToolStripMenuItem.Text = "Факультеты";
-            this.факультетыToolStripMenuItem.Click += new System.EventHandler(this.факультетыToolStripMenuItem_Click);
-            // 
-            // кафедрыToolStripMenuItem
-            // 
-            this.кафедрыToolStripMenuItem.Name = "кафедрыToolStripMenuItem";
-            this.кафедрыToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.кафедрыToolStripMenuItem.Text = "Кафедры";
-            this.кафедрыToolStripMenuItem.Click += new System.EventHandler(this.кафедрыToolStripMenuItem_Click);
             // 
             // MainForm
             // 

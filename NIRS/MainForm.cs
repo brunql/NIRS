@@ -54,10 +54,8 @@ namespace NIRS
 
         private void AddRecord_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Not implemented, yet.");
-            //addSomeOne addsmone = new addSomeOne();
-            //addsmone.ShowDialog();
-            //UpdateAllDataGridView();
+            //MessageBox.Show("Not implemented, yet.");
+            (new addSomeOne()).ShowDialog();
         }
 
         private void Exit_ToolStripMenuItem_Click(object sender, EventArgs e)

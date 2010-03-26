@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 
-using NIRS_DB;
 using Gios.Word; // export to word in rtf file format
 
 namespace NIRS
