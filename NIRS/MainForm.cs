@@ -54,7 +54,6 @@ namespace NIRS
 
         private void AddRecord_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //MessageBox.Show("Not implemented, yet.");
             (new addSomeOne()).ShowDialog();
         }
 
@@ -151,6 +150,5 @@ namespace NIRS
         {
             (new division_windows()).Show();
         }
-
     }
 }

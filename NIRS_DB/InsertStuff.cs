@@ -45,24 +45,24 @@ namespace NIRS_DB
                     Name, Surname, FatherName, Work, AcademicRank, Degree, DivisionId)
                 );
         }
-        public static void InsertScienceWork(int StudentId, string Name, string Description)
+        public static void InsertScienceWork(int StudentId, string Name, string Description, int MentorId)
         {
             DBConnection.Request(
                 string.Format(
                     "INSERT INTO `{0}` " +
-                    "VALUES (null, {1}, \"{2}\", \"{3}\");",
+                    "VALUES (null, {1}, \"{2}\", \"{3}\", {4});",
                     "spec",
-                    StudentId, Name, Description)
+                    StudentId, Name, Description, MentorId)
                 );
         }
-        public static void InsertStudent(string Name, string Surname, string FatherName, int GroupId, int MentorId, DateTime BirthDate)
+        public static void InsertStudent(string Name, string Surname, string FatherName, int GroupId, DateTime BirthDate, string Study, string Grant)
         {
             DBConnection.Request(
                 string.Format(
                     "INSERT INTO `{0}` " +
-                    "VALUES (null, \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\", \"{6}\");",
+                    "VALUES (null, \"{1}\", \"{2}\", \"{3}\", \"{4}\", \"{5}\", \"{6}\", \"{7}\");",
                     "student",
-                    Name, Surname, FatherName, GroupId, MentorId, BirthDate.Year.ToString() + "-" + BirthDate.Month.ToString() + "-" + BirthDate.Day.ToString())
+                    Name, Surname, FatherName, GroupId, BirthDate.Year.ToString() + "-" + BirthDate.Month.ToString() + "-" + BirthDate.Day.ToString(), Study, Grant)
                 );
         }
     }
