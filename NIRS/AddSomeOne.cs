@@ -95,12 +95,6 @@ namespace NIRS
                 MessageBox.Show("Группа не выбрана");
                 return;
             }
-            
-            if (cmbNIR_Mentor.SelectedItem == null)
-            {
-                MessageBox.Show("Руководитель не выбран");
-                return;
-            }
 
             InsertStuff.InsertStudent(
                 txtStudentName.Text,
@@ -111,8 +105,8 @@ namespace NIRS
                 cmbStudentBudget.Text,
                 (txtStudentGrant.Text == "") ? "Нет" : txtStudentGrant.Text
                 );
-            bindStudent.Clear(); // i know this sucks
-            bindStudent.Fill();
+            //bindStudent.Clear();
+            //bindStudent.Fill(); // i know this sucks
             //MessageBox.Show("not implemented");
 
 
@@ -132,7 +126,8 @@ namespace NIRS
 
         private void btnFacultyAdded_Click(object sender, EventArgs e)
         {
-            InsertStuff.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
+            //InsertStuff.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
+            NIRS_Viewer.config.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
             bindFaculty.Clear();
             bindFaculty.Fill();
         }
@@ -211,7 +206,7 @@ namespace NIRS
         private void cmbStudentSpetialize_SelectedIndexChanged(object sender, EventArgs e)
         {
             cmbStudentGroup.Enabled = true;
-            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedGroup, cmbStudentGroup, 2, 1, (cmbStudentDivision.SelectedItem as ComboBoxKiller).Id);
+            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedGroup, cmbStudentGroup, 2, 1, (cmbStudentSpetialize.SelectedItem as ComboBoxKiller).Id);
         }
 
         private void tabPage2_Enter(object sender, EventArgs e)

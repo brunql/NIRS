@@ -69,6 +69,12 @@
     <Compile Include="AddSomeOne.Designer.cs">
       <DependentUpon>AddSomeOne.cs</DependentUpon>
     </Compile>
+    <Compile Include="FindScienceWorksDialogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindScienceWorksDialogForm.Designer.cs">
+      <DependentUpon>FindScienceWorksDialogForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="mentor_windows\division_windows.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AddSomeOne.resx">
       <DependentUpon>AddSomeOne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindScienceWorksDialogForm.resx">
+      <DependentUpon>FindScienceWorksDialogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mentor_windows\division_windows.resx">
       <DependentUpon>division_windows.cs</DependentUpon>

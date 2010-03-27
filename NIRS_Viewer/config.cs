@@ -98,24 +98,24 @@ namespace NIRS_Viewer
 			command_builder_faculty = new MySqlCommandBuilder(adapter_faculty);
 
             // Just testing
-            //adapter_faculty.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
-            //adapter_faculty.InsertCommand.Connection = NIRS_MySqlConnection;
-            //adapter_faculty.InsertCommand.CommandText = "INSERT INTO `nirs`.`faculty` (`name`, `fullname`) VALUES (@name, @fullname)";
-            //adapter_faculty.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            //MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            //param.ParameterName = "@name";
-            //param.DbType = global::System.Data.DbType.String;
-            //param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            //param.IsNullable = true;
-            //param.SourceColumn = "name";
-            //adapter_faculty.InsertCommand.Parameters.Add(param);
-            //param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            //param.ParameterName = "@fullname";
-            //param.DbType = global::System.Data.DbType.String;
-            //param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            //param.IsNullable = true;
-            //param.SourceColumn = "fullname";
-            //adapter_faculty.InsertCommand.Parameters.Add(param);
+            adapter_faculty.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
+            adapter_faculty.InsertCommand.Connection = NIRS_MySqlConnection;
+            adapter_faculty.InsertCommand.CommandText = "INSERT INTO `nirs`.`faculty` (`name`, `fullname`) VALUES (@name, @fullname)";
+            adapter_faculty.InsertCommand.CommandType = global::System.Data.CommandType.Text;
+            MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@name";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "name";
+            adapter_faculty.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@fullname";
+            param.DbType = global::System.Data.DbType.String;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.IsNullable = true;
+            param.SourceColumn = "fullname";
+            adapter_faculty.InsertCommand.Parameters.Add(param);
 
 //			variable_table = NIRS_DataSet.Tables["faculty"];
 			
@@ -180,42 +180,42 @@ namespace NIRS_Viewer
 			}
 		}
 
-        //public static int InsertFaculty(string name, string fullname)
-        //{
-        //    if ((name == null))
-        //    {
-        //        throw new global::System.ArgumentNullException("name");
-        //    }
-        //    else
-        //    {
-        //        adapter_faculty.InsertCommand.Parameters[0].Value = ((string)(name));
-        //    }
-        //    if ((fullname == null))
-        //    {
-        //        throw new global::System.ArgumentNullException("fullname");
-        //    }
-        //    else
-        //    {
-        //        adapter_faculty.InsertCommand.Parameters[1].Value = ((string)(fullname));
-        //    }
-        //    global::System.Data.ConnectionState previousConnectionState = adapter_faculty.InsertCommand.Connection.State;
-        //    if (((adapter_faculty.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open)
-        //                != global::System.Data.ConnectionState.Open))
-        //    {
-        //        adapter_faculty.InsertCommand.Connection.Open();
-        //    }
-        //    try
-        //    {
-        //        int returnValue = adapter_faculty.InsertCommand.ExecuteNonQuery();
-        //        return returnValue;
-        //    }
-        //    finally
-        //    {
-        //        if ((previousConnectionState == global::System.Data.ConnectionState.Closed))
-        //        {
-        //            adapter_faculty.InsertCommand.Connection.Close();
-        //        }
-        //    }
-        //}
+        public static int InsertFaculty(string name, string fullname)
+        {
+            if ((name == null))
+            {
+                throw new global::System.ArgumentNullException("name");
+            }
+            else
+            {
+                adapter_faculty.InsertCommand.Parameters[0].Value = ((string)(name));
+            }
+            if ((fullname == null))
+            {
+                throw new global::System.ArgumentNullException("fullname");
+            }
+            else
+            {
+                adapter_faculty.InsertCommand.Parameters[1].Value = ((string)(fullname));
+            }
+            global::System.Data.ConnectionState previousConnectionState = adapter_faculty.InsertCommand.Connection.State;
+            if (((adapter_faculty.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open)
+                        != global::System.Data.ConnectionState.Open))
+            {
+                adapter_faculty.InsertCommand.Connection.Open();
+            }
+            try
+            {
+                int returnValue = adapter_faculty.InsertCommand.ExecuteNonQuery();
+                return returnValue;
+            }
+            finally
+            {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed))
+                {
+                    adapter_faculty.InsertCommand.Connection.Close();
+                }
+            }
+        }
 	}
 }

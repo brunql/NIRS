@@ -150,5 +150,17 @@ namespace NIRS
         {
             (new division_windows()).Show();
         }
+
+        private void нуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FindScienceWorksDialogForm fsdf = new FindScienceWorksDialogForm();
+            fsdf.ShowDialog();
+            if (FindScienceWorksDialogForm.Result != null)
+            {
+                this.summaryDataGridView.DataSource = null;
+                this.summaryDataGridView.DataSource = FindScienceWorksDialogForm.Result;
+                SummaryTable = FindScienceWorksDialogForm.Result;
+            }
+        }
     }
 }
