@@ -156,12 +156,13 @@
             this.txtStudentFathername = new System.Windows.Forms.TextBox();
             this.lblFaculty = new System.Windows.Forms.Label();
             this.cmbStudentFaculty = new System.Windows.Forms.ComboBox();
+            this.btnAddStudent = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label16 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnAddStudent = new System.Windows.Forms.Button();
+            this.btnAddStudentNIR = new System.Windows.Forms.Button();
             this.cmbStudentMentor = new System.Windows.Forms.ComboBox();
             this.txtStudentProgramCount = new System.Windows.Forms.TextBox();
             this.lbYearInNirs = new System.Windows.Forms.Label();
@@ -178,6 +179,8 @@
             this.label31 = new System.Windows.Forms.Label();
             this.bindStudent = new NIRS_Viewer.bind();
             this.bindWorks = new NIRS_Viewer.bind();
+            this.label36 = new System.Windows.Forms.Label();
+            this.cmbNIR_Student = new System.Windows.Forms.ComboBox();
             this.AddFuculty.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -224,7 +227,7 @@
             this.AddFuculty.Location = new System.Drawing.Point(0, 0);
             this.AddFuculty.Name = "AddFuculty";
             this.AddFuculty.SelectedIndex = 0;
-            this.AddFuculty.Size = new System.Drawing.Size(558, 447);
+            this.AddFuculty.Size = new System.Drawing.Size(729, 494);
             this.AddFuculty.TabIndex = 27;
             // 
             // tabPage3
@@ -233,16 +236,17 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(543, 421);
+            this.tabPage3.Size = new System.Drawing.Size(721, 421);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Факультет";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Controls.Add(this.label18, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.dataGridViewFaculty, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label17, 0, 1);
@@ -259,18 +263,18 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(537, 415);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(715, 415);
             this.tableLayoutPanel1.TabIndex = 63;
             // 
             // label18
             // 
             this.label18.AutoSize = true;
-            this.tableLayoutPanel1.SetColumnSpan(this.label18, 2);
+            this.tableLayoutPanel1.SetColumnSpan(this.label18, 3);
             this.label18.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label18.Location = new System.Drawing.Point(3, 0);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(531, 25);
+            this.label18.Size = new System.Drawing.Size(709, 25);
             this.label18.TabIndex = 51;
             this.label18.Text = "Добавление факультета в базу";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -278,24 +282,26 @@
             // dataGridViewFaculty
             // 
             this.dataGridViewFaculty.AutoGenerateColumns = false;
+            this.dataGridViewFaculty.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataGridViewFaculty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewFaculty.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.fullnameDataGridViewTextBoxColumn});
-            this.tableLayoutPanel1.SetColumnSpan(this.dataGridViewFaculty, 2);
+            this.tableLayoutPanel1.SetColumnSpan(this.dataGridViewFaculty, 3);
             this.dataGridViewFaculty.DataSource = this.bindFaculty;
             this.dataGridViewFaculty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewFaculty.Location = new System.Drawing.Point(3, 109);
             this.dataGridViewFaculty.Name = "dataGridViewFaculty";
-            this.dataGridViewFaculty.Size = new System.Drawing.Size(531, 303);
+            this.dataGridViewFaculty.Size = new System.Drawing.Size(709, 303);
             this.dataGridViewFaculty.TabIndex = 62;
             // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.Width = 41;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -303,12 +309,14 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Факультет";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.nameDataGridViewTextBoxColumn.Width = 297;
             // 
             // fullnameDataGridViewTextBoxColumn
             // 
             this.fullnameDataGridViewTextBoxColumn.DataPropertyName = "fullname";
             this.fullnameDataGridViewTextBoxColumn.HeaderText = "Полное имя факультета";
             this.fullnameDataGridViewTextBoxColumn.Name = "fullnameDataGridViewTextBoxColumn";
+            this.fullnameDataGridViewTextBoxColumn.Width = 477;
             // 
             // bindFaculty
             // 
@@ -321,16 +329,16 @@
             this.label17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label17.Location = new System.Drawing.Point(3, 25);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(262, 26);
+            this.label17.Size = new System.Drawing.Size(232, 26);
             this.label17.TabIndex = 49;
             this.label17.Text = "Факультет";
             this.label17.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtAddFacultyFullName
             // 
-            this.txtAddFacultyFullName.Location = new System.Drawing.Point(271, 54);
+            this.txtAddFacultyFullName.Location = new System.Drawing.Point(241, 54);
             this.txtAddFacultyFullName.Name = "txtAddFacultyFullName";
-            this.txtAddFacultyFullName.Size = new System.Drawing.Size(233, 20);
+            this.txtAddFacultyFullName.Size = new System.Drawing.Size(232, 20);
             this.txtAddFacultyFullName.TabIndex = 61;
             // 
             // label34
@@ -339,21 +347,21 @@
             this.label34.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label34.Location = new System.Drawing.Point(3, 51);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(262, 26);
+            this.label34.Size = new System.Drawing.Size(232, 26);
             this.label34.TabIndex = 60;
             this.label34.Text = "Полное имя факультета";
             this.label34.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtAddFacultyName
             // 
-            this.txtAddFacultyName.Location = new System.Drawing.Point(271, 28);
+            this.txtAddFacultyName.Location = new System.Drawing.Point(241, 28);
             this.txtAddFacultyName.Name = "txtAddFacultyName";
-            this.txtAddFacultyName.Size = new System.Drawing.Size(233, 20);
+            this.txtAddFacultyName.Size = new System.Drawing.Size(232, 20);
             this.txtAddFacultyName.TabIndex = 50;
             // 
             // btnAddFaculty
             // 
-            this.btnAddFaculty.Location = new System.Drawing.Point(271, 80);
+            this.btnAddFaculty.Location = new System.Drawing.Point(241, 80);
             this.btnAddFaculty.Name = "btnAddFaculty";
             this.btnAddFaculty.Size = new System.Drawing.Size(145, 23);
             this.btnAddFaculty.TabIndex = 48;
@@ -366,16 +374,17 @@
             this.tabPage4.Controls.Add(this.tableLayoutPanel2);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(550, 421);
+            this.tabPage4.Size = new System.Drawing.Size(721, 421);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Кафедра";
             this.tabPage4.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel2
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.ColumnCount = 3;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.Controls.Add(this.label19, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.dataViewAddedDivision, 0, 7);
             this.tableLayoutPanel2.Controls.Add(this.label25, 0, 6);
@@ -398,18 +407,18 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(550, 421);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(721, 421);
             this.tableLayoutPanel2.TabIndex = 61;
             // 
             // label19
             // 
             this.label19.AutoSize = true;
-            this.tableLayoutPanel2.SetColumnSpan(this.label19, 2);
+            this.tableLayoutPanel2.SetColumnSpan(this.label19, 3);
             this.label19.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label19.Location = new System.Drawing.Point(3, 0);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(544, 25);
+            this.label19.Size = new System.Drawing.Size(715, 25);
             this.label19.TabIndex = 54;
             this.label19.Text = "Добавление кафедры в базу";
             this.label19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -417,43 +426,48 @@
             // dataViewAddedDivision
             // 
             this.dataViewAddedDivision.AutoGenerateColumns = false;
+            this.dataViewAddedDivision.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedDivision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewAddedDivision.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn2,
             this.facidDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn2,
             this.fullnameDataGridViewTextBoxColumn2});
-            this.tableLayoutPanel2.SetColumnSpan(this.dataViewAddedDivision, 2);
+            this.tableLayoutPanel2.SetColumnSpan(this.dataViewAddedDivision, 3);
             this.dataViewAddedDivision.DataSource = this.bindDivision;
             this.dataViewAddedDivision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewAddedDivision.Location = new System.Drawing.Point(3, 306);
             this.dataViewAddedDivision.Name = "dataViewAddedDivision";
-            this.dataViewAddedDivision.Size = new System.Drawing.Size(544, 132);
+            this.dataViewAddedDivision.Size = new System.Drawing.Size(715, 132);
             this.dataViewAddedDivision.TabIndex = 55;
             // 
             // idDataGridViewTextBoxColumn2
             // 
             this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            this.idDataGridViewTextBoxColumn2.Width = 41;
             // 
             // facidDataGridViewTextBoxColumn
             // 
             this.facidDataGridViewTextBoxColumn.DataPropertyName = "fac_id";
-            this.facidDataGridViewTextBoxColumn.HeaderText = "fac_id";
+            this.facidDataGridViewTextBoxColumn.HeaderText = "Id Факультета";
             this.facidDataGridViewTextBoxColumn.Name = "facidDataGridViewTextBoxColumn";
+            this.facidDataGridViewTextBoxColumn.Width = 97;
             // 
             // nameDataGridViewTextBoxColumn2
             // 
             this.nameDataGridViewTextBoxColumn2.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn2.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "Кафедра";
             this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            this.nameDataGridViewTextBoxColumn2.Width = 112;
             // 
             // fullnameDataGridViewTextBoxColumn2
             // 
             this.fullnameDataGridViewTextBoxColumn2.DataPropertyName = "fullname";
-            this.fullnameDataGridViewTextBoxColumn2.HeaderText = "fullname";
+            this.fullnameDataGridViewTextBoxColumn2.HeaderText = "Полное имя кафедры";
             this.fullnameDataGridViewTextBoxColumn2.Name = "fullnameDataGridViewTextBoxColumn2";
+            this.fullnameDataGridViewTextBoxColumn2.Width = 130;
             // 
             // bindDivision
             // 
@@ -472,36 +486,40 @@
             // dataViewDivisionFaculty
             // 
             this.dataViewDivisionFaculty.AutoGenerateColumns = false;
+            this.dataViewDivisionFaculty.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewDivisionFaculty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewDivisionFaculty.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn1,
             this.nameDataGridViewTextBoxColumn1,
             this.fullnameDataGridViewTextBoxColumn1});
-            this.tableLayoutPanel2.SetColumnSpan(this.dataViewDivisionFaculty, 2);
+            this.tableLayoutPanel2.SetColumnSpan(this.dataViewDivisionFaculty, 3);
             this.dataViewDivisionFaculty.DataSource = this.bindFaculty;
             this.dataViewDivisionFaculty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewDivisionFaculty.Location = new System.Drawing.Point(3, 93);
             this.dataViewDivisionFaculty.Name = "dataViewDivisionFaculty";
-            this.dataViewDivisionFaculty.Size = new System.Drawing.Size(544, 165);
+            this.dataViewDivisionFaculty.Size = new System.Drawing.Size(715, 165);
             this.dataViewDivisionFaculty.TabIndex = 57;
             // 
             // idDataGridViewTextBoxColumn1
             // 
             this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn1.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
+            this.idDataGridViewTextBoxColumn1.Width = 41;
             // 
             // nameDataGridViewTextBoxColumn1
             // 
             this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn1.HeaderText = "Факультет";
             this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
+            this.nameDataGridViewTextBoxColumn1.Width = 297;
             // 
             // fullnameDataGridViewTextBoxColumn1
             // 
             this.fullnameDataGridViewTextBoxColumn1.DataPropertyName = "fullname";
-            this.fullnameDataGridViewTextBoxColumn1.HeaderText = "fullname";
+            this.fullnameDataGridViewTextBoxColumn1.HeaderText = "Полное имя факультета";
             this.fullnameDataGridViewTextBoxColumn1.Name = "fullnameDataGridViewTextBoxColumn1";
+            this.fullnameDataGridViewTextBoxColumn1.Width = 477;
             // 
             // label20
             // 
@@ -509,14 +527,14 @@
             this.label20.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label20.Location = new System.Drawing.Point(3, 25);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(269, 26);
+            this.label20.Size = new System.Drawing.Size(234, 26);
             this.label20.TabIndex = 52;
             this.label20.Text = "Кафедра";
             this.label20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnAddDivision
             // 
-            this.btnAddDivision.Location = new System.Drawing.Point(278, 264);
+            this.btnAddDivision.Location = new System.Drawing.Point(243, 264);
             this.btnAddDivision.Name = "btnAddDivision";
             this.btnAddDivision.Size = new System.Drawing.Size(145, 23);
             this.btnAddDivision.TabIndex = 48;
@@ -530,7 +548,7 @@
             this.label35.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label35.Location = new System.Drawing.Point(3, 51);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(269, 26);
+            this.label35.Size = new System.Drawing.Size(234, 26);
             this.label35.TabIndex = 59;
             this.label35.Text = "Полное имя кафедры";
             this.label35.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -541,23 +559,23 @@
             this.label26.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label26.Location = new System.Drawing.Point(3, 77);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(269, 13);
+            this.label26.Size = new System.Drawing.Size(234, 13);
             this.label26.TabIndex = 58;
             this.label26.Text = "Выберите факультет из базы";
             this.label26.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtAddDivision
             // 
-            this.txtAddDivision.Location = new System.Drawing.Point(278, 28);
+            this.txtAddDivision.Location = new System.Drawing.Point(243, 28);
             this.txtAddDivision.Name = "txtAddDivision";
-            this.txtAddDivision.Size = new System.Drawing.Size(237, 20);
+            this.txtAddDivision.Size = new System.Drawing.Size(234, 20);
             this.txtAddDivision.TabIndex = 53;
             // 
             // txtAddDivisionFullName
             // 
-            this.txtAddDivisionFullName.Location = new System.Drawing.Point(278, 54);
+            this.txtAddDivisionFullName.Location = new System.Drawing.Point(243, 54);
             this.txtAddDivisionFullName.Name = "txtAddDivisionFullName";
-            this.txtAddDivisionFullName.Size = new System.Drawing.Size(236, 20);
+            this.txtAddDivisionFullName.Size = new System.Drawing.Size(234, 20);
             this.txtAddDivisionFullName.TabIndex = 60;
             // 
             // dataSpec
@@ -565,16 +583,17 @@
             this.dataSpec.Controls.Add(this.tableLayoutPanel3);
             this.dataSpec.Location = new System.Drawing.Point(4, 22);
             this.dataSpec.Name = "dataSpec";
-            this.dataSpec.Size = new System.Drawing.Size(543, 421);
+            this.dataSpec.Size = new System.Drawing.Size(721, 421);
             this.dataSpec.TabIndex = 5;
             this.dataSpec.Text = "Специальность";
             this.dataSpec.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
-            this.tableLayoutPanel3.ColumnCount = 2;
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel3.ColumnCount = 3;
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel3.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel3.Controls.Add(this.label21, 0, 0);
             this.tableLayoutPanel3.Controls.Add(this.dataViewAddedSpec, 0, 7);
             this.tableLayoutPanel3.Controls.Add(this.label27, 0, 6);
@@ -597,18 +616,18 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(543, 421);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(721, 421);
             this.tableLayoutPanel3.TabIndex = 72;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.tableLayoutPanel3.SetColumnSpan(this.label21, 2);
+            this.tableLayoutPanel3.SetColumnSpan(this.label21, 3);
             this.label21.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label21.Location = new System.Drawing.Point(3, 0);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(537, 25);
+            this.label21.Size = new System.Drawing.Size(715, 25);
             this.label21.TabIndex = 58;
             this.label21.Text = "Добавление специальность в базу";
             this.label21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -616,43 +635,48 @@
             // dataViewAddedSpec
             // 
             this.dataViewAddedSpec.AutoGenerateColumns = false;
+            this.dataViewAddedSpec.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedSpec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewAddedSpec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn4,
             this.dividDataGridViewTextBoxColumn,
             this.codeDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn4});
-            this.tableLayoutPanel3.SetColumnSpan(this.dataViewAddedSpec, 2);
+            this.tableLayoutPanel3.SetColumnSpan(this.dataViewAddedSpec, 3);
             this.dataViewAddedSpec.DataSource = this.bindSpec;
             this.dataViewAddedSpec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewAddedSpec.Location = new System.Drawing.Point(3, 294);
             this.dataViewAddedSpec.Name = "dataViewAddedSpec";
-            this.dataViewAddedSpec.Size = new System.Drawing.Size(537, 124);
+            this.dataViewAddedSpec.Size = new System.Drawing.Size(715, 124);
             this.dataViewAddedSpec.TabIndex = 59;
             // 
             // idDataGridViewTextBoxColumn4
             // 
             this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn4.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn4.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
+            this.idDataGridViewTextBoxColumn4.Width = 41;
             // 
             // dividDataGridViewTextBoxColumn
             // 
             this.dividDataGridViewTextBoxColumn.DataPropertyName = "div_id";
-            this.dividDataGridViewTextBoxColumn.HeaderText = "div_id";
+            this.dividDataGridViewTextBoxColumn.HeaderText = "Id Кафедры";
             this.dividDataGridViewTextBoxColumn.Name = "dividDataGridViewTextBoxColumn";
+            this.dividDataGridViewTextBoxColumn.Width = 91;
             // 
             // codeDataGridViewTextBoxColumn
             // 
             this.codeDataGridViewTextBoxColumn.DataPropertyName = "code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "code";
+            this.codeDataGridViewTextBoxColumn.HeaderText = "Код";
             this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+            this.codeDataGridViewTextBoxColumn.Width = 69;
             // 
             // nameDataGridViewTextBoxColumn4
             // 
             this.nameDataGridViewTextBoxColumn4.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn4.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn4.HeaderText = "Специальность";
             this.nameDataGridViewTextBoxColumn4.Name = "nameDataGridViewTextBoxColumn4";
+            this.nameDataGridViewTextBoxColumn4.Width = 500;
             // 
             // bindSpec
             // 
@@ -671,43 +695,48 @@
             // dataViewSpecDivision
             // 
             this.dataViewSpecDivision.AutoGenerateColumns = false;
+            this.dataViewSpecDivision.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewSpecDivision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewSpecDivision.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn3,
             this.facidDataGridViewTextBoxColumn1,
             this.nameDataGridViewTextBoxColumn3,
             this.fullnameDataGridViewTextBoxColumn3});
-            this.tableLayoutPanel3.SetColumnSpan(this.dataViewSpecDivision, 2);
+            this.tableLayoutPanel3.SetColumnSpan(this.dataViewSpecDivision, 3);
             this.dataViewSpecDivision.DataSource = this.bindDivision;
             this.dataViewSpecDivision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewSpecDivision.Location = new System.Drawing.Point(3, 93);
             this.dataViewSpecDivision.Name = "dataViewSpecDivision";
-            this.dataViewSpecDivision.Size = new System.Drawing.Size(537, 153);
+            this.dataViewSpecDivision.Size = new System.Drawing.Size(715, 153);
             this.dataViewSpecDivision.TabIndex = 61;
             // 
             // idDataGridViewTextBoxColumn3
             // 
             this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn3.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn3.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
+            this.idDataGridViewTextBoxColumn3.Width = 41;
             // 
             // facidDataGridViewTextBoxColumn1
             // 
             this.facidDataGridViewTextBoxColumn1.DataPropertyName = "fac_id";
-            this.facidDataGridViewTextBoxColumn1.HeaderText = "fac_id";
+            this.facidDataGridViewTextBoxColumn1.HeaderText = "Id Факультета";
             this.facidDataGridViewTextBoxColumn1.Name = "facidDataGridViewTextBoxColumn1";
+            this.facidDataGridViewTextBoxColumn1.Width = 97;
             // 
             // nameDataGridViewTextBoxColumn3
             // 
             this.nameDataGridViewTextBoxColumn3.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn3.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn3.HeaderText = "Кафедра";
             this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
+            this.nameDataGridViewTextBoxColumn3.Width = 112;
             // 
             // fullnameDataGridViewTextBoxColumn3
             // 
             this.fullnameDataGridViewTextBoxColumn3.DataPropertyName = "fullname";
-            this.fullnameDataGridViewTextBoxColumn3.HeaderText = "fullname";
+            this.fullnameDataGridViewTextBoxColumn3.HeaderText = "Полное имя кафедры";
             this.fullnameDataGridViewTextBoxColumn3.Name = "fullnameDataGridViewTextBoxColumn3";
+            this.fullnameDataGridViewTextBoxColumn3.Width = 130;
             // 
             // label28
             // 
@@ -715,14 +744,14 @@
             this.label28.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label28.Location = new System.Drawing.Point(3, 77);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(265, 13);
+            this.label28.Size = new System.Drawing.Size(234, 13);
             this.label28.TabIndex = 62;
             this.label28.Text = "Выберите кафедру из базы";
             this.label28.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // btnAddSpec
             // 
-            this.btnAddSpec.Location = new System.Drawing.Point(274, 252);
+            this.btnAddSpec.Location = new System.Drawing.Point(243, 252);
             this.btnAddSpec.Name = "btnAddSpec";
             this.btnAddSpec.Size = new System.Drawing.Size(145, 23);
             this.btnAddSpec.TabIndex = 55;
@@ -732,9 +761,9 @@
             // 
             // txtAddSpecFullName
             // 
-            this.txtAddSpecFullName.Location = new System.Drawing.Point(274, 54);
+            this.txtAddSpecFullName.Location = new System.Drawing.Point(243, 54);
             this.txtAddSpecFullName.Name = "txtAddSpecFullName";
-            this.txtAddSpecFullName.Size = new System.Drawing.Size(266, 20);
+            this.txtAddSpecFullName.Size = new System.Drawing.Size(234, 20);
             this.txtAddSpecFullName.TabIndex = 71;
             // 
             // label22
@@ -743,7 +772,7 @@
             this.label22.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label22.Location = new System.Drawing.Point(3, 25);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(265, 26);
+            this.label22.Size = new System.Drawing.Size(234, 26);
             this.label22.TabIndex = 56;
             this.label22.Text = "Код";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -754,16 +783,16 @@
             this.label32.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label32.Location = new System.Drawing.Point(3, 51);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(265, 26);
+            this.label32.Size = new System.Drawing.Size(234, 26);
             this.label32.TabIndex = 70;
-            this.label32.Text = "Полное название";
+            this.label32.Text = "Специальность";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtAddSpec
             // 
-            this.txtAddSpec.Location = new System.Drawing.Point(274, 28);
+            this.txtAddSpec.Location = new System.Drawing.Point(243, 28);
             this.txtAddSpec.Name = "txtAddSpec";
-            this.txtAddSpec.Size = new System.Drawing.Size(266, 20);
+            this.txtAddSpec.Size = new System.Drawing.Size(234, 20);
             this.txtAddSpec.TabIndex = 57;
             // 
             // tabPage5
@@ -771,7 +800,7 @@
             this.tabPage5.Controls.Add(this.tableLayoutPanel4);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(543, 421);
+            this.tabPage5.Size = new System.Drawing.Size(721, 421);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Группа";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -800,7 +829,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(543, 421);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(721, 421);
             this.tableLayoutPanel4.TabIndex = 68;
             // 
             // label23
@@ -811,7 +840,7 @@
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label23.Location = new System.Drawing.Point(3, 0);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(537, 25);
+            this.label23.Size = new System.Drawing.Size(715, 25);
             this.label23.TabIndex = 63;
             this.label23.Text = "Добавление группу в базу";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -819,6 +848,7 @@
             // dataViewAddedGroup
             // 
             this.dataViewAddedGroup.AutoGenerateColumns = false;
+            this.dataViewAddedGroup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewAddedGroup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn6,
@@ -829,26 +859,29 @@
             this.dataViewAddedGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewAddedGroup.Location = new System.Drawing.Point(3, 291);
             this.dataViewAddedGroup.Name = "dataViewAddedGroup";
-            this.dataViewAddedGroup.Size = new System.Drawing.Size(537, 146);
+            this.dataViewAddedGroup.Size = new System.Drawing.Size(715, 146);
             this.dataViewAddedGroup.TabIndex = 64;
             // 
             // idDataGridViewTextBoxColumn6
             // 
             this.idDataGridViewTextBoxColumn6.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn6.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn6.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn6.Name = "idDataGridViewTextBoxColumn6";
+            this.idDataGridViewTextBoxColumn6.Width = 41;
             // 
             // specidDataGridViewTextBoxColumn
             // 
             this.specidDataGridViewTextBoxColumn.DataPropertyName = "spec_id";
-            this.specidDataGridViewTextBoxColumn.HeaderText = "spec_id";
+            this.specidDataGridViewTextBoxColumn.HeaderText = "Id Специальности";
             this.specidDataGridViewTextBoxColumn.Name = "specidDataGridViewTextBoxColumn";
+            this.specidDataGridViewTextBoxColumn.Width = 112;
             // 
             // codeDataGridViewTextBoxColumn2
             // 
             this.codeDataGridViewTextBoxColumn2.DataPropertyName = "code";
-            this.codeDataGridViewTextBoxColumn2.HeaderText = "code";
+            this.codeDataGridViewTextBoxColumn2.HeaderText = "Код группы";
             this.codeDataGridViewTextBoxColumn2.Name = "codeDataGridViewTextBoxColumn2";
+            this.codeDataGridViewTextBoxColumn2.Width = 94;
             // 
             // bindGroup
             // 
@@ -870,7 +903,7 @@
             this.label24.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label24.Location = new System.Drawing.Point(3, 25);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(265, 26);
+            this.label24.Size = new System.Drawing.Size(354, 26);
             this.label24.TabIndex = 61;
             this.label24.Text = "Код группы";
             this.label24.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -878,6 +911,7 @@
             // dataViewGroupSpec
             // 
             this.dataViewGroupSpec.AutoGenerateColumns = false;
+            this.dataViewGroupSpec.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewGroupSpec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewGroupSpec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn5,
@@ -889,36 +923,40 @@
             this.dataViewGroupSpec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewGroupSpec.Location = new System.Drawing.Point(3, 67);
             this.dataViewGroupSpec.Name = "dataViewGroupSpec";
-            this.dataViewGroupSpec.Size = new System.Drawing.Size(537, 176);
+            this.dataViewGroupSpec.Size = new System.Drawing.Size(715, 176);
             this.dataViewGroupSpec.TabIndex = 66;
             // 
             // idDataGridViewTextBoxColumn5
             // 
             this.idDataGridViewTextBoxColumn5.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn5.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn5.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
+            this.idDataGridViewTextBoxColumn5.Width = 41;
             // 
             // dividDataGridViewTextBoxColumn1
             // 
             this.dividDataGridViewTextBoxColumn1.DataPropertyName = "div_id";
-            this.dividDataGridViewTextBoxColumn1.HeaderText = "div_id";
+            this.dividDataGridViewTextBoxColumn1.HeaderText = "Id Кафедры";
             this.dividDataGridViewTextBoxColumn1.Name = "dividDataGridViewTextBoxColumn1";
+            this.dividDataGridViewTextBoxColumn1.Width = 91;
             // 
             // codeDataGridViewTextBoxColumn1
             // 
             this.codeDataGridViewTextBoxColumn1.DataPropertyName = "code";
-            this.codeDataGridViewTextBoxColumn1.HeaderText = "code";
+            this.codeDataGridViewTextBoxColumn1.HeaderText = "Код";
             this.codeDataGridViewTextBoxColumn1.Name = "codeDataGridViewTextBoxColumn1";
+            this.codeDataGridViewTextBoxColumn1.Width = 69;
             // 
             // nameDataGridViewTextBoxColumn5
             // 
             this.nameDataGridViewTextBoxColumn5.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn5.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn5.HeaderText = "Специальность";
             this.nameDataGridViewTextBoxColumn5.Name = "nameDataGridViewTextBoxColumn5";
+            this.nameDataGridViewTextBoxColumn5.Width = 500;
             // 
             // btnAddGroup
             // 
-            this.btnAddGroup.Location = new System.Drawing.Point(274, 249);
+            this.btnAddGroup.Location = new System.Drawing.Point(363, 249);
             this.btnAddGroup.Name = "btnAddGroup";
             this.btnAddGroup.Size = new System.Drawing.Size(145, 23);
             this.btnAddGroup.TabIndex = 48;
@@ -928,7 +966,7 @@
             // 
             // txtAddGroupCode
             // 
-            this.txtAddGroupCode.Location = new System.Drawing.Point(274, 28);
+            this.txtAddGroupCode.Location = new System.Drawing.Point(363, 28);
             this.txtAddGroupCode.Name = "txtAddGroupCode";
             this.txtAddGroupCode.Size = new System.Drawing.Size(112, 20);
             this.txtAddGroupCode.TabIndex = 62;
@@ -939,7 +977,7 @@
             this.label29.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label29.Location = new System.Drawing.Point(3, 51);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(265, 13);
+            this.label29.Size = new System.Drawing.Size(354, 13);
             this.label29.TabIndex = 65;
             this.label29.Text = "Выберите специальность из базы";
             this.label29.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -951,16 +989,17 @@
             this.dataMentor.Location = new System.Drawing.Point(4, 22);
             this.dataMentor.Name = "dataMentor";
             this.dataMentor.Padding = new System.Windows.Forms.Padding(3);
-            this.dataMentor.Size = new System.Drawing.Size(543, 421);
+            this.dataMentor.Size = new System.Drawing.Size(721, 421);
             this.dataMentor.TabIndex = 1;
             this.dataMentor.Text = "Руководитель";
             this.dataMentor.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel5
             // 
-            this.tableLayoutPanel5.ColumnCount = 2;
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel5.ColumnCount = 3;
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel5.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel5.Controls.Add(this.label8, 0, 0);
             this.tableLayoutPanel5.Controls.Add(this.txtMentorAcademicRank, 1, 7);
             this.tableLayoutPanel5.Controls.Add(this.cbMentorDivision, 1, 5);
@@ -994,18 +1033,18 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(537, 415);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(715, 415);
             this.tableLayoutPanel5.TabIndex = 51;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.tableLayoutPanel5.SetColumnSpan(this.label8, 2);
+            this.tableLayoutPanel5.SetColumnSpan(this.label8, 3);
             this.label8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label8.Location = new System.Drawing.Point(3, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(531, 25);
+            this.label8.Size = new System.Drawing.Size(709, 25);
             this.label8.TabIndex = 46;
             this.label8.Text = "Ввод данных о руководителе и запись в базу";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1013,31 +1052,32 @@
             // txtMentorAcademicRank
             // 
             this.txtMentorAcademicRank.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMentorAcademicRank.Location = new System.Drawing.Point(271, 185);
+            this.txtMentorAcademicRank.Location = new System.Drawing.Point(241, 185);
             this.txtMentorAcademicRank.Name = "txtMentorAcademicRank";
-            this.txtMentorAcademicRank.Size = new System.Drawing.Size(263, 20);
+            this.txtMentorAcademicRank.Size = new System.Drawing.Size(232, 20);
             this.txtMentorAcademicRank.TabIndex = 45;
             // 
             // cbMentorDivision
             // 
             this.cbMentorDivision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbMentorDivision.FormattingEnabled = true;
-            this.cbMentorDivision.Location = new System.Drawing.Point(271, 132);
+            this.cbMentorDivision.Location = new System.Drawing.Point(241, 132);
             this.cbMentorDivision.Name = "cbMentorDivision";
-            this.cbMentorDivision.Size = new System.Drawing.Size(263, 21);
+            this.cbMentorDivision.Size = new System.Drawing.Size(232, 21);
             this.cbMentorDivision.TabIndex = 49;
             // 
             // txtMentorDegree
             // 
             this.txtMentorDegree.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMentorDegree.Location = new System.Drawing.Point(271, 159);
+            this.txtMentorDegree.Location = new System.Drawing.Point(241, 159);
             this.txtMentorDegree.Name = "txtMentorDegree";
-            this.txtMentorDegree.Size = new System.Drawing.Size(263, 20);
+            this.txtMentorDegree.Size = new System.Drawing.Size(232, 20);
             this.txtMentorDegree.TabIndex = 43;
             // 
             // dataViewAddedMentor
             // 
             this.dataViewAddedMentor.AutoGenerateColumns = false;
+            this.dataViewAddedMentor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedMentor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataViewAddedMentor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn7,
@@ -1048,61 +1088,69 @@
             this.acrankDataGridViewTextBoxColumn,
             this.degreeDataGridViewTextBoxColumn,
             this.dividDataGridViewTextBoxColumn2});
-            this.tableLayoutPanel5.SetColumnSpan(this.dataViewAddedMentor, 2);
+            this.tableLayoutPanel5.SetColumnSpan(this.dataViewAddedMentor, 3);
             this.dataViewAddedMentor.DataSource = this.bindMentor;
             this.dataViewAddedMentor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewAddedMentor.Location = new System.Drawing.Point(3, 253);
             this.dataViewAddedMentor.Name = "dataViewAddedMentor";
-            this.dataViewAddedMentor.Size = new System.Drawing.Size(531, 159);
+            this.dataViewAddedMentor.Size = new System.Drawing.Size(709, 159);
             this.dataViewAddedMentor.TabIndex = 49;
             // 
             // idDataGridViewTextBoxColumn7
             // 
             this.idDataGridViewTextBoxColumn7.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn7.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn7.HeaderText = "Id";
             this.idDataGridViewTextBoxColumn7.Name = "idDataGridViewTextBoxColumn7";
+            this.idDataGridViewTextBoxColumn7.Width = 41;
             // 
             // nameDataGridViewTextBoxColumn6
             // 
             this.nameDataGridViewTextBoxColumn6.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn6.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn6.HeaderText = "Имя";
             this.nameDataGridViewTextBoxColumn6.Name = "nameDataGridViewTextBoxColumn6";
+            this.nameDataGridViewTextBoxColumn6.Width = 54;
             // 
             // surnameDataGridViewTextBoxColumn
             // 
             this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "surname";
+            this.surnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
+            this.surnameDataGridViewTextBoxColumn.Width = 81;
             // 
             // fathernameDataGridViewTextBoxColumn
             // 
             this.fathernameDataGridViewTextBoxColumn.DataPropertyName = "fathername";
-            this.fathernameDataGridViewTextBoxColumn.HeaderText = "fathername";
+            this.fathernameDataGridViewTextBoxColumn.HeaderText = "Отчество";
             this.fathernameDataGridViewTextBoxColumn.Name = "fathernameDataGridViewTextBoxColumn";
+            this.fathernameDataGridViewTextBoxColumn.Width = 79;
             // 
             // workDataGridViewTextBoxColumn
             // 
             this.workDataGridViewTextBoxColumn.DataPropertyName = "work";
-            this.workDataGridViewTextBoxColumn.HeaderText = "work";
+            this.workDataGridViewTextBoxColumn.HeaderText = "Место работы";
             this.workDataGridViewTextBoxColumn.Name = "workDataGridViewTextBoxColumn";
+            this.workDataGridViewTextBoxColumn.Width = 96;
             // 
             // acrankDataGridViewTextBoxColumn
             // 
             this.acrankDataGridViewTextBoxColumn.DataPropertyName = "acrank";
-            this.acrankDataGridViewTextBoxColumn.HeaderText = "acrank";
+            this.acrankDataGridViewTextBoxColumn.HeaderText = "Научное звание";
             this.acrankDataGridViewTextBoxColumn.Name = "acrankDataGridViewTextBoxColumn";
+            this.acrankDataGridViewTextBoxColumn.Width = 104;
             // 
             // degreeDataGridViewTextBoxColumn
             // 
             this.degreeDataGridViewTextBoxColumn.DataPropertyName = "degree";
-            this.degreeDataGridViewTextBoxColumn.HeaderText = "degree";
+            this.degreeDataGridViewTextBoxColumn.HeaderText = "Научная степень";
             this.degreeDataGridViewTextBoxColumn.Name = "degreeDataGridViewTextBoxColumn";
+            this.degreeDataGridViewTextBoxColumn.Width = 108;
             // 
             // dividDataGridViewTextBoxColumn2
             // 
             this.dividDataGridViewTextBoxColumn2.DataPropertyName = "div_id";
-            this.dividDataGridViewTextBoxColumn2.HeaderText = "div_id";
+            this.dividDataGridViewTextBoxColumn2.HeaderText = "Id Кафедры";
             this.dividDataGridViewTextBoxColumn2.Name = "dividDataGridViewTextBoxColumn2";
+            this.dividDataGridViewTextBoxColumn2.Width = 84;
             // 
             // bindMentor
             // 
@@ -1124,7 +1172,7 @@
             this.label4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label4.Location = new System.Drawing.Point(3, 25);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(262, 26);
+            this.label4.Size = new System.Drawing.Size(232, 26);
             this.label4.TabIndex = 35;
             this.label4.Text = "Фамилия";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1132,9 +1180,9 @@
             // txtMentorWork
             // 
             this.txtMentorWork.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMentorWork.Location = new System.Drawing.Point(271, 106);
+            this.txtMentorWork.Location = new System.Drawing.Point(241, 106);
             this.txtMentorWork.Name = "txtMentorWork";
-            this.txtMentorWork.Size = new System.Drawing.Size(263, 20);
+            this.txtMentorWork.Size = new System.Drawing.Size(232, 20);
             this.txtMentorWork.TabIndex = 41;
             // 
             // label3
@@ -1143,7 +1191,7 @@
             this.label3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label3.Location = new System.Drawing.Point(3, 51);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(262, 26);
+            this.label3.Size = new System.Drawing.Size(232, 26);
             this.label3.TabIndex = 37;
             this.label3.Text = "Имя";
             this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1151,9 +1199,9 @@
             // txtMentorFathername
             // 
             this.txtMentorFathername.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMentorFathername.Location = new System.Drawing.Point(271, 80);
+            this.txtMentorFathername.Location = new System.Drawing.Point(241, 80);
             this.txtMentorFathername.Name = "txtMentorFathername";
-            this.txtMentorFathername.Size = new System.Drawing.Size(263, 20);
+            this.txtMentorFathername.Size = new System.Drawing.Size(232, 20);
             this.txtMentorFathername.TabIndex = 38;
             // 
             // label2
@@ -1162,7 +1210,7 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label2.Location = new System.Drawing.Point(3, 77);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(262, 26);
+            this.label2.Size = new System.Drawing.Size(232, 26);
             this.label2.TabIndex = 39;
             this.label2.Text = "Отчество";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1170,14 +1218,14 @@
             // txtMentorName
             // 
             this.txtMentorName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMentorName.Location = new System.Drawing.Point(271, 54);
+            this.txtMentorName.Location = new System.Drawing.Point(241, 54);
             this.txtMentorName.Name = "txtMentorName";
-            this.txtMentorName.Size = new System.Drawing.Size(263, 20);
+            this.txtMentorName.Size = new System.Drawing.Size(232, 20);
             this.txtMentorName.TabIndex = 36;
             // 
             // btnAddMentor
             // 
-            this.btnAddMentor.Location = new System.Drawing.Point(271, 211);
+            this.btnAddMentor.Location = new System.Drawing.Point(241, 211);
             this.btnAddMentor.Name = "btnAddMentor";
             this.btnAddMentor.Size = new System.Drawing.Size(145, 23);
             this.btnAddMentor.TabIndex = 47;
@@ -1188,9 +1236,9 @@
             // txtMentorSurname
             // 
             this.txtMentorSurname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtMentorSurname.Location = new System.Drawing.Point(271, 28);
+            this.txtMentorSurname.Location = new System.Drawing.Point(241, 28);
             this.txtMentorSurname.Name = "txtMentorSurname";
-            this.txtMentorSurname.Size = new System.Drawing.Size(263, 20);
+            this.txtMentorSurname.Size = new System.Drawing.Size(232, 20);
             this.txtMentorSurname.TabIndex = 34;
             // 
             // label14
@@ -1199,7 +1247,7 @@
             this.label14.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label14.Location = new System.Drawing.Point(3, 129);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(262, 27);
+            this.label14.Size = new System.Drawing.Size(232, 27);
             this.label14.TabIndex = 48;
             this.label14.Text = "Кафедра";
             this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1210,7 +1258,7 @@
             this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label5.Location = new System.Drawing.Point(3, 103);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(262, 26);
+            this.label5.Size = new System.Drawing.Size(232, 26);
             this.label5.TabIndex = 40;
             this.label5.Text = "Место работы";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1221,7 +1269,7 @@
             this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label7.Location = new System.Drawing.Point(3, 182);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(262, 26);
+            this.label7.Size = new System.Drawing.Size(232, 26);
             this.label7.TabIndex = 44;
             this.label7.Text = "Учёное звание";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1232,7 +1280,7 @@
             this.label6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label6.Location = new System.Drawing.Point(3, 156);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(262, 26);
+            this.label6.Size = new System.Drawing.Size(232, 26);
             this.label6.TabIndex = 42;
             this.label6.Text = "Учёная степень";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1243,7 +1291,7 @@
             this.dataStudent.Location = new System.Drawing.Point(4, 22);
             this.dataStudent.Name = "dataStudent";
             this.dataStudent.Padding = new System.Windows.Forms.Padding(3);
-            this.dataStudent.Size = new System.Drawing.Size(543, 421);
+            this.dataStudent.Size = new System.Drawing.Size(721, 468);
             this.dataStudent.TabIndex = 0;
             this.dataStudent.Text = "Студент";
             this.dataStudent.UseVisualStyleBackColor = true;
@@ -1256,7 +1304,7 @@
             this.dataStudentReal.Location = new System.Drawing.Point(3, 3);
             this.dataStudentReal.Name = "dataStudentReal";
             this.dataStudentReal.SelectedIndex = 0;
-            this.dataStudentReal.Size = new System.Drawing.Size(537, 415);
+            this.dataStudentReal.Size = new System.Drawing.Size(715, 462);
             this.dataStudentReal.TabIndex = 49;
             // 
             // tabPage1
@@ -1265,7 +1313,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(529, 389);
+            this.tabPage1.Size = new System.Drawing.Size(707, 389);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Личные данные";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1273,9 +1321,10 @@
             // 
             // tableLayoutPanel6
             // 
-            this.tableLayoutPanel6.ColumnCount = 2;
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel6.ColumnCount = 3;
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel6.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel6.Controls.Add(this.lblCaption, 0, 0);
             this.tableLayoutPanel6.Controls.Add(this.txtStudentGrant, 1, 10);
             this.tableLayoutPanel6.Controls.Add(this.ckbMoney, 0, 10);
@@ -1297,6 +1346,7 @@
             this.tableLayoutPanel6.Controls.Add(this.txtStudentFathername, 1, 3);
             this.tableLayoutPanel6.Controls.Add(this.lblFaculty, 0, 5);
             this.tableLayoutPanel6.Controls.Add(this.cmbStudentFaculty, 1, 5);
+            this.tableLayoutPanel6.Controls.Add(this.btnAddStudent, 1, 11);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
@@ -1313,18 +1363,18 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(523, 383);
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(701, 383);
             this.tableLayoutPanel6.TabIndex = 75;
             // 
             // lblCaption
             // 
             this.lblCaption.AutoSize = true;
-            this.tableLayoutPanel6.SetColumnSpan(this.lblCaption, 2);
+            this.tableLayoutPanel6.SetColumnSpan(this.lblCaption, 3);
             this.lblCaption.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblCaption.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.lblCaption.Location = new System.Drawing.Point(3, 0);
             this.lblCaption.Name = "lblCaption";
-            this.lblCaption.Size = new System.Drawing.Size(517, 25);
+            this.lblCaption.Size = new System.Drawing.Size(695, 25);
             this.lblCaption.TabIndex = 54;
             this.lblCaption.Text = "Ввод данных о студенте и запись в базу";
             this.lblCaption.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1333,9 +1383,9 @@
             // 
             this.txtStudentGrant.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtStudentGrant.Enabled = false;
-            this.txtStudentGrant.Location = new System.Drawing.Point(264, 267);
+            this.txtStudentGrant.Location = new System.Drawing.Point(236, 267);
             this.txtStudentGrant.Name = "txtStudentGrant";
-            this.txtStudentGrant.Size = new System.Drawing.Size(256, 20);
+            this.txtStudentGrant.Size = new System.Drawing.Size(227, 20);
             this.txtStudentGrant.TabIndex = 67;
             // 
             // ckbMoney
@@ -1345,7 +1395,7 @@
             this.ckbMoney.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ckbMoney.Location = new System.Drawing.Point(3, 267);
             this.ckbMoney.Name = "ckbMoney";
-            this.ckbMoney.Size = new System.Drawing.Size(255, 20);
+            this.ckbMoney.Size = new System.Drawing.Size(227, 20);
             this.ckbMoney.TabIndex = 68;
             this.ckbMoney.Text = "Получает ли стипендию? И какую?";
             this.ckbMoney.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1363,9 +1413,9 @@
             "4",
             "5",
             "Аспирант"});
-            this.cmbStudentGroup.Location = new System.Drawing.Point(264, 213);
+            this.cmbStudentGroup.Location = new System.Drawing.Point(236, 213);
             this.cmbStudentGroup.Name = "cmbStudentGroup";
-            this.cmbStudentGroup.Size = new System.Drawing.Size(256, 21);
+            this.cmbStudentGroup.Size = new System.Drawing.Size(227, 21);
             this.cmbStudentGroup.TabIndex = 70;
             // 
             // cmbStudentDivision
@@ -1373,9 +1423,9 @@
             this.cmbStudentDivision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbStudentDivision.Enabled = false;
             this.cmbStudentDivision.FormattingEnabled = true;
-            this.cmbStudentDivision.Location = new System.Drawing.Point(264, 159);
+            this.cmbStudentDivision.Location = new System.Drawing.Point(236, 159);
             this.cmbStudentDivision.Name = "cmbStudentDivision";
-            this.cmbStudentDivision.Size = new System.Drawing.Size(256, 21);
+            this.cmbStudentDivision.Size = new System.Drawing.Size(227, 21);
             this.cmbStudentDivision.TabIndex = 74;
             this.cmbStudentDivision.SelectedIndexChanged += new System.EventHandler(this.cmbStudentDivision_SelectedIndexChanged);
             // 
@@ -1385,9 +1435,9 @@
             this.cmbStudentBudget.Items.AddRange(new object[] {
             "Бюджет",
             "СКЦ"});
-            this.cmbStudentBudget.Location = new System.Drawing.Point(264, 240);
+            this.cmbStudentBudget.Location = new System.Drawing.Point(236, 240);
             this.cmbStudentBudget.Name = "cmbStudentBudget";
-            this.cmbStudentBudget.Size = new System.Drawing.Size(256, 21);
+            this.cmbStudentBudget.Size = new System.Drawing.Size(227, 21);
             this.cmbStudentBudget.TabIndex = 65;
             // 
             // lblStudingForm
@@ -1396,7 +1446,7 @@
             this.lblStudingForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblStudingForm.Location = new System.Drawing.Point(3, 237);
             this.lblStudingForm.Name = "lblStudingForm";
-            this.lblStudingForm.Size = new System.Drawing.Size(255, 27);
+            this.lblStudingForm.Size = new System.Drawing.Size(227, 27);
             this.lblStudingForm.TabIndex = 66;
             this.lblStudingForm.Text = "Форма обучения";
             this.lblStudingForm.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1407,7 +1457,7 @@
             this.lblFirstName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFirstName.Location = new System.Drawing.Point(3, 25);
             this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(255, 26);
+            this.lblFirstName.Size = new System.Drawing.Size(227, 26);
             this.lblFirstName.TabIndex = 50;
             this.lblFirstName.Text = "Фамилия";
             this.lblFirstName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1418,7 +1468,7 @@
             this.label15.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label15.Location = new System.Drawing.Point(3, 156);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(255, 27);
+            this.label15.Size = new System.Drawing.Size(227, 27);
             this.label15.TabIndex = 73;
             this.label15.Text = "Кафедра";
             this.label15.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1429,7 +1479,7 @@
             this.lblName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblName.Location = new System.Drawing.Point(3, 51);
             this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(255, 26);
+            this.lblName.Size = new System.Drawing.Size(227, 26);
             this.lblName.TabIndex = 52;
             this.lblName.Text = "Имя";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1437,9 +1487,9 @@
             // txtStudentBirthdayDate
             // 
             this.txtStudentBirthdayDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtStudentBirthdayDate.Location = new System.Drawing.Point(264, 106);
+            this.txtStudentBirthdayDate.Location = new System.Drawing.Point(236, 106);
             this.txtStudentBirthdayDate.Name = "txtStudentBirthdayDate";
-            this.txtStudentBirthdayDate.Size = new System.Drawing.Size(256, 20);
+            this.txtStudentBirthdayDate.Size = new System.Drawing.Size(227, 20);
             this.txtStudentBirthdayDate.TabIndex = 71;
             // 
             // lblGroup
@@ -1448,7 +1498,7 @@
             this.lblGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblGroup.Location = new System.Drawing.Point(3, 210);
             this.lblGroup.Name = "lblGroup";
-            this.lblGroup.Size = new System.Drawing.Size(255, 27);
+            this.lblGroup.Size = new System.Drawing.Size(227, 27);
             this.lblGroup.TabIndex = 64;
             this.lblGroup.Text = "Группа";
             this.lblGroup.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1459,7 +1509,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Location = new System.Drawing.Point(3, 103);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(255, 26);
+            this.label1.Size = new System.Drawing.Size(227, 26);
             this.label1.TabIndex = 72;
             this.label1.Text = "Дата рождения";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1471,9 +1521,9 @@
             this.cmbStudentSpetialize.Items.AddRange(new object[] {
             "ПО",
             "НЕПО"});
-            this.cmbStudentSpetialize.Location = new System.Drawing.Point(264, 186);
+            this.cmbStudentSpetialize.Location = new System.Drawing.Point(236, 186);
             this.cmbStudentSpetialize.Name = "cmbStudentSpetialize";
-            this.cmbStudentSpetialize.Size = new System.Drawing.Size(256, 21);
+            this.cmbStudentSpetialize.Size = new System.Drawing.Size(227, 21);
             this.cmbStudentSpetialize.TabIndex = 58;
             this.cmbStudentSpetialize.SelectedIndexChanged += new System.EventHandler(this.cmbStudentSpetialize_SelectedIndexChanged);
             // 
@@ -1483,7 +1533,7 @@
             this.lblSpecialize.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSpecialize.Location = new System.Drawing.Point(3, 183);
             this.lblSpecialize.Name = "lblSpecialize";
-            this.lblSpecialize.Size = new System.Drawing.Size(255, 27);
+            this.lblSpecialize.Size = new System.Drawing.Size(227, 27);
             this.lblSpecialize.TabIndex = 59;
             this.lblSpecialize.Text = "Специальность";
             this.lblSpecialize.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1494,7 +1544,7 @@
             this.lblSecondName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblSecondName.Location = new System.Drawing.Point(3, 77);
             this.lblSecondName.Name = "lblSecondName";
-            this.lblSecondName.Size = new System.Drawing.Size(255, 26);
+            this.lblSecondName.Size = new System.Drawing.Size(227, 26);
             this.lblSecondName.TabIndex = 55;
             this.lblSecondName.Text = "Отчество";
             this.lblSecondName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1502,25 +1552,25 @@
             // txtStudentSurname
             // 
             this.txtStudentSurname.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtStudentSurname.Location = new System.Drawing.Point(264, 28);
+            this.txtStudentSurname.Location = new System.Drawing.Point(236, 28);
             this.txtStudentSurname.Name = "txtStudentSurname";
-            this.txtStudentSurname.Size = new System.Drawing.Size(256, 20);
+            this.txtStudentSurname.Size = new System.Drawing.Size(227, 20);
             this.txtStudentSurname.TabIndex = 49;
             // 
             // txtStudentName
             // 
             this.txtStudentName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtStudentName.Location = new System.Drawing.Point(264, 54);
+            this.txtStudentName.Location = new System.Drawing.Point(236, 54);
             this.txtStudentName.Name = "txtStudentName";
-            this.txtStudentName.Size = new System.Drawing.Size(256, 20);
+            this.txtStudentName.Size = new System.Drawing.Size(227, 20);
             this.txtStudentName.TabIndex = 51;
             // 
             // txtStudentFathername
             // 
             this.txtStudentFathername.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtStudentFathername.Location = new System.Drawing.Point(264, 80);
+            this.txtStudentFathername.Location = new System.Drawing.Point(236, 80);
             this.txtStudentFathername.Name = "txtStudentFathername";
-            this.txtStudentFathername.Size = new System.Drawing.Size(256, 20);
+            this.txtStudentFathername.Size = new System.Drawing.Size(227, 20);
             this.txtStudentFathername.TabIndex = 54;
             // 
             // lblFaculty
@@ -1529,7 +1579,7 @@
             this.lblFaculty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblFaculty.Location = new System.Drawing.Point(3, 129);
             this.lblFaculty.Name = "lblFaculty";
-            this.lblFaculty.Size = new System.Drawing.Size(255, 27);
+            this.lblFaculty.Size = new System.Drawing.Size(227, 27);
             this.lblFaculty.TabIndex = 56;
             this.lblFaculty.Text = "Факультет";
             this.lblFaculty.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1540,11 +1590,21 @@
             this.cmbStudentFaculty.Items.AddRange(new object[] {
             "КТАС",
             "НЕКТАС"});
-            this.cmbStudentFaculty.Location = new System.Drawing.Point(264, 132);
+            this.cmbStudentFaculty.Location = new System.Drawing.Point(236, 132);
             this.cmbStudentFaculty.Name = "cmbStudentFaculty";
-            this.cmbStudentFaculty.Size = new System.Drawing.Size(256, 21);
+            this.cmbStudentFaculty.Size = new System.Drawing.Size(227, 21);
             this.cmbStudentFaculty.TabIndex = 57;
             this.cmbStudentFaculty.SelectedIndexChanged += new System.EventHandler(this.cmbStudentFaculty_SelectedIndexChanged);
+            // 
+            // btnAddStudent
+            // 
+            this.btnAddStudent.Location = new System.Drawing.Point(236, 293);
+            this.btnAddStudent.Name = "btnAddStudent";
+            this.btnAddStudent.Size = new System.Drawing.Size(145, 23);
+            this.btnAddStudent.TabIndex = 84;
+            this.btnAddStudent.Text = "Добавить в базу";
+            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click_1);
             // 
             // tabPage2
             // 
@@ -1552,7 +1612,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(529, 389);
+            this.tabPage2.Size = new System.Drawing.Size(707, 436);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "НИР студента";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -1560,32 +1620,36 @@
             // 
             // tableLayoutPanel7
             // 
-            this.tableLayoutPanel7.ColumnCount = 2;
+            this.tableLayoutPanel7.ColumnCount = 3;
+            this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel7.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel7.Controls.Add(this.label16, 0, 1);
-            this.tableLayoutPanel7.Controls.Add(this.label12, 0, 10);
-            this.tableLayoutPanel7.Controls.Add(this.label13, 0, 9);
-            this.tableLayoutPanel7.Controls.Add(this.btnAddStudent, 1, 11);
-            this.tableLayoutPanel7.Controls.Add(this.cmbStudentMentor, 1, 1);
-            this.tableLayoutPanel7.Controls.Add(this.txtStudentProgramCount, 1, 10);
-            this.tableLayoutPanel7.Controls.Add(this.lbYearInNirs, 0, 2);
-            this.tableLayoutPanel7.Controls.Add(this.txtStudentYearsNIR, 1, 2);
-            this.tableLayoutPanel7.Controls.Add(this.txtStudentPatents, 1, 9);
-            this.tableLayoutPanel7.Controls.Add(this.lbTheme, 0, 3);
-            this.tableLayoutPanel7.Controls.Add(this.rtbxStudentTheme, 0, 4);
-            this.tableLayoutPanel7.Controls.Add(this.txtStudentAsset, 1, 8);
-            this.tableLayoutPanel7.Controls.Add(this.label9, 0, 5);
-            this.tableLayoutPanel7.Controls.Add(this.txtStudentPublicationCount, 1, 7);
-            this.tableLayoutPanel7.Controls.Add(this.label11, 0, 8);
-            this.tableLayoutPanel7.Controls.Add(this.rtbxStudentBackLog, 0, 6);
-            this.tableLayoutPanel7.Controls.Add(this.label10, 0, 7);
+            this.tableLayoutPanel7.Controls.Add(this.label16, 0, 2);
+            this.tableLayoutPanel7.Controls.Add(this.label12, 0, 11);
+            this.tableLayoutPanel7.Controls.Add(this.label13, 0, 10);
+            this.tableLayoutPanel7.Controls.Add(this.btnAddStudentNIR, 1, 12);
+            this.tableLayoutPanel7.Controls.Add(this.cmbStudentMentor, 1, 2);
+            this.tableLayoutPanel7.Controls.Add(this.txtStudentProgramCount, 1, 11);
+            this.tableLayoutPanel7.Controls.Add(this.lbYearInNirs, 0, 3);
+            this.tableLayoutPanel7.Controls.Add(this.txtStudentYearsNIR, 1, 3);
+            this.tableLayoutPanel7.Controls.Add(this.txtStudentPatents, 1, 10);
+            this.tableLayoutPanel7.Controls.Add(this.lbTheme, 0, 4);
+            this.tableLayoutPanel7.Controls.Add(this.rtbxStudentTheme, 0, 5);
+            this.tableLayoutPanel7.Controls.Add(this.txtStudentAsset, 1, 9);
+            this.tableLayoutPanel7.Controls.Add(this.label9, 0, 6);
+            this.tableLayoutPanel7.Controls.Add(this.txtStudentPublicationCount, 1, 8);
+            this.tableLayoutPanel7.Controls.Add(this.label11, 0, 9);
+            this.tableLayoutPanel7.Controls.Add(this.rtbxStudentBackLog, 0, 7);
+            this.tableLayoutPanel7.Controls.Add(this.label10, 0, 8);
             this.tableLayoutPanel7.Controls.Add(this.label31, 0, 0);
+            this.tableLayoutPanel7.Controls.Add(this.label36, 0, 1);
+            this.tableLayoutPanel7.Controls.Add(this.cmbNIR_Student, 1, 1);
             this.tableLayoutPanel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel7.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel7.Name = "tableLayoutPanel7";
-            this.tableLayoutPanel7.RowCount = 12;
+            this.tableLayoutPanel7.RowCount = 13;
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1597,16 +1661,16 @@
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel7.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel7.Size = new System.Drawing.Size(523, 383);
+            this.tableLayoutPanel7.Size = new System.Drawing.Size(701, 430);
             this.tableLayoutPanel7.TabIndex = 86;
             // 
             // label16
             // 
             this.label16.AutoSize = true;
             this.label16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label16.Location = new System.Drawing.Point(3, 25);
+            this.label16.Location = new System.Drawing.Point(3, 45);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(255, 27);
+            this.label16.Size = new System.Drawing.Size(376, 27);
             this.label16.TabIndex = 84;
             this.label16.Text = "Научный руководитель";
             this.label16.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1615,9 +1679,9 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label12.Location = new System.Drawing.Point(3, 326);
+            this.label12.Location = new System.Drawing.Point(3, 346);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(255, 26);
+            this.label12.Size = new System.Drawing.Size(376, 26);
             this.label12.TabIndex = 79;
             this.label12.Text = "в том числе патенты на изобретения и полезные модели";
             this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1626,34 +1690,35 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label13.Location = new System.Drawing.Point(3, 300);
+            this.label13.Location = new System.Drawing.Point(3, 320);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(255, 26);
+            this.label13.Size = new System.Drawing.Size(376, 26);
             this.label13.TabIndex = 81;
             this.label13.Text = "свидетельства на программы для ЭВМ";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // btnAddStudent
+            // btnAddStudentNIR
             // 
-            this.btnAddStudent.Location = new System.Drawing.Point(264, 355);
-            this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(145, 23);
-            this.btnAddStudent.TabIndex = 83;
-            this.btnAddStudent.Text = "Добавить в базу";
-            this.btnAddStudent.UseVisualStyleBackColor = true;
-            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
+            this.btnAddStudentNIR.Location = new System.Drawing.Point(385, 375);
+            this.btnAddStudentNIR.Name = "btnAddStudentNIR";
+            this.btnAddStudentNIR.Size = new System.Drawing.Size(145, 23);
+            this.btnAddStudentNIR.TabIndex = 83;
+            this.btnAddStudentNIR.Text = "Добавить в базу";
+            this.btnAddStudentNIR.UseVisualStyleBackColor = true;
+            this.btnAddStudentNIR.Click += new System.EventHandler(this.btnAddStudentNIR_Click);
             // 
             // cmbStudentMentor
             // 
+            this.cmbStudentMentor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cmbStudentMentor.FormattingEnabled = true;
-            this.cmbStudentMentor.Location = new System.Drawing.Point(264, 28);
+            this.cmbStudentMentor.Location = new System.Drawing.Point(385, 48);
             this.cmbStudentMentor.Name = "cmbStudentMentor";
-            this.cmbStudentMentor.Size = new System.Drawing.Size(94, 21);
+            this.cmbStudentMentor.Size = new System.Drawing.Size(153, 21);
             this.cmbStudentMentor.TabIndex = 85;
             // 
             // txtStudentProgramCount
             // 
-            this.txtStudentProgramCount.Location = new System.Drawing.Point(264, 329);
+            this.txtStudentProgramCount.Location = new System.Drawing.Point(385, 349);
             this.txtStudentProgramCount.Name = "txtStudentProgramCount";
             this.txtStudentProgramCount.Size = new System.Drawing.Size(59, 20);
             this.txtStudentProgramCount.TabIndex = 82;
@@ -1662,23 +1727,24 @@
             // 
             this.lbYearInNirs.AutoSize = true;
             this.lbYearInNirs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbYearInNirs.Location = new System.Drawing.Point(3, 52);
+            this.lbYearInNirs.Location = new System.Drawing.Point(3, 72);
             this.lbYearInNirs.Name = "lbYearInNirs";
-            this.lbYearInNirs.Size = new System.Drawing.Size(255, 26);
+            this.lbYearInNirs.Size = new System.Drawing.Size(376, 26);
             this.lbYearInNirs.TabIndex = 69;
             this.lbYearInNirs.Text = "Сколько лет занимается НИР";
             this.lbYearInNirs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtStudentYearsNIR
             // 
-            this.txtStudentYearsNIR.Location = new System.Drawing.Point(264, 55);
+            this.txtStudentYearsNIR.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtStudentYearsNIR.Location = new System.Drawing.Point(385, 75);
             this.txtStudentYearsNIR.Name = "txtStudentYearsNIR";
-            this.txtStudentYearsNIR.Size = new System.Drawing.Size(94, 20);
+            this.txtStudentYearsNIR.Size = new System.Drawing.Size(153, 20);
             this.txtStudentYearsNIR.TabIndex = 70;
             // 
             // txtStudentPatents
             // 
-            this.txtStudentPatents.Location = new System.Drawing.Point(264, 303);
+            this.txtStudentPatents.Location = new System.Drawing.Point(385, 323);
             this.txtStudentPatents.Name = "txtStudentPatents";
             this.txtStudentPatents.Size = new System.Drawing.Size(59, 20);
             this.txtStudentPatents.TabIndex = 80;
@@ -1687,26 +1753,26 @@
             // 
             this.lbTheme.AutoSize = true;
             this.lbTheme.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lbTheme.Location = new System.Drawing.Point(3, 78);
+            this.lbTheme.Location = new System.Drawing.Point(3, 98);
             this.lbTheme.Name = "lbTheme";
-            this.lbTheme.Size = new System.Drawing.Size(255, 13);
+            this.lbTheme.Size = new System.Drawing.Size(376, 13);
             this.lbTheme.TabIndex = 71;
             this.lbTheme.Text = "Научная тематика, по которой студент работал";
             this.lbTheme.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // rtbxStudentTheme
             // 
-            this.tableLayoutPanel7.SetColumnSpan(this.rtbxStudentTheme, 2);
+            this.tableLayoutPanel7.SetColumnSpan(this.rtbxStudentTheme, 3);
             this.rtbxStudentTheme.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbxStudentTheme.Location = new System.Drawing.Point(3, 94);
+            this.rtbxStudentTheme.Location = new System.Drawing.Point(3, 114);
             this.rtbxStudentTheme.Name = "rtbxStudentTheme";
-            this.rtbxStudentTheme.Size = new System.Drawing.Size(517, 27);
+            this.rtbxStudentTheme.Size = new System.Drawing.Size(695, 27);
             this.rtbxStudentTheme.TabIndex = 72;
             this.rtbxStudentTheme.Text = "";
             // 
             // txtStudentAsset
             // 
-            this.txtStudentAsset.Location = new System.Drawing.Point(264, 277);
+            this.txtStudentAsset.Location = new System.Drawing.Point(385, 297);
             this.txtStudentAsset.Name = "txtStudentAsset";
             this.txtStudentAsset.Size = new System.Drawing.Size(59, 20);
             this.txtStudentAsset.TabIndex = 78;
@@ -1715,16 +1781,16 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Location = new System.Drawing.Point(3, 124);
+            this.label9.Location = new System.Drawing.Point(3, 144);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(255, 13);
+            this.label9.Size = new System.Drawing.Size(376, 13);
             this.label9.TabIndex = 73;
             this.label9.Text = "Научный задел";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtStudentPublicationCount
             // 
-            this.txtStudentPublicationCount.Location = new System.Drawing.Point(264, 251);
+            this.txtStudentPublicationCount.Location = new System.Drawing.Point(385, 271);
             this.txtStudentPublicationCount.Name = "txtStudentPublicationCount";
             this.txtStudentPublicationCount.Size = new System.Drawing.Size(59, 20);
             this.txtStudentPublicationCount.TabIndex = 76;
@@ -1733,20 +1799,20 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label11.Location = new System.Drawing.Point(3, 274);
+            this.label11.Location = new System.Drawing.Point(3, 294);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(255, 26);
+            this.label11.Size = new System.Drawing.Size(376, 26);
             this.label11.TabIndex = 77;
             this.label11.Text = "Объекты интелектуальной и промышленной собственности, количество";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // rtbxStudentBackLog
             // 
-            this.tableLayoutPanel7.SetColumnSpan(this.rtbxStudentBackLog, 2);
+            this.tableLayoutPanel7.SetColumnSpan(this.rtbxStudentBackLog, 3);
             this.rtbxStudentBackLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbxStudentBackLog.Location = new System.Drawing.Point(3, 140);
+            this.rtbxStudentBackLog.Location = new System.Drawing.Point(3, 160);
             this.rtbxStudentBackLog.Name = "rtbxStudentBackLog";
-            this.rtbxStudentBackLog.Size = new System.Drawing.Size(517, 105);
+            this.rtbxStudentBackLog.Size = new System.Drawing.Size(695, 105);
             this.rtbxStudentBackLog.TabIndex = 74;
             this.rtbxStudentBackLog.Text = "";
             // 
@@ -1754,9 +1820,9 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label10.Location = new System.Drawing.Point(3, 248);
+            this.label10.Location = new System.Drawing.Point(3, 268);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(255, 26);
+            this.label10.Size = new System.Drawing.Size(376, 26);
             this.label10.TabIndex = 75;
             this.label10.Text = "Публикаци, количество всего / статей";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -1764,12 +1830,12 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.tableLayoutPanel7.SetColumnSpan(this.label31, 2);
+            this.tableLayoutPanel7.SetColumnSpan(this.label31, 3);
             this.label31.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label31.Location = new System.Drawing.Point(3, 0);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(517, 25);
+            this.label31.Size = new System.Drawing.Size(695, 25);
             this.label31.TabIndex = 86;
             this.label31.Text = "Научно-исследовательская работа студента";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1783,11 +1849,31 @@
             // 
             this.bindWorks.DataMember = "works";
             // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label36.Location = new System.Drawing.Point(3, 25);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(376, 20);
+            this.label36.TabIndex = 87;
+            this.label36.Text = "Студент";
+            this.label36.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cmbNIR_Student
+            // 
+            this.cmbNIR_Student.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbNIR_Student.FormattingEnabled = true;
+            this.cmbNIR_Student.Location = new System.Drawing.Point(385, 28);
+            this.cmbNIR_Student.Name = "cmbNIR_Student";
+            this.cmbNIR_Student.Size = new System.Drawing.Size(153, 21);
+            this.cmbNIR_Student.TabIndex = 88;
+            // 
             // addSomeOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(558, 447);
+            this.ClientSize = new System.Drawing.Size(729, 494);
             this.Controls.Add(this.AddFuculty);
             this.Name = "addSomeOne";
             this.Text = "Добавление записей";
@@ -1887,7 +1973,7 @@
         private System.Windows.Forms.TextBox txtStudentYearsNIR;
         private System.Windows.Forms.Label lbYearInNirs;
         private System.Windows.Forms.Button btnAddMentor;
-        private System.Windows.Forms.Button btnAddStudent;
+        private System.Windows.Forms.Button btnAddStudentNIR;
         private System.Windows.Forms.Label lblCaption;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtStudentBirthdayDate;
@@ -1939,19 +2025,9 @@
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.DataGridView dataGridViewFaculty;
         private NIRS_Viewer.bind bindFaculty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private NIRS_Viewer.bind bindDivision;
         private NIRS_Viewer.bind bindSpec;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn facidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn2;
         private NIRS_Viewer.bind bindGroup;
         private NIRS_Viewer.bind bindMentor;
         private NIRS_Viewer.bind bindStudent;
@@ -1960,14 +2036,27 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel4;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dividDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn facidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn facidDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dividDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn6;
         private System.Windows.Forms.DataGridViewTextBoxColumn specidDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn2;
@@ -1983,9 +2072,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn acrankDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn degreeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dividDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel6;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel7;
-        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button btnAddStudent;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.ComboBox cmbNIR_Student;
     }
 }
 

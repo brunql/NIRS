@@ -67,7 +67,7 @@ namespace NIRS
             throw new NullReferenceException();
         }
 
-        private void btnAddStudent_Click(object sender, EventArgs e)
+        private void btnAddStudent_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -215,6 +215,10 @@ namespace NIRS
             //ComboBoxKiller.FillComboBox_mentor(dataViewAddedMentor, cmbStudentMentor);
         }
 
+        private void btnAddStudentNIR_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
     //class ComboBoxKiller
