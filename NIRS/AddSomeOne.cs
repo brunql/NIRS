@@ -128,8 +128,8 @@ namespace NIRS
         {
             //InsertStuff.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
             NIRS_Viewer.config.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
-            bindFaculty.Clear();
-            bindFaculty.Fill();
+            NIRS_Viewer.config.Update("faculty");
+            bindFaculty.Update();
         }
 
         private void addSomeOne_Load(object sender, EventArgs e)

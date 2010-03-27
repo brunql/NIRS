@@ -32,17 +32,14 @@ namespace NIRS
                 doc.SetTextAlign(WordTextAlign.Center);
                 doc.SetFont(timesBold);
 
-                WordTable wt = doc.NewTable(timesRegular, Color.Black, ShowMe.Rows.Count + 2, ShowMe.Columns.Count, 0);
+                WordTable wt = doc.NewTable(timesRegular, Color.Black, ShowMe.Rows.Count + 1, ShowMe.Columns.Count, 0);
                 foreach (WordCell rc in wt.Cells) rc.SetBorders(Color.Black, 1, true, true, true, true);
                 wt.SetContentAlignment(ContentAlignment.TopCenter);
-                wt.SetFont(timesBigBold);
-                wt.Rows[0][0].ColSpan = ShowMe.Columns.Count;
-                wt.Rows[0][0].WriteControlWord(Encode("Сводная таблица"));
                 wt.SetFont(timesBold);
 
                 for (int i = 0; i < ShowMe.Columns.Count; i++)
                 {
-                    wt.Rows[1][i].WriteControlWord(Encode(ShowMe.Columns[i].Caption));
+                    wt.Rows[0][i].WriteControlWord(Encode(ShowMe.Columns[i].Caption));
                 }
 
                 wt.SetFont(timesRegular);
@@ -51,7 +48,7 @@ namespace NIRS
                     for (int col = 0; col < ShowMe.Columns.Count; col++)
                     {
                         string temp = Encode(ShowMe.Rows[row].ItemArray[col].ToString());
-                        wt.Rows[row + 2][col].WriteControlWord(temp);
+                        wt.Rows[row + 1][col].WriteControlWord(temp);
                     }
                 }
             
