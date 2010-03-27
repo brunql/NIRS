@@ -177,10 +177,17 @@
             this.rtbxStudentBackLog = new System.Windows.Forms.RichTextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
-            this.bindStudent = new NIRS_Viewer.bind();
-            this.bindWorks = new NIRS_Viewer.bind();
             this.label36 = new System.Windows.Forms.Label();
             this.cmbNIR_Student = new System.Windows.Forms.ComboBox();
+            this.bindStudent = new NIRS_Viewer.bind();
+            this.bindWorks = new NIRS_Viewer.bind();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nameDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fathernameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mentoridDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bornDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AddFuculty.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -213,6 +220,7 @@
             this.tableLayoutPanel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindStudent)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindWorks)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // AddFuculty
@@ -236,7 +244,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(721, 421);
+            this.tabPage3.Size = new System.Drawing.Size(721, 468);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Факультет";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -263,7 +271,7 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(715, 415);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(715, 462);
             this.tableLayoutPanel1.TabIndex = 63;
             // 
             // label18
@@ -293,7 +301,7 @@
             this.dataGridViewFaculty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridViewFaculty.Location = new System.Drawing.Point(3, 109);
             this.dataGridViewFaculty.Name = "dataGridViewFaculty";
-            this.dataGridViewFaculty.Size = new System.Drawing.Size(709, 303);
+            this.dataGridViewFaculty.Size = new System.Drawing.Size(709, 350);
             this.dataGridViewFaculty.TabIndex = 62;
             // 
             // idDataGridViewTextBoxColumn
@@ -374,7 +382,7 @@
             this.tabPage4.Controls.Add(this.tableLayoutPanel2);
             this.tabPage4.Location = new System.Drawing.Point(4, 22);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(721, 421);
+            this.tabPage4.Size = new System.Drawing.Size(721, 468);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Кафедра";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -407,7 +415,7 @@
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(721, 421);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(721, 468);
             this.tableLayoutPanel2.TabIndex = 61;
             // 
             // label19
@@ -438,7 +446,7 @@
             this.dataViewAddedDivision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewAddedDivision.Location = new System.Drawing.Point(3, 306);
             this.dataViewAddedDivision.Name = "dataViewAddedDivision";
-            this.dataViewAddedDivision.Size = new System.Drawing.Size(715, 132);
+            this.dataViewAddedDivision.Size = new System.Drawing.Size(715, 159);
             this.dataViewAddedDivision.TabIndex = 55;
             // 
             // idDataGridViewTextBoxColumn2
@@ -583,7 +591,7 @@
             this.dataSpec.Controls.Add(this.tableLayoutPanel3);
             this.dataSpec.Location = new System.Drawing.Point(4, 22);
             this.dataSpec.Name = "dataSpec";
-            this.dataSpec.Size = new System.Drawing.Size(721, 421);
+            this.dataSpec.Size = new System.Drawing.Size(721, 468);
             this.dataSpec.TabIndex = 5;
             this.dataSpec.Text = "Специальность";
             this.dataSpec.UseVisualStyleBackColor = true;
@@ -616,7 +624,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(721, 421);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(721, 468);
             this.tableLayoutPanel3.TabIndex = 72;
             // 
             // label21
@@ -647,7 +655,7 @@
             this.dataViewAddedSpec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewAddedSpec.Location = new System.Drawing.Point(3, 294);
             this.dataViewAddedSpec.Name = "dataViewAddedSpec";
-            this.dataViewAddedSpec.Size = new System.Drawing.Size(715, 124);
+            this.dataViewAddedSpec.Size = new System.Drawing.Size(715, 171);
             this.dataViewAddedSpec.TabIndex = 59;
             // 
             // idDataGridViewTextBoxColumn4
@@ -800,7 +808,7 @@
             this.tabPage5.Controls.Add(this.tableLayoutPanel4);
             this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(721, 421);
+            this.tabPage5.Size = new System.Drawing.Size(721, 468);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Группа";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -829,7 +837,7 @@
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(721, 421);
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(721, 468);
             this.tableLayoutPanel4.TabIndex = 68;
             // 
             // label23
@@ -842,7 +850,7 @@
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(715, 25);
             this.label23.TabIndex = 63;
-            this.label23.Text = "Добавление группу в базу";
+            this.label23.Text = "Добавление группы в базу";
             this.label23.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // dataViewAddedGroup
@@ -859,7 +867,7 @@
             this.dataViewAddedGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewAddedGroup.Location = new System.Drawing.Point(3, 291);
             this.dataViewAddedGroup.Name = "dataViewAddedGroup";
-            this.dataViewAddedGroup.Size = new System.Drawing.Size(715, 146);
+            this.dataViewAddedGroup.Size = new System.Drawing.Size(715, 174);
             this.dataViewAddedGroup.TabIndex = 64;
             // 
             // idDataGridViewTextBoxColumn6
@@ -989,7 +997,7 @@
             this.dataMentor.Location = new System.Drawing.Point(4, 22);
             this.dataMentor.Name = "dataMentor";
             this.dataMentor.Padding = new System.Windows.Forms.Padding(3);
-            this.dataMentor.Size = new System.Drawing.Size(721, 421);
+            this.dataMentor.Size = new System.Drawing.Size(721, 468);
             this.dataMentor.TabIndex = 1;
             this.dataMentor.Text = "Руководитель";
             this.dataMentor.UseVisualStyleBackColor = true;
@@ -1033,7 +1041,7 @@
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel5.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel5.Size = new System.Drawing.Size(715, 415);
+            this.tableLayoutPanel5.Size = new System.Drawing.Size(715, 462);
             this.tableLayoutPanel5.TabIndex = 51;
             // 
             // label8
@@ -1093,7 +1101,7 @@
             this.dataViewAddedMentor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewAddedMentor.Location = new System.Drawing.Point(3, 253);
             this.dataViewAddedMentor.Name = "dataViewAddedMentor";
-            this.dataViewAddedMentor.Size = new System.Drawing.Size(709, 159);
+            this.dataViewAddedMentor.Size = new System.Drawing.Size(709, 206);
             this.dataViewAddedMentor.TabIndex = 49;
             // 
             // idDataGridViewTextBoxColumn7
@@ -1313,7 +1321,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(707, 389);
+            this.tabPage1.Size = new System.Drawing.Size(707, 436);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Личные данные";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -1346,11 +1354,12 @@
             this.tableLayoutPanel6.Controls.Add(this.txtStudentFathername, 1, 3);
             this.tableLayoutPanel6.Controls.Add(this.lblFaculty, 0, 5);
             this.tableLayoutPanel6.Controls.Add(this.cmbStudentFaculty, 1, 5);
+            this.tableLayoutPanel6.Controls.Add(this.dataGridView1, 0, 12);
             this.tableLayoutPanel6.Controls.Add(this.btnAddStudent, 1, 11);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 12;
+            this.tableLayoutPanel6.RowCount = 13;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1362,8 +1371,9 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel6.Size = new System.Drawing.Size(701, 383);
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel6.Size = new System.Drawing.Size(701, 430);
             this.tableLayoutPanel6.TabIndex = 75;
             // 
             // lblCaption
@@ -1600,11 +1610,11 @@
             // 
             this.btnAddStudent.Location = new System.Drawing.Point(236, 293);
             this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(145, 23);
+            this.btnAddStudent.Size = new System.Drawing.Size(145, 24);
             this.btnAddStudent.TabIndex = 84;
             this.btnAddStudent.Text = "Добавить в базу";
             this.btnAddStudent.UseVisualStyleBackColor = true;
-            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click_1);
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // tabPage2
             // 
@@ -1840,15 +1850,6 @@
             this.label31.Text = "Научно-исследовательская работа студента";
             this.label31.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // bindStudent
-            // 
-            this.bindStudent.DataMember = "student";
-            this.bindStudent.Position = 0;
-            // 
-            // bindWorks
-            // 
-            this.bindWorks.DataMember = "works";
-            // 
             // label36
             // 
             this.label36.AutoSize = true;
@@ -1868,6 +1869,77 @@
             this.cmbNIR_Student.Name = "cmbNIR_Student";
             this.cmbNIR_Student.Size = new System.Drawing.Size(153, 21);
             this.cmbNIR_Student.TabIndex = 88;
+            // 
+            // bindStudent
+            // 
+            this.bindStudent.DataMember = "student";
+            this.bindStudent.Position = 0;
+            // 
+            // bindWorks
+            // 
+            this.bindWorks.DataMember = "works";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nameDataGridViewTextBoxColumn7,
+            this.surnameDataGridViewTextBoxColumn1,
+            this.fathernameDataGridViewTextBoxColumn1,
+            this.groupidDataGridViewTextBoxColumn,
+            this.mentoridDataGridViewTextBoxColumn,
+            this.bornDataGridViewTextBoxColumn});
+            this.tableLayoutPanel6.SetColumnSpan(this.dataGridView1, 3);
+            this.dataGridView1.DataSource = this.bindStudent;
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 323);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(695, 104);
+            this.dataGridView1.TabIndex = 86;
+            // 
+            // nameDataGridViewTextBoxColumn7
+            // 
+            this.nameDataGridViewTextBoxColumn7.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn7.HeaderText = "Имя";
+            this.nameDataGridViewTextBoxColumn7.Name = "nameDataGridViewTextBoxColumn7";
+            this.nameDataGridViewTextBoxColumn7.Width = 54;
+            // 
+            // surnameDataGridViewTextBoxColumn1
+            // 
+            this.surnameDataGridViewTextBoxColumn1.DataPropertyName = "surname";
+            this.surnameDataGridViewTextBoxColumn1.HeaderText = "Фамилия";
+            this.surnameDataGridViewTextBoxColumn1.Name = "surnameDataGridViewTextBoxColumn1";
+            this.surnameDataGridViewTextBoxColumn1.Width = 81;
+            // 
+            // fathernameDataGridViewTextBoxColumn1
+            // 
+            this.fathernameDataGridViewTextBoxColumn1.DataPropertyName = "fathername";
+            this.fathernameDataGridViewTextBoxColumn1.HeaderText = "Отчество";
+            this.fathernameDataGridViewTextBoxColumn1.Name = "fathernameDataGridViewTextBoxColumn1";
+            this.fathernameDataGridViewTextBoxColumn1.Width = 79;
+            // 
+            // groupidDataGridViewTextBoxColumn
+            // 
+            this.groupidDataGridViewTextBoxColumn.DataPropertyName = "group_id";
+            this.groupidDataGridViewTextBoxColumn.HeaderText = "ID Группы";
+            this.groupidDataGridViewTextBoxColumn.Name = "groupidDataGridViewTextBoxColumn";
+            this.groupidDataGridViewTextBoxColumn.Width = 83;
+            // 
+            // mentoridDataGridViewTextBoxColumn
+            // 
+            this.mentoridDataGridViewTextBoxColumn.DataPropertyName = "mentor_id";
+            this.mentoridDataGridViewTextBoxColumn.HeaderText = "ID Руководителя";
+            this.mentoridDataGridViewTextBoxColumn.Name = "mentoridDataGridViewTextBoxColumn";
+            this.mentoridDataGridViewTextBoxColumn.Width = 107;
+            // 
+            // bornDataGridViewTextBoxColumn
+            // 
+            this.bornDataGridViewTextBoxColumn.DataPropertyName = "born";
+            this.bornDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
+            this.bornDataGridViewTextBoxColumn.Name = "bornDataGridViewTextBoxColumn";
+            this.bornDataGridViewTextBoxColumn.Width = 102;
             // 
             // addSomeOne
             // 
@@ -1917,6 +1989,7 @@
             this.tableLayoutPanel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindStudent)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindWorks)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2075,6 +2148,13 @@
         private System.Windows.Forms.Button btnAddStudent;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.ComboBox cmbNIR_Student;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fathernameDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn groupidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mentoridDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bornDataGridViewTextBoxColumn;
     }
 }
 

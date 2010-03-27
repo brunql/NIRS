@@ -59,7 +59,7 @@ namespace NIRS_Viewer
 		private static string select_group_string = "SELECT id, spec_id, code FROM `group`";
 		private static string select_mentor_string = "SELECT id, name, surname, fathername, work, acrank, degree,div_id FROM mentor";
 		private static string select_spec_string = "SELECT id, div_id, code, name FROM spec";
-		private static string select_student_string = "SELECT id name, surname, fathername, group_id, mentor_id, born FROM student";
+		private static string select_student_string = @"SELECT id name, surname, fathername, group_id, born, study, `grant` FROM student";
 		private static string select_works_string = "SELECT id, student_id, name, `desc`, mentor_id FROM works";
 		
 		public static bool IsInitialize {get; private set;}

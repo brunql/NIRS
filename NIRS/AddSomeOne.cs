@@ -30,11 +30,11 @@ namespace NIRS
 
         private void btnAddMentor_Click(object sender, EventArgs e)
         {
-            //if ((ComboBoxKiller)cbMentorDivision.SelectedItem == null)
-            //{
-            //    MessageBox.Show("Кафедра не выбрана");
-            //    return;
-            //}
+            if ((ComboBoxKiller)cbMentorDivision.SelectedItem == null)
+            {
+                MessageBox.Show("Кафедра не выбрана");
+                return;
+            }
 
             InsertStuff.InsertMentor(txtMentorName.Text,
                 txtMentorSurname.Text,
@@ -42,8 +42,7 @@ namespace NIRS
                 txtMentorWork.Text,
                 txtMentorAcademicRank.Text,
                 txtMentorDegree.Text,
-                2 // TODO
-                //((ComboBoxKiller)cbMentorDivision.SelectedItem).Id
+                ((ComboBoxKiller)cbMentorDivision.SelectedItem).Id
                 );
 
             //MessageBox.Show("not implemented");
@@ -67,7 +66,7 @@ namespace NIRS
             throw new NullReferenceException();
         }
 
-        private void btnAddStudent_Click_1(object sender, EventArgs e)
+        private void btnAddStudent_Click(object sender, EventArgs e)
         {
             try
             {
@@ -106,10 +105,8 @@ namespace NIRS
                 txtStudentName.Text,
                 txtStudentSurname.Text,
                 txtStudentFathername.Text,
-                2, // TODO
-                2, // TODO
-                //(cmbStudentGroup.SelectedItem as ComboBoxKiller).Id,
-                //(cmbStudentMentor.SelectedItem as ComboBoxKiller).Id,
+                (cmbStudentGroup.SelectedItem as ComboBoxKiller).Id,
+                (cmbStudentMentor.SelectedItem as ComboBoxKiller).Id,
                 birthdate
                 );
 
@@ -137,13 +134,13 @@ namespace NIRS
 
         private void addSomeOne_Load(object sender, EventArgs e)
         {
-            //for (int i = dataViewSpecDivision.Rows.Count - 1 - 1; i >= 0; i--)
-            //{
-            //    ComboBoxKiller iam = new ComboBoxKiller();
-            //    iam.Id = (int)dataViewSpecDivision.Rows[i].Cells[0].Value;
-            //    iam.Name = dataViewSpecDivision.Rows[i].Cells[1].Value.ToString();
-            //    cbMentorDivision.Items.Add(iam);
-            //}
+            for (int i = dataViewSpecDivision.Rows.Count - 1 - 1; i >= 0; i--)
+            {
+                ComboBoxKiller iam = new ComboBoxKiller();
+                iam.Id = (int)dataViewSpecDivision.Rows[i].Cells[0].Value;
+                iam.Name = dataViewSpecDivision.Rows[i].Cells[1].Value.ToString();
+                cbMentorDivision.Items.Add(iam);
+            }
         }
 
         private void AddDivision_Click(object sender, EventArgs e)
@@ -178,41 +175,37 @@ namespace NIRS
 
         private void tabPage1_Enter(object sender, EventArgs e)
         {
-            //ComboBoxKiller.FillComboBox(dataGridViewFaculty, cmbStudentFaculty);
-            // todo: load mentors to cmbStudentMentors
-            //ComboBoxKiller.FillComboBox(dataViewAddedDivision, cmbStudentDivision);
-            //ComboBoxKiller.FillComboBox(dataViewAddedGroup, cmbStudentGroup);
-            //ComboBoxKiller.FillComboBox(dat
-            //for (int i = dataViewSpecDivision.Rows.Count - 1 - 1; i >= 0; i--)
-            //{
-            //    ComboBoxKiller iam = new ComboBoxKiller();
-            //    iam.Id = (int)dataViewSpecDivision.Rows[i].Cells[0].Value;
-            //    iam.Name = dataViewSpecDivision.Rows[i].Cells[1].Value.ToString();
-            //    cbMentorDivision.Items.Add(iam);
-            //}
+            ComboBoxKiller.FillComboBox(dataGridViewFaculty, cmbStudentFaculty);
+            for (int i = (dataViewAddedDivision.Rows.Count - 1) - 1; i >= 0; i--)
+            {
+                ComboBoxKiller iam = new ComboBoxKiller();
+                iam.Id = (int)dataViewAddedDivision.Rows[i].Cells[0].Value;
+                iam.Name = dataViewAddedDivision.Rows[i].Cells[2].Value.ToString();
+                cbMentorDivision.Items.Add(iam);
+            }
         }
 
         private void cmbStudentFaculty_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //cmbStudentDivision.Enabled = true;
-            //ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedDivision, cmbStudentDivision,"name", "fac_id", (cmbStudentFaculty.SelectedItem as ComboBoxKiller).Id);
+            cmbStudentDivision.Enabled = true;
+            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedDivision, cmbStudentDivision, 2, 1, (cmbStudentFaculty.SelectedItem as ComboBoxKiller).Id);
         }
 
         private void cmbStudentDivision_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //cmbStudentSpetialize.Enabled = true;
-            //ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedSpec, cmbStudentSpetialize, "name", "div_id", (cmbStudentDivision.SelectedItem as ComboBoxKiller).Id);
+            cmbStudentSpetialize.Enabled = true;
+            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedSpec, cmbStudentSpetialize, 2, 1, (cmbStudentDivision.SelectedItem as ComboBoxKiller).Id);
         }
 
         private void cmbStudentSpetialize_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //cmbStudentGroup.Enabled = true;
-            //ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedGroup, cmbStudentGroup, "code", "spec_id", (cmbStudentDivision.SelectedItem as ComboBoxKiller).Id);
+            cmbStudentGroup.Enabled = true;
+            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedGroup, cmbStudentGroup, 2, 1, (cmbStudentDivision.SelectedItem as ComboBoxKiller).Id);
         }
 
         private void tabPage2_Enter(object sender, EventArgs e)
         {
-            //ComboBoxKiller.FillComboBox_mentor(dataViewAddedMentor, cmbStudentMentor);
+            ComboBoxKiller.FillComboBox_mentor(dataViewAddedMentor, cmbStudentMentor);
         }
 
         private void btnAddStudentNIR_Click(object sender, EventArgs e)
@@ -221,54 +214,54 @@ namespace NIRS
         }
     }
 
-    //class ComboBoxKiller
-    //{
-    //    public int Id { get; set; }
-    //    public string Name { get; set; }
-    //    public override string ToString()
-    //    {
-    //        return Name;
-    //    }
+    class ComboBoxKiller
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public override string ToString()
+        {
+            return Name;
+        }
 
-    //    public static void FillComboBox(DataGridView dtvw, ComboBox cb)
-    //    {
-    //        cb.Items.Clear();
-    //        for (int i = dtvw.Rows.Count - 1 - 1; i >= 0; i--)
-    //        {
-    //            ComboBoxKiller iam = new ComboBoxKiller();
-    //            iam.Id = (int)dtvw.Rows[i].Cells["id"].Value;
-    //            iam.Name = dtvw.Rows[i].Cells["name"].Value.ToString();
-    //            cb.Items.Add(iam);
-    //        }
-    //    }
+        public static void FillComboBox(DataGridView dtvw, ComboBox cb)
+        {
+            cb.Items.Clear();
+            for (int i = (dtvw.Rows.Count - 1) - 1; i >= 0; i--)
+            {
+                ComboBoxKiller iam = new ComboBoxKiller();
+                iam.Id = (int)dtvw.Rows[i].Cells[0].Value;
+                iam.Name = dtvw.Rows[i].Cells[1].Value.ToString();
+                cb.Items.Add(iam);
+            }
+        }
 
-    //    public static void FillComboBox_mentor(DataGridView dtvw, ComboBox cb)
-    //    {
-    //        cb.Items.Clear();
-    //        for (int i = dtvw.Rows.Count - 1 - 1; i >= 0; i--)
-    //        {
-    //            ComboBoxKiller iam = new ComboBoxKiller();
-    //            iam.Id = (int)dtvw.Rows[i].Cells[0].Value;
-    //            iam.Name = dtvw.Rows[i].Cells[1].Value.ToString() +" "+
-    //                dtvw.Rows[i].Cells[2].Value.ToString() + " "+
-    //                dtvw.Rows[i].Cells[3].Value.ToString();
-    //            cb.Items.Add(iam);
-    //        }
-    //    }
+        public static void FillComboBox_mentor(DataGridView dtvw, ComboBox cb)
+        {
+            cb.Items.Clear();
+            for (int i = dtvw.Rows.Count - 1 - 1; i >= 0; i--)
+            {
+                ComboBoxKiller iam = new ComboBoxKiller();
+                iam.Id = (int)dtvw.Rows[i].Cells[0].Value;
+                iam.Name = dtvw.Rows[i].Cells[1].Value.ToString() + " " +
+                    dtvw.Rows[i].Cells[2].Value.ToString() + " " +
+                    dtvw.Rows[i].Cells[3].Value.ToString();
+                cb.Items.Add(iam);
+            }
+        }
 
-    //    public static void FillComboBoxWithCmp(DataGridView dtvw, ComboBox cb, string col_name, string thatCmp, int idCmp)
-    //    {
-    //        cb.Items.Clear();
-    //        for (int i = dtvw.Rows.Count - 1 - 1; i >= 0; i--)
-    //        {
-    //            if ((int)dtvw.Rows[i].Cells[thatCmp].Value == idCmp)
-    //            {
-    //                ComboBoxKiller iam = new ComboBoxKiller();
-    //                iam.Id = (int)dtvw.Rows[i].Cells[0].Value;
-    //                iam.Name = dtvw.Rows[i].Cells[col_name].Value.ToString();
-    //                cb.Items.Add(iam);
-    //            }
-    //        }
-    //    }
-    //}
+        public static void FillComboBoxWithCmp(DataGridView dtvw, ComboBox cb, int col_indx, int thatCmp_indx, int idCmp)
+        {
+            cb.Items.Clear();
+            for (int i = dtvw.Rows.Count - 1 - 1; i >= 0; i--)
+            {
+                if ((int)dtvw.Rows[i].Cells[thatCmp_indx].Value == idCmp)
+                {
+                    ComboBoxKiller iam = new ComboBoxKiller();
+                    iam.Id = (int)dtvw.Rows[i].Cells[0].Value;
+                    iam.Name = dtvw.Rows[i].Cells[col_indx].Value.ToString();
+                    cb.Items.Add(iam);
+                }
+            }
+        }
+    }
 }

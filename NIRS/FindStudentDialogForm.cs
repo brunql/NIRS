@@ -28,18 +28,18 @@ namespace NIRS
                 DataView t = new DataView();
                 Result = new DataTable();
                 Result.Load(
-                        DBConnection.ExecuteReader(
+                        DBConnection.ExecuteReader(                        
                         string.Format(
                         @"SELECT CONCAT(s.name,' ',s.fathername, ' ', s.surname) `Студент`, s.born `Дата рождения`,
                         f.name `Факультет`,
                         d.name `Кафедра`,
                         spec.name `Специальность`,
                         g.code `Группа`,
-                        CONCAT(m.name, ' ', m.fathername, ' ', m.surname) `Научный руководитель`
+                        s.study `Форма обучения`,
+                        s.`grant`  `Стипендия`
                     FROM `student` s
                         JOIN `group` g ON s.group_id = g.id
                         JOIN `spec` spec ON g.spec_id = spec.id
-                        JOIN `mentor` m ON s.mentor_id = m.id
                         JOIN `division` d ON spec.div_id = d.id
                         JOIN `faculty` f ON d.fac_id = f.id
                     WHERE s.name LIKE '%{0}%' AND
