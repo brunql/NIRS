@@ -51,7 +51,7 @@ namespace NIRS_DB
                 string.Format(
                     "INSERT INTO `{0}` " +
                     "VALUES (null, {1}, \"{2}\", \"{3}\", {4});",
-                    "spec",
+                    "works",
                     StudentId, Name, Description, MentorId)
                 );
         }
