@@ -44,8 +44,8 @@ namespace NIRS
                 txtMentorDegree.Text,
                 ((ComboBoxKiller)cbMentorDivision.SelectedItem).Id
                 );
-            bindMentor.Clear(); // i know this sucks
-            bindMentor.Fill();
+            //bindMentor.Clear(); // i know this sucks
+            //bindMentor.Fill();
             //MessageBox.Show("not implemented");
 
             DialogResult result = MessageBox.Show("Руководитель добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
@@ -126,21 +126,15 @@ namespace NIRS
 
         private void btnFacultyAdded_Click(object sender, EventArgs e)
         {
-            //InsertStuff.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
-            NIRS_Viewer.config.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
-            NIRS_Viewer.config.Update("faculty");
-            bindFaculty.Update();
+            InsertStuff.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
+            //NIRS_Viewer.config.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
+            //NIRS_Viewer.config.Update("faculty");
+            //bindFaculty.Update();
         }
 
         private void addSomeOne_Load(object sender, EventArgs e)
         {
-            for (int i = dataViewSpecDivision.Rows.Count - 1 - 1; i >= 0; i--)
-            {
-                ComboBoxKiller iam = new ComboBoxKiller();
-                iam.Id = (int)dataViewSpecDivision.Rows[i].Cells[0].Value;
-                iam.Name = dataViewSpecDivision.Rows[i].Cells[2].Value.ToString();
-                cbMentorDivision.Items.Add(iam);
-            }
+            ComboBoxKiller.FillComboBox(dataViewAddedDivision, cbMentorDivision);
         }
 
         private void AddDivision_Click(object sender, EventArgs e)
@@ -150,8 +144,8 @@ namespace NIRS
                 txtAddDivision.Text,
                 txtAddDivisionFullName.Text
                 );
-            bindDivision.Clear();
-            bindDivision.Fill();
+            //bindDivision.Clear();
+            //bindDivision.Fill();
             //MessageBox.Show("not implemented");
         }
 
@@ -162,8 +156,8 @@ namespace NIRS
                 txtAddSpec.Text,
                 txtAddSpecFullName.Text
                 );
-            bindSpec.Clear();
-            bindSpec.Fill();
+            //bindSpec.Clear();
+            //bindSpec.Fill();
             //MessageBox.Show("not implemented");
         }
 
@@ -173,8 +167,8 @@ namespace NIRS
                 (int)dataViewGroupSpec.CurrentRow.Cells[0].Value,
                 txtAddGroupCode.Text
                 );
-            bindGroup.Clear();
-            bindGroup.Fill();
+            //bindGroup.Clear();
+            //bindGroup.Fill();
             //MessageBox.Show("not implemented");
         }
 
@@ -182,13 +176,7 @@ namespace NIRS
         private void tabPage1_Enter(object sender, EventArgs e)
         {
             ComboBoxKiller.FillComboBox(dataGridViewFaculty, cmbStudentFaculty);
-            for (int i = (dataViewAddedDivision.Rows.Count - 1) - 1; i >= 0; i--)
-            {
-                ComboBoxKiller iam = new ComboBoxKiller();
-                iam.Id = (int)dataViewAddedDivision.Rows[i].Cells[0].Value;
-                iam.Name = dataViewAddedDivision.Rows[i].Cells[2].Value.ToString();
-                cbMentorDivision.Items.Add(iam);
-            }
+            ComboBoxKiller.FillComboBox(dataViewAddedDivision, cbMentorDivision);
         }
 
         private void cmbStudentFaculty_SelectedIndexChanged(object sender, EventArgs e)
@@ -250,11 +238,11 @@ namespace NIRS
         public static void FillComboBox(DataGridView dtvw, ComboBox cb)
         {
             cb.Items.Clear();
-            for (int i = (dtvw.Rows.Count - 1) - 1; i >= 0; i--)
+            for (int i = (dtvw.Rows.Count - 1); i >= 0; i--)
             {
                 ComboBoxKiller iam = new ComboBoxKiller();
                 iam.Id = (int)dtvw.Rows[i].Cells[0].Value;
-                iam.Name = dtvw.Rows[i].Cells[1].Value.ToString();
+                iam.Name = dtvw.Rows[i].Cells[2].Value.ToString();
                 cb.Items.Add(iam);
             }
         }
@@ -262,7 +250,7 @@ namespace NIRS
         public static void FillComboBox_MentorStudent(DataGridView dtvw, ComboBox cb)
         {
             cb.Items.Clear();
-            for (int i = dtvw.Rows.Count - 1 - 1; i >= 0; i--)
+            for (int i = dtvw.Rows.Count - 1; i >= 0; i--)
             {
                 ComboBoxKiller iam = new ComboBoxKiller();
                 iam.Id = (int)dtvw.Rows[i].Cells[0].Value;
@@ -276,7 +264,7 @@ namespace NIRS
         public static void FillComboBoxWithCmp(DataGridView dtvw, ComboBox cb, int col_indx, int thatCmp_indx, int idCmp)
         {
             cb.Items.Clear();
-            for (int i = dtvw.Rows.Count - 1 - 1; i >= 0; i--)
+            for (int i = dtvw.Rows.Count - 1; i >= 0; i--)
             {
                 if ((int)dtvw.Rows[i].Cells[thatCmp_indx].Value == idCmp)
                 {
