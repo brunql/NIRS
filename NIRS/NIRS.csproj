@@ -69,11 +69,35 @@
     <Compile Include="AddSomeOne.Designer.cs">
       <DependentUpon>AddSomeOne.cs</DependentUpon>
     </Compile>
+    <Compile Include="division_windows\division_windows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="division_windows\division_windows.designer.cs">
+      <DependentUpon>division_windows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="division_windows\fix_problem_in_mentor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="division_windows\fix_problem_in_mentor.designer.cs">
+      <DependentUpon>fix_problem_in_mentor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="division_windows\fix_problem_in_spec.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="division_windows\fix_problem_in_spec.designer.cs">
+      <DependentUpon>fix_problem_in_spec.cs</DependentUpon>
+    </Compile>
     <Compile Include="FindScienceWorksDialogForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FindScienceWorksDialogForm.Designer.cs">
       <DependentUpon>FindScienceWorksDialogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="group_windows\group_windows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="group_windows\group_windows.designer.cs">
+      <DependentUpon>group_windows.cs</DependentUpon>
     </Compile>
     <Compile Include="mentor_windows\division_windows.cs">
       <SubType>Form</SubType>
@@ -123,6 +147,24 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="mentor_windows\fix_problem_in_student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mentor_windows\fix_problem_in_student.designer.cs">
+      <DependentUpon>fix_problem_in_student.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mentor_windows\fix_problem_in_works.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mentor_windows\fix_problem_in_works.designer.cs">
+      <DependentUpon>fix_problem_in_works.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mentor_windows\mentor_windows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mentor_windows\mentor_windows.designer.cs">
+      <DependentUpon>mentor_windows.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutBox.resx">
@@ -131,8 +173,20 @@
     <EmbeddedResource Include="AddSomeOne.resx">
       <DependentUpon>AddSomeOne.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="division_windows\division_windows.resx">
+      <DependentUpon>division_windows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="division_windows\fix_problem_in_mentor.resx">
+      <DependentUpon>fix_problem_in_mentor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="division_windows\fix_problem_in_spec.resx">
+      <DependentUpon>fix_problem_in_spec.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FindScienceWorksDialogForm.resx">
       <DependentUpon>FindScienceWorksDialogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="group_windows\group_windows.resx">
+      <DependentUpon>group_windows.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mentor_windows\division_windows.resx">
       <DependentUpon>division_windows.cs</DependentUpon>
@@ -159,6 +213,15 @@
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="mentor_windows\fix_problem_in_student.resx">
+      <DependentUpon>fix_problem_in_student.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mentor_windows\fix_problem_in_works.resx">
+      <DependentUpon>fix_problem_in_works.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mentor_windows\mentor_windows.resx">
+      <DependentUpon>mentor_windows.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>
       <Generator>ResXFileCodeGenerator</Generator>
@@ -168,6 +231,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SettingsWordExportForm.resx">
       <DependentUpon>SettingsWordExportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="spec_windows\fix_problem_in_group.resx">
+      <DependentUpon>fix_problem_in_group.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="spec_windows\spec_windows.resx">
+      <DependentUpon>spec_windows.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="student_windows\student_windows.resx">
+      <DependentUpon>student_windows.cs</DependentUpon>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
@@ -196,6 +268,27 @@
     <Compile Include="SettingsWordExportForm.Designer.cs">
       <DependentUpon>SettingsWordExportForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="spec_windows\fix_problem_in_group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="spec_windows\fix_problem_in_group.designer.cs">
+      <DependentUpon>fix_problem_in_group.cs</DependentUpon>
+    </Compile>
+    <Compile Include="spec_windows\spec_windows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="spec_windows\spec_windows.designer.cs">
+      <DependentUpon>spec_windows.cs</DependentUpon>
+    </Compile>
+    <Compile Include="student_windows\student_windows.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="student_windows\student_windows.designer.cs">
+      <DependentUpon>student_windows.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="works_windows\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

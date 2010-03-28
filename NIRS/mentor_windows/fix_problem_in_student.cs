@@ -15,22 +15,22 @@ using System.Collections.Generic;
 namespace NIRS
 {
 	/// <summary>
-	/// Description of fix_problem_in_division.
+	/// Description of fix_problem_in_student.
 	/// </summary>
-	public partial class fix_problem_in_division : Form
+	public partial class fix_problem_in_student : Form
 	{
-		public fix_problem_in_division(string filter_string)
+		public fix_problem_in_student(string filter_string)
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
 			//
 			InitializeComponent();
 			
-			bind_division.Filter = filter_string;
+			bind_student.Filter = filter_string;
 		}
 		
 		List<DataRow> kill_they = new List<DataRow>();
-		void DataGridView_divisionCellValueChanged(object sender, DataGridViewCellEventArgs e)
+		void DataGridView_studentCellValueChanged(object sender, DataGridViewCellEventArgs e)
 		{
 			if(e.ColumnIndex!=-1 && e.RowIndex!=-1 && wasChanged)
 			{
@@ -54,24 +54,49 @@ namespace NIRS
 		List<DataRow> change_list = new List<DataRow>();
 		DataRow changed_row;
 		bool wasChanged = false;
-		void DataGridView_divisionCellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+		void DataGridView_studentCellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
 		{
 			if(e.ColumnIndex!=-1 && e.RowIndex!=-1)
 			{
-				changed_row = ((DataRowView)bind_division.List[e.RowIndex]).Row;
+				changed_row = ((DataRowView)bind_student.List[e.RowIndex]).Row;
 				wasChanged = true;
 			}
 		}
 		
 		void ToolStripFixedClick(object sender, EventArgs e)
 		{
-			bind_division.Update();
+			bind_student.Update();
 			this.Close();
 		}
 		
-		void Fix_problem_in_divisionLoad(object sender, EventArgs e)
+		int visible_column_count;
+		int visible_column_width;
+		void Fix_problem_in_studentLoad(object sender, EventArgs e)
 		{
-			dataGridView_division.Columns[0].Visible = false;
+			visible_column_count = 0;
+			foreach(DataColumn column in bind_student.current_DataTable.Columns)
+			{
+				if(column.ColumnMapping != MappingType.Hidden)
+				{
+					visible_column_count++;
+				}
+			}
+			
+			dataGridView_student.Columns[0].Visible = false;
+			
+			DataGridView_studentResize(null,null);
+		}
+		
+		void DataGridView_studentResize(object sender, EventArgs e)
+		{
+			visible_column_width = (dataGridView_student.Width - 50)/ visible_column_count;
+			foreach(DataGridViewColumn DGVcolumn in dataGridView_student.Columns)
+			{
+				if(DGVcolumn.Visible)
+				{
+					DGVcolumn.Width = visible_column_width;
+				}
+			}
 		}
 	}
 }

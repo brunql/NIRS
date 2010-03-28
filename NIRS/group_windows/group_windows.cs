@@ -15,11 +15,11 @@ using System.Text;
 namespace NIRS
 {
 	/// <summary>
-	/// Description of faculty_windows.
+	/// Description of group_windows.
 	/// </summary>
-	public partial class faculty_windows : Form
+	public partial class group_windows : Form
 	{
-		public faculty_windows()
+		public group_windows()
 		{
 			//
 			// The InitializeComponent() call is required for Windows Forms designer support.
@@ -31,42 +31,45 @@ namespace NIRS
 			//
 		}
 		
-		void DataGridView_faculty_RowsWillRemoved()
+		void DataGridView_group_RowsWillRemoved()
 		{
-			string first_part_of_select_expression = "(fac_id = ";
+			string first_part_of_select_expression = "(group_id = ";
 			string last_part_of_select_expression = ") OR ";
 			StringBuilder variable = new StringBuilder();
 			DataGridViewCell cell;
 			int i;
-			for( i= dataGridView_faculty.SelectedCells.Count-1; i>0; i--)
+			for( i= dataGridView_group.SelectedCells.Count-1; i>0; i--)
 			{
-				cell = dataGridView_faculty.SelectedCells[i];
+				cell = dataGridView_group.SelectedCells[i];
 				variable.Append( 
 					first_part_of_select_expression +
-					dataGridView_faculty.Rows[cell.RowIndex].Cells[0].Value.ToString() + 
+					dataGridView_group.Rows[cell.RowIndex].Cells[0].Value.ToString() + 
 					last_part_of_select_expression);
 			}
-			cell = dataGridView_faculty.SelectedCells[i];
+			cell = dataGridView_group.SelectedCells[i];
 			variable.Append(
 				first_part_of_select_expression + 
-				dataGridView_faculty.Rows[cell.RowIndex].Cells[0].Value.ToString() + 
+				dataGridView_group.Rows[cell.RowIndex].Cells[0].Value.ToString() + 
 				")"
 			);
-			bind_division_del_helpful.Filter = variable.ToString();
-			if(bind_division_del_helpful.Count!=0)
+			bind_group_in_student_helpful.Filter = variable.ToString();
+			if(bind_group_in_student_helpful.Count!=0)
 			{
-				(new fix_problem_in_division(variable.ToString())).ShowDialog();
+				(new fix_problem_in_student(variable.ToString())).ShowDialog();
 			}
 		}
 		
 		void УдалитьВыбранныеToolStripMenuItemClick(object sender, EventArgs e)
 		{
-			DataGridView_faculty_RowsWillRemoved();
-			foreach(DataGridViewCell cell in dataGridView_faculty.SelectedCells)
+			if(dataGridView_group.SelectedRows.Count>0)
 			{
-				if(cell.RowIndex!=-1)
+				DataGridView_group_RowsWillRemoved();
+				foreach(DataGridViewCell cell in dataGridView_group.SelectedCells)
 				{
-					dataGridView_faculty.Rows.RemoveAt(cell.RowIndex);
+					if(cell.RowIndex!=-1)
+					{
+						dataGridView_group.Rows.RemoveAt(cell.RowIndex);
+					}
 				}
 			}
 		}
@@ -86,36 +89,42 @@ namespace NIRS
 			}
 		}
 		
-		void Faculty_windowsLoad(object sender, EventArgs e)
+		int visible_column_count;
+		int visible_column_width;
+		void group_windowsLoad(object sender, EventArgs e)
 		{
 			// hide "id" column
-			dataGridView_faculty.Columns[0].Visible = false;
+			dataGridView_group.Columns[0].Visible = false;
 			
-			toolsOpacityStatus.Value = (int)(this.Opacity*100.0);
+			toolsOpacityStatus.Value = (int)this.Opacity*100;
 			
-			foreach(DataColumn column in bind_faculty.current_DataTable.Columns)
+			visible_column_count = 0;
+			foreach(DataColumn column in bind_group.current_DataTable.Columns)
 			{
 				if(column.ColumnMapping != MappingType.Hidden)
 				{
+					visible_column_count++;
 					toolsFindIn.Items.Add(new strings_container(column.ColumnName, (string)column.Caption.Clone()));
 				}
 			}
+			
+			DataGridView_groupResize(null, null);
 		}
 		
 		void ToolsFindItKeyUp(object sender, KeyEventArgs e)
 		{
 			if(toolsFindIt.Text=="")
 			{
-				bind_faculty.Filter = null;
+				bind_group.Filter = null;
 				return;
 			}
 			if(toolsFindIn.SelectedIndex!=-1)
 			{
 				switch(toolsFindIn.Items[toolsFindIn.SelectedIndex].ToString())
 				{
-					case ("none") : bind_faculty.Filter = null; break;
+					case ("none") : bind_group.Filter = null; break;
 					default : 
-									bind_faculty.Filter =
+									bind_group.Filter =
 										((strings_container)toolsFindIn.SelectedItem).value +
 										" LIKE '" + toolsFindIt + "*'";
 									break;
@@ -132,9 +141,21 @@ namespace NIRS
 		{
 			try
 			{
-				bind_faculty.Update();
+				bind_group.Update();
 			}
 			catch{}
+		}
+		
+		void DataGridView_groupResize(object sender, EventArgs e)
+		{
+			visible_column_width = (dataGridView_group.Width - 50)/ visible_column_count;
+			foreach(DataGridViewColumn DGVcolumn in dataGridView_group.Columns)
+			{
+				if(DGVcolumn.Visible)
+				{
+					DGVcolumn.Width = visible_column_width;
+				}
+			}
 		}
 		
 		void ToolStripOpacityMinusClick(object sender, EventArgs e)
@@ -155,9 +176,9 @@ namespace NIRS
 			}
 		}
 		
-		void DataGridView_facultyRowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+		void DataGridView_groupRowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
 		{
-			DataGridView_faculty_RowsWillRemoved();
+			DataGridView_group_RowsWillRemoved();
 		}
 	}
 }

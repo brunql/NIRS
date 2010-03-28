@@ -140,17 +140,7 @@ namespace NIRS
                 SummaryTable = FindMentorDialogForm.Result;
             }
         }
-
-        private void факультетыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            (new faculty_windows()).Show();
-        }
-
-        private void кафедрыToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            (new division_windows()).Show();
-        }
-
+        
         private void нуToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FindScienceWorksDialogForm fsdf = new FindScienceWorksDialogForm();
@@ -162,5 +152,38 @@ namespace NIRS
                 SummaryTable = FindScienceWorksDialogForm.Result;
             }
         }
+
+
+        private void факультетыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new faculty_windows()).Show();
+        }
+
+        private void кафедрыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new division_windows()).Show();
+        }
+
+        private void группыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new group_windows()).Show();
+        }
+
+        private void специальностиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new spec_windows()).Show();
+        }
+
+        private void руководителиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new mentor_windows()).Show();
+        }
+
+        private void студентыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new student_windows()).Show();
+        }
+
+
     }
 }

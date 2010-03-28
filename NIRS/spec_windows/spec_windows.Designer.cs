@@ -8,7 +8,7 @@
  */
 namespace NIRS
 {
-	partial class faculty_windows
+	partial class spec_windows
 	{
 		/// <summary>
 		/// Designer variable used to keep track of non-visual components.
@@ -37,7 +37,7 @@ namespace NIRS
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(faculty_windows));
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(spec_windows));
 			this.tools = new System.Windows.Forms.ToolStrip();
 			this.toolsFindLabel = new System.Windows.Forms.ToolStripLabel();
 			this.toolsFindIt = new System.Windows.Forms.ToolStripTextBox();
@@ -49,19 +49,22 @@ namespace NIRS
 			this.toolStripOpacityMinus = new System.Windows.Forms.ToolStripButton();
 			this.toolsOpacityStatus = new System.Windows.Forms.ToolStripProgressBar();
 			this.toolsOpacityPlus = new System.Windows.Forms.ToolStripButton();
-			this.dataGridView_faculty = new System.Windows.Forms.DataGridView();
-			this.contextMenuStrip_faculty = new System.Windows.Forms.ContextMenuStrip(this.components);
+			this.dataGridView_spec = new System.Windows.Forms.DataGridView();
+			this.contextMenuStrip_spec = new System.Windows.Forms.ContextMenuStrip(this.components);
 			this.удалитьВыбранныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.bind_faculty = new NIRS_Viewer.bind();
-			this.bind_division_del_helpful = new NIRS_Viewer.bind();
+			this.bind_spec = new NIRS_Viewer.bind();
+			this.bind_father_division = new NIRS_Viewer.bind();
+			this.bind_spec_in_group_helpful = new NIRS_Viewer.bind();
 			this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dividDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+			this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.tools.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView_faculty)).BeginInit();
-			this.contextMenuStrip_faculty.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.bind_faculty)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.bind_division_del_helpful)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView_spec)).BeginInit();
+			this.contextMenuStrip_spec.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.bind_spec)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bind_father_division)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bind_spec_in_group_helpful)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// tools
@@ -153,29 +156,31 @@ namespace NIRS
 			this.toolsOpacityPlus.Size = new System.Drawing.Size(23, 22);
 			this.toolsOpacityPlus.Click += new System.EventHandler(this.ToolsOpacityPlusClick);
 			// 
-			// dataGridView_faculty
+			// dataGridView_spec
 			// 
-			this.dataGridView_faculty.AutoGenerateColumns = false;
-			this.dataGridView_faculty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView_faculty.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+			this.dataGridView_spec.AutoGenerateColumns = false;
+			this.dataGridView_spec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView_spec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 									this.idDataGridViewTextBoxColumn,
-									this.nameDataGridViewTextBoxColumn,
-									this.fullnameDataGridViewTextBoxColumn});
-			this.dataGridView_faculty.ContextMenuStrip = this.contextMenuStrip_faculty;
-			this.dataGridView_faculty.DataSource = this.bind_faculty;
-			this.dataGridView_faculty.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.dataGridView_faculty.Location = new System.Drawing.Point(0, 0);
-			this.dataGridView_faculty.Name = "dataGridView_faculty";
-			this.dataGridView_faculty.Size = new System.Drawing.Size(609, 361);
-			this.dataGridView_faculty.TabIndex = 1;
-			this.dataGridView_faculty.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGridView_facultyRowsRemoved);
+									this.dividDataGridViewTextBoxColumn,
+									this.codeDataGridViewTextBoxColumn,
+									this.nameDataGridViewTextBoxColumn});
+			this.dataGridView_spec.ContextMenuStrip = this.contextMenuStrip_spec;
+			this.dataGridView_spec.DataSource = this.bind_spec;
+			this.dataGridView_spec.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.dataGridView_spec.Location = new System.Drawing.Point(0, 0);
+			this.dataGridView_spec.Name = "dataGridView_spec";
+			this.dataGridView_spec.Size = new System.Drawing.Size(609, 361);
+			this.dataGridView_spec.TabIndex = 1;
+			this.dataGridView_spec.Resize += new System.EventHandler(this.DataGridView_specResize);
+			this.dataGridView_spec.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGridView_specRowsRemoved);
 			// 
-			// contextMenuStrip_faculty
+			// contextMenuStrip_spec
 			// 
-			this.contextMenuStrip_faculty.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+			this.contextMenuStrip_spec.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
 									this.удалитьВыбранныеToolStripMenuItem});
-			this.contextMenuStrip_faculty.Name = "contextMenuStrip_faculty";
-			this.contextMenuStrip_faculty.Size = new System.Drawing.Size(228, 26);
+			this.contextMenuStrip_spec.Name = "contextMenuStrip_spec";
+			this.contextMenuStrip_spec.Size = new System.Drawing.Size(228, 26);
 			// 
 			// удалитьВыбранныеToolStripMenuItem
 			// 
@@ -184,15 +189,20 @@ namespace NIRS
 			this.удалитьВыбранныеToolStripMenuItem.Text = "удалить выбранные строки";
 			this.удалитьВыбранныеToolStripMenuItem.Click += new System.EventHandler(this.УдалитьВыбранныеToolStripMenuItemClick);
 			// 
-			// bind_faculty
+			// bind_spec
 			// 
-			this.bind_faculty.DataMember = "faculty";
-			this.bind_faculty.Position = 0;
+			this.bind_spec.DataMember = "spec";
+			this.bind_spec.Position = 0;
 			// 
-			// bind_division_del_helpful
+			// bind_father_division
 			// 
-			this.bind_division_del_helpful.DataMember = "division";
-			this.bind_division_del_helpful.Position = 0;
+			this.bind_father_division.DataMember = "division";
+			this.bind_father_division.Position = 0;
+			// 
+			// bind_spec_in_group_helpful
+			// 
+			this.bind_spec_in_group_helpful.DataMember = "group";
+			this.bind_spec_in_group_helpful.Position = 0;
 			// 
 			// idDataGridViewTextBoxColumn
 			// 
@@ -200,53 +210,70 @@ namespace NIRS
 			this.idDataGridViewTextBoxColumn.HeaderText = "id";
 			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
 			// 
+			// dividDataGridViewTextBoxColumn
+			// 
+			this.dividDataGridViewTextBoxColumn.DataPropertyName = "div_id";
+			this.dividDataGridViewTextBoxColumn.DataSource = this.bind_father_division;
+			this.dividDataGridViewTextBoxColumn.DisplayMember = "name";
+			this.dividDataGridViewTextBoxColumn.HeaderText = "Кафедра";
+			this.dividDataGridViewTextBoxColumn.Name = "dividDataGridViewTextBoxColumn";
+			this.dividDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.dividDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.dividDataGridViewTextBoxColumn.ToolTipText = "кафедра, на которой обучают специальности";
+			this.dividDataGridViewTextBoxColumn.ValueMember = "id";
+			// 
+			// codeDataGridViewTextBoxColumn
+			// 
+			this.codeDataGridViewTextBoxColumn.DataPropertyName = "code";
+			this.codeDataGridViewTextBoxColumn.HeaderText = "Код";
+			this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
+			this.codeDataGridViewTextBoxColumn.ToolTipText = "код специальности";
+			// 
 			// nameDataGridViewTextBoxColumn
 			// 
 			this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
 			this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
 			this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-			this.nameDataGridViewTextBoxColumn.ToolTipText = "название факультета";
+			this.nameDataGridViewTextBoxColumn.ToolTipText = "название специальности";
 			// 
-			// fullnameDataGridViewTextBoxColumn
-			// 
-			this.fullnameDataGridViewTextBoxColumn.DataPropertyName = "fullname";
-			this.fullnameDataGridViewTextBoxColumn.HeaderText = "Полное Название Факультета";
-			this.fullnameDataGridViewTextBoxColumn.Name = "fullnameDataGridViewTextBoxColumn";
-			this.fullnameDataGridViewTextBoxColumn.ToolTipText = "полное название факультета";
-			// 
-			// faculty_windows
+			// spec_windows
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(609, 386);
-			this.Controls.Add(this.dataGridView_faculty);
+			this.Controls.Add(this.dataGridView_spec);
 			this.Controls.Add(this.tools);
-			this.Name = "faculty_windows";
-			this.Text = "faculty_windows";
-			this.Load += new System.EventHandler(this.Faculty_windowsLoad);
+			this.Name = "spec_windows";
+			this.Text = "spec_windows";
+			this.Load += new System.EventHandler(this.spec_windowsLoad);
 			this.tools.ResumeLayout(false);
 			this.tools.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView_faculty)).EndInit();
-			this.contextMenuStrip_faculty.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.bind_faculty)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.bind_division_del_helpful)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView_spec)).EndInit();
+			this.contextMenuStrip_spec.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.bind_spec)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bind_father_division)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bind_spec_in_group_helpful)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 		}
+		private NIRS_Viewer.bind bind_spec_in_group_helpful;
+		private NIRS_Viewer.bind bind_father_division;
+		private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
+		private System.Windows.Forms.DataGridViewComboBoxColumn dividDataGridViewTextBoxColumn;
 		private System.Windows.Forms.ToolStripButton toolStripOpacityMinus;
 		private System.Windows.Forms.ToolStripProgressBar toolsOpacityStatus;
 		private System.Windows.Forms.ToolStripButton toolsOpacityPlus;
-		private NIRS_Viewer.bind bind_division_del_helpful;
+//		private System.Windows.Forms.DataGridViewComboBoxColumn facidDataGridViewTextBoxColumn;
 		private System.Windows.Forms.ToolStripMenuItem удалитьВыбранныеToolStripMenuItem;
-		private System.Windows.Forms.ContextMenuStrip contextMenuStrip_faculty;
-		private System.Windows.Forms.DataGridView dataGridView_faculty;
+		private System.Windows.Forms.ContextMenuStrip contextMenuStrip_spec;
+		private System.Windows.Forms.DataGridView dataGridView_spec;
 		private System.Windows.Forms.ToolStripLabel toolStripTransparency;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
 		private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
 		private System.Windows.Forms.ToolStripComboBox toolsFindIn;
 		private System.Windows.Forms.ToolStripTextBox toolsFindIt;
-		private NIRS_Viewer.bind bind_faculty;
-		private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
+		private NIRS_Viewer.bind bind_spec;
+//		private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
 		private System.Windows.Forms.ToolStripButton toolStripSave;
