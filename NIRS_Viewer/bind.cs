@@ -25,18 +25,18 @@ namespace NIRS_Viewer
 		{
 			this.DataSource = config.NIRS_DataSet;
 		}
+
+        public void Fill()
+        {
+            config.Fill(this.DataMember);
+        }
+
+        public void Update()
+        {
+            config.Update(this.DataMember);
+        }
 		
-		public void Fill()
-		{
-			config.Fill(this.DataMember);
-		}
-		
-		public void Update()
-		{
-			config.Update(this.DataMember);
-		}
-		
-		public DataSet nirs_DataSet {get {return config.NIRS_DataSet;}}
+		public nirsDataSetMain nirs_DataSet {get {return config.NIRS_DataSet;}}
 		public DataTable current_DataTable {get {return config.NIRS_DataSet.Tables[this.DataMember];}}
 	}
 }

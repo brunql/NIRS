@@ -36,7 +36,16 @@ namespace NIRS
                 return;
             }
 
-            InsertStuff.InsertMentor(txtMentorName.Text,
+
+            if (((ComboBoxKiller)cbMentorDivision.SelectedItem).Id < 0)
+            {
+                MessageBox.Show("cbMentorDivision.Id < 0");
+                return;
+            }
+
+            NIRS_Viewer.config.NIRS_DataSet.mentor.AddmentorRow(
+//            InsertStuff.InsertMentor(
+                txtMentorName.Text,
                 txtMentorSurname.Text,
                 txtStudentFathername.Text,
                 txtMentorWork.Text,
@@ -44,9 +53,7 @@ namespace NIRS
                 txtMentorDegree.Text,
                 ((ComboBoxKiller)cbMentorDivision.SelectedItem).Id
                 );
-            //bindMentor.Clear(); // i know this sucks
-            //bindMentor.Fill();
-            //MessageBox.Show("not implemented");
+            bindMentor.Update();
 
             DialogResult result = MessageBox.Show("Руководитель добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
@@ -96,7 +103,14 @@ namespace NIRS
                 return;
             }
 
-            InsertStuff.InsertStudent(
+            if (((ComboBoxKiller)cmbStudentGroup.SelectedItem).Id < 0)
+            {
+                MessageBox.Show("cmbStudentGroup.Id < 0");
+                return;
+            }
+
+            NIRS_Viewer.config.NIRS_DataSet.student.AddstudentRow(
+            //InsertStuff.InsertStudent(
                 txtStudentName.Text,
                 txtStudentSurname.Text,
                 txtStudentFathername.Text,
@@ -105,10 +119,7 @@ namespace NIRS
                 cmbStudentBudget.Text,
                 (txtStudentGrant.Text == "") ? "Нет" : txtStudentGrant.Text
                 );
-            //bindStudent.Clear();
-            //bindStudent.Fill(); // i know this sucks
-            //MessageBox.Show("not implemented");
-
+            bindStudent.Update();
 
             DialogResult result = MessageBox.Show("Студент добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
@@ -126,7 +137,27 @@ namespace NIRS
 
         private void btnFacultyAdded_Click(object sender, EventArgs e)
         {
-            InsertStuff.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
+            NIRS_Viewer.config.NIRS_DataSet.faculty.AddfacultyRow(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
+            bindFaculty.Update();
+            
+            //MySqlCommand command = new MySqlCommand(@"SELECT MAX(`id`) FROM `faculty`;", NIRS_Viewer.config.NIRS_MySqlConnection);
+            //NIRS_Viewer.config.NIRS_MySqlConnection.Open();
+            //MySqlDataReader reader = command.ExecuteReader();
+            //reader.Read();
+            //int id = reader.GetInt32(0);
+            //reader.Close();
+            //NIRS_Viewer.config.NIRS_MySqlConnection.Close();
+
+            //newrow.id = id;
+            
+            //InsertStuff.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
+            //object[] vals = {
+            //        -1, txtAddFacultyName.Text, txtAddFacultyFullName.Text
+            //};
+            //NIRS_Viewer.config.NIRS_DataSet.Tables["faculty"].LoadDataRow(vals, true);
+            //bindFaculty.Update();
+            //NIRS_Viewer.config.NIRS_DataSet.AcceptChanges();
+            
             //NIRS_Viewer.config.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
             //NIRS_Viewer.config.Update("faculty");
             //bindFaculty.Update();
@@ -134,42 +165,60 @@ namespace NIRS
 
         private void addSomeOne_Load(object sender, EventArgs e)
         {
+            bindFaculty.Fill();
             ComboBoxKiller.FillComboBox(dataViewAddedDivision, cbMentorDivision);
         }
 
         private void AddDivision_Click(object sender, EventArgs e)
         {
-            InsertStuff.InsertDivision(
+            if ((int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value < 0)
+            {
+                // fuck fuck fuck !!!!!!!
+                // this sucks!!!
+                // i don't know that todo to make it work as it must! :'(
+                MessageBox.Show("(int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value < 0");
+                return; 
+            }
+
+            NIRS_Viewer.config.NIRS_DataSet.division.AdddivisionRow(
+            //InsertStuff.InsertDivision(
                 (int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value,
                 txtAddDivision.Text,
                 txtAddDivisionFullName.Text
                 );
-            //bindDivision.Clear();
-            //bindDivision.Fill();
-            //MessageBox.Show("not implemented");
+            bindDivision.Update();
         }
 
         private void AddSpec_Click(object sender, EventArgs e)
         {
-            InsertStuff.InsertSpecialize(
+            if ((int)dataViewSpecDivision.CurrentRow.Cells[0].Value < 0)
+            {
+                MessageBox.Show("(int)dataViewSpecDivision.CurrentRow.Cells[0].Value < 0");
+                return;
+            }
+            NIRS_Viewer.config.NIRS_DataSet.spec.AddspecRow(
+            //InsertStuff.InsertSpecialize(
                 (int)dataViewSpecDivision.CurrentRow.Cells[0].Value,
                 txtAddSpec.Text,
                 txtAddSpecFullName.Text
                 );
-            //bindSpec.Clear();
-            //bindSpec.Fill();
-            //MessageBox.Show("not implemented");
+
+            bindSpec.Update();
         }
 
         private void btnAddGroup_Click(object sender, EventArgs e)
         {
-            InsertStuff.InsertGroup(
+            if ((int)dataViewGroupSpec.CurrentRow.Cells[0].Value < 0)
+            {
+                MessageBox.Show("(int)dataViewGroupSpec.CurrentRow.Cells[0].Value < 0");
+                return;
+            }
+            NIRS_Viewer.config.NIRS_DataSet.group.AddgroupRow(
+            //InsertStuff.InsertGroup(
                 (int)dataViewGroupSpec.CurrentRow.Cells[0].Value,
                 txtAddGroupCode.Text
                 );
-            //bindGroup.Clear();
-            //bindGroup.Fill();
-            //MessageBox.Show("not implemented");
+            bindGroup.Update();
         }
 
 
@@ -216,7 +265,20 @@ namespace NIRS
                 return;
             }
 
-            InsertStuff.InsertScienceWork(
+            if ((cmbNIR_Student.SelectedItem as ComboBoxKiller).Id < 0)
+            {
+                MessageBox.Show("(cmbNIR_Student.SelectedItem as ComboBoxKiller).Id < 0");
+                return;
+            }
+
+            if ((cmbNIR_Mentor.SelectedItem as ComboBoxKiller).Id < 0)
+            {
+                MessageBox.Show("(cmbNIR_Mentor.SelectedItem as ComboBoxKiller).Id < 0");
+                return;
+            }
+
+            NIRS_Viewer.config.NIRS_DataSet.works.AddworksRow(
+            //InsertStuff.InsertScienceWork(
                 (cmbNIR_Student.SelectedItem as ComboBoxKiller).Id,
                 rtbxStudentTheme.Text,
                 rtbxStudentBackLog.Text,
