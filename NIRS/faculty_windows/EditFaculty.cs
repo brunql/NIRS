@@ -1,12 +1,4 @@
-﻿/*
- * Created by SharpDevelop.
- * User: Администратор
- * Date: 21.03.2010
- * Time: 6:05
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data;
@@ -14,9 +6,6 @@ using System.Text;
 
 namespace NIRS
 {
-	/// <summary>
-	/// Description of EditFaculty.
-	/// </summary>
 	public partial class EditFaculty : WindowsEditBaseForm
 	{
 		public EditFaculty() : base ()

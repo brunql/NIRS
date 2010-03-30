@@ -171,7 +171,7 @@ namespace NIRS
 
         private void специальностиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new spec_windows()).Show();
+            (new EditSpec()).Show();
         }
 
         private void руководителиToolStripMenuItem_Click(object sender, EventArgs e)

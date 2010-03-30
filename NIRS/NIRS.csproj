@@ -69,7 +69,7 @@
     <Compile Include="AddSomeOne.Designer.cs">
       <DependentUpon>AddSomeOne.cs</DependentUpon>
     </Compile>
-    <Compile Include="division_windows\division_windows.cs">
+    <Compile Include="division_windows\EditDivision.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="division_windows\fix_problem_in_mentor.cs">
@@ -108,7 +108,7 @@
     <Compile Include="group_windows\group_windows.designer.cs">
       <DependentUpon>group_windows.cs</DependentUpon>
     </Compile>
-    <Compile Include="faculty_windows\faculty_windows.cs">
+    <Compile Include="faculty_windows\EditFaculty.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FindMentorDialogForm.cs">
@@ -205,9 +205,6 @@
     <EmbeddedResource Include="spec_windows\fix_problem_in_group.resx">
       <DependentUpon>fix_problem_in_group.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="spec_windows\spec_windows.resx">
-      <DependentUpon>spec_windows.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="student_windows\student_windows.resx">
       <DependentUpon>student_windows.cs</DependentUpon>
     </EmbeddedResource>
@@ -244,11 +241,8 @@
     <Compile Include="spec_windows\fix_problem_in_group.designer.cs">
       <DependentUpon>fix_problem_in_group.cs</DependentUpon>
     </Compile>
-    <Compile Include="spec_windows\spec_windows.cs">
+    <Compile Include="spec_windows\EditSpec.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="spec_windows\spec_windows.designer.cs">
-      <DependentUpon>spec_windows.cs</DependentUpon>
     </Compile>
     <Compile Include="student_windows\student_windows.cs">
       <SubType>Form</SubType>
