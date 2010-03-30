@@ -1,16 +1,26 @@
-﻿using System;
+﻿/*
+ * Created by SharpDevelop.
+ * User: Администратор
+ * Date: 21.03.2010
+ * Time: 7:53
+ * 
+ * To change this template use Tools | Options | Coding | Edit Standard Headers.
+ */
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 using System.Data;
-using System.Text;
+using System.Collections.Generic;
 
 namespace NIRS
 {
-	public partial class EditSpec : WindowsEditBaseForm
+	/// <summary>
+	/// Description of fix_problem_in_spec.
+	/// </summary>
+	public partial class FixProblemsInSpec : FixProblemsBaseForm
 	{
-        public EditSpec() : base() { }
+        public FixProblemsInSpec(string filter_string) : base(filter_string) { }
 
-        private NIRS_Viewer.bind bind_spec_in_group_helpful = new NIRS_Viewer.bind();
         private NIRS_Viewer.bind bind_father_division = new NIRS_Viewer.bind();
 
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
@@ -21,9 +31,8 @@ namespace NIRS
 
         protected override void InitializeDataViewAndBindings()
         {
-            this.Text = "Редактирование специальностей";
+            this.Text = "Исправление зависимостей в специальностях";
 
-            bind_spec_in_group_helpful.DataMember = "group";
             bind_father_division.DataMember = "division";
             dataBinding.DataMember = "spec";
 
@@ -72,24 +81,5 @@ namespace NIRS
 									this.nameDataGridViewTextBoxColumn});
 
         }
-		
-		protected override void DataGridView_RowsRemoving()
-		{
-			StringBuilder variable = new StringBuilder();
-			DataGridViewCell cell;
-            for (int i = 0; i < dataGridView.SelectedCells.Count; i++)
-            {
-                cell = dataGridView.SelectedCells[i];
-                variable.Append(
-                    "(spec_id = " +
-                        dataGridView.Rows[cell.RowIndex].Cells[0].Value.ToString() +
-                    ((i == dataGridView.SelectedCells.Count - 1) ? ")" : ") OR "));
-            }
-			bind_spec_in_group_helpful.Filter = variable.ToString();
-			if(bind_spec_in_group_helpful.Count!=0)
-			{
-				(new fix_problem_in_group(variable.ToString())).ShowDialog();
-			}
-		}
 	}
 }

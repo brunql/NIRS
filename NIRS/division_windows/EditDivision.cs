@@ -95,13 +95,13 @@ namespace NIRS
 			bind_division_mentor_helpful.Filter = variable.ToString();
 			if(bind_division_mentor_helpful.Count!=0)
 			{
-				(new fix_problem_in_mentor(variable.ToString())).ShowDialog();
+                (new FixProblemsInMentor(variable.ToString())).ShowDialog();
 			}
 
 			bind_division_spec_helpful.Filter = variable.ToString();
 			if(bind_division_mentor_helpful.Count!=0)
 			{
-				(new fix_problem_in_spec(variable.ToString())).ShowDialog();
+                (new FixProblemsInSpec(variable.ToString())).ShowDialog();
 			}
 		}
 	}
