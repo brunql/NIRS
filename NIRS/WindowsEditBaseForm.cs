@@ -49,7 +49,7 @@ namespace NIRS
                 DataColumn column = dataBinding.current_DataTable.Columns[i];
 				if(!column.ColumnName.Contains("id"))
 				{
-                    toolsFindIn.Items.Add(new strings_container(column.ColumnName, dataGridView.Columns[i].HeaderText + column.ColumnName));
+                    toolsFindIn.Items.Add(new strings_container(column.ColumnName, dataGridView.Columns[i].HeaderText));
 				}
 			}
 		}

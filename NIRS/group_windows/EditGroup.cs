@@ -26,7 +26,7 @@ namespace NIRS
 
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewComboBoxColumn specidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewComboBoxColumn specidDataGridViewComboBoxColumn;
 
         protected override void InitializeDataViewAndBindings()
         {
@@ -37,7 +37,7 @@ namespace NIRS
             dataBinding.DataMember = "group";
 
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.specidDataGridViewComboBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 
             // 
@@ -47,17 +47,17 @@ namespace NIRS
             this.idDataGridViewTextBoxColumn.HeaderText = "id";
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             // 
-            // specidDataGridViewTextBoxColumn
+            // specidDataGridViewComboBoxColumn
             // 
-            this.specidDataGridViewTextBoxColumn.DataPropertyName = "spec_id";
-            this.specidDataGridViewTextBoxColumn.DataSource = this.bind_father_spec;
-            this.specidDataGridViewTextBoxColumn.DisplayMember = "name";
-            this.specidDataGridViewTextBoxColumn.HeaderText = "Специальность";
-            this.specidDataGridViewTextBoxColumn.Name = "specidDataGridViewTextBoxColumn";
-            this.specidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.specidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.specidDataGridViewTextBoxColumn.ToolTipText = "специальность, на которой обучается группа";
-            this.specidDataGridViewTextBoxColumn.ValueMember = "id";
+            this.specidDataGridViewComboBoxColumn.DataPropertyName = "spec_id";
+            this.specidDataGridViewComboBoxColumn.DataSource = this.bind_father_spec;
+            this.specidDataGridViewComboBoxColumn.DisplayMember = "name";
+            this.specidDataGridViewComboBoxColumn.HeaderText = "Специальность";
+            this.specidDataGridViewComboBoxColumn.Name = "specidDataGridViewTextBoxColumn";
+            this.specidDataGridViewComboBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.specidDataGridViewComboBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.specidDataGridViewComboBoxColumn.ToolTipText = "специальность, на которой обучается группа";
+            this.specidDataGridViewComboBoxColumn.ValueMember = "id";
             // 
             // codeDataGridViewTextBoxColumn
             // 
@@ -69,7 +69,7 @@ namespace NIRS
 
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 									this.idDataGridViewTextBoxColumn,
-									this.specidDataGridViewTextBoxColumn,
+									this.specidDataGridViewComboBoxColumn,
 									this.codeDataGridViewTextBoxColumn});
         }
 		
