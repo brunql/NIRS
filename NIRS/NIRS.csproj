@@ -69,28 +69,28 @@
     <Compile Include="AddSomeOne.Designer.cs">
       <DependentUpon>AddSomeOne.cs</DependentUpon>
     </Compile>
-    <Compile Include="division_windows\EditDivision.cs">
+    <Compile Include="EditWindows\EditDivision.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="division_windows\FixProblemsInMentor.cs">
+    <Compile Include="FixProblemsWindows\FixProblemsInMentor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="division_windows\FixProblemsInSpec.cs">
+    <Compile Include="FixProblemsWindows\FixProblemsInSpec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FixProblemsBaseForm.cs">
+    <Compile Include="FixProblemsWindows\FixProblemsBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FixProblemsBaseForm.Designer.cs">
+    <Compile Include="FixProblemsWindows\FixProblemsBaseForm.Designer.cs">
       <DependentUpon>FixProblemsBaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="group_windows\FixProblemsInStudent.cs">
+    <Compile Include="FixProblemsWindows\FixProblemsInStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsEditBaseForm.cs">
+    <Compile Include="EditWindows\WindowsEditBaseForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="WindowsEditBaseForm.Designer.cs">
+    <Compile Include="EditWindows\WindowsEditBaseForm.Designer.cs">
       <DependentUpon>WindowsEditBaseForm.cs</DependentUpon>
     </Compile>
     <Compile Include="FindScienceWorksDialogForm.cs">
@@ -99,10 +99,10 @@
     <Compile Include="FindScienceWorksDialogForm.Designer.cs">
       <DependentUpon>FindScienceWorksDialogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="group_windows\EditGroup.cs">
+    <Compile Include="EditWindows\EditGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="faculty_windows\EditFaculty.cs">
+    <Compile Include="EditWindows\EditFaculty.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FindMentorDialogForm.cs">
@@ -117,7 +117,7 @@
     <Compile Include="FindStudentDialogForm.Designer.cs">
       <DependentUpon>FindStudentDialogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="faculty_windows\FixProblemsInDivision.cs">
+    <Compile Include="FixProblemsWindows\FixProblemsInDivision.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.cs">
@@ -126,10 +126,10 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="mentor_windows\FixProblemsInWorks.cs">
+    <Compile Include="FixProblemsWindows\FixProblemsInWorks.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mentor_windows\EditMentor.cs">
+    <Compile Include="EditWindows\EditMentor.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Program.cs" />
@@ -140,10 +140,10 @@
     <EmbeddedResource Include="AddSomeOne.resx">
       <DependentUpon>AddSomeOne.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FixProblemsBaseForm.resx">
+    <EmbeddedResource Include="FixProblemsWindows\FixProblemsBaseForm.resx">
       <DependentUpon>FixProblemsBaseForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="WindowsEditBaseForm.resx">
+    <EmbeddedResource Include="EditWindows\WindowsEditBaseForm.resx">
       <DependentUpon>WindowsEditBaseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindScienceWorksDialogForm.resx">
@@ -196,16 +196,16 @@
     <Compile Include="SettingsWordExportForm.Designer.cs">
       <DependentUpon>SettingsWordExportForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="spec_windows\FixProblemsInGroup.cs">
+    <Compile Include="FixProblemsWindows\FixProblemsInGroup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="spec_windows\EditSpec.cs">
+    <Compile Include="EditWindows\EditSpec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="student_windows\EditStudent.cs">
+    <Compile Include="EditWindows\EditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="works_windows\EditWorks.cs">
+    <Compile Include="EditWindows\EditWorks.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
