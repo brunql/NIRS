@@ -84,11 +84,8 @@
     <Compile Include="FixProblemsBaseForm.Designer.cs">
       <DependentUpon>FixProblemsBaseForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="group_windows\fix_problem_in_student.cs">
+    <Compile Include="group_windows\FixProblemsInStudent.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="group_windows\fix_problem_in_student.designer.cs">
-      <DependentUpon>fix_problem_in_student.cs</DependentUpon>
     </Compile>
     <Compile Include="WindowsEditBaseForm.cs">
       <SubType>Form</SubType>
@@ -148,9 +145,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FixProblemsBaseForm.resx">
       <DependentUpon>FixProblemsBaseForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="group_windows\fix_problem_in_student.resx">
-      <DependentUpon>fix_problem_in_student.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowsEditBaseForm.resx">
       <DependentUpon>WindowsEditBaseForm.cs</DependentUpon>

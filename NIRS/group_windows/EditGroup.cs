@@ -89,7 +89,7 @@ namespace NIRS
 			bind_group_in_student_helpful.Filter = variable.ToString();
 			if(bind_group_in_student_helpful.Count!=0)
 			{
-				(new fix_problem_in_student(variable.ToString())).ShowDialog();
+                (new FixProblemsInStudent(variable.ToString())).ShowDialog();
 			}
 		}
 	}
