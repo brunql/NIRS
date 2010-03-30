@@ -2046,11 +2046,11 @@
             this.bornDataGridViewTextBoxColumn.ReadOnly = true;
             this.bornDataGridViewTextBoxColumn.Width = 102;
             // 
-            // study
+            // studyDataGridViewTextBoxColumn
             // 
-            this.study.DataPropertyName = "study";
+            this.study.DataPropertyName = "studyDataGridViewTextBoxColumn";
             this.study.HeaderText = "Форма обучения";
-            this.study.Name = "study";
+            this.study.Name = "studyDataGridViewTextBoxColumn";
             this.study.ReadOnly = true;
             this.study.Width = 108;
             // 

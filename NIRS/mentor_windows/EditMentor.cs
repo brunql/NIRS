@@ -50,28 +50,28 @@ namespace NIRS
             this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
             this.nameDataGridViewTextBoxColumn.HeaderText = "Имя";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ToolTipText = "имя научного руководителя";
+            this.nameDataGridViewTextBoxColumn.ToolTipText = "Имя научного руководителя";
             // 
             // surnameDataGridViewTextBoxColumn
             // 
             this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
             this.surnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
             this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.ToolTipText = "фамилия научного руководителя";
+            this.surnameDataGridViewTextBoxColumn.ToolTipText = "Фамилия научного руководителя";
             // 
             // fathernameDataGridViewTextBoxColumn
             // 
             this.fathernameDataGridViewTextBoxColumn.DataPropertyName = "fathername";
             this.fathernameDataGridViewTextBoxColumn.HeaderText = "Отчество";
             this.fathernameDataGridViewTextBoxColumn.Name = "fathernameDataGridViewTextBoxColumn";
-            this.fathernameDataGridViewTextBoxColumn.ToolTipText = "отчество научного руководителя";
+            this.fathernameDataGridViewTextBoxColumn.ToolTipText = "Отчество научного руководителя";
             // 
             // workDataGridViewTextBoxColumn
             // 
             this.workDataGridViewTextBoxColumn.DataPropertyName = "work";
-            this.workDataGridViewTextBoxColumn.HeaderText = "Работы";
+            this.workDataGridViewTextBoxColumn.HeaderText = "Место работы";
             this.workDataGridViewTextBoxColumn.Name = "workDataGridViewTextBoxColumn";
-            this.workDataGridViewTextBoxColumn.ToolTipText = "работы, курировавшиеся этим научным руководителем";
+            this.workDataGridViewTextBoxColumn.ToolTipText = "Место работы куратора";
             // 
             // dividDataGridViewComboBoxColumn
             // 
@@ -88,14 +88,14 @@ namespace NIRS
             // acrankDataGridViewTextBoxColumn
             // 
             this.acrankDataGridViewTextBoxColumn.DataPropertyName = "acrank";
-            this.acrankDataGridViewTextBoxColumn.HeaderText = "Академический Ранг";
+            this.acrankDataGridViewTextBoxColumn.HeaderText = "Учёное звание";
             this.acrankDataGridViewTextBoxColumn.Name = "acrankDataGridViewTextBoxColumn";
-            this.acrankDataGridViewTextBoxColumn.ToolTipText = "академический ранг научного руководителя";
+            this.acrankDataGridViewTextBoxColumn.ToolTipText = "Ученое звание научного руководителя";
             // 
             // degreeDataGridViewTextBoxColumn
             // 
             this.degreeDataGridViewTextBoxColumn.DataPropertyName = "degree";
-            this.degreeDataGridViewTextBoxColumn.HeaderText = "Учёная Степень";
+            this.degreeDataGridViewTextBoxColumn.HeaderText = "Учёная степень";
             this.degreeDataGridViewTextBoxColumn.Name = "degreeDataGridViewTextBoxColumn";
             this.degreeDataGridViewTextBoxColumn.ToolTipText = "учёная степень научного руководителя";
 
@@ -106,9 +106,9 @@ namespace NIRS
                     this.surnameDataGridViewTextBoxColumn,
                     this.fathernameDataGridViewTextBoxColumn,
                     this.workDataGridViewTextBoxColumn,
-                    this.dividDataGridViewComboBoxColumn,
                     this.acrankDataGridViewTextBoxColumn,
-                    this.degreeDataGridViewTextBoxColumn});
+                    this.degreeDataGridViewTextBoxColumn,
+                    this.dividDataGridViewComboBoxColumn});
         }
 		
 		protected override void  DataGridView_RowsRemoving()

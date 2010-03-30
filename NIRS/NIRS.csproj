@@ -193,9 +193,6 @@
     <EmbeddedResource Include="spec_windows\fix_problem_in_group.resx">
       <DependentUpon>fix_problem_in_group.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="student_windows\student_windows.resx">
-      <DependentUpon>student_windows.cs</DependentUpon>
-    </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
@@ -232,11 +229,8 @@
     <Compile Include="spec_windows\EditSpec.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="student_windows\student_windows.cs">
+    <Compile Include="student_windows\EditStudent.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="student_windows\student_windows.designer.cs">
-      <DependentUpon>student_windows.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

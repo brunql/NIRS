@@ -29,7 +29,8 @@ namespace NIRS
 			{
 				if(cell.RowIndex!=-1)
 				{
-					dataGridView.Rows.RemoveAt(cell.RowIndex);
+					if(cell.RowIndex != dataGridView.Rows.Count - 1)
+                        dataGridView.Rows.RemoveAt(cell.RowIndex);
 				}
 			}
 		}
@@ -43,11 +44,12 @@ namespace NIRS
 			
 			toolsOpacityStatus.Value = (int)(this.Opacity*100.0);
 			
-			foreach(DataColumn column in dataBinding.current_DataTable.Columns)
+			for(int i=0; i < dataGridView.Columns.Count; i++)
 			{
-				if(column.ColumnMapping != MappingType.Hidden)
+                DataColumn column = dataBinding.current_DataTable.Columns[i];
+				if(!column.ColumnName.Contains("id"))
 				{
-					toolsFindIn.Items.Add(new strings_container(column.ColumnName, (string)column.Caption.Clone()));
+                    toolsFindIn.Items.Add(new strings_container(column.ColumnName, dataGridView.Columns[i].HeaderText + column.ColumnName));
 				}
 			}
 		}

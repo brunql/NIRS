@@ -181,7 +181,7 @@ namespace NIRS
 
         private void студентыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new student_windows()).Show();
+            (new EditStudent()).Show();
         }
 
 
