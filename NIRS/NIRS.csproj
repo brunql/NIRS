@@ -126,29 +126,11 @@
     <Compile Include="faculty_windows\fix_problem_in_division.Designer.cs">
       <DependentUpon>fix_problem_in_division.cs</DependentUpon>
     </Compile>
-    <Compile Include="mentor_windows\fix_problem_in_mentor.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mentor_windows\fix_problem_in_mentor.Designer.cs">
-      <DependentUpon>fix_problem_in_mentor.cs</DependentUpon>
-    </Compile>
-    <Compile Include="mentor_windows\fix_problem_in_spec.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mentor_windows\fix_problem_in_spec.Designer.cs">
-      <DependentUpon>fix_problem_in_spec.cs</DependentUpon>
-    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="mentor_windows\fix_problem_in_student.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mentor_windows\fix_problem_in_student.designer.cs">
-      <DependentUpon>fix_problem_in_student.cs</DependentUpon>
     </Compile>
     <Compile Include="mentor_windows\fix_problem_in_works.cs">
       <SubType>Form</SubType>
@@ -197,18 +179,9 @@
     <EmbeddedResource Include="faculty_windows\fix_problem_in_division.resx">
       <DependentUpon>fix_problem_in_division.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mentor_windows\fix_problem_in_mentor.resx">
-      <DependentUpon>fix_problem_in_mentor.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mentor_windows\fix_problem_in_spec.resx">
-      <DependentUpon>fix_problem_in_spec.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mentor_windows\fix_problem_in_student.resx">
-      <DependentUpon>fix_problem_in_student.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="mentor_windows\fix_problem_in_works.resx">
       <DependentUpon>fix_problem_in_works.cs</DependentUpon>

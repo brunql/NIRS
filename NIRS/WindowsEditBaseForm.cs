@@ -11,20 +11,20 @@ namespace NIRS
         public WindowsEditBaseForm()
 		{
 			InitializeComponent();
-            InitializeDataBindings();
+            InitializeDataViewAndBindings();
 		}
 
         /// <summary>
         /// Override me to init dataBinding field
         /// </summary>
-        protected virtual void InitializeDataBindings()
+        protected virtual void InitializeDataViewAndBindings()
         {
             throw new NotImplementedException();
         }
 		
 		void УдалитьВыбранныеToolStripMenuItemClick(object sender, EventArgs e)
 		{
-            DataGridView_RowsRemoved(null, null);
+            DataGridView_RowsRemoving();
 			foreach(DataGridViewCell cell in dataGridView.SelectedCells)
 			{
 				if(cell.RowIndex!=-1)
@@ -36,10 +36,10 @@ namespace NIRS
 		
 		void Faculty_windowsLoad(object sender, EventArgs e)
 		{
-			// hide "id" column
-            dataGridView.Update();
+            dataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
 
-			dataGridView.Columns[0].Visible = false;
+            // hide "id" column
+            dataGridView.Columns[0].Visible = false;
 			
 			toolsOpacityStatus.Value = (int)(this.Opacity*100.0);
 			
@@ -104,12 +104,6 @@ namespace NIRS
 				toolsOpacityStatus.Value = (int)(this.Opacity*100.0);
 			}
 		}
-		
-        private void DataGridView_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
-        {
-            DataGridView_RowsRemoving();
-        }
-
 
         /// <summary>
         /// Override me!

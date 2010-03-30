@@ -164,6 +164,7 @@ namespace NIRS
             // 
             // dataGridView
             // 
+            this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AutoGenerateColumns = false;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.ContextMenuStrip = this.contextMenuStrip_faculty;
@@ -173,7 +174,6 @@ namespace NIRS
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.Size = new System.Drawing.Size(609, 361);
             this.dataGridView.TabIndex = 1;
-            this.dataGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGridView_RowsRemoved);
             // 
             // dataBinding
             // 

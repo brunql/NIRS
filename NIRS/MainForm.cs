@@ -10,7 +10,7 @@ using MySql.Data.MySqlClient;
 
 using Gios.Word;
 using NIRS_DB;
-using NIRS_database;
+//using NIRS_database;
 
 namespace NIRS
 {
