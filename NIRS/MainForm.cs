@@ -156,12 +156,12 @@ namespace NIRS
 
         private void факультетыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new faculty_windows()).Show();
+            (new EditFaculty()).Show();
         }
 
         private void кафедрыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new division_windows()).Show();
+            (new EditDivision()).Show();
         }
 
         private void группыToolStripMenuItem_Click(object sender, EventArgs e)

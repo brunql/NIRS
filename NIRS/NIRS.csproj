@@ -72,9 +72,6 @@
     <Compile Include="division_windows\division_windows.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="division_windows\division_windows.designer.cs">
-      <DependentUpon>division_windows.cs</DependentUpon>
-    </Compile>
     <Compile Include="division_windows\fix_problem_in_mentor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +83,12 @@
     </Compile>
     <Compile Include="division_windows\fix_problem_in_spec.designer.cs">
       <DependentUpon>fix_problem_in_spec.cs</DependentUpon>
+    </Compile>
+    <Compile Include="group_windows\fix_problem_in_student.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="group_windows\fix_problem_in_student.designer.cs">
+      <DependentUpon>fix_problem_in_student.cs</DependentUpon>
     </Compile>
     <Compile Include="WindowsEditBaseForm.cs">
       <SubType>Form</SubType>
@@ -152,14 +155,14 @@
     <EmbeddedResource Include="AddSomeOne.resx">
       <DependentUpon>AddSomeOne.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="division_windows\division_windows.resx">
-      <DependentUpon>division_windows.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="division_windows\fix_problem_in_mentor.resx">
       <DependentUpon>fix_problem_in_mentor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="division_windows\fix_problem_in_spec.resx">
       <DependentUpon>fix_problem_in_spec.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="group_windows\fix_problem_in_student.resx">
+      <DependentUpon>fix_problem_in_student.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="WindowsEditBaseForm.resx">
       <DependentUpon>WindowsEditBaseForm.cs</DependentUpon>

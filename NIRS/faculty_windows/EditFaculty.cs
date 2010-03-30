@@ -15,11 +15,11 @@ using System.Text;
 namespace NIRS
 {
 	/// <summary>
-	/// Description of faculty_windows.
+	/// Description of EditFaculty.
 	/// </summary>
-	public partial class faculty_windows : WindowsEditBaseForm
+	public partial class EditFaculty : WindowsEditBaseForm
 	{
-		public faculty_windows() : base ()
+		public EditFaculty() : base ()
 		{
 		}
 		
@@ -72,8 +72,7 @@ namespace NIRS
 		{
 			StringBuilder variable = new StringBuilder();
 			DataGridViewCell cell;
-			int i;
-			for( i = 0; i < dataGridView.SelectedCells.Count; i++)
+			for(int i = 0; i < dataGridView.SelectedCells.Count; i++)
 			{
 				cell = dataGridView.SelectedCells[i];
 				variable.Append(
