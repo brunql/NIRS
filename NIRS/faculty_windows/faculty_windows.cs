@@ -19,18 +19,41 @@ namespace NIRS
 	/// </summary>
 	public partial class faculty_windows : WindowsEditBaseForm
 	{
-		public faculty_windows()
+		public faculty_windows() : base ()
 		{
-			base.InitializeComponent();
 		}
 		
         private NIRS_Viewer.bind bind_division_del_helpful = new NIRS_Viewer.bind();
+        
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
 
         protected override void InitializeDataBindings()
         {
             bind_division_del_helpful.DataMember = "division";
             dataBinding.DataMember = "faculty";
-            dataBinding.Save();
+
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+
+            this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fullnameDataGridViewTextBoxColumn.DataPropertyName = "fullname";
+            this.fullnameDataGridViewTextBoxColumn.HeaderText = "fullname";
+            this.fullnameDataGridViewTextBoxColumn.Name = "fullnameDataGridViewTextBoxColumn";
+
+            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+                    this.idDataGridViewTextBoxColumn,
+                    this.nameDataGridViewTextBoxColumn,
+                    this.fullnameDataGridViewTextBoxColumn
+                });
         }
 
 		protected override void DataGridView_RowsRemoving()

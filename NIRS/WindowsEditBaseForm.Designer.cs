@@ -49,13 +49,13 @@ namespace NIRS
             this.toolStripOpacityMinus = new System.Windows.Forms.ToolStripButton();
             this.toolsOpacityStatus = new System.Windows.Forms.ToolStripProgressBar();
             this.toolsOpacityPlus = new System.Windows.Forms.ToolStripButton();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip_faculty = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.удалитьВыбранныеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.dataBinding = new NIRS_Viewer.bind();
             this.tools.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.contextMenuStrip_faculty.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBinding)).BeginInit();
             this.SuspendLayout();
             // 
@@ -148,19 +148,6 @@ namespace NIRS
             this.toolsOpacityPlus.Size = new System.Drawing.Size(23, 22);
             this.toolsOpacityPlus.Click += new System.EventHandler(this.ToolsOpacityPlusClick);
             // 
-            // dataGridView
-            // 
-            this.dataGridView.AutoGenerateColumns = false;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.ContextMenuStrip = this.contextMenuStrip_faculty;
-            this.dataGridView.DataSource = this.dataBinding;
-            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(609, 361);
-            this.dataGridView.TabIndex = 1;
-            this.dataGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGridView_RowsRemoved);
-            // 
             // contextMenuStrip_faculty
             // 
             this.contextMenuStrip_faculty.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -174,6 +161,19 @@ namespace NIRS
             this.удалитьВыбранныеToolStripMenuItem.Size = new System.Drawing.Size(226, 22);
             this.удалитьВыбранныеToolStripMenuItem.Text = "Удалить выбранные строки";
             this.удалитьВыбранныеToolStripMenuItem.Click += new System.EventHandler(this.УдалитьВыбранныеToolStripMenuItemClick);
+            // 
+            // dataGridView
+            // 
+            this.dataGridView.AutoGenerateColumns = false;
+            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView.ContextMenuStrip = this.contextMenuStrip_faculty;
+            this.dataGridView.DataSource = this.dataBinding;
+            this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView.Name = "dataGridView";
+            this.dataGridView.Size = new System.Drawing.Size(609, 361);
+            this.dataGridView.TabIndex = 1;
+            this.dataGridView.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DataGridView_RowsRemoved);
             // 
             // dataBinding
             // 
@@ -191,8 +191,8 @@ namespace NIRS
             this.Load += new System.EventHandler(this.Faculty_windowsLoad);
             this.tools.ResumeLayout(false);
             this.tools.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             this.contextMenuStrip_faculty.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataBinding)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
