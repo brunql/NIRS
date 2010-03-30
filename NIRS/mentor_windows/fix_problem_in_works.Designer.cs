@@ -74,7 +74,7 @@ namespace NIRS
 			this.toolStripFixed.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolStripFixed.Name = "toolStripFixed";
 			this.toolStripFixed.Size = new System.Drawing.Size(92, 22);
-			this.toolStripFixed.Text = "исправленно";
+			this.toolStripFixed.Text = "Исправлено";
 			this.toolStripFixed.Click += new System.EventHandler(this.ToolStripFixedClick);
 			// 
 			// toolsStepBack
@@ -83,7 +83,7 @@ namespace NIRS
 			this.toolsStepBack.ImageTransparentColor = System.Drawing.Color.Magenta;
 			this.toolsStepBack.Name = "toolsStepBack";
 			this.toolsStepBack.Size = new System.Drawing.Size(79, 22);
-			this.toolsStepBack.Text = "шаг назад";
+			this.toolsStepBack.Text = "Шаг назад";
 			this.toolsStepBack.Click += new System.EventHandler(this.ToolsStepBackClick);
 			// 
 			// dataGridView_works

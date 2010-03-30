@@ -143,7 +143,7 @@ namespace NIRS
 		{
 			try
 			{
-				bind_division.Update();
+				bind_division.Save();
 			}
 			catch{}
 		}

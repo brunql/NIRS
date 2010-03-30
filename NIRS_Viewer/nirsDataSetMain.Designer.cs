@@ -6506,7 +6506,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
     }
     
     /// <summary>
-    ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+    ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Save scenarios
     ///</summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6720,7 +6720,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         }
         
         /// <summary>
-        ///Update rows in top-down order.
+        ///Save rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private int UpdateUpdatedRows(nirsDataSetMain dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
@@ -6922,7 +6922,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         }
         
         /// <summary>
-        ///Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+        ///Remove inserted rows that become updated rows after calling TableAdapter.Save(inserted rows) first
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private global::System.Data.DataRow[] GetRealUpdatedRows(global::System.Data.DataRow[] updatedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
@@ -6945,7 +6945,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         }
         
         /// <summary>
-        ///Update all changes to the dataset.
+        ///Save all changes to the dataset.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public virtual int UpdateAll(nirsDataSetMain dataSet) {
@@ -7204,7 +7204,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         }
         
         /// <summary>
-        ///Update Order Option
+        ///Save Order Option
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         public enum UpdateOrderOption {

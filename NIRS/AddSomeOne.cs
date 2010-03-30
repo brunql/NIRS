@@ -53,7 +53,7 @@ namespace NIRS
                 txtMentorDegree.Text,
                 ((ComboBoxKiller)cbMentorDivision.SelectedItem).Id
                 );
-            bindMentor.Update();
+            bindMentor.Save();
 
             DialogResult result = MessageBox.Show("Руководитель добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
@@ -119,7 +119,7 @@ namespace NIRS
                 cmbStudentBudget.Text,
                 (txtStudentGrant.Text == "") ? "Нет" : txtStudentGrant.Text
                 );
-            bindStudent.Update();
+            bindStudent.Save();
 
             DialogResult result = MessageBox.Show("Студент добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
@@ -138,7 +138,7 @@ namespace NIRS
         private void btnFacultyAdded_Click(object sender, EventArgs e)
         {
             NIRS_Viewer.config.NIRS_DataSet.faculty.AddfacultyRow(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
-            bindFaculty.Update();
+            bindFaculty.Save();
             
             //MySqlCommand command = new MySqlCommand(@"SELECT MAX(`id`) FROM `faculty`;", NIRS_Viewer.config.NIRS_MySqlConnection);
             //NIRS_Viewer.config.NIRS_MySqlConnection.Open();
@@ -155,12 +155,12 @@ namespace NIRS
             //        -1, txtAddFacultyName.Text, txtAddFacultyFullName.Text
             //};
             //NIRS_Viewer.config.NIRS_DataSet.Tables["faculty"].LoadDataRow(vals, true);
-            //bindFaculty.Update();
+            //bindFaculty.Save();
             //NIRS_Viewer.config.NIRS_DataSet.AcceptChanges();
             
             //NIRS_Viewer.config.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
-            //NIRS_Viewer.config.Update("faculty");
-            //bindFaculty.Update();
+            //NIRS_Viewer.config.Save("faculty");
+            //bindFaculty.Save();
         }
 
         private void addSomeOne_Load(object sender, EventArgs e)
@@ -186,7 +186,7 @@ namespace NIRS
                 txtAddDivision.Text,
                 txtAddDivisionFullName.Text
                 );
-            bindDivision.Update();
+            bindDivision.Save();
         }
 
         private void AddSpec_Click(object sender, EventArgs e)
@@ -203,7 +203,7 @@ namespace NIRS
                 txtAddSpecFullName.Text
                 );
 
-            bindSpec.Update();
+            bindSpec.Save();
         }
 
         private void btnAddGroup_Click(object sender, EventArgs e)
@@ -218,7 +218,7 @@ namespace NIRS
                 (int)dataViewGroupSpec.CurrentRow.Cells[0].Value,
                 txtAddGroupCode.Text
                 );
-            bindGroup.Update();
+            bindGroup.Save();
         }
 
 

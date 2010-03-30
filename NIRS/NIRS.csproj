@@ -87,6 +87,12 @@
     <Compile Include="division_windows\fix_problem_in_spec.designer.cs">
       <DependentUpon>fix_problem_in_spec.cs</DependentUpon>
     </Compile>
+    <Compile Include="WindowsEditBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WindowsEditBaseForm.Designer.cs">
+      <DependentUpon>WindowsEditBaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="FindScienceWorksDialogForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,17 +105,8 @@
     <Compile Include="group_windows\group_windows.designer.cs">
       <DependentUpon>group_windows.cs</DependentUpon>
     </Compile>
-    <Compile Include="mentor_windows\division_windows.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mentor_windows\division_windows.Designer.cs">
-      <DependentUpon>division_windows.cs</DependentUpon>
-    </Compile>
     <Compile Include="faculty_windows\faculty_windows.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="faculty_windows\faculty_windows.Designer.cs">
-      <DependentUpon>faculty_windows.cs</DependentUpon>
     </Compile>
     <Compile Include="FindMentorDialogForm.cs">
       <SubType>Form</SubType>
@@ -182,17 +179,14 @@
     <EmbeddedResource Include="division_windows\fix_problem_in_spec.resx">
       <DependentUpon>fix_problem_in_spec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WindowsEditBaseForm.resx">
+      <DependentUpon>WindowsEditBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FindScienceWorksDialogForm.resx">
       <DependentUpon>FindScienceWorksDialogForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="group_windows\group_windows.resx">
       <DependentUpon>group_windows.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mentor_windows\division_windows.resx">
-      <DependentUpon>division_windows.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="faculty_windows\faculty_windows.resx">
-      <DependentUpon>faculty_windows.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindMentorDialogForm.resx">
       <DependentUpon>FindMentorDialogForm.cs</DependentUpon>

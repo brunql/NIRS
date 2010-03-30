@@ -189,7 +189,7 @@ namespace NIRS
 			// 
 			this.удалитьВыбранныеToolStripMenuItem.Name = "удалитьВыбранныеToolStripMenuItem";
 			this.удалитьВыбранныеToolStripMenuItem.Size = new System.Drawing.Size(227, 22);
-			this.удалитьВыбранныеToolStripMenuItem.Text = "удалить выбранные строки";
+			this.удалитьВыбранныеToolStripMenuItem.Text = "Удалить выбранные строки";
 			this.удалитьВыбранныеToolStripMenuItem.Click += new System.EventHandler(this.УдалитьВыбранныеToolStripMenuItemClick);
 			// 
 			// bind_group

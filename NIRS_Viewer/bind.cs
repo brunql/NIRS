@@ -31,9 +31,9 @@ namespace NIRS_Viewer
             config.Fill(this.DataMember);
         }
 
-        public void Update()
+        public void Save()
         {
-            config.Update(this.DataMember);
+            config.Save(this.DataMember);
         }
 		
 		public nirsDataSetMain nirs_DataSet {get {return config.NIRS_DataSet;}}

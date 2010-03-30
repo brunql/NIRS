@@ -138,7 +138,7 @@ namespace NIRS
 		{
 			try
 			{
-				bind_spec.Update();
+				bind_spec.Save();
 			}
 			catch{}
 		}

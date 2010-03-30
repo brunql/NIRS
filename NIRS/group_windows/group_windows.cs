@@ -141,7 +141,7 @@ namespace NIRS
 		{
 			try
 			{
-				bind_group.Update();
+				bind_group.Save();
 			}
 			catch{}
 		}

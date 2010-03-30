@@ -146,7 +146,7 @@ namespace NIRS
 		{
 			try
 			{
-				bind_mentor.Update();
+				bind_mentor.Save();
 			}
 			catch{}
 		}

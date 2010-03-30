@@ -186,7 +186,7 @@ namespace NIRS_Viewer
             //}
         }
 
-        public static void Update(string table_name)
+        public static void Save(string table_name)
         {
             switch (table_name)
             {

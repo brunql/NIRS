@@ -65,7 +65,7 @@ namespace NIRS
 		
 		void ToolStripFixedClick(object sender, EventArgs e)
 		{
-			bind_student.Update();
+			bind_student.Save();
 			this.Close();
 		}
 		

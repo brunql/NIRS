@@ -65,7 +65,7 @@ namespace NIRS_database
 		
 		void ToolStripFixedClick(object sender, EventArgs e)
 		{
-			bind_spec.Update();
+			bind_spec.Save();
 			this.Close();
 		}
 		
