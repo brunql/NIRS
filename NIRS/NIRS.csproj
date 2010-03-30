@@ -102,11 +102,8 @@
     <Compile Include="FindScienceWorksDialogForm.Designer.cs">
       <DependentUpon>FindScienceWorksDialogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="group_windows\group_windows.cs">
+    <Compile Include="group_windows\EditGroup.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="group_windows\group_windows.designer.cs">
-      <DependentUpon>group_windows.cs</DependentUpon>
     </Compile>
     <Compile Include="faculty_windows\EditFaculty.cs">
       <SubType>Form</SubType>
@@ -169,9 +166,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FindScienceWorksDialogForm.resx">
       <DependentUpon>FindScienceWorksDialogForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="group_windows\group_windows.resx">
-      <DependentUpon>group_windows.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FindMentorDialogForm.resx">
       <DependentUpon>FindMentorDialogForm.cs</DependentUpon>

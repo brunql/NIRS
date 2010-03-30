@@ -166,7 +166,7 @@ namespace NIRS
 
         private void группыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new group_windows()).Show();
+            (new EditGroup()).Show();
         }
 
         private void специальностиToolStripMenuItem_Click(object sender, EventArgs e)
