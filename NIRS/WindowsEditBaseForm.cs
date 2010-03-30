@@ -15,7 +15,7 @@ namespace NIRS
 		}
 
         /// <summary>
-        /// Override me to init dataBinding field
+        /// Override me to init dataBinding and dataGridView field
         /// </summary>
         protected virtual void InitializeDataViewAndBindings()
         {
@@ -56,7 +56,7 @@ namespace NIRS
 		
 		void ToolsFindItKeyUp(object sender, KeyEventArgs e)
 		{
-			if(toolsFindIt.Text=="")
+			if(toolsFindIt.Text == "")
 			{
 				dataBinding.Filter = null;
 				return;

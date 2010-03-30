@@ -72,7 +72,7 @@ namespace NIRS
 			bind_division_del_helpful.Filter = variable.ToString();
 			if(bind_division_del_helpful.Count!=0)
 			{
-				(new fix_problem_in_division(variable.ToString())).ShowDialog();
+				(new FixProblemsInDivision(variable.ToString())).ShowDialog();
 			}
 		}
 	}

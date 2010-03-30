@@ -1803,7 +1803,7 @@
             this.idDataGridViewTextBoxColumn6.ReadOnly = true;
             this.idDataGridViewTextBoxColumn6.Width = 43;
             // 
-            // specidDataGridViewTextBoxColumn
+            // specidDataGridViewComboBoxColumn
             // 
             this.specidDataGridViewTextBoxColumn.DataPropertyName = "spec_id";
             this.specidDataGridViewTextBoxColumn.HeaderText = "ID Специальности";

@@ -194,7 +194,7 @@ namespace NIRS
 		private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewComboBoxColumn studentidDataGridViewTextBoxColumn;
 //		private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-//		private System.Windows.Forms.DataGridViewTextBoxColumn specidDataGridViewTextBoxColumn;
+//		private System.Windows.Forms.DataGridViewTextBoxColumn specidDataGridViewComboBoxColumn;
 //		private System.Windows.Forms.DataGridViewComboBoxColumn dividDataGridViewTextBoxColumn;
 //		private System.Windows.Forms.DataGridViewTextBoxColumn degreeDataGridViewTextBoxColumn;
 //		private System.Windows.Forms.DataGridViewTextBoxColumn acrankDataGridViewTextBoxColumn;

@@ -84,6 +84,12 @@
     <Compile Include="division_windows\fix_problem_in_spec.designer.cs">
       <DependentUpon>fix_problem_in_spec.cs</DependentUpon>
     </Compile>
+    <Compile Include="FixProblemsBaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FixProblemsBaseForm.Designer.cs">
+      <DependentUpon>FixProblemsBaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="group_windows\fix_problem_in_student.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -120,11 +126,8 @@
     <Compile Include="FindStudentDialogForm.Designer.cs">
       <DependentUpon>FindStudentDialogForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="faculty_windows\fix_problem_in_division.cs">
+    <Compile Include="faculty_windows\FixProblemsInDivision.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="faculty_windows\fix_problem_in_division.Designer.cs">
-      <DependentUpon>fix_problem_in_division.cs</DependentUpon>
     </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -155,6 +158,9 @@
     <EmbeddedResource Include="division_windows\fix_problem_in_spec.resx">
       <DependentUpon>fix_problem_in_spec.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FixProblemsBaseForm.resx">
+      <DependentUpon>FixProblemsBaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="group_windows\fix_problem_in_student.resx">
       <DependentUpon>fix_problem_in_student.cs</DependentUpon>
     </EmbeddedResource>
@@ -169,9 +175,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FindStudentDialogForm.resx">
       <DependentUpon>FindStudentDialogForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="faculty_windows\fix_problem_in_division.resx">
-      <DependentUpon>fix_problem_in_division.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>

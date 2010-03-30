@@ -108,7 +108,7 @@ namespace NIRS
 			this.idDataGridViewTextBoxColumn.HeaderText = "id";
 			this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
 			// 
-			// specidDataGridViewTextBoxColumn
+			// specidDataGridViewComboBoxColumn
 			// 
 			this.specidDataGridViewTextBoxColumn.DataPropertyName = "spec_id";
 			this.specidDataGridViewTextBoxColumn.HeaderText = "spec_id";
