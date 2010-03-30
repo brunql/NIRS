@@ -126,11 +126,8 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="mentor_windows\fix_problem_in_works.cs">
+    <Compile Include="mentor_windows\FixProblemsInWorks.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="mentor_windows\fix_problem_in_works.designer.cs">
-      <DependentUpon>fix_problem_in_works.cs</DependentUpon>
     </Compile>
     <Compile Include="mentor_windows\EditMentor.cs">
       <SubType>Form</SubType>
@@ -161,9 +158,6 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="mentor_windows\fix_problem_in_works.resx">
-      <DependentUpon>fix_problem_in_works.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <SubType>Designer</SubType>
@@ -211,9 +205,9 @@
     <Compile Include="student_windows\EditStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="works_windows\" />
+    <Compile Include="works_windows\EditWorks.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

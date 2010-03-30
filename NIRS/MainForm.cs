@@ -184,6 +184,11 @@ namespace NIRS
             (new EditStudent()).Show();
         }
 
+        private void научныеРаботыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            (new EditWorks()).Show();
+        }
+
 
     }
 }

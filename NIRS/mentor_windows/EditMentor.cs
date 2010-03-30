@@ -127,7 +127,7 @@ namespace NIRS
 			bind_mentor_in_works_helpful.Filter = variable.ToString();
 			if(bind_mentor_in_works_helpful.Count!=0)
 			{
-				(new fix_problem_in_works(variable.ToString())).ShowDialog();
+                (new FixProblemsInWorks(variable.ToString())).ShowDialog();
 			}
 		}
 	}
