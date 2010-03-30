@@ -176,7 +176,7 @@ namespace NIRS
 
         private void руководителиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new mentor_windows()).Show();
+            (new EditMentor()).Show();
         }
 
         private void студентыToolStripMenuItem_Click(object sender, EventArgs e)
