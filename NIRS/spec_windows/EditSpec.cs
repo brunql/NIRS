@@ -88,7 +88,7 @@ namespace NIRS
 			bind_spec_in_group_helpful.Filter = variable.ToString();
 			if(bind_spec_in_group_helpful.Count!=0)
 			{
-				(new fix_problem_in_group(variable.ToString())).ShowDialog();
+                (new FixProblemsInGroup(variable.ToString())).ShowDialog();
 			}
 		}
 	}
