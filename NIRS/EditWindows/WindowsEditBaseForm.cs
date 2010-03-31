@@ -133,5 +133,10 @@ namespace NIRS
             }
         }
 
+        private void WindowsEditBaseForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            NIRS_Viewer.config.NIRS_DataSet.RejectChanges();
+        }
+
 	}
 }

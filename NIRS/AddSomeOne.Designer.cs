@@ -145,7 +145,6 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.txtStudentBirthdayDate = new System.Windows.Forms.TextBox();
             this.lblGroup = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbStudentSpetialize = new System.Windows.Forms.ComboBox();
@@ -157,14 +156,24 @@
             this.lblFaculty = new System.Windows.Forms.Label();
             this.cmbStudentFaculty = new System.Windows.Forms.ComboBox();
             this.dataViewAddedStudent = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.surnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fathernameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bornDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.studyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.grant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindStudent = new NIRS_Viewer.bind();
             this.btnAddStudent = new System.Windows.Forms.Button();
+            this.dateTimePickerStudent = new System.Windows.Forms.DateTimePicker();
+            this.txtStudentBirthdayDate = new System.Windows.Forms.TextBox();
             this.tabPageNIR = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label16 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.btnAddStudentNIR = new System.Windows.Forms.Button();
+            this.btnAddWorksNIR = new System.Windows.Forms.Button();
             this.cmbNIR_Mentor = new System.Windows.Forms.ComboBox();
             this.txtStudentProgramCount = new System.Windows.Forms.TextBox();
             this.lbYearInNirs = new System.Windows.Forms.Label();
@@ -184,15 +193,6 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.bindWorks = new NIRS_Viewer.bind();
-            this.dateTimePickerStudent = new System.Windows.Forms.DateTimePicker();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fathernameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bornDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControlAddSomeOne.SuspendLayout();
             this.tabPageFaculty.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -1568,14 +1568,6 @@
             this.lblName.Text = "Имя";
             this.lblName.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // txtStudentBirthdayDate
-            // 
-            this.txtStudentBirthdayDate.Location = new System.Drawing.Point(469, 106);
-            this.txtStudentBirthdayDate.Name = "txtStudentBirthdayDate";
-            this.txtStudentBirthdayDate.Size = new System.Drawing.Size(155, 20);
-            this.txtStudentBirthdayDate.TabIndex = 4;
-            this.txtStudentBirthdayDate.Visible = false;
-            // 
             // lblGroup
             // 
             this.lblGroup.AutoSize = true;
@@ -1707,6 +1699,70 @@
             this.dataViewAddedStudent.Size = new System.Drawing.Size(695, 104);
             this.dataViewAddedStudent.TabIndex = 86;
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Width = 43;
+            // 
+            // nameDataGridViewTextBoxColumn7
+            // 
+            this.nameDataGridViewTextBoxColumn7.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn7.HeaderText = "Имя";
+            this.nameDataGridViewTextBoxColumn7.Name = "nameDataGridViewTextBoxColumn7";
+            this.nameDataGridViewTextBoxColumn7.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn7.Width = 54;
+            // 
+            // surnameDataGridViewTextBoxColumn1
+            // 
+            this.surnameDataGridViewTextBoxColumn1.DataPropertyName = "surname";
+            this.surnameDataGridViewTextBoxColumn1.HeaderText = "Фамилия";
+            this.surnameDataGridViewTextBoxColumn1.Name = "surnameDataGridViewTextBoxColumn1";
+            this.surnameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.surnameDataGridViewTextBoxColumn1.Width = 81;
+            // 
+            // fathernameDataGridViewTextBoxColumn1
+            // 
+            this.fathernameDataGridViewTextBoxColumn1.DataPropertyName = "fathername";
+            this.fathernameDataGridViewTextBoxColumn1.HeaderText = "Отчество";
+            this.fathernameDataGridViewTextBoxColumn1.Name = "fathernameDataGridViewTextBoxColumn1";
+            this.fathernameDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.fathernameDataGridViewTextBoxColumn1.Width = 82;
+            // 
+            // groupidDataGridViewTextBoxColumn
+            // 
+            this.groupidDataGridViewTextBoxColumn.DataPropertyName = "group_id";
+            this.groupidDataGridViewTextBoxColumn.HeaderText = "ID Группы";
+            this.groupidDataGridViewTextBoxColumn.Name = "groupidDataGridViewTextBoxColumn";
+            this.groupidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.groupidDataGridViewTextBoxColumn.Width = 77;
+            // 
+            // bornDataGridViewTextBoxColumn
+            // 
+            this.bornDataGridViewTextBoxColumn.DataPropertyName = "born";
+            this.bornDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
+            this.bornDataGridViewTextBoxColumn.Name = "bornDataGridViewTextBoxColumn";
+            this.bornDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bornDataGridViewTextBoxColumn.Width = 102;
+            // 
+            // studyDataGridViewTextBoxColumn
+            // 
+            this.studyDataGridViewTextBoxColumn.DataPropertyName = "study";
+            this.studyDataGridViewTextBoxColumn.HeaderText = "Форма обучения";
+            this.studyDataGridViewTextBoxColumn.Name = "studyDataGridViewTextBoxColumn";
+            this.studyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.studyDataGridViewTextBoxColumn.Width = 108;
+            // 
+            // grant
+            // 
+            this.grant.DataPropertyName = "grant";
+            this.grant.HeaderText = "Стипендия";
+            this.grant.Name = "grant";
+            this.grant.ReadOnly = true;
+            this.grant.Width = 108;
+            // 
             // bindStudent
             // 
             this.bindStudent.DataMember = "student";
@@ -1721,6 +1777,26 @@
             this.btnAddStudent.Text = "Добавить в базу";
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
+            // 
+            // dateTimePickerStudent
+            // 
+            this.dateTimePickerStudent.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dateTimePickerStudent.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerStudent.Location = new System.Drawing.Point(236, 106);
+            this.dateTimePickerStudent.MaxDate = new System.DateTime(2010, 12, 31, 0, 0, 0, 0);
+            this.dateTimePickerStudent.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerStudent.Name = "dateTimePickerStudent";
+            this.dateTimePickerStudent.Size = new System.Drawing.Size(227, 20);
+            this.dateTimePickerStudent.TabIndex = 4;
+            this.dateTimePickerStudent.Value = new System.DateTime(1991, 4, 10, 0, 0, 0, 0);
+            // 
+            // txtStudentBirthdayDate
+            // 
+            this.txtStudentBirthdayDate.Location = new System.Drawing.Point(469, 106);
+            this.txtStudentBirthdayDate.Name = "txtStudentBirthdayDate";
+            this.txtStudentBirthdayDate.Size = new System.Drawing.Size(155, 20);
+            this.txtStudentBirthdayDate.TabIndex = 4;
+            this.txtStudentBirthdayDate.Visible = false;
             // 
             // tabPageNIR
             // 
@@ -1743,7 +1819,7 @@
             this.tableLayoutPanel7.Controls.Add(this.label16, 0, 2);
             this.tableLayoutPanel7.Controls.Add(this.label12, 0, 11);
             this.tableLayoutPanel7.Controls.Add(this.label13, 0, 10);
-            this.tableLayoutPanel7.Controls.Add(this.btnAddStudentNIR, 1, 12);
+            this.tableLayoutPanel7.Controls.Add(this.btnAddWorksNIR, 1, 12);
             this.tableLayoutPanel7.Controls.Add(this.cmbNIR_Mentor, 1, 2);
             this.tableLayoutPanel7.Controls.Add(this.txtStudentProgramCount, 1, 11);
             this.tableLayoutPanel7.Controls.Add(this.lbYearInNirs, 0, 3);
@@ -1817,15 +1893,15 @@
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label13.Visible = false;
             // 
-            // btnAddStudentNIR
+            // btnAddWorksNIR
             // 
-            this.btnAddStudentNIR.Location = new System.Drawing.Point(385, 404);
-            this.btnAddStudentNIR.Name = "btnAddStudentNIR";
-            this.btnAddStudentNIR.Size = new System.Drawing.Size(145, 23);
-            this.btnAddStudentNIR.TabIndex = 83;
-            this.btnAddStudentNIR.Text = "Добавить в базу";
-            this.btnAddStudentNIR.UseVisualStyleBackColor = true;
-            this.btnAddStudentNIR.Click += new System.EventHandler(this.btnAddStudentNIR_Click);
+            this.btnAddWorksNIR.Location = new System.Drawing.Point(385, 404);
+            this.btnAddWorksNIR.Name = "btnAddWorksNIR";
+            this.btnAddWorksNIR.Size = new System.Drawing.Size(145, 23);
+            this.btnAddWorksNIR.TabIndex = 83;
+            this.btnAddWorksNIR.Text = "Добавить в базу";
+            this.btnAddWorksNIR.UseVisualStyleBackColor = true;
+            this.btnAddWorksNIR.Click += new System.EventHandler(this.btnAddWorksNIR_Click);
             // 
             // cmbNIR_Mentor
             // 
@@ -2019,82 +2095,6 @@
             this.bindWorks.DataMember = "works";
             this.bindWorks.Position = 0;
             // 
-            // dateTimePickerStudent
-            // 
-            this.dateTimePickerStudent.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dateTimePickerStudent.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerStudent.Location = new System.Drawing.Point(236, 106);
-            this.dateTimePickerStudent.MaxDate = new System.DateTime(2010, 12, 31, 0, 0, 0, 0);
-            this.dateTimePickerStudent.MinDate = new System.DateTime(1900, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerStudent.Name = "dateTimePickerStudent";
-            this.dateTimePickerStudent.Size = new System.Drawing.Size(227, 20);
-            this.dateTimePickerStudent.TabIndex = 4;
-            this.dateTimePickerStudent.Value = new System.DateTime(1991, 4, 10, 0, 0, 0, 0);
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 43;
-            // 
-            // nameDataGridViewTextBoxColumn7
-            // 
-            this.nameDataGridViewTextBoxColumn7.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn7.HeaderText = "Имя";
-            this.nameDataGridViewTextBoxColumn7.Name = "nameDataGridViewTextBoxColumn7";
-            this.nameDataGridViewTextBoxColumn7.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn7.Width = 54;
-            // 
-            // surnameDataGridViewTextBoxColumn1
-            // 
-            this.surnameDataGridViewTextBoxColumn1.DataPropertyName = "surname";
-            this.surnameDataGridViewTextBoxColumn1.HeaderText = "Фамилия";
-            this.surnameDataGridViewTextBoxColumn1.Name = "surnameDataGridViewTextBoxColumn1";
-            this.surnameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.surnameDataGridViewTextBoxColumn1.Width = 81;
-            // 
-            // fathernameDataGridViewTextBoxColumn1
-            // 
-            this.fathernameDataGridViewTextBoxColumn1.DataPropertyName = "fathername";
-            this.fathernameDataGridViewTextBoxColumn1.HeaderText = "Отчество";
-            this.fathernameDataGridViewTextBoxColumn1.Name = "fathernameDataGridViewTextBoxColumn1";
-            this.fathernameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.fathernameDataGridViewTextBoxColumn1.Width = 79;
-            // 
-            // groupidDataGridViewTextBoxColumn
-            // 
-            this.groupidDataGridViewTextBoxColumn.DataPropertyName = "group_id";
-            this.groupidDataGridViewTextBoxColumn.HeaderText = "ID Группы";
-            this.groupidDataGridViewTextBoxColumn.Name = "groupidDataGridViewTextBoxColumn";
-            this.groupidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.groupidDataGridViewTextBoxColumn.Width = 83;
-            // 
-            // bornDataGridViewTextBoxColumn
-            // 
-            this.bornDataGridViewTextBoxColumn.DataPropertyName = "born";
-            this.bornDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
-            this.bornDataGridViewTextBoxColumn.Name = "bornDataGridViewTextBoxColumn";
-            this.bornDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bornDataGridViewTextBoxColumn.Width = 102;
-            // 
-            // studyDataGridViewTextBoxColumn
-            // 
-            this.studyDataGridViewTextBoxColumn.DataPropertyName = "study";
-            this.studyDataGridViewTextBoxColumn.HeaderText = "Форма обучения";
-            this.studyDataGridViewTextBoxColumn.Name = "studyDataGridViewTextBoxColumn";
-            this.studyDataGridViewTextBoxColumn.ReadOnly = true;
-            this.studyDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // grant
-            // 
-            this.grant.DataPropertyName = "grant";
-            this.grant.HeaderText = "Стипендия";
-            this.grant.Name = "grant";
-            this.grant.ReadOnly = true;
-            this.grant.Width = 86;
-            // 
             // AddSomeOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2200,7 +2200,7 @@
         private System.Windows.Forms.TextBox txtStudentYearsNIR;
         private System.Windows.Forms.Label lbYearInNirs;
         private System.Windows.Forms.Button btnAddMentor;
-        private System.Windows.Forms.Button btnAddStudentNIR;
+        private System.Windows.Forms.Button btnAddWorksNIR;
         private System.Windows.Forms.Label lblCaption;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtStudentBirthdayDate;
@@ -2270,7 +2270,6 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.ComboBox cmbNIR_Student;
         private System.Windows.Forms.DataGridView dataViewAddedStudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mentoridDataGridViewTextBoxColumn;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn facidDataGridViewTextBoxColumn;
@@ -2302,7 +2301,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn acrankDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn degreeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dividDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn study;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;

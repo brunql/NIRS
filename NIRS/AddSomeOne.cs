@@ -30,6 +30,11 @@ namespace NIRS
         private void addSomeOne_Load(object sender, EventArgs e)
         {
             // здесь можно немного пошалить ;)
+            //cmbMentorDivision.DataSource = bindDivision;
+            //cmbMentorDivision.DisplayMember = "name";
+
+            //cmbNIR_Mentor.DataSource = bindMentor;
+            //cmbNIR_Mentor.DisplayMember = "secondname";
         }
 
 
@@ -42,7 +47,7 @@ namespace NIRS
                 txtAddFacultyFullName.Text);
             bindFaculty.Save();
 
-            DialogResult result = MessageBox.Show("Специальность добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
+            DialogResult result = MessageBox.Show("Факультет добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes)
             {
                 txtAddFacultyName.Text = "";
@@ -224,7 +229,7 @@ namespace NIRS
             }
         }
 
-        private void btnAddStudentNIR_Click(object sender, EventArgs e)
+        private void btnAddWorksNIR_Click(object sender, EventArgs e)
         {
             if (cmbNIR_Student.SelectedItem as ComboBoxKiller == null)
             {

@@ -64,7 +64,25 @@ namespace NIRS_Viewer
             tableAdapterManager.mentorTableAdapter.Fill(NIRS_DataSet.mentor);
             tableAdapterManager.studentTableAdapter.Fill(NIRS_DataSet.student);
             tableAdapterManager.worksTableAdapter.Fill(NIRS_DataSet.works);
+
+
+            tableAdapterManager.facultyTableAdapter.Adapter.RowUpdated +=new MySqlRowUpdatedEventHandler(Adapter_RowUpdated);
+            tableAdapterManager.divisionTableAdapter.Adapter.RowUpdated += new MySqlRowUpdatedEventHandler(Adapter_RowUpdated);
+            tableAdapterManager.groupTableAdapter.Adapter.RowUpdated += new MySqlRowUpdatedEventHandler(Adapter_RowUpdated);
+            tableAdapterManager.specTableAdapter.Adapter.RowUpdated += new MySqlRowUpdatedEventHandler(Adapter_RowUpdated);
+            tableAdapterManager.mentorTableAdapter.Adapter.RowUpdated += new MySqlRowUpdatedEventHandler(Adapter_RowUpdated);
+            tableAdapterManager.studentTableAdapter.Adapter.RowUpdated += new MySqlRowUpdatedEventHandler(Adapter_RowUpdated);
+            tableAdapterManager.worksTableAdapter.Adapter.RowUpdated += new MySqlRowUpdatedEventHandler(Adapter_RowUpdated);
 		}
+
+        private static void Adapter_RowUpdated(object sender, MySql.Data.MySqlClient.MySqlRowUpdatedEventArgs e)
+        {
+            // Yea! I solve this fucking problem!
+            if (e.StatementType == StatementType.Insert)
+            {
+                e.Row["id"] = e.Command.LastInsertedId;
+            }
+        }
 
         public static void Fill(string table_name)
         {

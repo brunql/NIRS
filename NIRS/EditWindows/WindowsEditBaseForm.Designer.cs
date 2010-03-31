@@ -189,6 +189,7 @@ namespace NIRS
             this.Name = "WindowsEditBaseForm";
             this.Text = "WindowsEditBaseForm";
             this.Load += new System.EventHandler(this.Faculty_windowsLoad);
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.WindowsEditBaseForm_FormClosing);
             this.tools.ResumeLayout(false);
             this.tools.PerformLayout();
             this.contextMenuStrip_faculty.ResumeLayout(false);
