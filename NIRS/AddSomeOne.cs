@@ -13,45 +13,139 @@ using MySql.Data.MySqlClient;
 
 namespace NIRS
 {
-    public partial class addSomeOne : Form
+    public partial class AddSomeOne : Form
     {
 
-        public addSomeOne()
+        public AddSomeOne()
         {
             InitializeComponent();
         }
 
-
-        private void ckbMoney_CheckedChanged(object sender, EventArgs e)
+        private void ShowError(string text)
         {
-            txtStudentGrant.Text = "";
-            txtStudentGrant.Enabled = ckbMoney.Checked;
+            MessageBox.Show("Проверьте правильность ввода данных: " + text, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            throw new NullReferenceException();
         }
+
+        private void addSomeOne_Load(object sender, EventArgs e)
+        {
+            // здесь можно немного пошалить ;)
+        }
+
+
+
+
+        private void btnAddFaculty_Click(object sender, EventArgs e)
+        {
+            NIRS_Viewer.config.NIRS_DataSet.faculty.AddfacultyRow(
+                txtAddFacultyName.Text, 
+                txtAddFacultyFullName.Text);
+            bindFaculty.Save();
+
+            DialogResult result = MessageBox.Show("Специальность добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                txtAddFacultyName.Text = "";
+                txtAddFacultyFullName.Text = "";
+            }
+        }
+
+        private void btnAddDivision_Click(object sender, EventArgs e)
+        {
+            if ((int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value < 0)
+            {
+                // fuck fuck fuck !!!!!!!
+                // this sucks!!!
+                // i don't know that todo to make it work as it must! :'(
+                MessageBox.Show("(int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value < 0");
+                return;
+            }
+
+            NIRS_Viewer.config.NIRS_DataSet.division.AdddivisionRow(
+                //InsertStuff.InsertDivision(
+                (int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value,
+                txtAddDivision.Text,
+                txtAddDivisionFullName.Text
+                );
+            bindDivision.Save();
+
+            DialogResult result = MessageBox.Show("Кафедра добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                txtAddDivision.Text = "";
+                txtAddDivisionFullName.Text = "";
+            }
+        }
+
+        private void btnAddSpec_Click(object sender, EventArgs e)
+        {
+            if ((int)dataViewSpecDivision.CurrentRow.Cells[0].Value < 0)
+            {
+                MessageBox.Show("(int)dataViewSpecDivision.CurrentRow.Cells[0].Value < 0");
+                return;
+            }
+            NIRS_Viewer.config.NIRS_DataSet.spec.AddspecRow(
+                //InsertStuff.InsertSpecialize(
+                (int)dataViewSpecDivision.CurrentRow.Cells[0].Value,
+                txtAddSpec.Text,
+                txtAddSpecFullName.Text
+                );
+            bindSpec.Save();
+
+            DialogResult result = MessageBox.Show("Специальность добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                txtAddSpec.Text = "";
+                txtAddSpecFullName.Text = "";
+            }
+        }
+
+        private void btnAddGroup_Click(object sender, EventArgs e)
+        {
+            if ((int)dataViewGroupSpec.CurrentRow.Cells[0].Value < 0)
+            {
+                MessageBox.Show("(int)dataViewGroupSpec.CurrentRow.Cells[0].Value < 0");
+                return;
+            }
+            NIRS_Viewer.config.NIRS_DataSet.group.AddgroupRow(
+                //InsertStuff.InsertGroup(
+                (int)dataViewGroupSpec.CurrentRow.Cells[0].Value,
+                txtAddGroupCode.Text
+                );
+            bindGroup.Save();
+
+            DialogResult result = MessageBox.Show("Группа добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                txtAddGroupCode.Text = "";
+            }
+        }
+
 
         private void btnAddMentor_Click(object sender, EventArgs e)
         {
-            if ((ComboBoxKiller)cbMentorDivision.SelectedItem == null)
+            if ((ComboBoxKiller)cmbMentorDivision.SelectedItem == null)
             {
                 MessageBox.Show("Кафедра не выбрана");
                 return;
             }
 
 
-            if (((ComboBoxKiller)cbMentorDivision.SelectedItem).Id < 0)
+            if (((ComboBoxKiller)cmbMentorDivision.SelectedItem).Id < 0)
             {
-                MessageBox.Show("cbMentorDivision.Id < 0");
+                MessageBox.Show("cmbMentorDivision.Id < 0");
                 return;
             }
 
             NIRS_Viewer.config.NIRS_DataSet.mentor.AddmentorRow(
-//            InsertStuff.InsertMentor(
+                //            InsertStuff.InsertMentor(
                 txtMentorName.Text,
                 txtMentorSurname.Text,
                 txtStudentFathername.Text,
                 txtMentorWork.Text,
                 txtMentorAcademicRank.Text,
                 txtMentorDegree.Text,
-                ((ComboBoxKiller)cbMentorDivision.SelectedItem).Id
+                ((ComboBoxKiller)cmbMentorDivision.SelectedItem).Id
                 );
             bindMentor.Save();
 
@@ -68,12 +162,6 @@ namespace NIRS
 
         }
 
-        private void ShowError(string text)
-        {
-            MessageBox.Show("Проверьте правильность ввода данных: " + text, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            throw new NullReferenceException();
-        }
-
         private void btnAddStudent_Click(object sender, EventArgs e)
         {
             try
@@ -84,13 +172,13 @@ namespace NIRS
             }
             catch // if error show only one error message and return
             {
-                return; 
+                return;
             }
 
             DateTime birthdate = new DateTime();
             try
             {
-                birthdate = Convert.ToDateTime(txtStudentBirthdayDate.Text);
+                birthdate = dateTimePickerStudent.Value; //Convert.ToDateTime(txtStudentBirthdayDate.Text);
             }
             catch (FormatException)
             {
@@ -110,7 +198,7 @@ namespace NIRS
             }
 
             NIRS_Viewer.config.NIRS_DataSet.student.AddstudentRow(
-            //InsertStuff.InsertStudent(
+                //InsertStuff.InsertStudent(
                 txtStudentName.Text,
                 txtStudentSurname.Text,
                 txtStudentFathername.Text,
@@ -128,105 +216,12 @@ namespace NIRS
                 txtStudentFathername.Text = "";
                 txtStudentName.Text = "";
                 txtStudentGrant.Text = "";
+                txtStudentBirthdayDate.Text = "";
                 txtStudentPatents.Text = "";
                 txtStudentProgramCount.Text = "";
                 txtStudentPublicationCount.Text = "";
                 txtStudentAsset.Text = "";
             }
-        }
-
-        private void btnFacultyAdded_Click(object sender, EventArgs e)
-        {
-            NIRS_Viewer.config.NIRS_DataSet.faculty.AddfacultyRow(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
-            bindFaculty.Save();
-        }
-
-        private void addSomeOne_Load(object sender, EventArgs e)
-        {
-            ComboBoxKiller.FillComboBox(dataViewAddedDivision, cbMentorDivision);
-        }
-
-        private void AddDivision_Click(object sender, EventArgs e)
-        {
-            if ((int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value < 0)
-            {
-                // fuck fuck fuck !!!!!!!
-                // this sucks!!!
-                // i don't know that todo to make it work as it must! :'(
-                MessageBox.Show("(int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value < 0");
-                return; 
-            }
-
-            NIRS_Viewer.config.NIRS_DataSet.division.AdddivisionRow(
-            //InsertStuff.InsertDivision(
-                (int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value,
-                txtAddDivision.Text,
-                txtAddDivisionFullName.Text
-                );
-            bindDivision.Save();
-        }
-
-        private void AddSpec_Click(object sender, EventArgs e)
-        {
-            if ((int)dataViewSpecDivision.CurrentRow.Cells[0].Value < 0)
-            {
-                MessageBox.Show("(int)dataViewSpecDivision.CurrentRow.Cells[0].Value < 0");
-                return;
-            }
-            NIRS_Viewer.config.NIRS_DataSet.spec.AddspecRow(
-            //InsertStuff.InsertSpecialize(
-                (int)dataViewSpecDivision.CurrentRow.Cells[0].Value,
-                txtAddSpec.Text,
-                txtAddSpecFullName.Text
-                );
-
-            bindSpec.Save();
-        }
-
-        private void btnAddGroup_Click(object sender, EventArgs e)
-        {
-            if ((int)dataViewGroupSpec.CurrentRow.Cells[0].Value < 0)
-            {
-                MessageBox.Show("(int)dataViewGroupSpec.CurrentRow.Cells[0].Value < 0");
-                return;
-            }
-            NIRS_Viewer.config.NIRS_DataSet.group.AddgroupRow(
-            //InsertStuff.InsertGroup(
-                (int)dataViewGroupSpec.CurrentRow.Cells[0].Value,
-                txtAddGroupCode.Text
-                );
-            bindGroup.Save();
-        }
-
-
-        private void tabPage1_Enter(object sender, EventArgs e)
-        {
-            ComboBoxKiller.FillComboBox(dataGridViewFaculty, cmbStudentFaculty);
-            ComboBoxKiller.FillComboBox(dataViewAddedDivision, cbMentorDivision);
-        }
-
-        private void cmbStudentFaculty_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cmbStudentDivision.Enabled = true;
-            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedDivision, cmbStudentDivision, 2, 1, (cmbStudentFaculty.SelectedItem as ComboBoxKiller).Id);
-        }
-
-        private void cmbStudentDivision_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cmbStudentSpetialize.Enabled = true;
-            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedSpec, cmbStudentSpetialize, 2, 1, (cmbStudentDivision.SelectedItem as ComboBoxKiller).Id);
-        }
-
-        private void cmbStudentSpetialize_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cmbStudentGroup.Enabled = true;
-            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedGroup, cmbStudentGroup, 2, 1, (cmbStudentSpetialize.SelectedItem as ComboBoxKiller).Id);
-        }
-
-        private void tabPage2_Enter(object sender, EventArgs e)
-        {
-            ComboBoxKiller.FillComboBox_MentorStudent(dataViewAddedMentor, cmbNIR_Mentor);
-            ComboBoxKiller.FillComboBox_MentorStudent(dataViewAddedStudent, cmbNIR_Student);
         }
 
         private void btnAddStudentNIR_Click(object sender, EventArgs e)
@@ -255,12 +250,67 @@ namespace NIRS
             }
 
             NIRS_Viewer.config.NIRS_DataSet.works.AddworksRow(
-            //InsertStuff.InsertScienceWork(
+                //InsertStuff.InsertScienceWork(
                 (cmbNIR_Student.SelectedItem as ComboBoxKiller).Id,
                 rtbxStudentTheme.Text,
                 rtbxStudentBackLog.Text,
                 (cmbNIR_Mentor.SelectedItem as ComboBoxKiller).Id
                 );
+            bindWorks.Save();
+
+            DialogResult result = MessageBox.Show("Научная работа добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
+            if (result == DialogResult.Yes)
+            {
+                cmbNIR_Student.SelectedIndex = 0;
+                cmbNIR_Mentor.SelectedIndex = 0;
+                rtbxStudentTheme.Text = "";
+                rtbxStudentBackLog.Text = "";
+            }
+        }
+
+
+
+        private void ckbMoney_CheckedChanged(object sender, EventArgs e)
+        {
+            txtStudentGrant.Text = "";
+            txtStudentGrant.Enabled = ckbMoney.Checked;
+        }
+
+       
+        
+        private void tabPageStudent_Enter(object sender, EventArgs e)
+        {
+            ComboBoxKiller.FillComboBox(dataGridViewFaculty, cmbStudentFaculty);
+            ComboBoxKiller.FillComboBox(dataViewAddedDivision, cmbMentorDivision);
+        }
+
+        private void cmbStudentFaculty_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbStudentDivision.Enabled = true;
+            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedDivision, cmbStudentDivision, 2, 1, (cmbStudentFaculty.SelectedItem as ComboBoxKiller).Id);
+        }
+
+        private void cmbStudentDivision_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbStudentSpetialize.Enabled = true;
+            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedSpec, cmbStudentSpetialize, 2, 1, (cmbStudentDivision.SelectedItem as ComboBoxKiller).Id);
+        }
+
+        private void cmbStudentSpetialize_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbStudentGroup.Enabled = true;
+            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedGroup, cmbStudentGroup, 2, 1, (cmbStudentSpetialize.SelectedItem as ComboBoxKiller).Id);
+        }
+
+        private void tabPageNIR_Enter(object sender, EventArgs e)
+        {
+            ComboBoxKiller.FillComboBox_MentorStudent(dataViewAddedMentor, cmbNIR_Mentor);
+            ComboBoxKiller.FillComboBox_MentorStudent(dataViewAddedStudent, cmbNIR_Student);
+        }
+
+        private void tabPageMentor_Enter(object sender, EventArgs e)
+        {
+            ComboBoxKiller.FillComboBox(dataViewAddedDivision, cmbMentorDivision);
         }
 
     }

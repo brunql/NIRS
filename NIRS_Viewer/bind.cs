@@ -1,19 +1,8 @@
-﻿/*
- * Created by SharpDevelop.
- * User: Администратор
- * Date: 21.03.2010
- * Time: 0:15
- * 
- * To change this template use Tools | Options | Coding | Edit Standard Headers.
- */
-using System;
+﻿using System;
 using System.Data;
 
 namespace NIRS_Viewer
 {
-	/// <summary>
-	/// Description of bind.
-	/// </summary>
 	public class bind : System.Windows.Forms.BindingSource
 	{
 		static bind()

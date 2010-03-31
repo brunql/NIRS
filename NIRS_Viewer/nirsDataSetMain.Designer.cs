@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace NIRS_Viewer {
+namespace NIRS_Viewer{
     
     
     /// <summary>
@@ -3197,8 +3197,7 @@ namespace NIRS_Viewer {
         }
     }
 }
-namespace NIRS_Viewer.nirsDataSetMainTableAdapters
-{
+namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
     
     
     /// <summary>
@@ -3449,7 +3448,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::nirs_viewer_test.Properties.Settings.Default.nirsConnectionString;
+            this._connection.ConnectionString = global::NIRS_Viewer.Properties.Settings.Default.nirsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3838,7 +3837,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::nirs_viewer_test.Properties.Settings.Default.nirsConnectionString;
+            this._connection.ConnectionString = global::NIRS_Viewer.Properties.Settings.Default.nirsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4242,7 +4241,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::nirs_viewer_test.Properties.Settings.Default.nirsConnectionString;
+            this._connection.ConnectionString = global::NIRS_Viewer.Properties.Settings.Default.nirsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4765,7 +4764,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::nirs_viewer_test.Properties.Settings.Default.nirsConnectionString;
+            this._connection.ConnectionString = global::NIRS_Viewer.Properties.Settings.Default.nirsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5283,7 +5282,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::nirs_viewer_test.Properties.Settings.Default.nirsConnectionString;
+            this._connection.ConnectionString = global::NIRS_Viewer.Properties.Settings.Default.nirsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5826,7 +5825,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::nirs_viewer_test.Properties.Settings.Default.nirsConnectionString;
+            this._connection.ConnectionString = global::NIRS_Viewer.Properties.Settings.Default.nirsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6339,7 +6338,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private void InitConnection() {
             this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::nirs_viewer_test.Properties.Settings.Default.nirsConnectionString;
+            this._connection.ConnectionString = global::NIRS_Viewer.Properties.Settings.Default.nirsConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6506,7 +6505,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
     }
     
     /// <summary>
-    ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Save scenarios
+    ///TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     ///</summary>
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
@@ -6720,7 +6719,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         }
         
         /// <summary>
-        ///Save rows in top-down order.
+        ///Update rows in top-down order.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private int UpdateUpdatedRows(nirsDataSetMain dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
@@ -6922,7 +6921,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         }
         
         /// <summary>
-        ///Remove inserted rows that become updated rows after calling TableAdapter.Save(inserted rows) first
+        ///Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         private global::System.Data.DataRow[] GetRealUpdatedRows(global::System.Data.DataRow[] updatedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
@@ -6945,7 +6944,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         }
         
         /// <summary>
-        ///Save all changes to the dataset.
+        ///Update all changes to the dataset.
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         public virtual int UpdateAll(nirsDataSetMain dataSet) {
@@ -7204,7 +7203,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters
         }
         
         /// <summary>
-        ///Save Order Option
+        ///Update Order Option
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "2.0.0.0")]
         public enum UpdateOrderOption {

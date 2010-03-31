@@ -54,7 +54,7 @@ namespace NIRS
 
         private void AddRecord_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new addSomeOne()).ShowDialog();
+            (new AddSomeOne()).ShowDialog();
         }
 
         private void Exit_ToolStripMenuItem_Click(object sender, EventArgs e)

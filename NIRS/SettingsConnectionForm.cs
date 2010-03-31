@@ -36,6 +36,8 @@ namespace NIRS
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            //NIRS_Viewer.Properties.Settings.nirsConnectionString
+
             DBSettings dbsettings = new DBSettings(
                 txtHost.Text,
                 txtPort.Text,

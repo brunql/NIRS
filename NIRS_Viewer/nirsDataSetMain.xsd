@@ -4,7 +4,7 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="nirsConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="nirsConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.nirs_viewer_test.Properties.Settings.GlobalReference.Default.nirsConnectionString" Provider="MySql.Data.MySqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="nirsConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="nirsConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NIRS_Viewer.Properties.Settings.GlobalReference.Default.nirsConnectionString" Provider="MySql.Data.MySqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="divisionTableAdapter" GeneratorDataComponentClassName="divisionTableAdapter" Name="division" UserDataComponentName="divisionTableAdapter">

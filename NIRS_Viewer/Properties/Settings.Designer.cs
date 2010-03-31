@@ -8,7 +8,8 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace nirs_viewer_test.Properties {
+namespace NIRS_Viewer.Properties
+{
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

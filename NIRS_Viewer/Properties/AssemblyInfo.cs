@@ -9,11 +9,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("NIRS_Viewer_test")]
+[assembly: AssemblyTitle("NIRS_Viewer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("NIRS_Viewer_test")]
+[assembly: AssemblyProduct("NIRS_Viewer")]
 [assembly: AssemblyCopyright("Copyright 2010")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
