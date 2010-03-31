@@ -139,33 +139,10 @@ namespace NIRS
         {
             NIRS_Viewer.config.NIRS_DataSet.faculty.AddfacultyRow(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
             bindFaculty.Save();
-            
-            //MySqlCommand command = new MySqlCommand(@"SELECT MAX(`id`) FROM `faculty`;", NIRS_Viewer.config.NIRS_MySqlConnection);
-            //NIRS_Viewer.config.NIRS_MySqlConnection.Open();
-            //MySqlDataReader reader = command.ExecuteReader();
-            //reader.Read();
-            //int id = reader.GetInt32(0);
-            //reader.Close();
-            //NIRS_Viewer.config.NIRS_MySqlConnection.Close();
-
-            //newrow.id = id;
-            
-            //InsertStuff.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
-            //object[] vals = {
-            //        -1, txtAddFacultyName.Text, txtAddFacultyFullName.Text
-            //};
-            //NIRS_Viewer.config.NIRS_DataSet.Tables["faculty"].LoadDataRow(vals, true);
-            //bindFaculty.Save();
-            //NIRS_Viewer.config.NIRS_DataSet.AcceptChanges();
-            
-            //NIRS_Viewer.config.InsertFaculty(txtAddFacultyName.Text, txtAddFacultyFullName.Text);
-            //NIRS_Viewer.config.Save("faculty");
-            //bindFaculty.Save();
         }
 
         private void addSomeOne_Load(object sender, EventArgs e)
         {
-            bindFaculty.Fill();
             ComboBoxKiller.FillComboBox(dataViewAddedDivision, cbMentorDivision);
         }
 

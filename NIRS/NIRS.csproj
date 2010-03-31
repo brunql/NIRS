@@ -69,6 +69,7 @@
     <Compile Include="AddSomeOne.Designer.cs">
       <DependentUpon>AddSomeOne.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataGridInitializer.cs" />
     <Compile Include="EditWindows\EditDivision.cs">
       <SubType>Form</SubType>
     </Compile>
