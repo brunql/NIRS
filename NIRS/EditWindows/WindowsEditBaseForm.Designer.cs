@@ -93,8 +93,7 @@ namespace NIRS
             // 
             // toolsFindIn
             // 
-            this.toolsFindIn.Items.AddRange(new object[] {
-            "none"});
+            this.toolsFindIn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.toolsFindIn.MergeAction = System.Windows.Forms.MergeAction.MatchOnly;
             this.toolsFindIn.Name = "toolsFindIn";
             this.toolsFindIn.Size = new System.Drawing.Size(121, 25);

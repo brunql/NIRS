@@ -36,7 +36,9 @@ namespace NIRS
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            //NIRS_Viewer.Properties.Settings.nirsConnectionString
+            // TODO:
+            // Change NIRS_Viewer.Properties.Settings.nirsConnectionString and reinitialize NIRS_DataSet
+            // Good luck :)
 
             DBSettings dbsettings = new DBSettings(
                 txtHost.Text,

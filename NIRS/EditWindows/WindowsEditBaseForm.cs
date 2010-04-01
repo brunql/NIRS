@@ -61,18 +61,15 @@ namespace NIRS
 				dataBinding.Filter = null;
 				return;
 			}
-			if(toolsFindIn.SelectedIndex!=-1)
-			{
-				switch(toolsFindIn.Items[toolsFindIn.SelectedIndex].ToString())
-				{
-					case ("none") : dataBinding.Filter = null; break;
-					default : 
-									dataBinding.Filter =
-										((strings_container)toolsFindIn.SelectedItem).value +
-										" LIKE '" + toolsFindIt + "*'";
-									break;
-				}
-			}
+            if (toolsFindIn.SelectedIndex != -1)
+            {
+                dataBinding.Filter = ((strings_container)toolsFindIn.SelectedItem).value +
+                    " LIKE '" + toolsFindIt + "*'";
+            }
+            else
+            {
+                dataBinding.Filter = null;
+            }
 		}
 		
 		void ToolsFindInSelectedIndexChanged(object sender, EventArgs e)
