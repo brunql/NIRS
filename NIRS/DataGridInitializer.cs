@@ -23,6 +23,7 @@ namespace NIRS
             idDataGridViewTextBoxColumn.DataPropertyName = "id";
             idDataGridViewTextBoxColumn.HeaderText = "id";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Visible = false;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -69,6 +70,7 @@ namespace NIRS
             idDataGridViewTextBoxColumn.DataPropertyName = "id";
             idDataGridViewTextBoxColumn.HeaderText = "id";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Visible = false;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -126,6 +128,7 @@ namespace NIRS
             idDataGridViewTextBoxColumn.DataPropertyName = "id";
             idDataGridViewTextBoxColumn.HeaderText = "id";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Visible = false;
             // 
             // dividDataGridViewTextBoxColumn
             // 
@@ -180,6 +183,7 @@ namespace NIRS
             idDataGridViewTextBoxColumn.DataPropertyName = "id";
             idDataGridViewTextBoxColumn.HeaderText = "id";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Visible = false;
             // 
             // specidDataGridViewComboBoxColumn
             // 
@@ -237,6 +241,7 @@ namespace NIRS
             idDataGridViewTextBoxColumn.DataPropertyName = "id";
             idDataGridViewTextBoxColumn.HeaderText = "id";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Visible = false;
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -335,6 +340,7 @@ namespace NIRS
             idDataGridViewTextBoxColumn.DataPropertyName = "id";
             idDataGridViewTextBoxColumn.HeaderText = "id";
             idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            idDataGridViewTextBoxColumn.Visible = false;
             // 
             // nameDataGridViewTextBoxColumn
             // 

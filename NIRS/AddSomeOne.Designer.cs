@@ -23,7 +23,7 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        /// Required method for Designer support - do not modify
+        /// Required method for Designer support - do any modify
         /// the contents of this method with the code editor.
         /// </summary>
         private void InitializeComponent()
@@ -34,9 +34,6 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label18 = new System.Windows.Forms.Label();
             this.dataViewFaculty = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindFaculty = new NIRS_Viewer.bind();
             this.label17 = new System.Windows.Forms.Label();
             this.txtAddFacultyFullName = new System.Windows.Forms.TextBox();
@@ -47,16 +44,9 @@
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label19 = new System.Windows.Forms.Label();
             this.dataViewAddedDivision = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.facidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullnameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindDivision = new NIRS_Viewer.bind();
             this.label25 = new System.Windows.Forms.Label();
             this.dataViewDivisionFaculty = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label20 = new System.Windows.Forms.Label();
             this.btnAddDivision = new System.Windows.Forms.Button();
             this.label35 = new System.Windows.Forms.Label();
@@ -67,17 +57,9 @@
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label21 = new System.Windows.Forms.Label();
             this.dataViewAddedSpec = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dividDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindSpec = new NIRS_Viewer.bind();
             this.label27 = new System.Windows.Forms.Label();
             this.dataViewSpecDivision = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.facidDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fullnameDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label28 = new System.Windows.Forms.Label();
             this.btnAddSpec = new System.Windows.Forms.Button();
             this.txtAddSpecFullName = new System.Windows.Forms.TextBox();
@@ -88,17 +70,10 @@
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
             this.label23 = new System.Windows.Forms.Label();
             this.dataViewAddedGroup = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.specidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindGroup = new NIRS_Viewer.bind();
             this.label30 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.dataViewGroupSpec = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dividDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAddGroup = new System.Windows.Forms.Button();
             this.txtAddGroupCode = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
@@ -109,14 +84,6 @@
             this.cmbMentorDivision = new System.Windows.Forms.ComboBox();
             this.txtMentorDegree = new System.Windows.Forms.TextBox();
             this.dataViewAddedMentor = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fathernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.workDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.acrankDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.degreeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dividDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindMentor = new NIRS_Viewer.bind();
             this.label33 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -156,14 +123,6 @@
             this.lblFaculty = new System.Windows.Forms.Label();
             this.cmbStudentFaculty = new System.Windows.Forms.ComboBox();
             this.dataViewAddedStudent = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.surnameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fathernameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.bornDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.studyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindStudent = new NIRS_Viewer.bind();
             this.btnAddStudent = new System.Windows.Forms.Button();
             this.dateTimePickerStudent = new System.Windows.Forms.DateTimePicker();
@@ -299,10 +258,7 @@
             this.dataViewFaculty.AutoGenerateColumns = false;
             this.dataViewFaculty.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewFaculty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewFaculty.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.fullnameDataGridViewTextBoxColumn});
+            DataGridInitializer.InitFaculty(this.dataViewFaculty);
             this.tableLayoutPanel1.SetColumnSpan(this.dataViewFaculty, 3);
             this.dataViewFaculty.DataSource = this.bindFaculty;
             this.dataViewFaculty.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -312,31 +268,6 @@
             this.dataViewFaculty.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewFaculty.Size = new System.Drawing.Size(709, 350);
             this.dataViewFaculty.TabIndex = 62;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 43;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Факультет";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.nameDataGridViewTextBoxColumn.Width = 297;
-            // 
-            // fullnameDataGridViewTextBoxColumn
-            // 
-            this.fullnameDataGridViewTextBoxColumn.DataPropertyName = "fullname";
-            this.fullnameDataGridViewTextBoxColumn.HeaderText = "Полное имя факультета";
-            this.fullnameDataGridViewTextBoxColumn.Name = "fullnameDataGridViewTextBoxColumn";
-            this.fullnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fullnameDataGridViewTextBoxColumn.Width = 477;
             // 
             // bindFaculty
             // 
@@ -450,11 +381,7 @@
             this.dataViewAddedDivision.AutoGenerateColumns = false;
             this.dataViewAddedDivision.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedDivision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewAddedDivision.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2,
-            this.facidDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn2,
-            this.fullnameDataGridViewTextBoxColumn2});
+            DataGridInitializer.InitDivision(this.dataViewAddedDivision);
             this.tableLayoutPanel2.SetColumnSpan(this.dataViewAddedDivision, 3);
             this.dataViewAddedDivision.DataSource = this.bindDivision;
             this.dataViewAddedDivision.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -463,38 +390,6 @@
             this.dataViewAddedDivision.ReadOnly = true;
             this.dataViewAddedDivision.Size = new System.Drawing.Size(715, 162);
             this.dataViewAddedDivision.TabIndex = 55;
-            // 
-            // idDataGridViewTextBoxColumn2
-            // 
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn2.Width = 43;
-            // 
-            // facidDataGridViewTextBoxColumn
-            // 
-            this.facidDataGridViewTextBoxColumn.DataPropertyName = "fac_id";
-            this.facidDataGridViewTextBoxColumn.HeaderText = "ID Факультета";
-            this.facidDataGridViewTextBoxColumn.Name = "facidDataGridViewTextBoxColumn";
-            this.facidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.facidDataGridViewTextBoxColumn.Width = 99;
-            // 
-            // nameDataGridViewTextBoxColumn2
-            // 
-            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn2.HeaderText = "Кафедра";
-            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
-            this.nameDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn2.Width = 160;
-            // 
-            // fullnameDataGridViewTextBoxColumn2
-            // 
-            this.fullnameDataGridViewTextBoxColumn2.DataPropertyName = "fullname";
-            this.fullnameDataGridViewTextBoxColumn2.HeaderText = "Полное имя кафедры";
-            this.fullnameDataGridViewTextBoxColumn2.Name = "fullnameDataGridViewTextBoxColumn2";
-            this.fullnameDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.fullnameDataGridViewTextBoxColumn2.Width = 406;
             // 
             // bindDivision
             // 
@@ -517,10 +412,7 @@
             this.dataViewDivisionFaculty.AutoGenerateColumns = false;
             this.dataViewDivisionFaculty.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewDivisionFaculty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewDivisionFaculty.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn1,
-            this.nameDataGridViewTextBoxColumn1,
-            this.fullnameDataGridViewTextBoxColumn1});
+            DataGridInitializer.InitFaculty(this.dataViewDivisionFaculty);
             this.tableLayoutPanel2.SetColumnSpan(this.dataViewDivisionFaculty, 3);
             this.dataViewDivisionFaculty.DataSource = this.bindFaculty;
             this.dataViewDivisionFaculty.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -531,30 +423,6 @@
             this.dataViewDivisionFaculty.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewDivisionFaculty.Size = new System.Drawing.Size(715, 162);
             this.dataViewDivisionFaculty.TabIndex = 3;
-            // 
-            // idDataGridViewTextBoxColumn1
-            // 
-            this.idDataGridViewTextBoxColumn1.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn1.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn1.Name = "idDataGridViewTextBoxColumn1";
-            this.idDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn1.Width = 43;
-            // 
-            // nameDataGridViewTextBoxColumn1
-            // 
-            this.nameDataGridViewTextBoxColumn1.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn1.HeaderText = "Факультет";
-            this.nameDataGridViewTextBoxColumn1.Name = "nameDataGridViewTextBoxColumn1";
-            this.nameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn1.Width = 297;
-            // 
-            // fullnameDataGridViewTextBoxColumn1
-            // 
-            this.fullnameDataGridViewTextBoxColumn1.DataPropertyName = "fullname";
-            this.fullnameDataGridViewTextBoxColumn1.HeaderText = "Полное имя факультета";
-            this.fullnameDataGridViewTextBoxColumn1.Name = "fullnameDataGridViewTextBoxColumn1";
-            this.fullnameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.fullnameDataGridViewTextBoxColumn1.Width = 477;
             // 
             // label20
             // 
@@ -674,11 +542,7 @@
             this.dataViewAddedSpec.AutoGenerateColumns = false;
             this.dataViewAddedSpec.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedSpec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewAddedSpec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn4,
-            this.dividDataGridViewTextBoxColumn,
-            this.codeDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn4});
+            DataGridInitializer.InitSpec(this.dataViewAddedSpec);
             this.tableLayoutPanel3.SetColumnSpan(this.dataViewAddedSpec, 3);
             this.dataViewAddedSpec.DataSource = this.bindSpec;
             this.dataViewAddedSpec.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -688,38 +552,6 @@
             this.dataViewAddedSpec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewAddedSpec.Size = new System.Drawing.Size(715, 162);
             this.dataViewAddedSpec.TabIndex = 59;
-            // 
-            // idDataGridViewTextBoxColumn4
-            // 
-            this.idDataGridViewTextBoxColumn4.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn4.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn4.Name = "idDataGridViewTextBoxColumn4";
-            this.idDataGridViewTextBoxColumn4.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn4.Width = 43;
-            // 
-            // dividDataGridViewTextBoxColumn
-            // 
-            this.dividDataGridViewTextBoxColumn.DataPropertyName = "div_id";
-            this.dividDataGridViewTextBoxColumn.HeaderText = "ID Кафедры";
-            this.dividDataGridViewTextBoxColumn.Name = "dividDataGridViewTextBoxColumn";
-            this.dividDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dividDataGridViewTextBoxColumn.Width = 93;
-            // 
-            // codeDataGridViewTextBoxColumn
-            // 
-            this.codeDataGridViewTextBoxColumn.DataPropertyName = "code";
-            this.codeDataGridViewTextBoxColumn.HeaderText = "Код";
-            this.codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
-            this.codeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codeDataGridViewTextBoxColumn.Width = 51;
-            // 
-            // nameDataGridViewTextBoxColumn4
-            // 
-            this.nameDataGridViewTextBoxColumn4.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn4.HeaderText = "Специальность";
-            this.nameDataGridViewTextBoxColumn4.Name = "nameDataGridViewTextBoxColumn4";
-            this.nameDataGridViewTextBoxColumn4.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn4.Width = 500;
             // 
             // bindSpec
             // 
@@ -742,11 +574,7 @@
             this.dataViewSpecDivision.AutoGenerateColumns = false;
             this.dataViewSpecDivision.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewSpecDivision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewSpecDivision.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn3,
-            this.facidDataGridViewTextBoxColumn1,
-            this.nameDataGridViewTextBoxColumn3,
-            this.fullnameDataGridViewTextBoxColumn3});
+            DataGridInitializer.InitDivision(this.dataViewSpecDivision);
             this.tableLayoutPanel3.SetColumnSpan(this.dataViewSpecDivision, 3);
             this.dataViewSpecDivision.DataSource = this.bindDivision;
             this.dataViewSpecDivision.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -757,38 +585,6 @@
             this.dataViewSpecDivision.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewSpecDivision.Size = new System.Drawing.Size(715, 162);
             this.dataViewSpecDivision.TabIndex = 3;
-            // 
-            // idDataGridViewTextBoxColumn3
-            // 
-            this.idDataGridViewTextBoxColumn3.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn3.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn3.Name = "idDataGridViewTextBoxColumn3";
-            this.idDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn3.Width = 43;
-            // 
-            // facidDataGridViewTextBoxColumn1
-            // 
-            this.facidDataGridViewTextBoxColumn1.DataPropertyName = "fac_id";
-            this.facidDataGridViewTextBoxColumn1.HeaderText = "ID Факультета";
-            this.facidDataGridViewTextBoxColumn1.Name = "facidDataGridViewTextBoxColumn1";
-            this.facidDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.facidDataGridViewTextBoxColumn1.Width = 99;
-            // 
-            // nameDataGridViewTextBoxColumn3
-            // 
-            this.nameDataGridViewTextBoxColumn3.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn3.HeaderText = "Кафедра";
-            this.nameDataGridViewTextBoxColumn3.Name = "nameDataGridViewTextBoxColumn3";
-            this.nameDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn3.Width = 160;
-            // 
-            // fullnameDataGridViewTextBoxColumn3
-            // 
-            this.fullnameDataGridViewTextBoxColumn3.DataPropertyName = "fullname";
-            this.fullnameDataGridViewTextBoxColumn3.HeaderText = "Полное имя кафедры";
-            this.fullnameDataGridViewTextBoxColumn3.Name = "fullnameDataGridViewTextBoxColumn3";
-            this.fullnameDataGridViewTextBoxColumn3.ReadOnly = true;
-            this.fullnameDataGridViewTextBoxColumn3.Width = 406;
             // 
             // label28
             // 
@@ -904,10 +700,7 @@
             this.dataViewAddedGroup.AutoGenerateColumns = false;
             this.dataViewAddedGroup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewAddedGroup.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn6,
-            this.specidDataGridViewTextBoxColumn,
-            this.codeDataGridViewTextBoxColumn2});
+            DataGridInitializer.InitGroup(this.dataViewAddedGroup);
             this.tableLayoutPanel4.SetColumnSpan(this.dataViewAddedGroup, 2);
             this.dataViewAddedGroup.DataSource = this.bindGroup;
             this.dataViewAddedGroup.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -917,30 +710,6 @@
             this.dataViewAddedGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewAddedGroup.Size = new System.Drawing.Size(715, 175);
             this.dataViewAddedGroup.TabIndex = 64;
-            // 
-            // idDataGridViewTextBoxColumn6
-            // 
-            this.idDataGridViewTextBoxColumn6.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn6.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn6.Name = "idDataGridViewTextBoxColumn6";
-            this.idDataGridViewTextBoxColumn6.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn6.Width = 43;
-            // 
-            // specidDataGridViewTextBoxColumn
-            // 
-            this.specidDataGridViewTextBoxColumn.DataPropertyName = "spec_id";
-            this.specidDataGridViewTextBoxColumn.HeaderText = "ID Специальности";
-            this.specidDataGridViewTextBoxColumn.Name = "specidDataGridViewTextBoxColumn";
-            this.specidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.specidDataGridViewTextBoxColumn.Width = 114;
-            // 
-            // codeDataGridViewTextBoxColumn2
-            // 
-            this.codeDataGridViewTextBoxColumn2.DataPropertyName = "code";
-            this.codeDataGridViewTextBoxColumn2.HeaderText = "Код группы";
-            this.codeDataGridViewTextBoxColumn2.Name = "codeDataGridViewTextBoxColumn2";
-            this.codeDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.codeDataGridViewTextBoxColumn2.Width = 83;
             // 
             // bindGroup
             // 
@@ -974,11 +743,7 @@
             this.dataViewGroupSpec.AutoGenerateColumns = false;
             this.dataViewGroupSpec.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewGroupSpec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewGroupSpec.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn5,
-            this.dividDataGridViewTextBoxColumn1,
-            this.codeDataGridViewTextBoxColumn1,
-            this.nameDataGridViewTextBoxColumn5});
+            DataGridInitializer.InitSpec(this.dataViewGroupSpec);
             this.tableLayoutPanel4.SetColumnSpan(this.dataViewGroupSpec, 2);
             this.dataViewGroupSpec.DataSource = this.bindSpec;
             this.dataViewGroupSpec.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -989,38 +754,6 @@
             this.dataViewGroupSpec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewGroupSpec.Size = new System.Drawing.Size(715, 175);
             this.dataViewGroupSpec.TabIndex = 66;
-            // 
-            // idDataGridViewTextBoxColumn5
-            // 
-            this.idDataGridViewTextBoxColumn5.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn5.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn5.Name = "idDataGridViewTextBoxColumn5";
-            this.idDataGridViewTextBoxColumn5.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn5.Width = 43;
-            // 
-            // dividDataGridViewTextBoxColumn1
-            // 
-            this.dividDataGridViewTextBoxColumn1.DataPropertyName = "div_id";
-            this.dividDataGridViewTextBoxColumn1.HeaderText = "ID Кафедры";
-            this.dividDataGridViewTextBoxColumn1.Name = "dividDataGridViewTextBoxColumn1";
-            this.dividDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dividDataGridViewTextBoxColumn1.Width = 93;
-            // 
-            // codeDataGridViewTextBoxColumn1
-            // 
-            this.codeDataGridViewTextBoxColumn1.DataPropertyName = "code";
-            this.codeDataGridViewTextBoxColumn1.HeaderText = "Код";
-            this.codeDataGridViewTextBoxColumn1.Name = "codeDataGridViewTextBoxColumn1";
-            this.codeDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.codeDataGridViewTextBoxColumn1.Width = 51;
-            // 
-            // nameDataGridViewTextBoxColumn5
-            // 
-            this.nameDataGridViewTextBoxColumn5.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn5.HeaderText = "Специальность";
-            this.nameDataGridViewTextBoxColumn5.Name = "nameDataGridViewTextBoxColumn5";
-            this.nameDataGridViewTextBoxColumn5.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn5.Width = 500;
             // 
             // btnAddGroup
             // 
@@ -1151,15 +884,7 @@
             this.dataViewAddedMentor.AutoGenerateColumns = false;
             this.dataViewAddedMentor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedMentor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewAddedMentor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn7,
-            this.nameDataGridViewTextBoxColumn6,
-            this.surnameDataGridViewTextBoxColumn,
-            this.fathernameDataGridViewTextBoxColumn,
-            this.workDataGridViewTextBoxColumn,
-            this.acrankDataGridViewTextBoxColumn,
-            this.degreeDataGridViewTextBoxColumn,
-            this.dividDataGridViewTextBoxColumn2});
+            DataGridInitializer.InitMentor(this.dataViewAddedMentor);
             this.tableLayoutPanel5.SetColumnSpan(this.dataViewAddedMentor, 3);
             this.dataViewAddedMentor.DataSource = this.bindMentor;
             this.dataViewAddedMentor.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1169,70 +894,6 @@
             this.dataViewAddedMentor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewAddedMentor.Size = new System.Drawing.Size(709, 206);
             this.dataViewAddedMentor.TabIndex = 49;
-            // 
-            // idDataGridViewTextBoxColumn7
-            // 
-            this.idDataGridViewTextBoxColumn7.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn7.HeaderText = "ID";
-            this.idDataGridViewTextBoxColumn7.Name = "idDataGridViewTextBoxColumn7";
-            this.idDataGridViewTextBoxColumn7.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn7.Width = 43;
-            // 
-            // nameDataGridViewTextBoxColumn6
-            // 
-            this.nameDataGridViewTextBoxColumn6.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn6.HeaderText = "Имя";
-            this.nameDataGridViewTextBoxColumn6.Name = "nameDataGridViewTextBoxColumn6";
-            this.nameDataGridViewTextBoxColumn6.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn6.Width = 54;
-            // 
-            // surnameDataGridViewTextBoxColumn
-            // 
-            this.surnameDataGridViewTextBoxColumn.DataPropertyName = "surname";
-            this.surnameDataGridViewTextBoxColumn.HeaderText = "Фамилия";
-            this.surnameDataGridViewTextBoxColumn.Name = "surnameDataGridViewTextBoxColumn";
-            this.surnameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.surnameDataGridViewTextBoxColumn.Width = 81;
-            // 
-            // fathernameDataGridViewTextBoxColumn
-            // 
-            this.fathernameDataGridViewTextBoxColumn.DataPropertyName = "fathername";
-            this.fathernameDataGridViewTextBoxColumn.HeaderText = "Отчество";
-            this.fathernameDataGridViewTextBoxColumn.Name = "fathernameDataGridViewTextBoxColumn";
-            this.fathernameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fathernameDataGridViewTextBoxColumn.Width = 79;
-            // 
-            // workDataGridViewTextBoxColumn
-            // 
-            this.workDataGridViewTextBoxColumn.DataPropertyName = "work";
-            this.workDataGridViewTextBoxColumn.HeaderText = "Место работы";
-            this.workDataGridViewTextBoxColumn.Name = "workDataGridViewTextBoxColumn";
-            this.workDataGridViewTextBoxColumn.ReadOnly = true;
-            this.workDataGridViewTextBoxColumn.Width = 121;
-            // 
-            // acrankDataGridViewTextBoxColumn
-            // 
-            this.acrankDataGridViewTextBoxColumn.DataPropertyName = "acrank";
-            this.acrankDataGridViewTextBoxColumn.HeaderText = "Научное звание";
-            this.acrankDataGridViewTextBoxColumn.Name = "acrankDataGridViewTextBoxColumn";
-            this.acrankDataGridViewTextBoxColumn.ReadOnly = true;
-            this.acrankDataGridViewTextBoxColumn.Width = 104;
-            // 
-            // degreeDataGridViewTextBoxColumn
-            // 
-            this.degreeDataGridViewTextBoxColumn.DataPropertyName = "degree";
-            this.degreeDataGridViewTextBoxColumn.HeaderText = "Научная степень";
-            this.degreeDataGridViewTextBoxColumn.Name = "degreeDataGridViewTextBoxColumn";
-            this.degreeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.degreeDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // dividDataGridViewTextBoxColumn2
-            // 
-            this.dividDataGridViewTextBoxColumn2.DataPropertyName = "div_id";
-            this.dividDataGridViewTextBoxColumn2.HeaderText = "ID Кафедры";
-            this.dividDataGridViewTextBoxColumn2.Name = "dividDataGridViewTextBoxColumn2";
-            this.dividDataGridViewTextBoxColumn2.ReadOnly = true;
-            this.dividDataGridViewTextBoxColumn2.Width = 86;
             // 
             // bindMentor
             // 
@@ -1493,12 +1154,12 @@
             this.cmbStudentGroup.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStudentGroup.Enabled = false;
             this.cmbStudentGroup.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5",
-            "Аспирант"});
+            "test1",
+            "test2",
+            "test3",
+            "test4",
+            "test5",
+            "done"});
             this.cmbStudentGroup.Location = new System.Drawing.Point(236, 213);
             this.cmbStudentGroup.Name = "cmbStudentGroup";
             this.cmbStudentGroup.Size = new System.Drawing.Size(227, 21);
@@ -1685,15 +1346,7 @@
             this.dataViewAddedStudent.AutoGenerateColumns = false;
             this.dataViewAddedStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataViewAddedStudent.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.nameDataGridViewTextBoxColumn7,
-            this.surnameDataGridViewTextBoxColumn1,
-            this.fathernameDataGridViewTextBoxColumn1,
-            this.groupidDataGridViewTextBoxColumn,
-            this.bornDataGridViewTextBoxColumn,
-            this.studyDataGridViewTextBoxColumn,
-            this.grant});
+            DataGridInitializer.InitStudent(this.dataViewAddedStudent);
             this.tableLayoutPanel6.SetColumnSpan(this.dataViewAddedStudent, 3);
             this.dataViewAddedStudent.DataSource = this.bindStudent;
             this.dataViewAddedStudent.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -1703,70 +1356,6 @@
             this.dataViewAddedStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewAddedStudent.Size = new System.Drawing.Size(695, 104);
             this.dataViewAddedStudent.TabIndex = 86;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Width = 43;
-            // 
-            // nameDataGridViewTextBoxColumn7
-            // 
-            this.nameDataGridViewTextBoxColumn7.DataPropertyName = "name";
-            this.nameDataGridViewTextBoxColumn7.HeaderText = "Имя";
-            this.nameDataGridViewTextBoxColumn7.Name = "nameDataGridViewTextBoxColumn7";
-            this.nameDataGridViewTextBoxColumn7.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn7.Width = 54;
-            // 
-            // surnameDataGridViewTextBoxColumn1
-            // 
-            this.surnameDataGridViewTextBoxColumn1.DataPropertyName = "surname";
-            this.surnameDataGridViewTextBoxColumn1.HeaderText = "Фамилия";
-            this.surnameDataGridViewTextBoxColumn1.Name = "surnameDataGridViewTextBoxColumn1";
-            this.surnameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.surnameDataGridViewTextBoxColumn1.Width = 81;
-            // 
-            // fathernameDataGridViewTextBoxColumn1
-            // 
-            this.fathernameDataGridViewTextBoxColumn1.DataPropertyName = "fathername";
-            this.fathernameDataGridViewTextBoxColumn1.HeaderText = "Отчество";
-            this.fathernameDataGridViewTextBoxColumn1.Name = "fathernameDataGridViewTextBoxColumn1";
-            this.fathernameDataGridViewTextBoxColumn1.ReadOnly = true;
-            this.fathernameDataGridViewTextBoxColumn1.Width = 82;
-            // 
-            // groupidDataGridViewTextBoxColumn
-            // 
-            this.groupidDataGridViewTextBoxColumn.DataPropertyName = "group_id";
-            this.groupidDataGridViewTextBoxColumn.HeaderText = "ID Группы";
-            this.groupidDataGridViewTextBoxColumn.Name = "groupidDataGridViewTextBoxColumn";
-            this.groupidDataGridViewTextBoxColumn.ReadOnly = true;
-            this.groupidDataGridViewTextBoxColumn.Width = 77;
-            // 
-            // bornDataGridViewTextBoxColumn
-            // 
-            this.bornDataGridViewTextBoxColumn.DataPropertyName = "born";
-            this.bornDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
-            this.bornDataGridViewTextBoxColumn.Name = "bornDataGridViewTextBoxColumn";
-            this.bornDataGridViewTextBoxColumn.ReadOnly = true;
-            this.bornDataGridViewTextBoxColumn.Width = 102;
-            // 
-            // studyDataGridViewTextBoxColumn
-            // 
-            this.studyDataGridViewTextBoxColumn.DataPropertyName = "study";
-            this.studyDataGridViewTextBoxColumn.HeaderText = "Форма обучения";
-            this.studyDataGridViewTextBoxColumn.Name = "studyDataGridViewTextBoxColumn";
-            this.studyDataGridViewTextBoxColumn.ReadOnly = true;
-            this.studyDataGridViewTextBoxColumn.Width = 108;
-            // 
-            // grant
-            // 
-            this.grant.DataPropertyName = "grant";
-            this.grant.HeaderText = "Стипендия";
-            this.grant.Name = "grant";
-            this.grant.ReadOnly = true;
-            this.grant.Width = 108;
             // 
             // bindStudent
             // 
@@ -2276,49 +1865,8 @@
         private System.Windows.Forms.ComboBox cmbNIR_Student;
         private System.Windows.Forms.DataGridView dataViewAddedStudent;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn facidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dividDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn facidDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn specidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dividDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn codeDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fathernameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn workDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn acrankDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn degreeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dividDataGridViewTextBoxColumn2;
         private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DateTimePicker dateTimePickerStudent;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fathernameDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn groupidDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn bornDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn studyDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn grant;
     }
 }
 
