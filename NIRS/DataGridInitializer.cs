@@ -121,7 +121,7 @@ namespace NIRS
             dividDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
             codeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
+            idDataGridViewTextBoxColumn.Visible = false;
             // 
             // idDataGridViewTextBoxColumn
             // 

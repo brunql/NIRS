@@ -26,6 +26,7 @@ namespace NIRS
             this.dataViewSpecDivision.DataSource = this.bindDivision;
             this.dataViewAddedSpec.DataSource = this.bindSpec;
             this.dataViewGroupSpec.DataSource = this.bindSpec;
+            this.dataViewAddedGroup.DataSource = this.bindGroup;
             this.dataViewAddedMentor.DataSource = this.bindMentor;
             this.dataViewAddedStudent.DataSource = this.bindStudent;
 
