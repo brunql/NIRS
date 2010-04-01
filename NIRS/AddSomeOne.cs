@@ -285,7 +285,7 @@ namespace NIRS
         
         private void tabPageStudent_Enter(object sender, EventArgs e)
         {
-            ComboBoxKiller.FillComboBox(dataGridViewFaculty, cmbStudentFaculty);
+            ComboBoxKiller.FillComboBox(dataViewFaculty, cmbStudentFaculty);
             ComboBoxKiller.FillComboBox(dataViewAddedDivision, cmbMentorDivision);
         }
 

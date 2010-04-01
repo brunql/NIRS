@@ -27,7 +27,7 @@ namespace NIRS
             // nameDataGridViewTextBoxColumn
             // 
             nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Название";
+            nameDataGridViewTextBoxColumn.HeaderText = "Факультет";
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             nameDataGridViewTextBoxColumn.ToolTipText = "Название факультета";
             // 
@@ -73,7 +73,7 @@ namespace NIRS
             // nameDataGridViewTextBoxColumn
             // 
             nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Название";
+            nameDataGridViewTextBoxColumn.HeaderText = "Кафедра";
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             nameDataGridViewTextBoxColumn.ToolTipText = "Название кафедры";
             // 
@@ -136,7 +136,7 @@ namespace NIRS
             dividDataGridViewTextBoxColumn.Name = "dividDataGridViewTextBoxColumn";
             dividDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             dividDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            dividDataGridViewTextBoxColumn.ToolTipText = "кафедра, на которой обучают специальности";
+            dividDataGridViewTextBoxColumn.ToolTipText = "Кафедра, к которой принадлежит специальность";
             dividDataGridViewTextBoxColumn.ValueMember = "id";
             // 
             // codeDataGridViewTextBoxColumn
@@ -149,9 +149,9 @@ namespace NIRS
             // nameDataGridViewTextBoxColumn
             // 
             nameDataGridViewTextBoxColumn.DataPropertyName = "name";
-            nameDataGridViewTextBoxColumn.HeaderText = "Название";
+            nameDataGridViewTextBoxColumn.HeaderText = "Специальность";
             nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            nameDataGridViewTextBoxColumn.ToolTipText = "название специальности";
+            nameDataGridViewTextBoxColumn.ToolTipText = "Название специальности";
 
             dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
 									idDataGridViewTextBoxColumn,
@@ -196,7 +196,7 @@ namespace NIRS
             // codeDataGridViewTextBoxColumn
             // 
             codeDataGridViewTextBoxColumn.DataPropertyName = "code";
-            codeDataGridViewTextBoxColumn.HeaderText = "Название";
+            codeDataGridViewTextBoxColumn.HeaderText = "Группа";
             codeDataGridViewTextBoxColumn.Name = "codeDataGridViewTextBoxColumn";
             codeDataGridViewTextBoxColumn.ToolTipText = "название группы";
 
@@ -290,7 +290,7 @@ namespace NIRS
             degreeDataGridViewTextBoxColumn.DataPropertyName = "degree";
             degreeDataGridViewTextBoxColumn.HeaderText = "Учёная степень";
             degreeDataGridViewTextBoxColumn.Name = "degreeDataGridViewTextBoxColumn";
-            degreeDataGridViewTextBoxColumn.ToolTipText = "учёная степень научного руководителя";
+            degreeDataGridViewTextBoxColumn.ToolTipText = "Учёная степень научного руководителя";
 
 
             dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -366,39 +366,40 @@ namespace NIRS
             groupidDataGridViewTextBoxColumn.Name = "groupidDataGridViewTextBoxColumn";
             groupidDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             groupidDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            groupidDataGridViewTextBoxColumn.ToolTipText = "группа, в которой учится студент";
+            groupidDataGridViewTextBoxColumn.ToolTipText = "Группа, в которой учится студент";
             groupidDataGridViewTextBoxColumn.ValueMember = "id";
             // 
             // bornDataGridViewTextBoxColumn
             // 
             bornDataGridViewTextBoxColumn.DataPropertyName = "born";
-            bornDataGridViewTextBoxColumn.HeaderText = "Дата Рождения";
+            bornDataGridViewTextBoxColumn.HeaderText = "Дата рождения";
             bornDataGridViewTextBoxColumn.Name = "bornDataGridViewTextBoxColumn";
-            bornDataGridViewTextBoxColumn.ToolTipText = "дата родления студента";
+            bornDataGridViewTextBoxColumn.ToolTipText = "Дата рождения студента";
             // 
             // studyDataGridViewTextBoxColumn
             // 
             studyDataGridViewTextBoxColumn.DataPropertyName = "study";
             studyDataGridViewTextBoxColumn.HeaderText = "Форма обучения";
             studyDataGridViewTextBoxColumn.Name = "grantDataGridViewTextBoxColumn";
+            studyDataGridViewTextBoxColumn.ToolTipText = "Бюджет или СКЦ";
             // 
             // grantDataGridViewTextBoxColumn
             // 
             grantDataGridViewTextBoxColumn.DataPropertyName = "grant";
             grantDataGridViewTextBoxColumn.HeaderText = "Стипендия";
             grantDataGridViewTextBoxColumn.Name = "grantDataGridViewTextBoxColumn";
-
+            grantDataGridViewTextBoxColumn.ToolTipText = "Получает ли студент стипендию, и какую?";
 
 
             dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            idDataGridViewTextBoxColumn,
-            nameDataGridViewTextBoxColumn,
-            surnameDataGridViewTextBoxColumn,
-            fathernameDataGridViewTextBoxColumn,
-            groupidDataGridViewTextBoxColumn,
-            bornDataGridViewTextBoxColumn,
-            studyDataGridViewTextBoxColumn,
-            grantDataGridViewTextBoxColumn});
+                        idDataGridViewTextBoxColumn,
+                        nameDataGridViewTextBoxColumn,
+                        surnameDataGridViewTextBoxColumn,
+                        fathernameDataGridViewTextBoxColumn,
+                        groupidDataGridViewTextBoxColumn,
+                        bornDataGridViewTextBoxColumn,
+                        studyDataGridViewTextBoxColumn,
+                        grantDataGridViewTextBoxColumn});
         }
 
         public static void InitWorks(DataGridView dataGridView)

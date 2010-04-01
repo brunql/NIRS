@@ -33,7 +33,7 @@
             this.tabPageFaculty = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label18 = new System.Windows.Forms.Label();
-            this.dataGridViewFaculty = new System.Windows.Forms.DataGridView();
+            this.dataViewFaculty = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fullnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -196,7 +196,7 @@
             this.tabControlAddSomeOne.SuspendLayout();
             this.tabPageFaculty.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFaculty)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewFaculty)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindFaculty)).BeginInit();
             this.tabPageDivision.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -261,7 +261,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel1.Controls.Add(this.label18, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dataGridViewFaculty, 0, 4);
+            this.tableLayoutPanel1.Controls.Add(this.dataViewFaculty, 0, 4);
             this.tableLayoutPanel1.Controls.Add(this.label17, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.txtAddFacultyFullName, 1, 2);
             this.tableLayoutPanel1.Controls.Add(this.label34, 0, 2);
@@ -292,25 +292,26 @@
             this.label18.Text = "Добавление факультета в базу";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridViewFaculty
+            // dataViewFaculty
             // 
-            this.dataGridViewFaculty.AllowUserToAddRows = false;
-            this.dataGridViewFaculty.AllowUserToDeleteRows = false;
-            this.dataGridViewFaculty.AutoGenerateColumns = false;
-            this.dataGridViewFaculty.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridViewFaculty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewFaculty.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataViewFaculty.AllowUserToAddRows = false;
+            this.dataViewFaculty.AllowUserToDeleteRows = false;
+            this.dataViewFaculty.AutoGenerateColumns = false;
+            this.dataViewFaculty.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataViewFaculty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataViewFaculty.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.fullnameDataGridViewTextBoxColumn});
-            this.tableLayoutPanel1.SetColumnSpan(this.dataGridViewFaculty, 3);
-            this.dataGridViewFaculty.DataSource = this.bindFaculty;
-            this.dataGridViewFaculty.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewFaculty.Location = new System.Drawing.Point(3, 109);
-            this.dataGridViewFaculty.Name = "dataGridViewFaculty";
-            this.dataGridViewFaculty.ReadOnly = true;
-            this.dataGridViewFaculty.Size = new System.Drawing.Size(709, 350);
-            this.dataGridViewFaculty.TabIndex = 62;
+            this.tableLayoutPanel1.SetColumnSpan(this.dataViewFaculty, 3);
+            this.dataViewFaculty.DataSource = this.bindFaculty;
+            this.dataViewFaculty.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataViewFaculty.Location = new System.Drawing.Point(3, 109);
+            this.dataViewFaculty.Name = "dataViewFaculty";
+            this.dataViewFaculty.ReadOnly = true;
+            this.dataViewFaculty.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataViewFaculty.Size = new System.Drawing.Size(709, 350);
+            this.dataViewFaculty.TabIndex = 62;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -684,6 +685,7 @@
             this.dataViewAddedSpec.Location = new System.Drawing.Point(3, 303);
             this.dataViewAddedSpec.Name = "dataViewAddedSpec";
             this.dataViewAddedSpec.ReadOnly = true;
+            this.dataViewAddedSpec.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewAddedSpec.Size = new System.Drawing.Size(715, 162);
             this.dataViewAddedSpec.TabIndex = 59;
             // 
@@ -912,6 +914,7 @@
             this.dataViewAddedGroup.Location = new System.Drawing.Point(3, 290);
             this.dataViewAddedGroup.Name = "dataViewAddedGroup";
             this.dataViewAddedGroup.ReadOnly = true;
+            this.dataViewAddedGroup.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewAddedGroup.Size = new System.Drawing.Size(715, 175);
             this.dataViewAddedGroup.TabIndex = 64;
             // 
@@ -1163,6 +1166,7 @@
             this.dataViewAddedMentor.Location = new System.Drawing.Point(3, 253);
             this.dataViewAddedMentor.Name = "dataViewAddedMentor";
             this.dataViewAddedMentor.ReadOnly = true;
+            this.dataViewAddedMentor.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewAddedMentor.Size = new System.Drawing.Size(709, 206);
             this.dataViewAddedMentor.TabIndex = 49;
             // 
@@ -1696,6 +1700,7 @@
             this.dataViewAddedStudent.Location = new System.Drawing.Point(3, 323);
             this.dataViewAddedStudent.Name = "dataViewAddedStudent";
             this.dataViewAddedStudent.ReadOnly = true;
+            this.dataViewAddedStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataViewAddedStudent.Size = new System.Drawing.Size(695, 104);
             this.dataViewAddedStudent.TabIndex = 86;
             // 
@@ -2108,7 +2113,7 @@
             this.tabPageFaculty.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewFaculty)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataViewFaculty)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindFaculty)).EndInit();
             this.tabPageDivision.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -2250,7 +2255,7 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.TextBox txtAddDivisionFullName;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.DataGridView dataGridViewFaculty;
+        private System.Windows.Forms.DataGridView dataViewFaculty;
         private NIRS_Viewer.bind bindFaculty;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private NIRS_Viewer.bind bindDivision;
