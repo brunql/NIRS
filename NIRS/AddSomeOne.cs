@@ -50,8 +50,8 @@ namespace NIRS
         private void addSomeOne_Load(object sender, EventArgs e)
         {
             // здесь можно немного пошалить ;)
-            //cmbMentorDivision.DataSource = bindDivision;
-            //cmbMentorDivision.DisplayMember = "name";
+            cmbMentorDivision.DataSource = bindDivision;
+            cmbMentorDivision.DisplayMember = "name";
 
             //cmbNIR_Mentor.DataSource = bindMentor;
             //cmbNIR_Mentor.DisplayMember = "secondname";
@@ -77,17 +77,7 @@ namespace NIRS
 
         private void btnAddDivision_Click(object sender, EventArgs e)
         {
-            if ((int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value < 0)
-            {
-                // fuck fuck fuck !!!!!!!
-                // this sucks!!!
-                // i don't know that todo to make it work as it must! :'(
-                MessageBox.Show("(int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value < 0");
-                return;
-            }
-
             NIRS_Viewer.config.NIRS_DataSet.division.AdddivisionRow(
-                //InsertStuff.InsertDivision(
                 (int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value,
                 txtAddDivision.Text,
                 txtAddDivisionFullName.Text
@@ -104,17 +94,12 @@ namespace NIRS
 
         private void btnAddSpec_Click(object sender, EventArgs e)
         {
-            if ((int)dataViewSpecDivision.CurrentRow.Cells[0].Value < 0)
-            {
-                MessageBox.Show("(int)dataViewSpecDivision.CurrentRow.Cells[0].Value < 0");
-                return;
-            }
             NIRS_Viewer.config.NIRS_DataSet.spec.AddspecRow(
-                //InsertStuff.InsertSpecialize(
                 (int)dataViewSpecDivision.CurrentRow.Cells[0].Value,
                 txtAddSpec.Text,
                 txtAddSpecFullName.Text
                 );
+            
             bindSpec.Save();
 
             DialogResult result = MessageBox.Show("Специальность добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
@@ -127,13 +112,7 @@ namespace NIRS
 
         private void btnAddGroup_Click(object sender, EventArgs e)
         {
-            if ((int)dataViewGroupSpec.CurrentRow.Cells[0].Value < 0)
-            {
-                MessageBox.Show("(int)dataViewGroupSpec.CurrentRow.Cells[0].Value < 0");
-                return;
-            }
             NIRS_Viewer.config.NIRS_DataSet.group.AddgroupRow(
-                //InsertStuff.InsertGroup(
                 (int)dataViewGroupSpec.CurrentRow.Cells[0].Value,
                 txtAddGroupCode.Text
                 );
@@ -149,28 +128,21 @@ namespace NIRS
 
         private void btnAddMentor_Click(object sender, EventArgs e)
         {
-            if ((ComboBoxKiller)cmbMentorDivision.SelectedItem == null)
+            if (((DataRowView)cmbMentorDivision.SelectedItem) == null )//((ComboBoxKiller)cmbMentorDivision.SelectedItem == null)
             {
                 MessageBox.Show("Кафедра не выбрана");
                 return;
             }
-
-
-            if (((ComboBoxKiller)cmbMentorDivision.SelectedItem).Id < 0)
-            {
-                MessageBox.Show("cmbMentorDivision.Id < 0");
-                return;
-            }
+            
 
             NIRS_Viewer.config.NIRS_DataSet.mentor.AddmentorRow(
-                //            InsertStuff.InsertMentor(
                 txtMentorName.Text,
                 txtMentorSurname.Text,
-                txtStudentFathername.Text,
+                txtMentorFathername.Text,
                 txtMentorWork.Text,
                 txtMentorAcademicRank.Text,
                 txtMentorDegree.Text,
-                ((ComboBoxKiller)cmbMentorDivision.SelectedItem).Id
+                (int)((DataRowView)cmbMentorDivision.SelectedItem).Row[0]
                 );
             bindMentor.Save();
 
@@ -223,7 +195,6 @@ namespace NIRS
             }
 
             NIRS_Viewer.config.NIRS_DataSet.student.AddstudentRow(
-                //InsertStuff.InsertStudent(
                 txtStudentName.Text,
                 txtStudentSurname.Text,
                 txtStudentFathername.Text,
@@ -275,7 +246,6 @@ namespace NIRS
             }
 
             NIRS_Viewer.config.NIRS_DataSet.works.AddworksRow(
-                //InsertStuff.InsertScienceWork(
                 (cmbNIR_Student.SelectedItem as ComboBoxKiller).Id,
                 rtbxStudentTheme.Text,
                 rtbxStudentBackLog.Text,
@@ -306,7 +276,6 @@ namespace NIRS
         private void tabPageStudent_Enter(object sender, EventArgs e)
         {
             ComboBoxKiller.FillComboBox(dataViewFaculty, cmbStudentFaculty);
-            ComboBoxKiller.FillComboBox(dataViewAddedDivision, cmbMentorDivision);
         }
 
         private void cmbStudentFaculty_SelectedIndexChanged(object sender, EventArgs e)
@@ -335,7 +304,7 @@ namespace NIRS
 
         private void tabPageMentor_Enter(object sender, EventArgs e)
         {
-            ComboBoxKiller.FillComboBox(dataViewAddedDivision, cmbMentorDivision);
+            //ComboBoxKiller.FillComboBox(dataViewAddedDivision, cmbMentorDivision);
         }
 
     }
