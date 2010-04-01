@@ -258,9 +258,7 @@
             this.dataViewFaculty.AutoGenerateColumns = false;
             this.dataViewFaculty.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewFaculty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridInitializer.InitFaculty(this.dataViewFaculty);
             this.tableLayoutPanel1.SetColumnSpan(this.dataViewFaculty, 3);
-            this.dataViewFaculty.DataSource = this.bindFaculty;
             this.dataViewFaculty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewFaculty.Location = new System.Drawing.Point(3, 109);
             this.dataViewFaculty.Name = "dataViewFaculty";
@@ -381,9 +379,7 @@
             this.dataViewAddedDivision.AutoGenerateColumns = false;
             this.dataViewAddedDivision.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedDivision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridInitializer.InitDivision(this.dataViewAddedDivision);
             this.tableLayoutPanel2.SetColumnSpan(this.dataViewAddedDivision, 3);
-            this.dataViewAddedDivision.DataSource = this.bindDivision;
             this.dataViewAddedDivision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewAddedDivision.Location = new System.Drawing.Point(3, 303);
             this.dataViewAddedDivision.Name = "dataViewAddedDivision";
@@ -411,10 +407,8 @@
             this.dataViewDivisionFaculty.AllowUserToDeleteRows = false;
             this.dataViewDivisionFaculty.AutoGenerateColumns = false;
             this.dataViewDivisionFaculty.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataViewDivisionFaculty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridInitializer.InitFaculty(this.dataViewDivisionFaculty);
+            this.dataViewDivisionFaculty.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;            
             this.tableLayoutPanel2.SetColumnSpan(this.dataViewDivisionFaculty, 3);
-            this.dataViewDivisionFaculty.DataSource = this.bindFaculty;
             this.dataViewDivisionFaculty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewDivisionFaculty.Location = new System.Drawing.Point(3, 93);
             this.dataViewDivisionFaculty.MultiSelect = false;
@@ -542,9 +536,7 @@
             this.dataViewAddedSpec.AutoGenerateColumns = false;
             this.dataViewAddedSpec.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedSpec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridInitializer.InitSpec(this.dataViewAddedSpec);
             this.tableLayoutPanel3.SetColumnSpan(this.dataViewAddedSpec, 3);
-            this.dataViewAddedSpec.DataSource = this.bindSpec;
             this.dataViewAddedSpec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewAddedSpec.Location = new System.Drawing.Point(3, 303);
             this.dataViewAddedSpec.Name = "dataViewAddedSpec";
@@ -574,9 +566,7 @@
             this.dataViewSpecDivision.AutoGenerateColumns = false;
             this.dataViewSpecDivision.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewSpecDivision.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridInitializer.InitDivision(this.dataViewSpecDivision);
             this.tableLayoutPanel3.SetColumnSpan(this.dataViewSpecDivision, 3);
-            this.dataViewSpecDivision.DataSource = this.bindDivision;
             this.dataViewSpecDivision.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewSpecDivision.Location = new System.Drawing.Point(3, 93);
             this.dataViewSpecDivision.MultiSelect = false;
@@ -700,9 +690,7 @@
             this.dataViewAddedGroup.AutoGenerateColumns = false;
             this.dataViewAddedGroup.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedGroup.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridInitializer.InitGroup(this.dataViewAddedGroup);
             this.tableLayoutPanel4.SetColumnSpan(this.dataViewAddedGroup, 2);
-            this.dataViewAddedGroup.DataSource = this.bindGroup;
             this.dataViewAddedGroup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewAddedGroup.Location = new System.Drawing.Point(3, 290);
             this.dataViewAddedGroup.Name = "dataViewAddedGroup";
@@ -743,9 +731,7 @@
             this.dataViewGroupSpec.AutoGenerateColumns = false;
             this.dataViewGroupSpec.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewGroupSpec.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridInitializer.InitSpec(this.dataViewGroupSpec);
             this.tableLayoutPanel4.SetColumnSpan(this.dataViewGroupSpec, 2);
-            this.dataViewGroupSpec.DataSource = this.bindSpec;
             this.dataViewGroupSpec.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewGroupSpec.Location = new System.Drawing.Point(3, 67);
             this.dataViewGroupSpec.MultiSelect = false;
@@ -884,9 +870,7 @@
             this.dataViewAddedMentor.AutoGenerateColumns = false;
             this.dataViewAddedMentor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedMentor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridInitializer.InitMentor(this.dataViewAddedMentor);
             this.tableLayoutPanel5.SetColumnSpan(this.dataViewAddedMentor, 3);
-            this.dataViewAddedMentor.DataSource = this.bindMentor;
             this.dataViewAddedMentor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewAddedMentor.Location = new System.Drawing.Point(3, 253);
             this.dataViewAddedMentor.Name = "dataViewAddedMentor";
@@ -1346,9 +1330,7 @@
             this.dataViewAddedStudent.AutoGenerateColumns = false;
             this.dataViewAddedStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dataViewAddedStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DataGridInitializer.InitStudent(this.dataViewAddedStudent);
             this.tableLayoutPanel6.SetColumnSpan(this.dataViewAddedStudent, 3);
-            this.dataViewAddedStudent.DataSource = this.bindStudent;
             this.dataViewAddedStudent.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataViewAddedStudent.Location = new System.Drawing.Point(3, 323);
             this.dataViewAddedStudent.Name = "dataViewAddedStudent";

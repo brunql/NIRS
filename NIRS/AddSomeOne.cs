@@ -19,6 +19,25 @@ namespace NIRS
         public AddSomeOne()
         {
             InitializeComponent();
+
+            this.dataViewFaculty.DataSource = this.bindFaculty;
+            this.dataViewDivisionFaculty.DataSource = this.bindFaculty;
+            this.dataViewAddedDivision.DataSource = this.bindDivision;
+            this.dataViewSpecDivision.DataSource = this.bindDivision;
+            this.dataViewAddedSpec.DataSource = this.bindSpec;
+            this.dataViewGroupSpec.DataSource = this.bindSpec;
+            this.dataViewAddedMentor.DataSource = this.bindMentor;
+            this.dataViewAddedStudent.DataSource = this.bindStudent;
+
+            DataGridInitializer.InitFaculty(this.dataViewFaculty);
+            DataGridInitializer.InitFaculty(this.dataViewDivisionFaculty);
+            DataGridInitializer.InitDivision(this.dataViewAddedDivision);
+            DataGridInitializer.InitDivision(this.dataViewSpecDivision);
+            DataGridInitializer.InitSpec(this.dataViewAddedSpec);
+            DataGridInitializer.InitSpec(this.dataViewGroupSpec);
+            DataGridInitializer.InitGroup(this.dataViewAddedGroup);
+            DataGridInitializer.InitMentor(this.dataViewAddedMentor);
+            DataGridInitializer.InitStudent(this.dataViewAddedStudent);
         }
 
         private void ShowError(string text)
