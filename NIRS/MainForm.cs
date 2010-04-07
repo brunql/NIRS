@@ -189,6 +189,11 @@ namespace NIRS
             (new EditWorks()).Show();
         }
 
+        private void summaryDataGridView_DataSourceChanged(object sender, EventArgs e)
+        {
+            summaryDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+
 
     }
 }

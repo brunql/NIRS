@@ -225,7 +225,7 @@
             this.Controls.Add(this.groupBoxConfig);
             this.Controls.Add(this.groupBoxOkCancel);
             this.Name = "SettingsWordExportForm";
-            this.Text = "SettingsWordExportForm";
+            this.Text = "Настройка экспорта в формат RTF";
             this.groupBoxConfig.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();

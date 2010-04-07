@@ -18,27 +18,36 @@ namespace NIRS
 
         public AddSomeOne()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
 
-            this.dataViewFaculty.DataSource = this.bindFaculty;
-            this.dataViewDivisionFaculty.DataSource = this.bindFaculty;
-            this.dataViewAddedDivision.DataSource = this.bindDivision;
-            this.dataViewSpecDivision.DataSource = this.bindDivision;
-            this.dataViewAddedSpec.DataSource = this.bindSpec;
-            this.dataViewGroupSpec.DataSource = this.bindSpec;
-            this.dataViewAddedGroup.DataSource = this.bindGroup;
-            this.dataViewAddedMentor.DataSource = this.bindMentor;
-            this.dataViewAddedStudent.DataSource = this.bindStudent;
+                this.dataViewFaculty.DataSource = this.bindFaculty;
+                this.dataViewDivisionFaculty.DataSource = this.bindFaculty;
+                
+                this.dataViewAddedDivision.DataSource = this.bindDivision;
+                this.dataViewSpecDivision.DataSource = this.bindDivision;
+                this.dataViewAddedSpec.DataSource = this.bindSpec;
+                this.dataViewGroupSpec.DataSource = this.bindSpec;
+                this.dataViewAddedGroup.DataSource = this.bindGroup;
+                this.dataViewAddedMentor.DataSource = this.bindMentor;
+                this.dataViewAddedStudent.DataSource = this.bindStudent;
 
-            DataGridInitializer.InitFaculty(this.dataViewFaculty);
-            DataGridInitializer.InitFaculty(this.dataViewDivisionFaculty);
-            DataGridInitializer.InitDivision(this.dataViewAddedDivision);
-            DataGridInitializer.InitDivision(this.dataViewSpecDivision);
-            DataGridInitializer.InitSpec(this.dataViewAddedSpec);
-            DataGridInitializer.InitSpec(this.dataViewGroupSpec);
-            DataGridInitializer.InitGroup(this.dataViewAddedGroup);
-            DataGridInitializer.InitMentor(this.dataViewAddedMentor);
-            DataGridInitializer.InitStudent(this.dataViewAddedStudent);
+                DataGridInitializer.InitFaculty(this.dataViewFaculty);
+                DataGridInitializer.InitFaculty(this.dataViewDivisionFaculty);
+                DataGridInitializer.InitDivision(this.dataViewAddedDivision);
+                DataGridInitializer.InitDivision(this.dataViewSpecDivision);
+                DataGridInitializer.InitSpec(this.dataViewAddedSpec);
+                DataGridInitializer.InitSpec(this.dataViewGroupSpec);
+                DataGridInitializer.InitGroup(this.dataViewAddedGroup);
+                DataGridInitializer.InitMentor(this.dataViewAddedMentor);
+                DataGridInitializer.InitStudent(this.dataViewAddedStudent);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Проблемы при инициализации окна добавления записей. Проверьте запущена ли база данных. Сообщение об ошибке: " + ex.Message);
+                this.Close();
+            }
         }
 
         private void ShowError(string text)
@@ -142,7 +151,7 @@ namespace NIRS
                 txtMentorWork.Text,
                 txtMentorAcademicRank.Text,
                 txtMentorDegree.Text,
-                (int)((DataRowView)cmbMentorDivision.SelectedItem).Row[0]
+                (int)((DataRowView)cmbMentorDivision.SelectedItem).Row[0] // get id
                 );
             bindMentor.Save();
 

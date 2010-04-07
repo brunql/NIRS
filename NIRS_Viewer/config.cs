@@ -101,15 +101,23 @@ namespace NIRS_Viewer
 
         public static void Save(string table_name)
         {
-            switch (table_name)
+            try
             {
-                case ("faculty"): tableAdapterManager.facultyTableAdapter.Update(NIRS_DataSet); break;
-                case ("division"): tableAdapterManager.divisionTableAdapter.Update(NIRS_DataSet); break;
-                case ("group"): tableAdapterManager.groupTableAdapter.Update(NIRS_DataSet); break;
-                case ("mentor"): tableAdapterManager.mentorTableAdapter.Update(NIRS_DataSet); break;
-                case ("spec"): tableAdapterManager.specTableAdapter.Update(NIRS_DataSet); break;
-                case ("student"): tableAdapterManager.studentTableAdapter.Update(NIRS_DataSet); break;
-                case ("works"): tableAdapterManager.worksTableAdapter.Update(NIRS_DataSet); break;
+                switch (table_name)
+                {
+                    case ("faculty"): tableAdapterManager.facultyTableAdapter.Update(NIRS_DataSet); break;
+                    case ("division"): tableAdapterManager.divisionTableAdapter.Update(NIRS_DataSet); break;
+                    case ("group"): tableAdapterManager.groupTableAdapter.Update(NIRS_DataSet); break;
+                    case ("mentor"): tableAdapterManager.mentorTableAdapter.Update(NIRS_DataSet); break;
+                    case ("spec"): tableAdapterManager.specTableAdapter.Update(NIRS_DataSet); break;
+                    case ("student"): tableAdapterManager.studentTableAdapter.Update(NIRS_DataSet); break;
+                    case ("works"): tableAdapterManager.worksTableAdapter.Update(NIRS_DataSet); break;
+                }
+            }
+            catch(Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show("Обновление данных в базе невозможно. Сообщение об ошибке: " + ex.Message);
+                throw;
             }
         }
 	}

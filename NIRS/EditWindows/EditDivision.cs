@@ -48,7 +48,7 @@ namespace NIRS
 			}
 
 			bind_division_spec_helpful.Filter = variable.ToString();
-			if(bind_division_mentor_helpful.Count!=0)
+            if (bind_division_spec_helpful.Count != 0)
 			{
                 (new FixProblemsInSpec(variable.ToString())).ShowDialog();
 			}

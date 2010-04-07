@@ -45,13 +45,13 @@
             this.специальностиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.руководителиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.студентыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.научныеРаботыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.подключениеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.помошьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.summaryDataGridView = new System.Windows.Forms.DataGridView();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
-            this.научныеРаботыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.summaryDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -194,6 +194,13 @@
             this.студентыToolStripMenuItem.Text = "Студенты";
             this.студентыToolStripMenuItem.Click += new System.EventHandler(this.студентыToolStripMenuItem_Click);
             // 
+            // научныеРаботыToolStripMenuItem
+            // 
+            this.научныеРаботыToolStripMenuItem.Name = "научныеРаботыToolStripMenuItem";
+            this.научныеРаботыToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
+            this.научныеРаботыToolStripMenuItem.Text = "Научные работы";
+            this.научныеРаботыToolStripMenuItem.Click += new System.EventHandler(this.научныеРаботыToolStripMenuItem_Click);
+            // 
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -228,7 +235,6 @@
             // 
             this.summaryDataGridView.AllowUserToAddRows = false;
             this.summaryDataGridView.AllowUserToDeleteRows = false;
-            this.summaryDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.summaryDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.summaryDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.summaryDataGridView.Location = new System.Drawing.Point(0, 24);
@@ -236,17 +242,11 @@
             this.summaryDataGridView.ReadOnly = true;
             this.summaryDataGridView.Size = new System.Drawing.Size(694, 306);
             this.summaryDataGridView.TabIndex = 0;
+            this.summaryDataGridView.DataSourceChanged += new System.EventHandler(this.summaryDataGridView_DataSourceChanged);
             // 
             // saveFileDialog
             // 
             this.saveFileDialog.Filter = "Word document (*.doc)|*.doc";
-            // 
-            // научныеРаботыToolStripMenuItem
-            // 
-            this.научныеРаботыToolStripMenuItem.Name = "научныеРаботыToolStripMenuItem";
-            this.научныеРаботыToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
-            this.научныеРаботыToolStripMenuItem.Text = "Научные работы";
-            this.научныеРаботыToolStripMenuItem.Click += new System.EventHandler(this.научныеРаботыToolStripMenuItem_Click);
             // 
             // MainForm
             // 
