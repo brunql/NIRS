@@ -12,7 +12,6 @@ namespace NIRS_DB
 {
 	public class DBConnection
 	{
-		#region Vars
 		/// <summary>
 		/// Singleton 
 		/// </summary>
@@ -20,10 +19,9 @@ namespace NIRS_DB
 		
 		private MySqlConnection _conn;
 		
-		
-		#endregion
-		
-		#region Private Functions
+
+
+
 		private DBConnection(MySqlConnection conn)
 		{
             this._conn = conn;
@@ -37,9 +35,9 @@ namespace NIRS_DB
 				throw new Exception("Not connected to database");	
 			}
 		}
-		#endregion
 		
-		#region Public Functions
+
+
 
         public static DBSettings InstalledSettings { get; private set; }
 
@@ -97,6 +95,15 @@ namespace NIRS_DB
             return command.ExecuteReader();
         }
 
-		#endregion
+        public static bool IsConnectionOpen()
+        {
+            if (_dbc != null && _dbc._conn != null)
+            {
+                return true;
+            }else
+            {
+                return false;
+            }
+        }
 	}
 }

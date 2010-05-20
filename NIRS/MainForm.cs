@@ -20,37 +20,25 @@ namespace NIRS
 
         public static DataTable SummaryTable { get; set; }
 
-
-        public static void SelectAllFromAndAdd(string table_name, DataGridView dataView, object tempDataTable)
-        {
-            DataTable t = new DataTable();
-            t.Load(
-                    DBConnection.ExecuteReader("SELECT * FROM `" + table_name + "` ORDER BY `id`;")
-                );
-            dataView.DataSource = t;
-        }
-
+        System.Diagnostics.Process MySQL_Process;
 
         public MainForm()
         {
             InitializeComponent();
-            
-            try
-            {
-                DBConnection.ConnectionWithDefaultSettings();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                SettingsConnectionForm scf = new SettingsConnectionForm();
-                if (scf.ShowDialog() == DialogResult.Cancel)
-                {
-                    Environment.Exit(93);
-                }
-            }
-
-            tabControlMain_SelectedIndexChanged(null, null);
         }
+
+
+        //public static void SelectAllFromAndAdd(string table_name, DataGridView dataView, object tempDataTable)
+        //{
+        //    DataTable t = new DataTable();
+        //    t.Load(
+        //            DBConnection.ExecuteReader("SELECT * FROM `" + table_name + "` ORDER BY `id`;")
+        //        );
+        //    dataView.DataSource = t;
+        //}
+
+
+
 
         private void AddRecord_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -70,8 +58,57 @@ namespace NIRS
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            
+            try
+            {
+                DBConnection.ConnectionWithDefaultSettings();
+            }
+            catch (MySqlException ex)
+            {
+                DialogResult res = MessageBox.Show(ex.Message + "\nClick OK to try to start MySQL server.");
+                if (res == DialogResult.OK)
+                {
+                    try
+                    {
+                        MySQL_Process = new System.Diagnostics.Process();
+                        MySQL_Process.StartInfo.FileName = Environment.CurrentDirectory + @"\mysql_start.bat";
+                        //p.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Minimized;
+                        // Disable console window
+                        MySQL_Process.StartInfo.RedirectStandardOutput = true;
+                        MySQL_Process.StartInfo.UseShellExecute = false;
+                        MySQL_Process.StartInfo.CreateNoWindow = true;
+
+                        MySQL_Process.Start();
+                        //MySQL_Process.WaitForExit();
+
+                        DBConnection.ConnectionWithDefaultSettings();
+                    }
+                    catch (Win32Exception ex_s)
+                    {
+                        MessageBox.Show("Не удается найти файл для запуска " + Environment.CurrentDirectory + @"\mysql_start.bat");
+                        Environment.Exit(93);
+                    }
+                    catch (MySqlException ex_mysql)
+                    {
+                        MessageBox.Show(ex_mysql.Message + "\n Сервер не запустился, либо что-то с настройками подключения.");
+                        Environment.Exit(93);
+                    }
+                }
+                else
+                {
+                    Environment.Exit(93);
+                }
+            }
             LoadSummaryDataGridTable();
+            this.summaryDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
+
+        //SettingsConnectionForm scf = new SettingsConnectionForm();
+        //if (scf.ShowDialog() == DialogResult.Cancel)
+        //{
+        //    Environment.Exit(93);
+        //}
+
 
         private void LoadSummaryDataGridTable()
         {
@@ -96,12 +133,6 @@ namespace NIRS
                  );
             summaryDataGridView.DataSource = SummaryTable;
             
-        }
-
-
-        private void tabControlMain_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            this.summaryDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
 
         private void connectionsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -192,6 +223,27 @@ namespace NIRS
         private void summaryDataGridView_DataSourceChanged(object sender, EventArgs e)
         {
             summaryDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+        }
+
+        private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (MySQL_Process != null)
+            {
+                MySQL_Process.Close();
+            }
+            if(DBConnection.IsConnectionOpen()){
+                // Stop mysqld
+                MySQL_Process = new System.Diagnostics.Process();
+                MySQL_Process.StartInfo.FileName = Environment.CurrentDirectory + @"\mysql_stop.bat";
+                //p.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Minimized;
+                // Disable console window
+                MySQL_Process.StartInfo.RedirectStandardOutput = true;
+                MySQL_Process.StartInfo.UseShellExecute = false;
+                MySQL_Process.StartInfo.CreateNoWindow = true;
+
+                MySQL_Process.Start();
+                MySQL_Process.WaitForExit();
+            }
         }
 
 

@@ -16,7 +16,7 @@ namespace NIRS_DB
         private static DBSettings defaultSettings = new DBSettings(
                     "localhost",
                     "3306",
-                    "root",
+                    "nirs",
                     "",
                     "nirs"
                 );
