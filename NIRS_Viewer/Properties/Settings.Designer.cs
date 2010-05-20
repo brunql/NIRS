@@ -26,7 +26,7 @@ namespace NIRS_Viewer.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;persist security info=True;database=nirs")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=nirs;persist security info=True;database=nirs")]
         public string nirsConnectionString {
             get {
                 return ((string)(this["nirsConnectionString"]));

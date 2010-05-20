@@ -7,7 +7,8 @@ namespace NIRS_Viewer
 	{
 		static bind()
 		{
-            NIRS_Viewer.config.Initialize("server=localhost; port=3306; user id=root; password=; database=nirs; CHARACTER SET=utf8");
+            //"server=localhost; port=3306; user id=root; password=; database=nirs; CHARACTER SET=utf8"
+            NIRS_Viewer.config.Initialize();
 		}
 		
 		public bind()

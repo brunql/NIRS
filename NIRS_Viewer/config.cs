@@ -45,7 +45,7 @@ namespace NIRS_Viewer
         }
 		
   
-		public static void Initialize(string conn)
+		public static void Initialize()
 		{
 			NIRS_DataSet = new nirsDataSetMain();
             tableAdapterManager = new NIRS_Viewer.nirsDataSetMainTableAdapters.TableAdapterManager();

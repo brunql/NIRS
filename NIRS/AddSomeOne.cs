@@ -15,12 +15,50 @@ namespace NIRS
 {
     public partial class AddSomeOne : Form
     {
+        private NIRS_Viewer.bind bindFaculty;
+        private NIRS_Viewer.bind bindDivision;
+        private NIRS_Viewer.bind bindSpec;
+        private NIRS_Viewer.bind bindGroup;
+        private NIRS_Viewer.bind bindMentor;
+        private NIRS_Viewer.bind bindStudent;
+        private NIRS_Viewer.bind bindWorks;
+        
+
 
         public AddSomeOne()
         {
             try
             {
                 InitializeComponent();
+                
+                this.bindFaculty = new NIRS_Viewer.bind();
+                this.bindFaculty.DataMember = "faculty";
+                this.bindFaculty.Position = 0;
+
+                this.bindDivision = new NIRS_Viewer.bind();
+                this.bindDivision.DataMember = "division";
+                this.bindDivision.Position = 0;
+
+                this.bindSpec = new NIRS_Viewer.bind();
+                this.bindSpec.DataMember = "spec";
+                this.bindSpec.Position = 0;
+
+                this.bindGroup = new NIRS_Viewer.bind();
+                this.bindGroup.DataMember = "group";
+                this.bindGroup.Position = 0;
+
+                this.bindMentor = new NIRS_Viewer.bind();
+                this.bindMentor.DataMember = "mentor";
+                this.bindMentor.Position = 0;
+
+                this.bindStudent = new NIRS_Viewer.bind();
+                this.bindStudent.DataMember = "student";
+                this.bindStudent.Position = 0;
+
+                this.bindWorks = new NIRS_Viewer.bind();
+                this.bindWorks.DataMember = "works";
+                this.bindWorks.Position = 0;
+
 
                 this.dataViewFaculty.DataSource = this.bindFaculty;
                 this.dataViewDivisionFaculty.DataSource = this.bindFaculty;

@@ -10,6 +10,8 @@ namespace NIRS
     {
         public static void InitFaculty(DataGridView dataGridView)
         {
+            dataGridView.Columns.Clear();
+
             System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
             System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
             System.Windows.Forms.DataGridViewTextBoxColumn fullnameDataGridViewTextBoxColumn;
@@ -50,6 +52,7 @@ namespace NIRS
 
         public static void InitDivision(DataGridView dataGridView)
         {
+            dataGridView.Columns.Clear();
 
             NIRS_Viewer.bind bind_father_fac = new NIRS_Viewer.bind();
             bind_father_fac.DataMember = "faculty";
@@ -108,6 +111,8 @@ namespace NIRS
 
         public static void InitSpec(DataGridView dataGridView)
         {
+            dataGridView.Columns.Clear();
+
             NIRS_Viewer.bind bind_father_division = new NIRS_Viewer.bind();
             bind_father_division.DataMember = "division";
 
@@ -167,6 +172,8 @@ namespace NIRS
 
         public static void InitGroup(DataGridView dataGridView)
         {
+            dataGridView.Columns.Clear();
+
             NIRS_Viewer.bind bind_father_spec = new NIRS_Viewer.bind();
             bind_father_spec.DataMember = "spec";
             System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
@@ -213,6 +220,8 @@ namespace NIRS
 
         public static void InitMentor(DataGridView dataGridView)
         {
+            dataGridView.Columns.Clear();
+
             NIRS_Viewer.bind bind_father_division = new NIRS_Viewer.bind();
             bind_father_division.DataMember = "division";
 
@@ -311,6 +320,8 @@ namespace NIRS
 
         public static void InitStudent(DataGridView dataGridView)
         {
+            dataGridView.Columns.Clear();
+
             NIRS_Viewer.bind bind_father_group = new NIRS_Viewer.bind();
             bind_father_group.DataMember = "group";
 
@@ -410,6 +421,7 @@ namespace NIRS
 
         public static void InitWorks(DataGridView dataGridView)
         {
+            dataGridView.Columns.Clear();
 
             NIRS_Viewer.bind bind_father_mentor = new NIRS_Viewer.bind();
             bind_father_mentor.DataMember = "mentor";

@@ -10,7 +10,6 @@ using MySql.Data.MySqlClient;
 
 using Gios.Word;
 using NIRS_DB;
-//using NIRS_database;
 
 namespace NIRS
 {
@@ -42,7 +41,8 @@ namespace NIRS
 
         private void AddRecord_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new AddSomeOne()).ShowDialog();
+            AddSomeOne ads = new AddSomeOne();
+            if (ads != null) ads.ShowDialog();
         }
 
         private void Exit_ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -53,7 +53,6 @@ namespace NIRS
         private void About_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             about_box.ShowDialog();
-            
         }
 
         private void MainForm_Load(object sender, EventArgs e)
