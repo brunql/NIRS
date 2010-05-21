@@ -333,6 +333,8 @@ namespace NIRS
             System.Windows.Forms.DataGridViewTextBoxColumn bornDataGridViewTextBoxColumn;
             System.Windows.Forms.DataGridViewTextBoxColumn studyDataGridViewTextBoxColumn;
             System.Windows.Forms.DataGridViewTextBoxColumn grantDataGridViewTextBoxColumn;
+            System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn;
+            System.Windows.Forms.DataGridViewTextBoxColumn phoneDataGridViewTextBoxColumn;
 
 
             idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -343,7 +345,8 @@ namespace NIRS
             bornDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             studyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             grantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
+            emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            phoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 
             // 
             // idDataGridViewTextBoxColumn
@@ -406,6 +409,20 @@ namespace NIRS
             grantDataGridViewTextBoxColumn.HeaderText = "Стипендия";
             grantDataGridViewTextBoxColumn.Name = "grantDataGridViewTextBoxColumn";
             grantDataGridViewTextBoxColumn.ToolTipText = "Получает ли студент стипендию, и какую?";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            emailDataGridViewTextBoxColumn.DataPropertyName = "email";
+            emailDataGridViewTextBoxColumn.HeaderText = "E-mail";
+            emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            emailDataGridViewTextBoxColumn.ToolTipText = "E-mail студента";
+            // 
+            // phoneDataGridViewTextBoxColumn
+            // 
+            phoneDataGridViewTextBoxColumn.DataPropertyName = "phone";
+            phoneDataGridViewTextBoxColumn.HeaderText = "Телефон";
+            phoneDataGridViewTextBoxColumn.Name = "phoneDataGridViewTextBoxColumn";
+            phoneDataGridViewTextBoxColumn.ToolTipText = "Номер телефона студента";
 
 
             dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -416,7 +433,10 @@ namespace NIRS
                         groupidDataGridViewTextBoxColumn,
                         bornDataGridViewTextBoxColumn,
                         studyDataGridViewTextBoxColumn,
-                        grantDataGridViewTextBoxColumn});
+                        grantDataGridViewTextBoxColumn,
+                        emailDataGridViewTextBoxColumn,
+                        phoneDataGridViewTextBoxColumn
+            });
         }
 
         public static void InitWorks(DataGridView dataGridView)

@@ -47,7 +47,7 @@ namespace NIRS
 			for(int i=0; i < dataGridView.Columns.Count; i++)
 			{
                 DataColumn column = dataBinding.current_DataTable.Columns[i];
-				if(!column.ColumnName.Contains("id"))
+				if(!column.ColumnName.Contains("id")) // TODO!!! contains id>??? u are crazy!! check it!!
 				{
                     toolsFindIn.Items.Add(new strings_container(column.ColumnName, dataGridView.Columns[i].HeaderText));
 				}

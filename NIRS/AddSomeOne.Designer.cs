@@ -116,10 +116,14 @@
             this.txtStudentFathername = new System.Windows.Forms.TextBox();
             this.lblFaculty = new System.Windows.Forms.Label();
             this.cmbStudentFaculty = new System.Windows.Forms.ComboBox();
-            this.dataViewAddedStudent = new System.Windows.Forms.DataGridView();
-            this.btnAddStudent = new System.Windows.Forms.Button();
             this.dateTimePickerStudent = new System.Windows.Forms.DateTimePicker();
             this.txtStudentBirthdayDate = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtStudentEmail = new System.Windows.Forms.TextBox();
+            this.txtStudentPhone = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.dataViewAddedStudent = new System.Windows.Forms.DataGridView();
+            this.btnAddStudent = new System.Windows.Forms.Button();
             this.tabPageNIR = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel7 = new System.Windows.Forms.TableLayoutPanel();
             this.label16 = new System.Windows.Forms.Label();
@@ -1025,14 +1029,18 @@
             this.tableLayoutPanel6.Controls.Add(this.txtStudentFathername, 1, 3);
             this.tableLayoutPanel6.Controls.Add(this.lblFaculty, 0, 5);
             this.tableLayoutPanel6.Controls.Add(this.cmbStudentFaculty, 1, 5);
-            this.tableLayoutPanel6.Controls.Add(this.dataViewAddedStudent, 0, 12);
-            this.tableLayoutPanel6.Controls.Add(this.btnAddStudent, 1, 11);
             this.tableLayoutPanel6.Controls.Add(this.dateTimePickerStudent, 1, 4);
             this.tableLayoutPanel6.Controls.Add(this.txtStudentBirthdayDate, 2, 4);
+            this.tableLayoutPanel6.Controls.Add(this.label39, 0, 11);
+            this.tableLayoutPanel6.Controls.Add(this.txtStudentEmail, 1, 11);
+            this.tableLayoutPanel6.Controls.Add(this.txtStudentPhone, 1, 12);
+            this.tableLayoutPanel6.Controls.Add(this.label40, 0, 12);
+            this.tableLayoutPanel6.Controls.Add(this.dataViewAddedStudent, 1, 15);
+            this.tableLayoutPanel6.Controls.Add(this.btnAddStudent, 1, 14);
             this.tableLayoutPanel6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel6.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
-            this.tableLayoutPanel6.RowCount = 13;
+            this.tableLayoutPanel6.RowCount = 17;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
@@ -1044,8 +1052,15 @@
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 10F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(701, 430);
             this.tableLayoutPanel6.TabIndex = 75;
             // 
@@ -1276,31 +1291,6 @@
             this.cmbStudentFaculty.TabIndex = 5;
             this.cmbStudentFaculty.SelectedIndexChanged += new System.EventHandler(this.cmbStudentFaculty_SelectedIndexChanged);
             // 
-            // dataViewAddedStudent
-            // 
-            this.dataViewAddedStudent.AllowUserToAddRows = false;
-            this.dataViewAddedStudent.AllowUserToDeleteRows = false;
-            this.dataViewAddedStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataViewAddedStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tableLayoutPanel6.SetColumnSpan(this.dataViewAddedStudent, 3);
-            this.dataViewAddedStudent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataViewAddedStudent.Location = new System.Drawing.Point(3, 323);
-            this.dataViewAddedStudent.Name = "dataViewAddedStudent";
-            this.dataViewAddedStudent.ReadOnly = true;
-            this.dataViewAddedStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataViewAddedStudent.Size = new System.Drawing.Size(695, 104);
-            this.dataViewAddedStudent.TabIndex = 86;
-            // 
-            // btnAddStudent
-            // 
-            this.btnAddStudent.Location = new System.Drawing.Point(236, 293);
-            this.btnAddStudent.Name = "btnAddStudent";
-            this.btnAddStudent.Size = new System.Drawing.Size(145, 24);
-            this.btnAddStudent.TabIndex = 84;
-            this.btnAddStudent.Text = "Добавить в базу";
-            this.btnAddStudent.UseVisualStyleBackColor = true;
-            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
-            // 
             // dateTimePickerStudent
             // 
             this.dateTimePickerStudent.Dock = System.Windows.Forms.DockStyle.Top;
@@ -1320,6 +1310,69 @@
             this.txtStudentBirthdayDate.Size = new System.Drawing.Size(155, 20);
             this.txtStudentBirthdayDate.TabIndex = 4;
             this.txtStudentBirthdayDate.Visible = false;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label39.Location = new System.Drawing.Point(3, 290);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(227, 26);
+            this.label39.TabIndex = 87;
+            this.label39.Text = "E-mail";
+            this.label39.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // txtStudentEmail
+            // 
+            this.txtStudentEmail.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtStudentEmail.Location = new System.Drawing.Point(236, 293);
+            this.txtStudentEmail.Name = "txtStudentEmail";
+            this.txtStudentEmail.Size = new System.Drawing.Size(227, 20);
+            this.txtStudentEmail.TabIndex = 88;
+            // 
+            // txtStudentPhone
+            // 
+            this.txtStudentPhone.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtStudentPhone.Location = new System.Drawing.Point(236, 319);
+            this.txtStudentPhone.Name = "txtStudentPhone";
+            this.txtStudentPhone.Size = new System.Drawing.Size(227, 20);
+            this.txtStudentPhone.TabIndex = 89;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label40.Location = new System.Drawing.Point(3, 316);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(227, 26);
+            this.label40.TabIndex = 90;
+            this.label40.Text = "Телефон";
+            this.label40.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // dataViewAddedStudent
+            // 
+            this.dataViewAddedStudent.AllowUserToAddRows = false;
+            this.dataViewAddedStudent.AllowUserToDeleteRows = false;
+            this.dataViewAddedStudent.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataViewAddedStudent.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tableLayoutPanel6.SetColumnSpan(this.dataViewAddedStudent, 3);
+            this.dataViewAddedStudent.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataViewAddedStudent.Location = new System.Drawing.Point(3, 375);
+            this.dataViewAddedStudent.Name = "dataViewAddedStudent";
+            this.dataViewAddedStudent.ReadOnly = true;
+            this.dataViewAddedStudent.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataViewAddedStudent.Size = new System.Drawing.Size(695, 52);
+            this.dataViewAddedStudent.TabIndex = 86;
+            // 
+            // btnAddStudent
+            // 
+            this.btnAddStudent.Location = new System.Drawing.Point(236, 345);
+            this.btnAddStudent.Name = "btnAddStudent";
+            this.btnAddStudent.Size = new System.Drawing.Size(145, 24);
+            this.btnAddStudent.TabIndex = 84;
+            this.btnAddStudent.Text = "Добавить в базу";
+            this.btnAddStudent.UseVisualStyleBackColor = true;
+            this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
             // tabPageNIR
             // 
@@ -1490,7 +1543,7 @@
             this.rtbxStudentTheme.Dock = System.Windows.Forms.DockStyle.Fill;
             this.rtbxStudentTheme.Location = new System.Drawing.Point(3, 114);
             this.rtbxStudentTheme.Name = "rtbxStudentTheme";
-            this.rtbxStudentTheme.Size = new System.Drawing.Size(695, 27);
+            this.rtbxStudentTheme.Size = new System.Drawing.Size(695, 43);
             this.rtbxStudentTheme.TabIndex = 4;
             this.rtbxStudentTheme.Text = "";
             // 
@@ -1506,11 +1559,11 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label9.Location = new System.Drawing.Point(3, 144);
+            this.label9.Location = new System.Drawing.Point(3, 160);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(376, 13);
             this.label9.TabIndex = 73;
-            this.label9.Text = "Научный задел";
+            this.label9.Text = "Научный задел (указать что имеется)";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // txtStudentPublicationCount
@@ -1537,9 +1590,9 @@
             // 
             this.tableLayoutPanel7.SetColumnSpan(this.rtbxStudentBackLog, 3);
             this.rtbxStudentBackLog.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.rtbxStudentBackLog.Location = new System.Drawing.Point(3, 160);
+            this.rtbxStudentBackLog.Location = new System.Drawing.Point(3, 176);
             this.rtbxStudentBackLog.Name = "rtbxStudentBackLog";
-            this.rtbxStudentBackLog.Size = new System.Drawing.Size(695, 134);
+            this.rtbxStudentBackLog.Size = new System.Drawing.Size(695, 118);
             this.rtbxStudentBackLog.TabIndex = 5;
             this.rtbxStudentBackLog.Text = "";
             // 
@@ -1777,6 +1830,10 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.DateTimePicker dateTimePickerStudent;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox txtStudentEmail;
+        private System.Windows.Forms.TextBox txtStudentPhone;
+        private System.Windows.Forms.Label label40;
     }
 }
 

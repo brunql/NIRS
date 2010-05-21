@@ -248,7 +248,9 @@ namespace NIRS
                 (cmbStudentGroup.SelectedItem as ComboBoxKiller).Id,
                 birthdate,
                 cmbStudentBudget.Text,
-                (txtStudentGrant.Text == "") ? "Нет" : txtStudentGrant.Text
+                ((txtStudentGrant.Text == "") ? "Нет" : txtStudentGrant.Text),
+                txtStudentEmail.Text,
+                txtStudentPhone.Text
                 );
             bindStudent.Save();
 
@@ -264,6 +266,8 @@ namespace NIRS
                 txtStudentProgramCount.Text = "";
                 txtStudentPublicationCount.Text = "";
                 txtStudentAsset.Text = "";
+                txtStudentEmail.Text = "";
+                txtStudentPhone.Text = "";
             }
         }
 
