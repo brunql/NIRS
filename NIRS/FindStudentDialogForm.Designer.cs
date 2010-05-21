@@ -44,13 +44,13 @@
             this.txtSpec = new System.Windows.Forms.TextBox();
             this.txtGroup = new System.Windows.Forms.TextBox();
             this.labelCaption = new System.Windows.Forms.Label();
+            this.lblKurs = new System.Windows.Forms.Label();
+            this.cmbKurs = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonFind = new System.Windows.Forms.Button();
             this.buttonCancel = new System.Windows.Forms.Button();
-            this.lblKurs = new System.Windows.Forms.Label();
-            this.cmbKurs = new System.Windows.Forms.ComboBox();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -242,6 +242,32 @@
             this.labelCaption.Text = "Выборка студентов по следующим критериям:";
             this.labelCaption.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblKurs
+            // 
+            this.lblKurs.AutoSize = true;
+            this.lblKurs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lblKurs.Location = new System.Drawing.Point(3, 212);
+            this.lblKurs.Name = "lblKurs";
+            this.lblKurs.Size = new System.Drawing.Size(200, 23);
+            this.lblKurs.TabIndex = 96;
+            this.lblKurs.Text = "Курс";
+            this.lblKurs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
+            // cmbKurs
+            // 
+            this.cmbKurs.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbKurs.FormattingEnabled = true;
+            this.cmbKurs.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5"});
+            this.cmbKurs.Location = new System.Drawing.Point(209, 215);
+            this.cmbKurs.Name = "cmbKurs";
+            this.cmbKurs.Size = new System.Drawing.Size(200, 21);
+            this.cmbKurs.TabIndex = 8;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.tableLayoutPanel1);
@@ -302,32 +328,6 @@
             this.buttonCancel.Text = "Cancel";
             this.buttonCancel.UseVisualStyleBackColor = true;
             this.buttonCancel.Click += new System.EventHandler(this.buttonCancel_Click);
-            // 
-            // lblKurs
-            // 
-            this.lblKurs.AutoSize = true;
-            this.lblKurs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblKurs.Location = new System.Drawing.Point(3, 212);
-            this.lblKurs.Name = "lblKurs";
-            this.lblKurs.Size = new System.Drawing.Size(200, 23);
-            this.lblKurs.TabIndex = 96;
-            this.lblKurs.Text = "Курс";
-            this.lblKurs.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // cmbKurs
-            // 
-            this.cmbKurs.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cmbKurs.FormattingEnabled = true;
-            this.cmbKurs.Items.AddRange(new object[] {
-            "1",
-            "2",
-            "3",
-            "4",
-            "5"});
-            this.cmbKurs.Location = new System.Drawing.Point(209, 215);
-            this.cmbKurs.Name = "cmbKurs";
-            this.cmbKurs.Size = new System.Drawing.Size(200, 21);
-            this.cmbKurs.TabIndex = 8;
             // 
             // FindStudentDialogForm
             // 

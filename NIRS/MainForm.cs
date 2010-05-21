@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Diagnostics;
 using MySql.Data.MySqlClient;
 
 using Gios.Word;
@@ -18,8 +19,6 @@ namespace NIRS
         AboutBox about_box = new AboutBox();
 
         public static DataTable SummaryTable { get; set; }
-
-        System.Diagnostics.Process MySQL_Process;
 
         public MainForm()
         {
@@ -64,13 +63,18 @@ namespace NIRS
             }
             catch (MySqlException ex)
             {
-                DialogResult res = MessageBox.Show(ex.Message + "\nClick OK to try to start MySQL server.");
+                DialogResult res = MessageBox.Show("Подключение к базе не удалось, нажмите ОК для попытки запуска сервера. \n" + ex.Message, "Ошибка #1");
                 if (res == DialogResult.OK)
                 {
+                    string pathToMysqld = @"C:\Program Files\xampp\mysql\bin\mysqld.exe";
+                    string pathToMyCnf = @"C:\Program Files\xampp\mysql\bin\my.cnf";
+                        
                     try
                     {
-                        MySQL_Process = new System.Diagnostics.Process();
-                        MySQL_Process.StartInfo.FileName = Environment.CurrentDirectory + @"\mysql_start.bat";
+                        Process MySQL_Process = new Process();
+                        // C:\Program Files\xampp\mysql\bin\mysqld --defaults-file=mysql\bin\my.cnf --standalone
+                        MySQL_Process.StartInfo.FileName = pathToMysqld;
+                        MySQL_Process.StartInfo.Arguments = "--defaults-file=\"" + pathToMyCnf + "\" --standalone";
                         //p.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Minimized;
                         // Disable console window
                         MySQL_Process.StartInfo.RedirectStandardOutput = true;
@@ -78,24 +82,24 @@ namespace NIRS
                         MySQL_Process.StartInfo.CreateNoWindow = true;
 
                         MySQL_Process.Start();
-                        //MySQL_Process.WaitForExit();
-
+                        MySQL_Process = null; // GC come here!
+                        
                         DBConnection.ConnectionWithDefaultSettings();
                     }
                     catch (Win32Exception ex_s)
                     {
-                        MessageBox.Show("Не удается найти файл для запуска " + Environment.CurrentDirectory + @"\mysql_start.bat");
-                        Environment.Exit(93);
+                        MessageBox.Show("Не удается найти файл для запуска " + pathToMysqld + "\n" + ex_s.Message, "Ошибка #2");
+                        Environment.Exit(2);
                     }
                     catch (MySqlException ex_mysql)
                     {
-                        MessageBox.Show(ex_mysql.Message + "\n Сервер не запустился, либо что-то с настройками подключения.");
-                        Environment.Exit(93);
+                        MessageBox.Show("Сервер не запустился, либо что-то с настройками подключения.\n" + ex_mysql.Message, "Ошибка #3");
+                        Environment.Exit(3);
                     }
                 }
                 else
                 {
-                    Environment.Exit(93);
+                    Environment.Exit(1);
                 }
             }
             LoadSummaryDataGridTable();
@@ -226,23 +230,25 @@ namespace NIRS
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)
         {
-            if (MySQL_Process != null)
-            {
-                MySQL_Process.Close();
-            }
-            if(DBConnection.IsConnectionOpen()){
-                // Stop mysqld
-                MySQL_Process = new System.Diagnostics.Process();
-                MySQL_Process.StartInfo.FileName = Environment.CurrentDirectory + @"\mysql_stop.bat";
-                //p.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Minimized;
-                // Disable console window
-                MySQL_Process.StartInfo.RedirectStandardOutput = true;
-                MySQL_Process.StartInfo.UseShellExecute = false;
-                MySQL_Process.StartInfo.CreateNoWindow = true;
+            // Start mysqld on first run of this program, and doesn't close it after use for future usings.
 
-                MySQL_Process.Start();
-                MySQL_Process.WaitForExit();
-            }
+            //if (MySQL_Process != null)
+            //{
+            //    MySQL_Process.Close();
+            //}
+            //if(DBConnection.IsConnectionOpen()){
+            //    // Stop mysqld
+            //    MySQL_Process = new System.Diagnostics.Process();
+            //    MySQL_Process.StartInfo.FileName = Environment.CurrentDirectory + @"\mysql_stop.bat";
+            //    //p.StartInfo.WindowStyle = System.Diagnostics.ProcessWindowStyle.Minimized;
+            //    // Disable console window
+            //    MySQL_Process.StartInfo.RedirectStandardOutput = true;
+            //    MySQL_Process.StartInfo.UseShellExecute = false;
+            //    MySQL_Process.StartInfo.CreateNoWindow = true;
+
+            //    MySQL_Process.Start();
+            //    MySQL_Process.WaitForExit();
+            //}
         }
 
 
