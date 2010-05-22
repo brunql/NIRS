@@ -12,6 +12,7 @@ namespace NIRS
     {
         public AboutBox()
         {
+            Logs.WriteLine("AboutBox initializing.");
             InitializeComponent();
             this.Text = String.Format("About {0}", AssemblyTitle);
             this.labelProductName.Text = AssemblyProduct;
@@ -19,6 +20,7 @@ namespace NIRS
             this.labelCopyright.Text = AssemblyCopyright;
             this.labelCompanyName.Text = AssemblyCompany;
             this.textBoxDescription.Text = AssemblyDescription;
+            Logs.WriteLine("AboutBox loaded.");
         }
 
         #region Assembly Attribute Accessors

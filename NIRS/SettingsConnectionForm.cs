@@ -15,22 +15,29 @@ namespace NIRS
     {
         public SettingsConnectionForm()
         {
-            InitializeComponent();
-            if (DBConnection.InstalledSettings != null)
+            try
             {
-                txtHost.Text = DBConnection.InstalledSettings.host;
-                txtPort.Text = DBConnection.InstalledSettings.port;
-                txtUser.Text = DBConnection.InstalledSettings.user;
-                txtPassword.Text = DBConnection.InstalledSettings.pwd;
-                txtDB.Text = DBConnection.InstalledSettings.database;
+                InitializeComponent();
+                if (DBConnection.InstalledSettings != null)
+                {
+                    txtHost.Text = DBConnection.InstalledSettings.host;
+                    txtPort.Text = DBConnection.InstalledSettings.port;
+                    txtUser.Text = DBConnection.InstalledSettings.user;
+                    txtPassword.Text = DBConnection.InstalledSettings.pwd;
+                    txtDB.Text = DBConnection.InstalledSettings.database;
+                }
+                else
+                {
+                    txtHost.Text = DBSettings.DefaultSettings.host;
+                    txtPort.Text = DBSettings.DefaultSettings.port;
+                    txtUser.Text = DBSettings.DefaultSettings.user;
+                    txtPassword.Text = DBSettings.DefaultSettings.pwd;
+                    txtDB.Text = DBSettings.DefaultSettings.database;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                txtHost.Text = DBSettings.DefaultSettings.host;
-                txtPort.Text = DBSettings.DefaultSettings.port;
-                txtUser.Text = DBSettings.DefaultSettings.user;
-                txtPassword.Text = DBSettings.DefaultSettings.pwd;
-                txtDB.Text = DBSettings.DefaultSettings.database;
+                Logs.WriteLine(ex.ToString());
             }
         }
 
@@ -55,6 +62,7 @@ namespace NIRS
             }
             catch (Exception ex)
             {
+                Logs.WriteLine(ex.ToString());
                 MessageBox.Show(ex.Message);
             }
         }

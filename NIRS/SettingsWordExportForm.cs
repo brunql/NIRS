@@ -17,7 +17,14 @@ namespace NIRS
 
         public SettingsWordExportForm()
         {
-            InitializeComponent();
+            try
+            {
+                InitializeComponent();
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
+            }
         }
 
         private void btnOk_Click(object sender, EventArgs e)
@@ -67,6 +74,7 @@ namespace NIRS
                 }
                 catch (NullReferenceException)
                 {
+                    Logs.WriteLine(ex.ToString());
                     MessageBox.Show("Не удается записать в указанный файл");
                     return;
                 }
@@ -78,6 +86,7 @@ namespace NIRS
             }
             catch (Exception ex)
             {
+                Logs.WriteLine(ex.ToString());
                 MessageBox.Show(ex.Message);
             }            
         }
@@ -89,9 +98,16 @@ namespace NIRS
 
         private void btnGetFileName_Click(object sender, EventArgs e)
         {
-            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            try
             {
-                txtSaveFileName.Text = saveFileDialog.FileName;
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    txtSaveFileName.Text = saveFileDialog.FileName;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
             }
         }
 

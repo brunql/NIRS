@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.IO;
 using MySql.Data.MySqlClient;
 
 using Gios.Word;
@@ -16,13 +17,21 @@ namespace NIRS
 {
     public partial class MainForm : Form
     {
-        AboutBox about_box = new AboutBox();
-
+        private AboutBox about_box;
         public static DataTable SummaryTable { get; set; }
 
         public MainForm()
         {
-            InitializeComponent();
+            try
+            {
+                Logs.WriteLine("MainForm initializing.");
+                InitializeComponent();
+                about_box = new AboutBox();
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
+            }
         }
 
 
@@ -40,35 +49,67 @@ namespace NIRS
 
         private void AddRecord_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddSomeOne ads = new AddSomeOne();
-            if (ads != null) ads.ShowDialog();
+            try
+            {
+                AddSomeOne ads = new AddSomeOne();
+                if (ads != null) ads.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void Exit_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            try
+            {
+                Environment.Exit(0);
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void About_ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            about_box.ShowDialog();
+            try
+            {
+                about_box.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+
             try
             {
+                Logs.WriteLine("MainForm_Load: Try to connect to MySQL deamon.");
                 DBConnection.ConnectionWithDefaultSettings();
+                Logs.WriteLine("MainForm_Load: Success connection to MySQL. MySQL deamon already loaded.");
+            }
+            catch (IOException ex_io)
+            {
+                MessageBox.Show(ex_io.Message + "\n" + ex_io.Message, "Ошибка #4");
+                Environment.Exit(4);
             }
             catch (MySqlException ex)
             {
+                Logs.WriteLine("MainForm_Load: Fail first connection to MySQL. MySQL deamon didn't load yet.");
                 DialogResult res = MessageBox.Show("Подключение к базе не удалось, нажмите ОК для попытки запуска сервера. \n" + ex.Message, "Ошибка #1");
                 if (res == DialogResult.OK)
                 {
                     string pathToMysqld = @"C:\Program Files\xampp\mysql\bin\mysqld.exe";
                     string pathToMyCnf = @"C:\Program Files\xampp\mysql\bin\my.cnf";
-                        
+
                     try
                     {
                         Process MySQL_Process = new Process();
@@ -80,30 +121,34 @@ namespace NIRS
                         MySQL_Process.StartInfo.RedirectStandardOutput = true;
                         MySQL_Process.StartInfo.UseShellExecute = false;
                         MySQL_Process.StartInfo.CreateNoWindow = true;
-
+                        Logs.WriteLine("MainForm_Load: Try to start MySQL process " + pathToMysqld + " with config " + pathToMyCnf);
                         MySQL_Process.Start();
                         MySQL_Process = null; // GC come here!
-                        
+                        Logs.WriteLine("MainForm_Load: Try to connect to MySQL deamon.");
                         DBConnection.ConnectionWithDefaultSettings();
                     }
                     catch (Win32Exception ex_s)
                     {
+                        Logs.WriteLine("MainForm_Load: Win32Exception: " + ex_s.ToString());
                         MessageBox.Show("Не удается найти файл для запуска " + pathToMysqld + "\n" + ex_s.Message, "Ошибка #2");
                         Environment.Exit(2);
                     }
                     catch (MySqlException ex_mysql)
                     {
+                        Logs.WriteLine("MainForm_Load: MySqlException: " + ex_mysql.ToString());
                         MessageBox.Show("Сервер не запустился, либо что-то с настройками подключения.\n" + ex_mysql.Message, "Ошибка #3");
                         Environment.Exit(3);
                     }
                 }
                 else
                 {
+                    Logs.WriteLine("MainForm_Load: Start of MySQL deamon canceled.");
                     Environment.Exit(1);
                 }
             }
             LoadSummaryDataGridTable();
             this.summaryDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            Logs.WriteLine("MainForm_Load: Initialized.");
         }
 
         //SettingsConnectionForm scf = new SettingsConnectionForm();
@@ -115,11 +160,14 @@ namespace NIRS
 
         private void LoadSummaryDataGridTable()
         {
-            DataView t = new DataView();
-            SummaryTable = new DataTable();
-            SummaryTable.Load(
-                    DBConnection.ExecuteReader(
-                    @"SELECT CONCAT(s.name,' ',s.fathername, ' ', s.surname) `Студент`, s.born `Дата рождения`,
+            try
+            {
+                Logs.WriteLine("LoadSummaryDataGridTable() starts.");
+                DataView t = new DataView();
+                SummaryTable = new DataTable();
+                SummaryTable.Load(
+                        DBConnection.ExecuteReader(
+                        @"SELECT CONCAT(s.name,' ',s.fathername, ' ', s.surname) `Студент`, s.born `Дата рождения`,
                         f.name `Факультет`,
                         d.name `Кафедра`,
                         spec.name `Специальность`,
@@ -132,100 +180,210 @@ namespace NIRS
                         JOIN `spec` spec ON g.spec_id = spec.id
                         JOIN `division` d ON spec.div_id = d.id
                         JOIN `faculty` f ON d.fac_id = f.id;"
-                    )
-                 );
-            summaryDataGridView.DataSource = SummaryTable;
-            
+                        )
+                     );
+                summaryDataGridView.DataSource = SummaryTable;
+                Logs.WriteLine("LoadSummaryDataGridTable() done.");
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show("Ошибка при загрузке информации в сводную таблицу.\n" + ex.Message, "Ошибка #5");
+            }
         }
 
         private void connectionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            SettingsConnectionForm scf = new SettingsConnectionForm();
-            scf.ShowDialog();
+            try
+            {
+                SettingsConnectionForm scf = new SettingsConnectionForm();
+                scf.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void exportToWordToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            SettingsWordExportForm swef = new SettingsWordExportForm();
-            SettingsWordExportForm.ShowMe = SummaryTable;
-            swef.ShowDialog();
+            try
+            {
+                SettingsWordExportForm swef = new SettingsWordExportForm();
+                SettingsWordExportForm.ShowMe = SummaryTable;
+                swef.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void студентToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FindStudentDialogForm fsdf = new FindStudentDialogForm();
-            fsdf.ShowDialog();
-            if (FindStudentDialogForm.Result != null)
+            try
             {
-                this.summaryDataGridView.DataSource = null;
-                this.summaryDataGridView.DataSource = FindStudentDialogForm.Result;
-                SummaryTable = FindStudentDialogForm.Result;
+                FindStudentDialogForm fsdf = new FindStudentDialogForm();
+                fsdf.ShowDialog();
+                if (FindStudentDialogForm.Result != null)
+                {
+                    this.summaryDataGridView.DataSource = null;
+                    this.summaryDataGridView.DataSource = FindStudentDialogForm.Result;
+                    SummaryTable = FindStudentDialogForm.Result;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 
         private void руководительToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FindMentorDialogForm fmdf = new FindMentorDialogForm();
-            fmdf.ShowDialog();
-            if (FindMentorDialogForm.Result != null)
+            try
             {
-                this.summaryDataGridView.DataSource = null;
-                this.summaryDataGridView.DataSource = FindMentorDialogForm.Result;
-                SummaryTable = FindMentorDialogForm.Result;
+                FindMentorDialogForm fmdf = new FindMentorDialogForm();
+                fmdf.ShowDialog();
+                if (FindMentorDialogForm.Result != null)
+                {
+                    this.summaryDataGridView.DataSource = null;
+                    this.summaryDataGridView.DataSource = FindMentorDialogForm.Result;
+                    SummaryTable = FindMentorDialogForm.Result;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
         
         private void нуToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FindScienceWorksDialogForm fsdf = new FindScienceWorksDialogForm();
-            fsdf.ShowDialog();
-            if (FindScienceWorksDialogForm.Result != null)
+            try
             {
-                this.summaryDataGridView.DataSource = null;
-                this.summaryDataGridView.DataSource = FindScienceWorksDialogForm.Result;
-                SummaryTable = FindScienceWorksDialogForm.Result;
+                FindScienceWorksDialogForm fsdf = new FindScienceWorksDialogForm();
+                fsdf.ShowDialog();
+                if (FindScienceWorksDialogForm.Result != null)
+                {
+                    this.summaryDataGridView.DataSource = null;
+                    this.summaryDataGridView.DataSource = FindScienceWorksDialogForm.Result;
+                    SummaryTable = FindScienceWorksDialogForm.Result;
+                }
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
             }
         }
 
 
         private void факультетыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new EditFaculty()).Show();
+            try
+            {
+                (new EditFaculty()).Show();
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void кафедрыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new EditDivision()).Show();
+            try
+            {
+                (new EditDivision()).Show();
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void группыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new EditGroup()).Show();
+            try
+            {
+                (new EditGroup()).Show();
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void специальностиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new EditSpec()).Show();
+            try
+            {
+                (new EditSpec()).Show();
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void руководителиToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new EditMentor()).Show();
+            try
+            {
+                (new EditMentor()).Show();
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void студентыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new EditStudent()).Show();
+            try
+            {
+                (new EditStudent()).Show();
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void научныеРаботыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            (new EditWorks()).Show();
+            try
+            {
+                (new EditWorks()).Show();
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void summaryDataGridView_DataSourceChanged(object sender, EventArgs e)
         {
-            summaryDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            try
+            {
+                summaryDataGridView.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine("Exception: " + ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void MainForm_FormClosed(object sender, FormClosedEventArgs e)

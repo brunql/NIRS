@@ -83,6 +83,7 @@ namespace NIRS
             }
             catch(Exception ex)
             {
+                Logs.WriteLine(ex.ToString());
                 MessageBox.Show("Проблемы при инициализации окна добавления записей. Проверьте запущена ли база данных. Сообщение об ошибке: " + ex.Message);
                 this.Close();
             }
@@ -96,12 +97,19 @@ namespace NIRS
 
         private void addSomeOne_Load(object sender, EventArgs e)
         {
-            // здесь можно немного пошалить ;)
-            cmbMentorDivision.DataSource = bindDivision;
-            cmbMentorDivision.DisplayMember = "name";
+            try
+            {
+                // здесь можно немного пошалить ;)
+                cmbMentorDivision.DataSource = bindDivision;
+                cmbMentorDivision.DisplayMember = "name";
 
-            //cmbNIR_Mentor.DataSource = bindMentor;
-            //cmbNIR_Mentor.DisplayMember = "secondname";
+                //cmbNIR_Mentor.DataSource = bindMentor;
+                //cmbNIR_Mentor.DisplayMember = "secondname";
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
+            }
         }
 
 
@@ -109,101 +117,135 @@ namespace NIRS
 
         private void btnAddFaculty_Click(object sender, EventArgs e)
         {
-            NIRS_Viewer.config.NIRS_DataSet.faculty.AddfacultyRow(
-                txtAddFacultyName.Text, 
-                txtAddFacultyFullName.Text);
-            bindFaculty.Save();
-
-            DialogResult result = MessageBox.Show("Факультет добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            try
             {
-                txtAddFacultyName.Text = "";
-                txtAddFacultyFullName.Text = "";
+                NIRS_Viewer.config.NIRS_DataSet.faculty.AddfacultyRow(
+                    txtAddFacultyName.Text,
+                    txtAddFacultyFullName.Text);
+                bindFaculty.Save();
+
+                DialogResult result = MessageBox.Show("Факультет добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    txtAddFacultyName.Text = "";
+                    txtAddFacultyFullName.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
             }
         }
 
         private void btnAddDivision_Click(object sender, EventArgs e)
         {
-            NIRS_Viewer.config.NIRS_DataSet.division.AdddivisionRow(
-                (int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value,
-                txtAddDivision.Text,
-                txtAddDivisionFullName.Text
-                );
-            bindDivision.Save();
-
-            DialogResult result = MessageBox.Show("Кафедра добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            try
             {
-                txtAddDivision.Text = "";
-                txtAddDivisionFullName.Text = "";
+                NIRS_Viewer.config.NIRS_DataSet.division.AdddivisionRow(
+                    (int)dataViewDivisionFaculty.CurrentRow.Cells[0].Value,
+                    txtAddDivision.Text,
+                    txtAddDivisionFullName.Text
+                    );
+                bindDivision.Save();
+
+                DialogResult result = MessageBox.Show("Кафедра добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    txtAddDivision.Text = "";
+                    txtAddDivisionFullName.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
             }
         }
 
         private void btnAddSpec_Click(object sender, EventArgs e)
         {
-            NIRS_Viewer.config.NIRS_DataSet.spec.AddspecRow(
-                (int)dataViewSpecDivision.CurrentRow.Cells[0].Value,
-                txtAddSpec.Text,
-                txtAddSpecFullName.Text
-                );
-            
-            bindSpec.Save();
-
-            DialogResult result = MessageBox.Show("Специальность добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            try
             {
-                txtAddSpec.Text = "";
-                txtAddSpecFullName.Text = "";
+                NIRS_Viewer.config.NIRS_DataSet.spec.AddspecRow(
+                    (int)dataViewSpecDivision.CurrentRow.Cells[0].Value,
+                    txtAddSpec.Text,
+                    txtAddSpecFullName.Text
+                    );
+
+                bindSpec.Save();
+
+                DialogResult result = MessageBox.Show("Специальность добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    txtAddSpec.Text = "";
+                    txtAddSpecFullName.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
             }
         }
 
         private void btnAddGroup_Click(object sender, EventArgs e)
         {
-            NIRS_Viewer.config.NIRS_DataSet.group.AddgroupRow(
-                (int)dataViewGroupSpec.CurrentRow.Cells[0].Value,
-                txtAddGroupCode.Text
-                );
-            bindGroup.Save();
-
-            DialogResult result = MessageBox.Show("Группа добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            try
             {
-                txtAddGroupCode.Text = "";
+                NIRS_Viewer.config.NIRS_DataSet.group.AddgroupRow(
+                    (int)dataViewGroupSpec.CurrentRow.Cells[0].Value,
+                    txtAddGroupCode.Text
+                    );
+                bindGroup.Save();
+
+                DialogResult result = MessageBox.Show("Группа добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    txtAddGroupCode.Text = "";
+                }
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
             }
         }
 
 
         private void btnAddMentor_Click(object sender, EventArgs e)
         {
-            if (((DataRowView)cmbMentorDivision.SelectedItem) == null )//((ComboBoxKiller)cmbMentorDivision.SelectedItem == null)
+            try
             {
-                MessageBox.Show("Кафедра не выбрана");
-                return;
+                if (((DataRowView)cmbMentorDivision.SelectedItem) == null)//((ComboBoxKiller)cmbMentorDivision.SelectedItem == null)
+                {
+                    MessageBox.Show("Кафедра не выбрана");
+                    return;
+                }
+
+
+                NIRS_Viewer.config.NIRS_DataSet.mentor.AddmentorRow(
+                    txtMentorName.Text,
+                    txtMentorSurname.Text,
+                    txtMentorFathername.Text,
+                    txtMentorWork.Text,
+                    txtMentorAcademicRank.Text,
+                    txtMentorDegree.Text,
+                    (int)((DataRowView)cmbMentorDivision.SelectedItem).Row[0] // get id
+                    );
+                bindMentor.Save();
+
+                DialogResult result = MessageBox.Show("Руководитель добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    txtMentorSurname.Text = "";
+                    txtMentorFathername.Text = "";
+                    txtMentorName.Text = "";
+                    txtMentorWork.Text = "";
+                    txtMentorDegree.Text = "";
+                    txtMentorAcademicRank.Text = "";
+                }
             }
-            
-
-            NIRS_Viewer.config.NIRS_DataSet.mentor.AddmentorRow(
-                txtMentorName.Text,
-                txtMentorSurname.Text,
-                txtMentorFathername.Text,
-                txtMentorWork.Text,
-                txtMentorAcademicRank.Text,
-                txtMentorDegree.Text,
-                (int)((DataRowView)cmbMentorDivision.SelectedItem).Row[0] // get id
-                );
-            bindMentor.Save();
-
-            DialogResult result = MessageBox.Show("Руководитель добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            catch (Exception ex)
             {
-                txtMentorSurname.Text = "";
-                txtMentorFathername.Text = "";
-                txtMentorName.Text = "";
-                txtMentorWork.Text = "";
-                txtMentorDegree.Text = "";
-                txtMentorAcademicRank.Text = "";
+                Logs.WriteLine(ex.ToString());
             }
-
         }
 
         private void btnAddStudent_Click(object sender, EventArgs e)
@@ -218,99 +260,112 @@ namespace NIRS
             {
                 return;
             }
-
-            DateTime birthdate = new DateTime();
             try
             {
-                birthdate = dateTimePickerStudent.Value; //Convert.ToDateTime(txtStudentBirthdayDate.Text);
-            }
-            catch (FormatException)
-            {
-                MessageBox.Show("Проверьте правильность ввода даты рождения.");
-                return;
-            }
-            if (cmbStudentGroup.SelectedItem == null)
-            {
-                MessageBox.Show("Группа не выбрана");
-                return;
-            }
+                DateTime birthdate = new DateTime();
+                try
+                {
+                    birthdate = dateTimePickerStudent.Value; //Convert.ToDateTime(txtStudentBirthdayDate.Text);
+                }
+                catch (FormatException)
+                {
+                    MessageBox.Show("Проверьте правильность ввода даты рождения.");
+                    return;
+                }
+                if (cmbStudentGroup.SelectedItem == null)
+                {
+                    MessageBox.Show("Группа не выбрана");
+                    return;
+                }
 
-            if (((ComboBoxKiller)cmbStudentGroup.SelectedItem).Id < 0)
-            {
-                MessageBox.Show("cmbStudentGroup.Id < 0");
-                return;
+                if (((ComboBoxKiller)cmbStudentGroup.SelectedItem).Id < 0)
+                {
+                    MessageBox.Show("cmbStudentGroup.Id < 0");
+                    return;
+                }
+
+                NIRS_Viewer.config.NIRS_DataSet.student.AddstudentRow(
+                    txtStudentName.Text,
+                    txtStudentSurname.Text,
+                    txtStudentFathername.Text,
+                    (cmbStudentGroup.SelectedItem as ComboBoxKiller).Id,
+                    birthdate,
+                    cmbStudentBudget.Text,
+                    ((txtStudentGrant.Text == "") ? "Нет" : txtStudentGrant.Text),
+                    txtStudentEmail.Text,
+                    txtStudentPhone.Text
+                    );
+                bindStudent.Save();
+
+                DialogResult result = MessageBox.Show("Студент добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    txtStudentSurname.Text = "";
+                    txtStudentFathername.Text = "";
+                    txtStudentName.Text = "";
+                    txtStudentGrant.Text = "";
+                    txtStudentBirthdayDate.Text = "";
+                    txtStudentPatents.Text = "";
+                    txtStudentProgramCount.Text = "";
+                    txtStudentPublicationCount.Text = "";
+                    txtStudentAsset.Text = "";
+                    txtStudentEmail.Text = "";
+                    txtStudentPhone.Text = "";
+                }
             }
-
-            NIRS_Viewer.config.NIRS_DataSet.student.AddstudentRow(
-                txtStudentName.Text,
-                txtStudentSurname.Text,
-                txtStudentFathername.Text,
-                (cmbStudentGroup.SelectedItem as ComboBoxKiller).Id,
-                birthdate,
-                cmbStudentBudget.Text,
-                ((txtStudentGrant.Text == "") ? "Нет" : txtStudentGrant.Text),
-                txtStudentEmail.Text,
-                txtStudentPhone.Text
-                );
-            bindStudent.Save();
-
-            DialogResult result = MessageBox.Show("Студент добавлен. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
+            catch (Exception ex)
             {
-                txtStudentSurname.Text = "";
-                txtStudentFathername.Text = "";
-                txtStudentName.Text = "";
-                txtStudentGrant.Text = "";
-                txtStudentBirthdayDate.Text = "";
-                txtStudentPatents.Text = "";
-                txtStudentProgramCount.Text = "";
-                txtStudentPublicationCount.Text = "";
-                txtStudentAsset.Text = "";
-                txtStudentEmail.Text = "";
-                txtStudentPhone.Text = "";
+                Logs.WriteLine(ex.ToString());
             }
         }
 
         private void btnAddWorksNIR_Click(object sender, EventArgs e)
         {
-            if (cmbNIR_Student.SelectedItem as ComboBoxKiller == null)
+            try
             {
-                MessageBox.Show("Студент не выбран");
-                return;
-            }
-            if (cmbNIR_Mentor.SelectedItem as ComboBoxKiller == null)
-            {
-                MessageBox.Show("Руководитель не выбран");
-                return;
-            }
+                if (cmbNIR_Student.SelectedItem as ComboBoxKiller == null)
+                {
+                    MessageBox.Show("Студент не выбран");
+                    return;
+                }
+                if (cmbNIR_Mentor.SelectedItem as ComboBoxKiller == null)
+                {
+                    MessageBox.Show("Руководитель не выбран");
+                    return;
+                }
 
-            if ((cmbNIR_Student.SelectedItem as ComboBoxKiller).Id < 0)
-            {
-                MessageBox.Show("(cmbNIR_Student.SelectedItem as ComboBoxKiller).Id < 0");
-                return;
+                if ((cmbNIR_Student.SelectedItem as ComboBoxKiller).Id < 0)
+                {
+                    MessageBox.Show("(cmbNIR_Student.SelectedItem as ComboBoxKiller).Id < 0");
+                    return;
+                }
+
+                if ((cmbNIR_Mentor.SelectedItem as ComboBoxKiller).Id < 0)
+                {
+                    MessageBox.Show("(cmbNIR_Mentor.SelectedItem as ComboBoxKiller).Id < 0");
+                    return;
+                }
+
+                NIRS_Viewer.config.NIRS_DataSet.works.AddworksRow(
+                    (cmbNIR_Student.SelectedItem as ComboBoxKiller).Id,
+                    rtbxStudentTheme.Text,
+                    rtbxStudentBackLog.Text,
+                    (cmbNIR_Mentor.SelectedItem as ComboBoxKiller).Id
+                    );
+                bindWorks.Save();
+
+                DialogResult result = MessageBox.Show("Научная работа добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                {
+                    cmbNIR_Student.SelectedIndex = 0;
+                    cmbNIR_Mentor.SelectedIndex = 0;
+                    rtbxStudentTheme.Text = "";
+                    rtbxStudentBackLog.Text = "";
+                }
             }
-
-            if ((cmbNIR_Mentor.SelectedItem as ComboBoxKiller).Id < 0)
+            catch (Exception ex)
             {
-                MessageBox.Show("(cmbNIR_Mentor.SelectedItem as ComboBoxKiller).Id < 0");
-                return;
-            }
-
-            NIRS_Viewer.config.NIRS_DataSet.works.AddworksRow(
-                (cmbNIR_Student.SelectedItem as ComboBoxKiller).Id,
-                rtbxStudentTheme.Text,
-                rtbxStudentBackLog.Text,
-                (cmbNIR_Mentor.SelectedItem as ComboBoxKiller).Id
-                );
-            bindWorks.Save();
-
-            DialogResult result = MessageBox.Show("Научная работа добавлена. Очистить поля?", "Добавление", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes)
-            {
-                cmbNIR_Student.SelectedIndex = 0;
-                cmbNIR_Mentor.SelectedIndex = 0;
-                rtbxStudentTheme.Text = "";
-                rtbxStudentBackLog.Text = "";
+                Logs.WriteLine(ex.ToString());
             }
         }
 
@@ -326,31 +381,66 @@ namespace NIRS
         
         private void tabPageStudent_Enter(object sender, EventArgs e)
         {
-            ComboBoxKiller.FillComboBox(dataViewFaculty, cmbStudentFaculty);
+            try
+            {
+                ComboBoxKiller.FillComboBox(dataViewFaculty, cmbStudentFaculty);
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
+            }
         }
 
         private void cmbStudentFaculty_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbStudentDivision.Enabled = true;
-            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedDivision, cmbStudentDivision, 2, 1, (cmbStudentFaculty.SelectedItem as ComboBoxKiller).Id);
+            try
+            {
+                cmbStudentDivision.Enabled = true;
+                ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedDivision, cmbStudentDivision, 2, 1, (cmbStudentFaculty.SelectedItem as ComboBoxKiller).Id);
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
+            }
         }
 
         private void cmbStudentDivision_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbStudentSpetialize.Enabled = true;
-            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedSpec, cmbStudentSpetialize, 2, 1, (cmbStudentDivision.SelectedItem as ComboBoxKiller).Id);
+            try
+            {
+                cmbStudentSpetialize.Enabled = true;
+                ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedSpec, cmbStudentSpetialize, 2, 1, (cmbStudentDivision.SelectedItem as ComboBoxKiller).Id);
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
+            }
         }
 
         private void cmbStudentSpetialize_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cmbStudentGroup.Enabled = true;
-            ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedGroup, cmbStudentGroup, 2, 1, (cmbStudentSpetialize.SelectedItem as ComboBoxKiller).Id);
+            try
+            {
+                cmbStudentGroup.Enabled = true;
+                ComboBoxKiller.FillComboBoxWithCmp(dataViewAddedGroup, cmbStudentGroup, 2, 1, (cmbStudentSpetialize.SelectedItem as ComboBoxKiller).Id);
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
+            }
         }
 
         private void tabPageNIR_Enter(object sender, EventArgs e)
         {
-            ComboBoxKiller.FillComboBox_MentorStudent(dataViewAddedMentor, cmbNIR_Mentor);
-            ComboBoxKiller.FillComboBox_MentorStudent(dataViewAddedStudent, cmbNIR_Student);
+            try
+            {
+                ComboBoxKiller.FillComboBox_MentorStudent(dataViewAddedMentor, cmbNIR_Mentor);
+                ComboBoxKiller.FillComboBox_MentorStudent(dataViewAddedStudent, cmbNIR_Student);
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
+            }
         }
 
         private void tabPageMentor_Enter(object sender, EventArgs e)

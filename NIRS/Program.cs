@@ -13,16 +13,16 @@ namespace NIRS
         [STAThread]
         static void Main()
         {
-            //try
-            //{
+            try
+            {
                 Application.EnableVisualStyles();
                 Application.SetCompatibleTextRenderingDefault(false);
                 Application.Run(new MainForm());
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message);
-            //}
+            }
+            catch(Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
+            }
         }
     }
 }

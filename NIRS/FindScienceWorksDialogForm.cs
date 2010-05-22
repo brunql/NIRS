@@ -15,8 +15,15 @@ namespace NIRS
     {
         public FindScienceWorksDialogForm()
         {
-            InitializeComponent();
-            Result = null;
+            try
+            {
+                InitializeComponent();
+                Result = null;
+            }
+            catch (Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
+            }
         }
 
         public static DataTable Result { get; set; }
@@ -62,6 +69,7 @@ namespace NIRS
             }
             catch (Exception ex)
             {
+                Logs.WriteLine(ex.ToString());
                 MessageBox.Show(ex.Message);
             }
         }
