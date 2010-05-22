@@ -89,7 +89,7 @@ namespace NIRS
             // 
             this.toolsFindIt.Name = "toolsFindIt";
             this.toolsFindIt.Size = new System.Drawing.Size(100, 25);
-            this.toolsFindIt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ToolsFindItKeyUp);
+            this.toolsFindIt.KeyUp += new System.Windows.Forms.KeyEventHandler(this.ToolsFindInSelectedIndexChanged);
             // 
             // toolsFindIn
             // 

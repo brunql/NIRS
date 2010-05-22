@@ -75,7 +75,7 @@ namespace NIRS
             }
 		}
 
-        void ToolsFindInSelectedIndexChanged(object sender, KeyEventArgs e) //ToolsFindItKeyUp
+        void ToolsFindInSelectedIndexChanged(object sender, EventArgs e) //ToolsFindItKeyUp
 		{
             try
             {

@@ -78,7 +78,7 @@ namespace NIRS_Viewer
             }
             catch (Exception ex)
             {
-                Logs.WriteLine(ex.ToString());
+                throw;
             }
 		}
 
@@ -123,7 +123,6 @@ namespace NIRS_Viewer
             }
             catch(Exception ex)
             {
-                Logs.WriteLine(ex.ToString());
                 System.Windows.Forms.MessageBox.Show("Обновление данных в базе невозможно. Сообщение об ошибке: " + ex.Message);
                 throw;
             }

@@ -72,7 +72,7 @@ namespace NIRS
                 {
                     doc.SaveToFile(pathToFile);
                 }
-                catch (NullReferenceException)
+                catch (NullReferenceException ex)
                 {
                     Logs.WriteLine(ex.ToString());
                     MessageBox.Show("Не удается записать в указанный файл");
