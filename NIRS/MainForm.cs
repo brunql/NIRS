@@ -409,6 +409,20 @@ namespace NIRS
             //}
         }
 
+        private void добавлениеСтудентовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                AddStudent addst = new AddStudent();
+                addst.ShowDialog();
+            }
+            catch(Exception ex)
+            {
+                Logs.WriteLine(ex.ToString());
+                MessageBox.Show(ex.Message);
+            }
+        }
+
 
     }
 }

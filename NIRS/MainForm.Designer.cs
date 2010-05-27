@@ -52,6 +52,7 @@
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.summaryDataGridView = new System.Windows.Forms.DataGridView();
             this.saveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.добавлениеСтудентовToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.summaryDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,7 @@
             // 
             this.файлБДToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.добавлениеЗаписейToolStripMenuItem,
+            this.добавлениеСтудентовToolStripMenuItem,
             this.поискToolStripMenuItem,
             this.exportToWordToolStripMenuItem1,
             this.toolStripSeparator1,
@@ -84,7 +86,7 @@
             // добавлениеЗаписейToolStripMenuItem
             // 
             this.добавлениеЗаписейToolStripMenuItem.Name = "добавлениеЗаписейToolStripMenuItem";
-            this.добавлениеЗаписейToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.добавлениеЗаписейToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.добавлениеЗаписейToolStripMenuItem.Text = "Добавление записей";
             this.добавлениеЗаписейToolStripMenuItem.Click += new System.EventHandler(this.AddRecord_ToolStripMenuItem_Click);
             // 
@@ -95,7 +97,7 @@
             this.руководительToolStripMenuItem,
             this.нуToolStripMenuItem});
             this.поискToolStripMenuItem.Name = "поискToolStripMenuItem";
-            this.поискToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.поискToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.поискToolStripMenuItem.Text = "Поиск";
             // 
             // студентToolStripMenuItem
@@ -122,19 +124,19 @@
             // exportToWordToolStripMenuItem1
             // 
             this.exportToWordToolStripMenuItem1.Name = "exportToWordToolStripMenuItem1";
-            this.exportToWordToolStripMenuItem1.Size = new System.Drawing.Size(190, 22);
+            this.exportToWordToolStripMenuItem1.Size = new System.Drawing.Size(204, 22);
             this.exportToWordToolStripMenuItem1.Text = "Экспорт в Word";
             this.exportToWordToolStripMenuItem1.Click += new System.EventHandler(this.exportToWordToolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(187, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(201, 6);
             // 
             // Exit_ToolStripMenuItem
             // 
             this.Exit_ToolStripMenuItem.Name = "Exit_ToolStripMenuItem";
-            this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(190, 22);
+            this.Exit_ToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
             this.Exit_ToolStripMenuItem.Text = "Выход";
             this.Exit_ToolStripMenuItem.Click += new System.EventHandler(this.Exit_ToolStripMenuItem_Click);
             // 
@@ -248,6 +250,13 @@
             // 
             this.saveFileDialog.Filter = "Word document (*.doc)|*.doc";
             // 
+            // добавлениеСтудентовToolStripMenuItem
+            // 
+            this.добавлениеСтудентовToolStripMenuItem.Name = "добавлениеСтудентовToolStripMenuItem";
+            this.добавлениеСтудентовToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.добавлениеСтудентовToolStripMenuItem.Text = "Добавление студентов";
+            this.добавлениеСтудентовToolStripMenuItem.Click += new System.EventHandler(this.добавлениеСтудентовToolStripMenuItem_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,5 +303,6 @@
         private System.Windows.Forms.ToolStripMenuItem руководителиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem студентыToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem научныеРаботыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem добавлениеСтудентовToolStripMenuItem;
     }
 }
