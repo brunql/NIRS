@@ -78,29 +78,29 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label32 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.ckbContiniueStuding = new System.Windows.Forms.CheckBox();
+            this.ckbWorkInScience = new System.Windows.Forms.CheckBox();
+            this.ckbWorkInDivision = new System.Windows.Forms.CheckBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
-            this.textBox13 = new System.Windows.Forms.TextBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.txtHomeAddress = new System.Windows.Forms.TextBox();
+            this.txtGPA = new System.Windows.Forms.TextBox();
+            this.txtNIR_Years = new System.Windows.Forms.TextBox();
+            this.txtScienceTheme = new System.Windows.Forms.TextBox();
+            this.txtScienceWorks = new System.Windows.Forms.TextBox();
+            this.txtPublicationsCount = new System.Windows.Forms.TextBox();
+            this.txtArticlesCount = new System.Windows.Forms.TextBox();
+            this.txtIntellictualAndIndustrialPropertyCount = new System.Windows.Forms.TextBox();
+            this.txtPatentsCount = new System.Windows.Forms.TextBox();
+            this.txtCertificateOnPCSoftCount = new System.Windows.Forms.TextBox();
+            this.txtPositiveSolutionOnInventionsCount = new System.Windows.Forms.TextBox();
+            this.txtRequestsOnInventionsCount = new System.Windows.Forms.TextBox();
+            this.txtRequestsOnPcSoftCount = new System.Windows.Forms.TextBox();
+            this.txtImplementationInIndustry = new System.Windows.Forms.TextBox();
+            this.txtImplementationInStudy = new System.Windows.Forms.TextBox();
+            this.txtAwardsOnScientificWorks = new System.Windows.Forms.TextBox();
             this.btnAddStudent = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cmbMentorDivision = new System.Windows.Forms.ComboBox();
+            this.cmbMentorFIO = new System.Windows.Forms.ComboBox();
             this.tabControlStudent = new System.Windows.Forms.TabControl();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataViewAddedStudent)).BeginInit();
@@ -148,6 +148,9 @@
             // 
             // tableLayoutPanel
             // 
+            this.tableLayoutPanel.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                        | System.Windows.Forms.AnchorStyles.Left)
+                        | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel.AutoScroll = true;
             this.tableLayoutPanel.ColumnCount = 3;
             this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.70551F));
@@ -199,30 +202,29 @@
             this.tableLayoutPanel.Controls.Add(this.label29, 0, 35);
             this.tableLayoutPanel.Controls.Add(this.label28, 0, 37);
             this.tableLayoutPanel.Controls.Add(this.label32, 0, 39);
-            this.tableLayoutPanel.Controls.Add(this.checkBox1, 0, 40);
-            this.tableLayoutPanel.Controls.Add(this.checkBox2, 0, 41);
-            this.tableLayoutPanel.Controls.Add(this.checkBox3, 0, 42);
+            this.tableLayoutPanel.Controls.Add(this.ckbContiniueStuding, 0, 40);
+            this.tableLayoutPanel.Controls.Add(this.ckbWorkInScience, 0, 41);
+            this.tableLayoutPanel.Controls.Add(this.ckbWorkInDivision, 0, 42);
             this.tableLayoutPanel.Controls.Add(this.label18, 0, 13);
-            this.tableLayoutPanel.Controls.Add(this.textBox1, 1, 13);
-            this.tableLayoutPanel.Controls.Add(this.textBox2, 1, 14);
-            this.tableLayoutPanel.Controls.Add(this.textBox3, 1, 15);
-            this.tableLayoutPanel.Controls.Add(this.textBox4, 0, 17);
-            this.tableLayoutPanel.Controls.Add(this.textBox5, 1, 22);
-            this.tableLayoutPanel.Controls.Add(this.textBox6, 2, 24);
-            this.tableLayoutPanel.Controls.Add(this.textBox7, 2, 25);
-            this.tableLayoutPanel.Controls.Add(this.textBox8, 2, 26);
-            this.tableLayoutPanel.Controls.Add(this.textBox9, 2, 27);
-            this.tableLayoutPanel.Controls.Add(this.textBox10, 2, 28);
-            this.tableLayoutPanel.Controls.Add(this.textBox11, 2, 29);
-            this.tableLayoutPanel.Controls.Add(this.textBox12, 2, 30);
-            this.tableLayoutPanel.Controls.Add(this.textBox13, 2, 31);
-            this.tableLayoutPanel.Controls.Add(this.textBox14, 1, 33);
-            this.tableLayoutPanel.Controls.Add(this.textBox15, 1, 35);
-            this.tableLayoutPanel.Controls.Add(this.textBox16, 0, 38);
+            this.tableLayoutPanel.Controls.Add(this.txtHomeAddress, 1, 13);
+            this.tableLayoutPanel.Controls.Add(this.txtGPA, 1, 14);
+            this.tableLayoutPanel.Controls.Add(this.txtNIR_Years, 1, 15);
+            this.tableLayoutPanel.Controls.Add(this.txtScienceTheme, 0, 17);
+            this.tableLayoutPanel.Controls.Add(this.txtScienceWorks, 1, 22);
+            this.tableLayoutPanel.Controls.Add(this.txtPublicationsCount, 2, 24);
+            this.tableLayoutPanel.Controls.Add(this.txtArticlesCount, 2, 25);
+            this.tableLayoutPanel.Controls.Add(this.txtIntellictualAndIndustrialPropertyCount, 2, 26);
+            this.tableLayoutPanel.Controls.Add(this.txtPatentsCount, 2, 27);
+            this.tableLayoutPanel.Controls.Add(this.txtCertificateOnPCSoftCount, 2, 28);
+            this.tableLayoutPanel.Controls.Add(this.txtPositiveSolutionOnInventionsCount, 2, 29);
+            this.tableLayoutPanel.Controls.Add(this.txtRequestsOnInventionsCount, 2, 30);
+            this.tableLayoutPanel.Controls.Add(this.txtRequestsOnPcSoftCount, 2, 31);
+            this.tableLayoutPanel.Controls.Add(this.txtImplementationInIndustry, 1, 33);
+            this.tableLayoutPanel.Controls.Add(this.txtImplementationInStudy, 1, 35);
+            this.tableLayoutPanel.Controls.Add(this.txtAwardsOnScientificWorks, 0, 38);
             this.tableLayoutPanel.Controls.Add(this.btnAddStudent, 1, 45);
-            this.tableLayoutPanel.Controls.Add(this.comboBox1, 1, 19);
-            this.tableLayoutPanel.Controls.Add(this.comboBox2, 1, 20);
-            this.tableLayoutPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel.Controls.Add(this.cmbMentorDivision, 1, 19);
+            this.tableLayoutPanel.Controls.Add(this.cmbMentorFIO, 1, 20);
             this.tableLayoutPanel.Location = new System.Drawing.Point(3, 3);
             this.tableLayoutPanel.Name = "tableLayoutPanel";
             this.tableLayoutPanel.RowCount = 47;
@@ -311,6 +313,7 @@
             this.ckbMoney.Text = "Получает ли стипендию? И какую?";
             this.ckbMoney.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.ckbMoney.UseVisualStyleBackColor = true;
+            this.ckbMoney.CheckedChanged += new System.EventHandler(this.ckbMoney_CheckedChanged);
             // 
             // cmbStudentGroup
             // 
@@ -339,6 +342,7 @@
             this.cmbStudentDivision.Name = "cmbStudentDivision";
             this.cmbStudentDivision.Size = new System.Drawing.Size(225, 21);
             this.cmbStudentDivision.TabIndex = 6;
+            this.cmbStudentDivision.SelectedValueChanged += new System.EventHandler(this.cmbStudentDivision_SelectedValueChanged);
             // 
             // cmbStudentBudget
             // 
@@ -430,6 +434,7 @@
             this.cmbStudentSpetialize.Name = "cmbStudentSpetialize";
             this.cmbStudentSpetialize.Size = new System.Drawing.Size(225, 21);
             this.cmbStudentSpetialize.TabIndex = 7;
+            this.cmbStudentSpetialize.SelectedValueChanged += new System.EventHandler(this.cmbStudentSpetialize_SelectedValueChanged);
             // 
             // lblSpecialize
             // 
@@ -499,6 +504,7 @@
             this.cmbStudentFaculty.Name = "cmbStudentFaculty";
             this.cmbStudentFaculty.Size = new System.Drawing.Size(225, 21);
             this.cmbStudentFaculty.TabIndex = 5;
+            this.cmbStudentFaculty.SelectedValueChanged += new System.EventHandler(this.cmbStudentFaculty_SelectedValueChanged);
             // 
             // dateTimePickerStudent
             // 
@@ -795,48 +801,48 @@
             this.label32.Text = "Желает ли студент:";
             this.label32.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // checkBox1
+            // ckbContiniueStuding
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.tableLayoutPanel.SetColumnSpan(this.checkBox1, 2);
-            this.checkBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox1.Location = new System.Drawing.Point(3, 1180);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(462, 17);
-            this.checkBox1.TabIndex = 31;
-            this.checkBox1.Text = "- продолжить обучение в аспирантуре КубГТУ";
-            this.checkBox1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.ckbContiniueStuding.AutoSize = true;
+            this.ckbContiniueStuding.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tableLayoutPanel.SetColumnSpan(this.ckbContiniueStuding, 2);
+            this.ckbContiniueStuding.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbContiniueStuding.Location = new System.Drawing.Point(3, 1180);
+            this.ckbContiniueStuding.Name = "ckbContiniueStuding";
+            this.ckbContiniueStuding.Size = new System.Drawing.Size(462, 17);
+            this.ckbContiniueStuding.TabIndex = 31;
+            this.ckbContiniueStuding.Text = "- продолжить обучение в аспирантуре КубГТУ";
+            this.ckbContiniueStuding.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckbContiniueStuding.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // ckbWorkInScience
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.tableLayoutPanel.SetColumnSpan(this.checkBox2, 2);
-            this.checkBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox2.Location = new System.Drawing.Point(3, 1203);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(462, 17);
-            this.checkBox2.TabIndex = 32;
-            this.checkBox2.Text = "работать в научно-образовательной сфере";
-            this.checkBox2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.ckbWorkInScience.AutoSize = true;
+            this.ckbWorkInScience.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tableLayoutPanel.SetColumnSpan(this.ckbWorkInScience, 2);
+            this.ckbWorkInScience.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbWorkInScience.Location = new System.Drawing.Point(3, 1203);
+            this.ckbWorkInScience.Name = "ckbWorkInScience";
+            this.ckbWorkInScience.Size = new System.Drawing.Size(462, 17);
+            this.ckbWorkInScience.TabIndex = 32;
+            this.ckbWorkInScience.Text = "работать в научно-образовательной сфере";
+            this.ckbWorkInScience.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckbWorkInScience.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // ckbWorkInDivision
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.tableLayoutPanel.SetColumnSpan(this.checkBox3, 2);
-            this.checkBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.checkBox3.Location = new System.Drawing.Point(3, 1226);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(462, 17);
-            this.checkBox3.TabIndex = 33;
-            this.checkBox3.Text = "Планирует ли кафедра оставить студента на кафедре для научной и педагогической де" +
+            this.ckbWorkInDivision.AutoSize = true;
+            this.ckbWorkInDivision.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.tableLayoutPanel.SetColumnSpan(this.ckbWorkInDivision, 2);
+            this.ckbWorkInDivision.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ckbWorkInDivision.Location = new System.Drawing.Point(3, 1226);
+            this.ckbWorkInDivision.Name = "ckbWorkInDivision";
+            this.ckbWorkInDivision.Size = new System.Drawing.Size(462, 17);
+            this.ckbWorkInDivision.TabIndex = 33;
+            this.ckbWorkInDivision.Text = "Планирует ли кафедра оставить студента на кафедре для научной и педагогической де" +
                 "ятельности и получения квалификации";
-            this.checkBox3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.ckbWorkInDivision.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.ckbWorkInDivision.UseVisualStyleBackColor = true;
             // 
             // label18
             // 
@@ -849,138 +855,138 @@
             this.label18.Text = "Домашний адрес студента";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // textBox1
+            // txtHomeAddress
             // 
-            this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox1.Location = new System.Drawing.Point(240, 343);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(225, 20);
-            this.textBox1.TabIndex = 13;
+            this.txtHomeAddress.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtHomeAddress.Location = new System.Drawing.Point(240, 343);
+            this.txtHomeAddress.Name = "txtHomeAddress";
+            this.txtHomeAddress.Size = new System.Drawing.Size(225, 20);
+            this.txtHomeAddress.TabIndex = 13;
             // 
-            // textBox2
+            // txtGPA
             // 
-            this.textBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox2.Location = new System.Drawing.Point(240, 369);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(225, 20);
-            this.textBox2.TabIndex = 14;
+            this.txtGPA.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtGPA.Location = new System.Drawing.Point(240, 369);
+            this.txtGPA.Name = "txtGPA";
+            this.txtGPA.Size = new System.Drawing.Size(225, 20);
+            this.txtGPA.TabIndex = 14;
             // 
-            // textBox3
+            // txtNIR_Years
             // 
-            this.textBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox3.Location = new System.Drawing.Point(240, 395);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(225, 20);
-            this.textBox3.TabIndex = 15;
+            this.txtNIR_Years.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtNIR_Years.Location = new System.Drawing.Point(240, 395);
+            this.txtNIR_Years.Name = "txtNIR_Years";
+            this.txtNIR_Years.Size = new System.Drawing.Size(225, 20);
+            this.txtNIR_Years.TabIndex = 15;
             // 
-            // textBox4
+            // txtScienceTheme
             // 
-            this.tableLayoutPanel.SetColumnSpan(this.textBox4, 3);
-            this.textBox4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox4.Location = new System.Drawing.Point(3, 434);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(698, 54);
-            this.textBox4.TabIndex = 16;
+            this.tableLayoutPanel.SetColumnSpan(this.txtScienceTheme, 3);
+            this.txtScienceTheme.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtScienceTheme.Location = new System.Drawing.Point(3, 434);
+            this.txtScienceTheme.Multiline = true;
+            this.txtScienceTheme.Name = "txtScienceTheme";
+            this.txtScienceTheme.Size = new System.Drawing.Size(698, 54);
+            this.txtScienceTheme.TabIndex = 16;
             // 
-            // textBox5
+            // txtScienceWorks
             // 
-            this.tableLayoutPanel.SetColumnSpan(this.textBox5, 2);
-            this.textBox5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox5.Location = new System.Drawing.Point(240, 574);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.tableLayoutPanel.SetRowSpan(this.textBox5, 2);
-            this.textBox5.Size = new System.Drawing.Size(461, 84);
-            this.textBox5.TabIndex = 19;
+            this.tableLayoutPanel.SetColumnSpan(this.txtScienceWorks, 2);
+            this.txtScienceWorks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtScienceWorks.Location = new System.Drawing.Point(240, 574);
+            this.txtScienceWorks.Multiline = true;
+            this.txtScienceWorks.Name = "txtScienceWorks";
+            this.tableLayoutPanel.SetRowSpan(this.txtScienceWorks, 2);
+            this.txtScienceWorks.Size = new System.Drawing.Size(461, 84);
+            this.txtScienceWorks.TabIndex = 19;
             // 
-            // textBox6
+            // txtPublicationsCount
             // 
-            this.textBox6.Location = new System.Drawing.Point(471, 664);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 20);
-            this.textBox6.TabIndex = 20;
+            this.txtPublicationsCount.Location = new System.Drawing.Point(471, 664);
+            this.txtPublicationsCount.Name = "txtPublicationsCount";
+            this.txtPublicationsCount.Size = new System.Drawing.Size(100, 20);
+            this.txtPublicationsCount.TabIndex = 20;
             // 
-            // textBox7
+            // txtArticlesCount
             // 
-            this.textBox7.Location = new System.Drawing.Point(471, 690);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(100, 20);
-            this.textBox7.TabIndex = 21;
+            this.txtArticlesCount.Location = new System.Drawing.Point(471, 690);
+            this.txtArticlesCount.Name = "txtArticlesCount";
+            this.txtArticlesCount.Size = new System.Drawing.Size(100, 20);
+            this.txtArticlesCount.TabIndex = 21;
             // 
-            // textBox8
+            // txtIntellictualAndIndustrialPropertyCount
             // 
-            this.textBox8.Location = new System.Drawing.Point(471, 716);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(100, 20);
-            this.textBox8.TabIndex = 22;
+            this.txtIntellictualAndIndustrialPropertyCount.Location = new System.Drawing.Point(471, 716);
+            this.txtIntellictualAndIndustrialPropertyCount.Name = "txtIntellictualAndIndustrialPropertyCount";
+            this.txtIntellictualAndIndustrialPropertyCount.Size = new System.Drawing.Size(100, 20);
+            this.txtIntellictualAndIndustrialPropertyCount.TabIndex = 22;
             // 
-            // textBox9
+            // txtPatentsCount
             // 
-            this.textBox9.Location = new System.Drawing.Point(471, 742);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(100, 20);
-            this.textBox9.TabIndex = 23;
+            this.txtPatentsCount.Location = new System.Drawing.Point(471, 742);
+            this.txtPatentsCount.Name = "txtPatentsCount";
+            this.txtPatentsCount.Size = new System.Drawing.Size(100, 20);
+            this.txtPatentsCount.TabIndex = 23;
             // 
-            // textBox10
+            // txtCertificateOnPCSoftCount
             // 
-            this.textBox10.Location = new System.Drawing.Point(471, 768);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(100, 20);
-            this.textBox10.TabIndex = 24;
+            this.txtCertificateOnPCSoftCount.Location = new System.Drawing.Point(471, 768);
+            this.txtCertificateOnPCSoftCount.Name = "txtCertificateOnPCSoftCount";
+            this.txtCertificateOnPCSoftCount.Size = new System.Drawing.Size(100, 20);
+            this.txtCertificateOnPCSoftCount.TabIndex = 24;
             // 
-            // textBox11
+            // txtPositiveSolutionOnInventionsCount
             // 
-            this.textBox11.Location = new System.Drawing.Point(471, 794);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(100, 20);
-            this.textBox11.TabIndex = 25;
+            this.txtPositiveSolutionOnInventionsCount.Location = new System.Drawing.Point(471, 794);
+            this.txtPositiveSolutionOnInventionsCount.Name = "txtPositiveSolutionOnInventionsCount";
+            this.txtPositiveSolutionOnInventionsCount.Size = new System.Drawing.Size(100, 20);
+            this.txtPositiveSolutionOnInventionsCount.TabIndex = 25;
             // 
-            // textBox12
+            // txtRequestsOnInventionsCount
             // 
-            this.textBox12.Location = new System.Drawing.Point(471, 820);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(100, 20);
-            this.textBox12.TabIndex = 26;
+            this.txtRequestsOnInventionsCount.Location = new System.Drawing.Point(471, 820);
+            this.txtRequestsOnInventionsCount.Name = "txtRequestsOnInventionsCount";
+            this.txtRequestsOnInventionsCount.Size = new System.Drawing.Size(100, 20);
+            this.txtRequestsOnInventionsCount.TabIndex = 26;
             // 
-            // textBox13
+            // txtRequestsOnPcSoftCount
             // 
-            this.textBox13.Location = new System.Drawing.Point(471, 846);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(100, 20);
-            this.textBox13.TabIndex = 27;
+            this.txtRequestsOnPcSoftCount.Location = new System.Drawing.Point(471, 846);
+            this.txtRequestsOnPcSoftCount.Name = "txtRequestsOnPcSoftCount";
+            this.txtRequestsOnPcSoftCount.Size = new System.Drawing.Size(100, 20);
+            this.txtRequestsOnPcSoftCount.TabIndex = 27;
             // 
-            // textBox14
+            // txtImplementationInIndustry
             // 
-            this.tableLayoutPanel.SetColumnSpan(this.textBox14, 2);
-            this.textBox14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox14.Location = new System.Drawing.Point(240, 885);
-            this.textBox14.Multiline = true;
-            this.textBox14.Name = "textBox14";
-            this.tableLayoutPanel.SetRowSpan(this.textBox14, 2);
-            this.textBox14.Size = new System.Drawing.Size(461, 84);
-            this.textBox14.TabIndex = 28;
+            this.tableLayoutPanel.SetColumnSpan(this.txtImplementationInIndustry, 2);
+            this.txtImplementationInIndustry.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtImplementationInIndustry.Location = new System.Drawing.Point(240, 885);
+            this.txtImplementationInIndustry.Multiline = true;
+            this.txtImplementationInIndustry.Name = "txtImplementationInIndustry";
+            this.tableLayoutPanel.SetRowSpan(this.txtImplementationInIndustry, 2);
+            this.txtImplementationInIndustry.Size = new System.Drawing.Size(461, 84);
+            this.txtImplementationInIndustry.TabIndex = 28;
             // 
-            // textBox15
+            // txtImplementationInStudy
             // 
-            this.tableLayoutPanel.SetColumnSpan(this.textBox15, 2);
-            this.textBox15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox15.Location = new System.Drawing.Point(240, 975);
-            this.textBox15.Multiline = true;
-            this.textBox15.Name = "textBox15";
-            this.tableLayoutPanel.SetRowSpan(this.textBox15, 2);
-            this.textBox15.Size = new System.Drawing.Size(461, 84);
-            this.textBox15.TabIndex = 29;
+            this.tableLayoutPanel.SetColumnSpan(this.txtImplementationInStudy, 2);
+            this.txtImplementationInStudy.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtImplementationInStudy.Location = new System.Drawing.Point(240, 975);
+            this.txtImplementationInStudy.Multiline = true;
+            this.txtImplementationInStudy.Name = "txtImplementationInStudy";
+            this.tableLayoutPanel.SetRowSpan(this.txtImplementationInStudy, 2);
+            this.txtImplementationInStudy.Size = new System.Drawing.Size(461, 84);
+            this.txtImplementationInStudy.TabIndex = 29;
             // 
-            // textBox16
+            // txtAwardsOnScientificWorks
             // 
-            this.tableLayoutPanel.SetColumnSpan(this.textBox16, 3);
-            this.textBox16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBox16.Location = new System.Drawing.Point(3, 1095);
-            this.textBox16.Multiline = true;
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(698, 66);
-            this.textBox16.TabIndex = 30;
+            this.tableLayoutPanel.SetColumnSpan(this.txtAwardsOnScientificWorks, 3);
+            this.txtAwardsOnScientificWorks.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtAwardsOnScientificWorks.Location = new System.Drawing.Point(3, 1095);
+            this.txtAwardsOnScientificWorks.Multiline = true;
+            this.txtAwardsOnScientificWorks.Name = "txtAwardsOnScientificWorks";
+            this.txtAwardsOnScientificWorks.Size = new System.Drawing.Size(698, 66);
+            this.txtAwardsOnScientificWorks.TabIndex = 30;
             // 
             // btnAddStudent
             // 
@@ -993,23 +999,26 @@
             this.btnAddStudent.UseVisualStyleBackColor = true;
             this.btnAddStudent.Click += new System.EventHandler(this.btnAddStudent_Click);
             // 
-            // comboBox1
+            // cmbMentorDivision
             // 
-            this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(240, 507);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(225, 21);
-            this.comboBox1.TabIndex = 17;
+            this.cmbMentorDivision.BackColor = System.Drawing.Color.Red;
+            this.cmbMentorDivision.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbMentorDivision.FormattingEnabled = true;
+            this.cmbMentorDivision.Location = new System.Drawing.Point(240, 507);
+            this.cmbMentorDivision.Name = "cmbMentorDivision";
+            this.cmbMentorDivision.Size = new System.Drawing.Size(225, 21);
+            this.cmbMentorDivision.TabIndex = 17;
+            this.cmbMentorDivision.SelectedValueChanged += new System.EventHandler(this.cmbMentorDivision_SelectedValueChanged);
             // 
-            // comboBox2
+            // cmbMentorFIO
             // 
-            this.comboBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(240, 534);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(225, 21);
-            this.comboBox2.TabIndex = 18;
+            this.cmbMentorFIO.BackColor = System.Drawing.Color.Red;
+            this.cmbMentorFIO.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cmbMentorFIO.FormattingEnabled = true;
+            this.cmbMentorFIO.Location = new System.Drawing.Point(240, 534);
+            this.cmbMentorFIO.Name = "cmbMentorFIO";
+            this.cmbMentorFIO.Size = new System.Drawing.Size(225, 21);
+            this.cmbMentorFIO.TabIndex = 18;
             // 
             // tabControlStudent
             // 
@@ -1093,29 +1102,29 @@
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.CheckBox checkBox1;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox ckbContiniueStuding;
+        private System.Windows.Forms.CheckBox ckbWorkInScience;
+        private System.Windows.Forms.CheckBox ckbWorkInDivision;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
-        private System.Windows.Forms.TextBox textBox13;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox txtHomeAddress;
+        private System.Windows.Forms.TextBox txtGPA;
+        private System.Windows.Forms.TextBox txtNIR_Years;
+        private System.Windows.Forms.TextBox txtScienceTheme;
+        private System.Windows.Forms.TextBox txtScienceWorks;
+        private System.Windows.Forms.TextBox txtPublicationsCount;
+        private System.Windows.Forms.TextBox txtArticlesCount;
+        private System.Windows.Forms.TextBox txtIntellictualAndIndustrialPropertyCount;
+        private System.Windows.Forms.TextBox txtPatentsCount;
+        private System.Windows.Forms.TextBox txtCertificateOnPCSoftCount;
+        private System.Windows.Forms.TextBox txtPositiveSolutionOnInventionsCount;
+        private System.Windows.Forms.TextBox txtRequestsOnInventionsCount;
+        private System.Windows.Forms.TextBox txtRequestsOnPcSoftCount;
+        private System.Windows.Forms.TextBox txtImplementationInIndustry;
+        private System.Windows.Forms.TextBox txtImplementationInStudy;
+        private System.Windows.Forms.TextBox txtAwardsOnScientificWorks;
         private System.Windows.Forms.Button btnAddStudent;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cmbMentorDivision;
+        private System.Windows.Forms.ComboBox cmbMentorFIO;
         private System.Windows.Forms.TabControl tabControlStudent;
 
     }

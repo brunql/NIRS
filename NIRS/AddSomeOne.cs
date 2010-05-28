@@ -101,9 +101,6 @@ namespace NIRS
                 // здесь можно немного пошалить ;)
                 cmbMentorDivision.DataSource = bindDivision;
                 cmbMentorDivision.DisplayMember = "name";
-
-                //cmbNIR_Mentor.DataSource = bindMentor;
-                //cmbNIR_Mentor.DisplayMember = "secondname";
             }
             catch (Exception ex)
             {

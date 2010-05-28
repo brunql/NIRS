@@ -92,7 +92,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.tabPageStudent = new System.Windows.Forms.TabPage();
             this.tabControlAddSomeOne.SuspendLayout();
             this.tabPageFaculty.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -121,7 +120,6 @@
             this.tabControlAddSomeOne.Controls.Add(this.tabPageSpec);
             this.tabControlAddSomeOne.Controls.Add(this.tabPageGroup);
             this.tabControlAddSomeOne.Controls.Add(this.tabPageMentor);
-            this.tabControlAddSomeOne.Controls.Add(this.tabPageStudent);
             this.tabControlAddSomeOne.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControlAddSomeOne.Location = new System.Drawing.Point(0, 0);
             this.tabControlAddSomeOne.Name = "tabControlAddSomeOne";
@@ -906,16 +904,6 @@
             this.label6.Text = "Учёная степень";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
-            // tabPageStudent
-            // 
-            this.tabPageStudent.Location = new System.Drawing.Point(4, 22);
-            this.tabPageStudent.Name = "tabPageStudent";
-            this.tabPageStudent.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageStudent.Size = new System.Drawing.Size(721, 468);
-            this.tabPageStudent.TabIndex = 0;
-            this.tabPageStudent.Text = "Студент";
-            this.tabPageStudent.UseVisualStyleBackColor = true;
-            // 
             // AddSomeOne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -956,7 +944,6 @@
         #endregion
 
         private System.Windows.Forms.TabControl tabControlAddSomeOne;
-        private System.Windows.Forms.TabPage tabPageStudent;
         private System.Windows.Forms.TabPage tabPageMentor;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtMentorFathername;

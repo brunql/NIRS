@@ -1922,17 +1922,9 @@ namespace NIRS_Viewer {
             
             private global::System.Data.DataColumn columnpatents_count;
             
-            private global::System.Data.DataColumn columnsertificate_on_pc_soft_count;
-            
             private global::System.Data.DataColumn columnpositive_solutions_on_inventions_and_utility_models_count;
             
             private global::System.Data.DataColumn columnrequests_on_inventions_and_untity_models_count;
-            
-            private global::System.Data.DataColumn columnpc_soft_count;
-            
-            private global::System.Data.DataColumn columnimplementation_in_industry;
-            
-            private global::System.Data.DataColumn columnimplementation_in_study;
             
             private global::System.Data.DataColumn columnawards_for_scientific_work;
             
@@ -1941,6 +1933,14 @@ namespace NIRS_Viewer {
             private global::System.Data.DataColumn columnwould_u_like_to_work_in_science_education_field;
             
             private global::System.Data.DataColumn columndivision_wants_to_leave_student_in_division;
+            
+            private global::System.Data.DataColumn columncertificate_on_pc_soft_count;
+            
+            private global::System.Data.DataColumn columnrequests_pc_soft_count;
+            
+            private global::System.Data.DataColumn columnimplementation_in_industry_txt;
+            
+            private global::System.Data.DataColumn columnimplementation_in_study_txt;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public studentDataTable() {
@@ -2106,13 +2106,6 @@ namespace NIRS_Viewer {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn sertificate_on_pc_soft_countColumn {
-                get {
-                    return this.columnsertificate_on_pc_soft_count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public global::System.Data.DataColumn positive_solutions_on_inventions_and_utility_models_countColumn {
                 get {
                     return this.columnpositive_solutions_on_inventions_and_utility_models_count;
@@ -2123,27 +2116,6 @@ namespace NIRS_Viewer {
             public global::System.Data.DataColumn requests_on_inventions_and_untity_models_countColumn {
                 get {
                     return this.columnrequests_on_inventions_and_untity_models_count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn pc_soft_countColumn {
-                get {
-                    return this.columnpc_soft_count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn implementation_in_industryColumn {
-                get {
-                    return this.columnimplementation_in_industry;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public global::System.Data.DataColumn implementation_in_studyColumn {
-                get {
-                    return this.columnimplementation_in_study;
                 }
             }
             
@@ -2172,6 +2144,34 @@ namespace NIRS_Viewer {
             public global::System.Data.DataColumn division_wants_to_leave_student_in_divisionColumn {
                 get {
                     return this.columndivision_wants_to_leave_student_in_division;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn certificate_on_pc_soft_countColumn {
+                get {
+                    return this.columncertificate_on_pc_soft_count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn requests_pc_soft_countColumn {
+                get {
+                    return this.columnrequests_pc_soft_count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn implementation_in_industry_txtColumn {
+                get {
+                    return this.columnimplementation_in_industry_txt;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public global::System.Data.DataColumn implementation_in_study_txtColumn {
+                get {
+                    return this.columnimplementation_in_study_txt;
                 }
             }
             
@@ -2223,16 +2223,16 @@ namespace NIRS_Viewer {
                         uint articles_count, 
                         uint intelectual_and_industryal_property_count, 
                         uint patents_count, 
-                        uint sertificate_on_pc_soft_count, 
                         uint positive_solutions_on_inventions_and_utility_models_count, 
                         uint requests_on_inventions_and_untity_models_count, 
-                        uint pc_soft_count, 
-                        uint implementation_in_industry, 
-                        uint implementation_in_study, 
                         string awards_for_scientific_work, 
                         bool would_u_like_to_study_in_graduate_school, 
                         bool would_u_like_to_work_in_science_education_field, 
-                        bool division_wants_to_leave_student_in_division) {
+                        bool division_wants_to_leave_student_in_division, 
+                        uint certificate_on_pc_soft_count, 
+                        uint requests_pc_soft_count, 
+                        string implementation_in_industry_txt, 
+                        string implementation_in_study_txt) {
                 studentRow rowstudentRow = ((studentRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2254,16 +2254,16 @@ namespace NIRS_Viewer {
                         articles_count,
                         intelectual_and_industryal_property_count,
                         patents_count,
-                        sertificate_on_pc_soft_count,
                         positive_solutions_on_inventions_and_utility_models_count,
                         requests_on_inventions_and_untity_models_count,
-                        pc_soft_count,
-                        implementation_in_industry,
-                        implementation_in_study,
                         awards_for_scientific_work,
                         would_u_like_to_study_in_graduate_school,
                         would_u_like_to_work_in_science_education_field,
-                        division_wants_to_leave_student_in_division};
+                        division_wants_to_leave_student_in_division,
+                        certificate_on_pc_soft_count,
+                        requests_pc_soft_count,
+                        implementation_in_industry_txt,
+                        implementation_in_study_txt};
                 rowstudentRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowstudentRow);
                 return rowstudentRow;
@@ -2308,16 +2308,16 @@ namespace NIRS_Viewer {
                 this.columnarticles_count = base.Columns["articles_count"];
                 this.columnintelectual_and_industryal_property_count = base.Columns["intelectual_and_industryal_property_count"];
                 this.columnpatents_count = base.Columns["patents_count"];
-                this.columnsertificate_on_pc_soft_count = base.Columns["sertificate_on_pc_soft_count"];
                 this.columnpositive_solutions_on_inventions_and_utility_models_count = base.Columns["positive_solutions_on_inventions_and_utility_models_count"];
                 this.columnrequests_on_inventions_and_untity_models_count = base.Columns["requests_on_inventions_and_untity_models_count"];
-                this.columnpc_soft_count = base.Columns["pc_soft_count"];
-                this.columnimplementation_in_industry = base.Columns["implementation_in_industry"];
-                this.columnimplementation_in_study = base.Columns["implementation_in_study"];
                 this.columnawards_for_scientific_work = base.Columns["awards_for_scientific_work"];
                 this.columnwould_u_like_to_study_in_graduate_school = base.Columns["would_u_like_to_study_in_graduate_school"];
                 this.columnwould_u_like_to_work_in_science_education_field = base.Columns["would_u_like_to_work_in_science_education_field"];
                 this.columndivision_wants_to_leave_student_in_division = base.Columns["division_wants_to_leave_student_in_division"];
+                this.columncertificate_on_pc_soft_count = base.Columns["certificate_on_pc_soft_count"];
+                this.columnrequests_pc_soft_count = base.Columns["requests_pc_soft_count"];
+                this.columnimplementation_in_industry_txt = base.Columns["implementation_in_industry_txt"];
+                this.columnimplementation_in_study_txt = base.Columns["implementation_in_study_txt"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2360,18 +2360,10 @@ namespace NIRS_Viewer {
                 base.Columns.Add(this.columnintelectual_and_industryal_property_count);
                 this.columnpatents_count = new global::System.Data.DataColumn("patents_count", typeof(uint), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpatents_count);
-                this.columnsertificate_on_pc_soft_count = new global::System.Data.DataColumn("sertificate_on_pc_soft_count", typeof(uint), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnsertificate_on_pc_soft_count);
                 this.columnpositive_solutions_on_inventions_and_utility_models_count = new global::System.Data.DataColumn("positive_solutions_on_inventions_and_utility_models_count", typeof(uint), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnpositive_solutions_on_inventions_and_utility_models_count);
                 this.columnrequests_on_inventions_and_untity_models_count = new global::System.Data.DataColumn("requests_on_inventions_and_untity_models_count", typeof(uint), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnrequests_on_inventions_and_untity_models_count);
-                this.columnpc_soft_count = new global::System.Data.DataColumn("pc_soft_count", typeof(uint), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnpc_soft_count);
-                this.columnimplementation_in_industry = new global::System.Data.DataColumn("implementation_in_industry", typeof(uint), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnimplementation_in_industry);
-                this.columnimplementation_in_study = new global::System.Data.DataColumn("implementation_in_study", typeof(uint), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnimplementation_in_study);
                 this.columnawards_for_scientific_work = new global::System.Data.DataColumn("awards_for_scientific_work", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnawards_for_scientific_work);
                 this.columnwould_u_like_to_study_in_graduate_school = new global::System.Data.DataColumn("would_u_like_to_study_in_graduate_school", typeof(bool), null, global::System.Data.MappingType.Element);
@@ -2380,6 +2372,14 @@ namespace NIRS_Viewer {
                 base.Columns.Add(this.columnwould_u_like_to_work_in_science_education_field);
                 this.columndivision_wants_to_leave_student_in_division = new global::System.Data.DataColumn("division_wants_to_leave_student_in_division", typeof(bool), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columndivision_wants_to_leave_student_in_division);
+                this.columncertificate_on_pc_soft_count = new global::System.Data.DataColumn("certificate_on_pc_soft_count", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columncertificate_on_pc_soft_count);
+                this.columnrequests_pc_soft_count = new global::System.Data.DataColumn("requests_pc_soft_count", typeof(uint), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnrequests_pc_soft_count);
+                this.columnimplementation_in_industry_txt = new global::System.Data.DataColumn("implementation_in_industry_txt", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimplementation_in_industry_txt);
+                this.columnimplementation_in_study_txt = new global::System.Data.DataColumn("implementation_in_study_txt", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnimplementation_in_study_txt);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnid}, true));
                 this.columnid.AutoIncrement = true;
@@ -2408,6 +2408,8 @@ namespace NIRS_Viewer {
                 this.columnaddress_home.MaxLength = 45;
                 this.columnscince_works.MaxLength = 21845;
                 this.columnawards_for_scientific_work.MaxLength = 21845;
+                this.columnimplementation_in_industry_txt.MaxLength = 21845;
+                this.columnimplementation_in_study_txt.MaxLength = 21845;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3380,22 +3382,6 @@ namespace NIRS_Viewer {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public uint sertificate_on_pc_soft_count {
-                get {
-                    try {
-                        return ((uint)(this[this.tablestudent.sertificate_on_pc_soft_countColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'sertificate_on_pc_soft_count\' in table \'student\' is DBNull." +
-                                "", e);
-                    }
-                }
-                set {
-                    this[this.tablestudent.sertificate_on_pc_soft_countColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public uint positive_solutions_on_inventions_and_utility_models_count {
                 get {
                     try {
@@ -3424,51 +3410,6 @@ namespace NIRS_Viewer {
                 }
                 set {
                     this[this.tablestudent.requests_on_inventions_and_untity_models_countColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public uint pc_soft_count {
-                get {
-                    try {
-                        return ((uint)(this[this.tablestudent.pc_soft_countColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'pc_soft_count\' in table \'student\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablestudent.pc_soft_countColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public uint implementation_in_industry {
-                get {
-                    try {
-                        return ((uint)(this[this.tablestudent.implementation_in_industryColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'implementation_in_industry\' in table \'student\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablestudent.implementation_in_industryColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public uint implementation_in_study {
-                get {
-                    try {
-                        return ((uint)(this[this.tablestudent.implementation_in_studyColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'implementation_in_study\' in table \'student\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tablestudent.implementation_in_studyColumn] = value;
                 }
             }
             
@@ -3532,6 +3473,68 @@ namespace NIRS_Viewer {
                 }
                 set {
                     this[this.tablestudent.division_wants_to_leave_student_in_divisionColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public uint certificate_on_pc_soft_count {
+                get {
+                    try {
+                        return ((uint)(this[this.tablestudent.certificate_on_pc_soft_countColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'certificate_on_pc_soft_count\' in table \'student\' is DBNull." +
+                                "", e);
+                    }
+                }
+                set {
+                    this[this.tablestudent.certificate_on_pc_soft_countColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public uint requests_pc_soft_count {
+                get {
+                    try {
+                        return ((uint)(this[this.tablestudent.requests_pc_soft_countColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'requests_pc_soft_count\' in table \'student\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablestudent.requests_pc_soft_countColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string implementation_in_industry_txt {
+                get {
+                    try {
+                        return ((string)(this[this.tablestudent.implementation_in_industry_txtColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'implementation_in_industry_txt\' in table \'student\' is DBNul" +
+                                "l.", e);
+                    }
+                }
+                set {
+                    this[this.tablestudent.implementation_in_industry_txtColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public string implementation_in_study_txt {
+                get {
+                    try {
+                        return ((string)(this[this.tablestudent.implementation_in_study_txtColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'implementation_in_study_txt\' in table \'student\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tablestudent.implementation_in_study_txtColumn] = value;
                 }
             }
             
@@ -3626,16 +3629,6 @@ namespace NIRS_Viewer {
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool Issertificate_on_pc_soft_countNull() {
-                return this.IsNull(this.tablestudent.sertificate_on_pc_soft_countColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Setsertificate_on_pc_soft_countNull() {
-                this[this.tablestudent.sertificate_on_pc_soft_countColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public bool Ispositive_solutions_on_inventions_and_utility_models_countNull() {
                 return this.IsNull(this.tablestudent.positive_solutions_on_inventions_and_utility_models_countColumn);
             }
@@ -3653,36 +3646,6 @@ namespace NIRS_Viewer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void Setrequests_on_inventions_and_untity_models_countNull() {
                 this[this.tablestudent.requests_on_inventions_and_untity_models_countColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool Ispc_soft_countNull() {
-                return this.IsNull(this.tablestudent.pc_soft_countColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Setpc_soft_countNull() {
-                this[this.tablestudent.pc_soft_countColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool Isimplementation_in_industryNull() {
-                return this.IsNull(this.tablestudent.implementation_in_industryColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Setimplementation_in_industryNull() {
-                this[this.tablestudent.implementation_in_industryColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public bool Isimplementation_in_studyNull() {
-                return this.IsNull(this.tablestudent.implementation_in_studyColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            public void Setimplementation_in_studyNull() {
-                this[this.tablestudent.implementation_in_studyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3723,6 +3686,46 @@ namespace NIRS_Viewer {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             public void Setdivision_wants_to_leave_student_in_divisionNull() {
                 this[this.tablestudent.division_wants_to_leave_student_in_divisionColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Iscertificate_on_pc_soft_countNull() {
+                return this.IsNull(this.tablestudent.certificate_on_pc_soft_countColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setcertificate_on_pc_soft_countNull() {
+                this[this.tablestudent.certificate_on_pc_soft_countColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isrequests_pc_soft_countNull() {
+                return this.IsNull(this.tablestudent.requests_pc_soft_countColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setrequests_pc_soft_countNull() {
+                this[this.tablestudent.requests_pc_soft_countColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isimplementation_in_industry_txtNull() {
+                return this.IsNull(this.tablestudent.implementation_in_industry_txtColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setimplementation_in_industry_txtNull() {
+                this[this.tablestudent.implementation_in_industry_txtColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public bool Isimplementation_in_study_txtNull() {
+                return this.IsNull(this.tablestudent.implementation_in_study_txtColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            public void Setimplementation_in_study_txtNull() {
+                this[this.tablestudent.implementation_in_study_txtColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -6402,16 +6405,16 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             tableMapping.ColumnMappings.Add("articles_count", "articles_count");
             tableMapping.ColumnMappings.Add("intelectual_and_industryal_property_count", "intelectual_and_industryal_property_count");
             tableMapping.ColumnMappings.Add("patents_count", "patents_count");
-            tableMapping.ColumnMappings.Add("sertificate_on_pc_soft_count", "sertificate_on_pc_soft_count");
             tableMapping.ColumnMappings.Add("positive_solutions_on_inventions_and_utility_models_count", "positive_solutions_on_inventions_and_utility_models_count");
             tableMapping.ColumnMappings.Add("requests_on_inventions_and_untity_models_count", "requests_on_inventions_and_untity_models_count");
-            tableMapping.ColumnMappings.Add("pc_soft_count", "pc_soft_count");
-            tableMapping.ColumnMappings.Add("implementation_in_industry", "implementation_in_industry");
-            tableMapping.ColumnMappings.Add("implementation_in_study", "implementation_in_study");
             tableMapping.ColumnMappings.Add("awards_for_scientific_work", "awards_for_scientific_work");
             tableMapping.ColumnMappings.Add("would_u_like_to_study_in_graduate_school", "would_u_like_to_study_in_graduate_school");
             tableMapping.ColumnMappings.Add("would_u_like_to_work_in_science_education_field", "would_u_like_to_work_in_science_education_field");
             tableMapping.ColumnMappings.Add("division_wants_to_leave_student_in_division", "division_wants_to_leave_student_in_division");
+            tableMapping.ColumnMappings.Add("certificate_on_pc_soft_count", "certificate_on_pc_soft_count");
+            tableMapping.ColumnMappings.Add("requests_pc_soft_count", "requests_pc_soft_count");
+            tableMapping.ColumnMappings.Add("implementation_in_industry_txt", "implementation_in_industry_txt");
+            tableMapping.ColumnMappings.Add("implementation_in_study_txt", "implementation_in_study_txt");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
@@ -6428,34 +6431,30 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
                 ") AND ((@IsNull_division_wants_to_leave_student_in_division = 1 AND `division_wa" +
                 "nts_to_leave_student_in_division` IS NULL) OR (`division_wants_to_leave_student_" +
                 "in_division` = @Original_division_wants_to_leave_student_in_division)) AND ((@Is" +
-                "Null_gpa = 1 AND `gpa` IS NULL) OR (`gpa` = @Original_gpa)) AND ((@IsNull_implem" +
-                "entation_in_industry = 1 AND `implementation_in_industry` IS NULL) OR (`implemen" +
-                "tation_in_industry` = @Original_implementation_in_industry)) AND ((@IsNull_imple" +
-                "mentation_in_study = 1 AND `implementation_in_study` IS NULL) OR (`implementatio" +
-                "n_in_study` = @Original_implementation_in_study)) AND ((@IsNull_intelectual_and_" +
-                "industryal_property_count = 1 AND `intelectual_and_industryal_property_count` IS" +
-                " NULL) OR (`intelectual_and_industryal_property_count` = @Original_intelectual_a" +
-                "nd_industryal_property_count)) AND ((@IsNull_nir_years = 1 AND `nir_years` IS NU" +
-                "LL) OR (`nir_years` = @Original_nir_years)) AND ((@IsNull_patents_count = 1 AND " +
-                "`patents_count` IS NULL) OR (`patents_count` = @Original_patents_count)) AND ((@" +
-                "IsNull_pc_soft_count = 1 AND `pc_soft_count` IS NULL) OR (`pc_soft_count` = @Ori" +
-                "ginal_pc_soft_count)) AND ((@IsNull_positive_solutions_on_inventions_and_utility" +
-                "_models_count = 1 AND `positive_solutions_on_inventions_and_utility_models_count" +
-                "` IS NULL) OR (`positive_solutions_on_inventions_and_utility_models_count` = @Or" +
-                "iginal_positive_solutions_on_inventions_and_utility_models_count)) AND ((@IsNull" +
-                "_publications_count = 1 AND `publications_count` IS NULL) OR (`publications_coun" +
-                "t` = @Original_publications_count)) AND ((@IsNull_requests_on_inventions_and_unt" +
-                "ity_models_count = 1 AND `requests_on_inventions_and_untity_models_count` IS NUL" +
-                "L) OR (`requests_on_inventions_and_untity_models_count` = @Original_requests_on_" +
-                "inventions_and_untity_models_count)) AND ((@IsNull_sertificate_on_pc_soft_count " +
-                "= 1 AND `sertificate_on_pc_soft_count` IS NULL) OR (`sertificate_on_pc_soft_coun" +
-                "t` = @Original_sertificate_on_pc_soft_count)) AND ((@IsNull_would_u_like_to_stud" +
-                "y_in_graduate_school = 1 AND `would_u_like_to_study_in_graduate_school` IS NULL)" +
-                " OR (`would_u_like_to_study_in_graduate_school` = @Original_would_u_like_to_stud" +
-                "y_in_graduate_school)) AND ((@IsNull_would_u_like_to_work_in_science_education_f" +
-                "ield = 1 AND `would_u_like_to_work_in_science_education_field` IS NULL) OR (`wou" +
-                "ld_u_like_to_work_in_science_education_field` = @Original_would_u_like_to_work_i" +
-                "n_science_education_field)))";
+                "Null_gpa = 1 AND `gpa` IS NULL) OR (`gpa` = @Original_gpa)) AND ((@IsNull_intele" +
+                "ctual_and_industryal_property_count = 1 AND `intelectual_and_industryal_property" +
+                "_count` IS NULL) OR (`intelectual_and_industryal_property_count` = @Original_int" +
+                "electual_and_industryal_property_count)) AND ((@IsNull_nir_years = 1 AND `nir_ye" +
+                "ars` IS NULL) OR (`nir_years` = @Original_nir_years)) AND ((@IsNull_patents_coun" +
+                "t = 1 AND `patents_count` IS NULL) OR (`patents_count` = @Original_patents_count" +
+                ")) AND ((@IsNull_positive_solutions_on_inventions_and_utility_models_count = 1 A" +
+                "ND `positive_solutions_on_inventions_and_utility_models_count` IS NULL) OR (`pos" +
+                "itive_solutions_on_inventions_and_utility_models_count` = @Original_positive_sol" +
+                "utions_on_inventions_and_utility_models_count)) AND ((@IsNull_publications_count" +
+                " = 1 AND `publications_count` IS NULL) OR (`publications_count` = @Original_publ" +
+                "ications_count)) AND ((@IsNull_requests_on_inventions_and_untity_models_count = " +
+                "1 AND `requests_on_inventions_and_untity_models_count` IS NULL) OR (`requests_on" +
+                "_inventions_and_untity_models_count` = @Original_requests_on_inventions_and_unti" +
+                "ty_models_count)) AND ((@IsNull_would_u_like_to_study_in_graduate_school = 1 AND" +
+                " `would_u_like_to_study_in_graduate_school` IS NULL) OR (`would_u_like_to_study_" +
+                "in_graduate_school` = @Original_would_u_like_to_study_in_graduate_school)) AND (" +
+                "(@IsNull_would_u_like_to_work_in_science_education_field = 1 AND `would_u_like_t" +
+                "o_work_in_science_education_field` IS NULL) OR (`would_u_like_to_work_in_science" +
+                "_education_field` = @Original_would_u_like_to_work_in_science_education_field)) " +
+                "AND ((@IsNull_certificate_on_pc_soft_count = 1 AND `certificate_on_pc_soft_count" +
+                "` IS NULL) OR (`certificate_on_pc_soft_count` = @Original_certificate_on_pc_soft" +
+                "_count)) AND ((@IsNull_requests_pc_soft_count = 1 AND `requests_pc_soft_count` I" +
+                "S NULL) OR (`requests_pc_soft_count` = @Original_requests_pc_soft_count)))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@Original_id";
@@ -6651,40 +6650,6 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@IsNull_implementation_in_industry";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "implementation_in_industry";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_implementation_in_industry";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "implementation_in_industry";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@IsNull_implementation_in_study";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "implementation_in_study";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_implementation_in_study";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "implementation_in_study";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@IsNull_intelectual_and_industryal_property_count";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
@@ -6733,23 +6698,6 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
             param.IsNullable = true;
             param.SourceColumn = "patents_count";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@IsNull_pc_soft_count";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "pc_soft_count";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_pc_soft_count";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "pc_soft_count";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -6804,23 +6752,6 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@IsNull_sertificate_on_pc_soft_count";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "sertificate_on_pc_soft_count";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_sertificate_on_pc_soft_count";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "sertificate_on_pc_soft_count";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.DeleteCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@IsNull_would_u_like_to_study_in_graduate_school";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
@@ -6854,9 +6785,43 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.SourceColumn = "would_u_like_to_work_in_science_education_field";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@IsNull_certificate_on_pc_soft_count";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "certificate_on_pc_soft_count";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Original_certificate_on_pc_soft_count";
+            param.DbType = global::System.Data.DbType.UInt32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
+            param.IsNullable = true;
+            param.SourceColumn = "certificate_on_pc_soft_count";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@IsNull_requests_pc_soft_count";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "requests_pc_soft_count";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.DeleteCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Original_requests_pc_soft_count";
+            param.DbType = global::System.Data.DbType.UInt32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
+            param.IsNullable = true;
+            param.SourceColumn = "requests_pc_soft_count";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.DeleteCommand.Parameters.Add(param);
             this._adapter.InsertCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO `nirs`.`student` (`name`, `surname`, `fathername`, `group_id`, `born`, `study`, `grant`, `email`, `phone`, `address_home`, `articles_count`, `awards_for_scientific_work`, `division_wants_to_leave_student_in_division`, `gpa`, `implementation_in_industry`, `implementation_in_study`, `intelectual_and_industryal_property_count`, `nir_years`, `patents_count`, `pc_soft_count`, `positive_solutions_on_inventions_and_utility_models_count`, `publications_count`, `requests_on_inventions_and_untity_models_count`, `scince_theme`, `scince_works`, `sertificate_on_pc_soft_count`, `would_u_like_to_study_in_graduate_school`, `would_u_like_to_work_in_science_education_field`) VALUES (@name, @surname, @fathername, @group_id, @born, @study, @grant, @email, @phone, @address_home, @articles_count, @awards_for_scientific_work, @division_wants_to_leave_student_in_division, @gpa, @implementation_in_industry, @implementation_in_study, @intelectual_and_industryal_property_count, @nir_years, @patents_count, @pc_soft_count, @positive_solutions_on_inventions_and_utility_models_count, @publications_count, @requests_on_inventions_and_untity_models_count, @scince_theme, @scince_works, @sertificate_on_pc_soft_count, @would_u_like_to_study_in_graduate_school, @would_u_like_to_work_in_science_education_field)";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO `nirs`.`student` (`name`, `surname`, `fathername`, `group_id`, `born`, `study`, `grant`, `email`, `phone`, `address_home`, `articles_count`, `awards_for_scientific_work`, `division_wants_to_leave_student_in_division`, `gpa`, `intelectual_and_industryal_property_count`, `nir_years`, `patents_count`, `positive_solutions_on_inventions_and_utility_models_count`, `publications_count`, `requests_on_inventions_and_untity_models_count`, `scince_theme`, `scince_works`, `would_u_like_to_study_in_graduate_school`, `would_u_like_to_work_in_science_education_field`, `certificate_on_pc_soft_count`, `requests_pc_soft_count`, `implementation_in_industry_txt`, `implementation_in_study_txt`) VALUES (@name, @surname, @fathername, @group_id, @born, @study, @grant, @email, @phone, @address_home, @articles_count, @awards_for_scientific_work, @division_wants_to_leave_student_in_division, @gpa, @intelectual_and_industryal_property_count, @nir_years, @patents_count, @positive_solutions_on_inventions_and_utility_models_count, @publications_count, @requests_on_inventions_and_untity_models_count, @scince_theme, @scince_works, @would_u_like_to_study_in_graduate_school, @would_u_like_to_work_in_science_education_field, @certificate_on_pc_soft_count, @requests_pc_soft_count, @implementation_in_industry_txt, @implementation_in_study_txt)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@name";
@@ -6956,20 +6921,6 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.SourceColumn = "gpa";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@implementation_in_industry";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "implementation_in_industry";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@implementation_in_study";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "implementation_in_study";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@intelectual_and_industryal_property_count";
             param.DbType = global::System.Data.DbType.UInt32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
@@ -6989,13 +6940,6 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
             param.IsNullable = true;
             param.SourceColumn = "patents_count";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@pc_soft_count";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "pc_soft_count";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@positive_solutions_on_inventions_and_utility_models_count";
@@ -7031,13 +6975,6 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.SourceColumn = "scince_works";
             this._adapter.InsertCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@sertificate_on_pc_soft_count";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "sertificate_on_pc_soft_count";
-            this._adapter.InsertCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@would_u_like_to_study_in_graduate_school";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
@@ -7051,6 +6988,32 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.IsNullable = true;
             param.SourceColumn = "would_u_like_to_work_in_science_education_field";
             this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@certificate_on_pc_soft_count";
+            param.DbType = global::System.Data.DbType.UInt32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
+            param.IsNullable = true;
+            param.SourceColumn = "certificate_on_pc_soft_count";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@requests_pc_soft_count";
+            param.DbType = global::System.Data.DbType.UInt32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
+            param.IsNullable = true;
+            param.SourceColumn = "requests_pc_soft_count";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@implementation_in_industry_txt";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "implementation_in_industry_txt";
+            this._adapter.InsertCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@implementation_in_study_txt";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "implementation_in_study_txt";
+            this._adapter.InsertCommand.Parameters.Add(param);
             this._adapter.UpdateCommand = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
             this._adapter.UpdateCommand.CommandText = "UPDATE `nirs`.`student` SET `name` = @name, `surname` = @surname, `fathername` = " +
@@ -7058,58 +7021,55 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
                 " @grant, `email` = @email, `phone` = @phone, `address_home` = @address_home, `ar" +
                 "ticles_count` = @articles_count, `awards_for_scientific_work` = @awards_for_scie" +
                 "ntific_work, `division_wants_to_leave_student_in_division` = @division_wants_to_" +
-                "leave_student_in_division, `gpa` = @gpa, `implementation_in_industry` = @impleme" +
-                "ntation_in_industry, `implementation_in_study` = @implementation_in_study, `inte" +
-                "lectual_and_industryal_property_count` = @intelectual_and_industryal_property_co" +
-                "unt, `nir_years` = @nir_years, `patents_count` = @patents_count, `pc_soft_count`" +
-                " = @pc_soft_count, `positive_solutions_on_inventions_and_utility_models_count` =" +
-                " @positive_solutions_on_inventions_and_utility_models_count, `publications_count" +
-                "` = @publications_count, `requests_on_inventions_and_untity_models_count` = @req" +
-                "uests_on_inventions_and_untity_models_count, `scince_theme` = @scince_theme, `sc" +
-                "ince_works` = @scince_works, `sertificate_on_pc_soft_count` = @sertificate_on_pc" +
-                "_soft_count, `would_u_like_to_study_in_graduate_school` = @would_u_like_to_study" +
-                "_in_graduate_school, `would_u_like_to_work_in_science_education_field` = @would_" +
-                "u_like_to_work_in_science_education_field WHERE ((`id` = @Original_id) AND (`nam" +
-                "e` = @Original_name) AND (`surname` = @Original_surname) AND (`fathername` = @Or" +
-                "iginal_fathername) AND (`group_id` = @Original_group_id) AND ((@IsNull_born = 1 " +
-                "AND `born` IS NULL) OR (`born` = @Original_born)) AND ((@IsNull_study = 1 AND `s" +
-                "tudy` IS NULL) OR (`study` = @Original_study)) AND ((@IsNull_grant = 1 AND `gran" +
-                "t` IS NULL) OR (`grant` = @Original_grant)) AND ((@IsNull_email = 1 AND `email` " +
-                "IS NULL) OR (`email` = @Original_email)) AND ((@IsNull_phone = 1 AND `phone` IS " +
-                "NULL) OR (`phone` = @Original_phone)) AND ((@IsNull_address_home = 1 AND `addres" +
-                "s_home` IS NULL) OR (`address_home` = @Original_address_home)) AND ((@IsNull_art" +
-                "icles_count = 1 AND `articles_count` IS NULL) OR (`articles_count` = @Original_a" +
-                "rticles_count)) AND ((@IsNull_division_wants_to_leave_student_in_division = 1 AN" +
-                "D `division_wants_to_leave_student_in_division` IS NULL) OR (`division_wants_to_" +
-                "leave_student_in_division` = @Original_division_wants_to_leave_student_in_divisi" +
-                "on)) AND ((@IsNull_gpa = 1 AND `gpa` IS NULL) OR (`gpa` = @Original_gpa)) AND ((" +
-                "@IsNull_implementation_in_industry = 1 AND `implementation_in_industry` IS NULL)" +
-                " OR (`implementation_in_industry` = @Original_implementation_in_industry)) AND (" +
-                "(@IsNull_implementation_in_study = 1 AND `implementation_in_study` IS NULL) OR (" +
-                "`implementation_in_study` = @Original_implementation_in_study)) AND ((@IsNull_in" +
-                "telectual_and_industryal_property_count = 1 AND `intelectual_and_industryal_prop" +
-                "erty_count` IS NULL) OR (`intelectual_and_industryal_property_count` = @Original" +
-                "_intelectual_and_industryal_property_count)) AND ((@IsNull_nir_years = 1 AND `ni" +
-                "r_years` IS NULL) OR (`nir_years` = @Original_nir_years)) AND ((@IsNull_patents_" +
-                "count = 1 AND `patents_count` IS NULL) OR (`patents_count` = @Original_patents_c" +
-                "ount)) AND ((@IsNull_pc_soft_count = 1 AND `pc_soft_count` IS NULL) OR (`pc_soft" +
-                "_count` = @Original_pc_soft_count)) AND ((@IsNull_positive_solutions_on_inventio" +
-                "ns_and_utility_models_count = 1 AND `positive_solutions_on_inventions_and_utilit" +
-                "y_models_count` IS NULL) OR (`positive_solutions_on_inventions_and_utility_model" +
-                "s_count` = @Original_positive_solutions_on_inventions_and_utility_models_count))" +
-                " AND ((@IsNull_publications_count = 1 AND `publications_count` IS NULL) OR (`pub" +
-                "lications_count` = @Original_publications_count)) AND ((@IsNull_requests_on_inve" +
-                "ntions_and_untity_models_count = 1 AND `requests_on_inventions_and_untity_models" +
-                "_count` IS NULL) OR (`requests_on_inventions_and_untity_models_count` = @Origina" +
-                "l_requests_on_inventions_and_untity_models_count)) AND ((@IsNull_sertificate_on_" +
-                "pc_soft_count = 1 AND `sertificate_on_pc_soft_count` IS NULL) OR (`sertificate_o" +
-                "n_pc_soft_count` = @Original_sertificate_on_pc_soft_count)) AND ((@IsNull_would_" +
-                "u_like_to_study_in_graduate_school = 1 AND `would_u_like_to_study_in_graduate_sc" +
-                "hool` IS NULL) OR (`would_u_like_to_study_in_graduate_school` = @Original_would_" +
-                "u_like_to_study_in_graduate_school)) AND ((@IsNull_would_u_like_to_work_in_scien" +
-                "ce_education_field = 1 AND `would_u_like_to_work_in_science_education_field` IS " +
-                "NULL) OR (`would_u_like_to_work_in_science_education_field` = @Original_would_u_" +
-                "like_to_work_in_science_education_field)))";
+                "leave_student_in_division, `gpa` = @gpa, `intelectual_and_industryal_property_co" +
+                "unt` = @intelectual_and_industryal_property_count, `nir_years` = @nir_years, `pa" +
+                "tents_count` = @patents_count, `positive_solutions_on_inventions_and_utility_mod" +
+                "els_count` = @positive_solutions_on_inventions_and_utility_models_count, `public" +
+                "ations_count` = @publications_count, `requests_on_inventions_and_untity_models_c" +
+                "ount` = @requests_on_inventions_and_untity_models_count, `scince_theme` = @scinc" +
+                "e_theme, `scince_works` = @scince_works, `would_u_like_to_study_in_graduate_scho" +
+                "ol` = @would_u_like_to_study_in_graduate_school, `would_u_like_to_work_in_scienc" +
+                "e_education_field` = @would_u_like_to_work_in_science_education_field, `certific" +
+                "ate_on_pc_soft_count` = @certificate_on_pc_soft_count, `requests_pc_soft_count` " +
+                "= @requests_pc_soft_count, `implementation_in_industry_txt` = @implementation_in" +
+                "_industry_txt, `implementation_in_study_txt` = @implementation_in_study_txt WHER" +
+                "E ((`id` = @Original_id) AND (`name` = @Original_name) AND (`surname` = @Origina" +
+                "l_surname) AND (`fathername` = @Original_fathername) AND (`group_id` = @Original" +
+                "_group_id) AND ((@IsNull_born = 1 AND `born` IS NULL) OR (`born` = @Original_bor" +
+                "n)) AND ((@IsNull_study = 1 AND `study` IS NULL) OR (`study` = @Original_study))" +
+                " AND ((@IsNull_grant = 1 AND `grant` IS NULL) OR (`grant` = @Original_grant)) AN" +
+                "D ((@IsNull_email = 1 AND `email` IS NULL) OR (`email` = @Original_email)) AND (" +
+                "(@IsNull_phone = 1 AND `phone` IS NULL) OR (`phone` = @Original_phone)) AND ((@I" +
+                "sNull_address_home = 1 AND `address_home` IS NULL) OR (`address_home` = @Origina" +
+                "l_address_home)) AND ((@IsNull_articles_count = 1 AND `articles_count` IS NULL) " +
+                "OR (`articles_count` = @Original_articles_count)) AND ((@IsNull_division_wants_t" +
+                "o_leave_student_in_division = 1 AND `division_wants_to_leave_student_in_division" +
+                "` IS NULL) OR (`division_wants_to_leave_student_in_division` = @Original_divisio" +
+                "n_wants_to_leave_student_in_division)) AND ((@IsNull_gpa = 1 AND `gpa` IS NULL) " +
+                "OR (`gpa` = @Original_gpa)) AND ((@IsNull_intelectual_and_industryal_property_co" +
+                "unt = 1 AND `intelectual_and_industryal_property_count` IS NULL) OR (`intelectua" +
+                "l_and_industryal_property_count` = @Original_intelectual_and_industryal_property" +
+                "_count)) AND ((@IsNull_nir_years = 1 AND `nir_years` IS NULL) OR (`nir_years` = " +
+                "@Original_nir_years)) AND ((@IsNull_patents_count = 1 AND `patents_count` IS NUL" +
+                "L) OR (`patents_count` = @Original_patents_count)) AND ((@IsNull_positive_soluti" +
+                "ons_on_inventions_and_utility_models_count = 1 AND `positive_solutions_on_invent" +
+                "ions_and_utility_models_count` IS NULL) OR (`positive_solutions_on_inventions_an" +
+                "d_utility_models_count` = @Original_positive_solutions_on_inventions_and_utility" +
+                "_models_count)) AND ((@IsNull_publications_count = 1 AND `publications_count` IS" +
+                " NULL) OR (`publications_count` = @Original_publications_count)) AND ((@IsNull_r" +
+                "equests_on_inventions_and_untity_models_count = 1 AND `requests_on_inventions_an" +
+                "d_untity_models_count` IS NULL) OR (`requests_on_inventions_and_untity_models_co" +
+                "unt` = @Original_requests_on_inventions_and_untity_models_count)) AND ((@IsNull_" +
+                "would_u_like_to_study_in_graduate_school = 1 AND `would_u_like_to_study_in_gradu" +
+                "ate_school` IS NULL) OR (`would_u_like_to_study_in_graduate_school` = @Original_" +
+                "would_u_like_to_study_in_graduate_school)) AND ((@IsNull_would_u_like_to_work_in" +
+                "_science_education_field = 1 AND `would_u_like_to_work_in_science_education_fiel" +
+                "d` IS NULL) OR (`would_u_like_to_work_in_science_education_field` = @Original_wo" +
+                "uld_u_like_to_work_in_science_education_field)) AND ((@IsNull_certificate_on_pc_" +
+                "soft_count = 1 AND `certificate_on_pc_soft_count` IS NULL) OR (`certificate_on_p" +
+                "c_soft_count` = @Original_certificate_on_pc_soft_count)) AND ((@IsNull_requests_" +
+                "pc_soft_count = 1 AND `requests_pc_soft_count` IS NULL) OR (`requests_pc_soft_co" +
+                "unt` = @Original_requests_pc_soft_count)))";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@name";
@@ -7209,20 +7169,6 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.SourceColumn = "gpa";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@implementation_in_industry";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "implementation_in_industry";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@implementation_in_study";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "implementation_in_study";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@intelectual_and_industryal_property_count";
             param.DbType = global::System.Data.DbType.UInt32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
@@ -7242,13 +7188,6 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
             param.IsNullable = true;
             param.SourceColumn = "patents_count";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@pc_soft_count";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "pc_soft_count";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@positive_solutions_on_inventions_and_utility_models_count";
@@ -7284,13 +7223,6 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.SourceColumn = "scince_works";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@sertificate_on_pc_soft_count";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "sertificate_on_pc_soft_count";
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@would_u_like_to_study_in_graduate_school";
             param.DbType = global::System.Data.DbType.SByte;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
@@ -7303,6 +7235,32 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Byte;
             param.IsNullable = true;
             param.SourceColumn = "would_u_like_to_work_in_science_education_field";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@certificate_on_pc_soft_count";
+            param.DbType = global::System.Data.DbType.UInt32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
+            param.IsNullable = true;
+            param.SourceColumn = "certificate_on_pc_soft_count";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@requests_pc_soft_count";
+            param.DbType = global::System.Data.DbType.UInt32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
+            param.IsNullable = true;
+            param.SourceColumn = "requests_pc_soft_count";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@implementation_in_industry_txt";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "implementation_in_industry_txt";
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@implementation_in_study_txt";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Text;
+            param.IsNullable = true;
+            param.SourceColumn = "implementation_in_study_txt";
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@Original_id";
@@ -7498,40 +7456,6 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@IsNull_implementation_in_industry";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "implementation_in_industry";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_implementation_in_industry";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "implementation_in_industry";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@IsNull_implementation_in_study";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "implementation_in_study";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_implementation_in_study";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "implementation_in_study";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@IsNull_intelectual_and_industryal_property_count";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
@@ -7580,23 +7504,6 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
             param.IsNullable = true;
             param.SourceColumn = "patents_count";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@IsNull_pc_soft_count";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "pc_soft_count";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_pc_soft_count";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "pc_soft_count";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
@@ -7651,23 +7558,6 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@IsNull_sertificate_on_pc_soft_count";
-            param.DbType = global::System.Data.DbType.Int32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
-            param.IsNullable = true;
-            param.SourceColumn = "sertificate_on_pc_soft_count";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            param.SourceColumnNullMapping = true;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "@Original_sertificate_on_pc_soft_count";
-            param.DbType = global::System.Data.DbType.UInt32;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
-            param.IsNullable = true;
-            param.SourceColumn = "sertificate_on_pc_soft_count";
-            param.SourceVersion = global::System.Data.DataRowVersion.Original;
-            this._adapter.UpdateCommand.Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "@IsNull_would_u_like_to_study_in_graduate_school";
             param.DbType = global::System.Data.DbType.Int32;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
@@ -7701,6 +7591,40 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             param.SourceColumn = "would_u_like_to_work_in_science_education_field";
             param.SourceVersion = global::System.Data.DataRowVersion.Original;
             this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@IsNull_certificate_on_pc_soft_count";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "certificate_on_pc_soft_count";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Original_certificate_on_pc_soft_count";
+            param.DbType = global::System.Data.DbType.UInt32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
+            param.IsNullable = true;
+            param.SourceColumn = "certificate_on_pc_soft_count";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@IsNull_requests_pc_soft_count";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.IsNullable = true;
+            param.SourceColumn = "requests_pc_soft_count";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            param.SourceColumnNullMapping = true;
+            this._adapter.UpdateCommand.Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "@Original_requests_pc_soft_count";
+            param.DbType = global::System.Data.DbType.UInt32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.UInt32;
+            param.IsNullable = true;
+            param.SourceColumn = "requests_pc_soft_count";
+            param.SourceVersion = global::System.Data.DataRowVersion.Original;
+            this._adapter.UpdateCommand.Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7714,7 +7638,7 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
             this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = @"SELECT id, name, surname, fathername, group_id, born, study, `grant`, email, phone, address_home, articles_count, awards_for_scientific_work, division_wants_to_leave_student_in_division, gpa, implementation_in_industry, implementation_in_study, intelectual_and_industryal_property_count, nir_years, patents_count, pc_soft_count, positive_solutions_on_inventions_and_utility_models_count, publications_count, requests_on_inventions_and_untity_models_count, scince_theme, scince_works, sertificate_on_pc_soft_count, would_u_like_to_study_in_graduate_school, would_u_like_to_work_in_science_education_field FROM student";
+            this._commandCollection[0].CommandText = @"SELECT id, name, surname, fathername, group_id, born, study, `grant`, email, phone, address_home, articles_count, awards_for_scientific_work, division_wants_to_leave_student_in_division, gpa, intelectual_and_industryal_property_count, nir_years, patents_count, positive_solutions_on_inventions_and_utility_models_count, publications_count, requests_on_inventions_and_untity_models_count, scince_theme, scince_works, would_u_like_to_study_in_graduate_school, would_u_like_to_work_in_science_education_field, certificate_on_pc_soft_count, requests_pc_soft_count, implementation_in_industry_txt, implementation_in_study_txt FROM student";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -7783,18 +7707,16 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
                     global::System.Nullable<uint> Original_articles_count, 
                     global::System.Nullable<byte> Original_division_wants_to_leave_student_in_division, 
                     string Original_gpa, 
-                    global::System.Nullable<uint> Original_implementation_in_industry, 
-                    global::System.Nullable<uint> Original_implementation_in_study, 
                     global::System.Nullable<uint> Original_intelectual_and_industryal_property_count, 
                     global::System.Nullable<uint> Original_nir_years, 
                     global::System.Nullable<uint> Original_patents_count, 
-                    global::System.Nullable<uint> Original_pc_soft_count, 
                     global::System.Nullable<uint> Original_positive_solutions_on_inventions_and_utility_models_count, 
                     global::System.Nullable<uint> Original_publications_count, 
                     global::System.Nullable<uint> Original_requests_on_inventions_and_untity_models_count, 
-                    global::System.Nullable<uint> Original_sertificate_on_pc_soft_count, 
                     global::System.Nullable<byte> Original_would_u_like_to_study_in_graduate_school, 
-                    global::System.Nullable<byte> Original_would_u_like_to_work_in_science_education_field) {
+                    global::System.Nullable<byte> Original_would_u_like_to_work_in_science_education_field, 
+                    global::System.Nullable<uint> Original_certificate_on_pc_soft_count, 
+                    global::System.Nullable<uint> Original_requests_pc_soft_count) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_id));
             if ((Original_name == null)) {
                 throw new global::System.ArgumentNullException("Original_name");
@@ -7887,101 +7809,85 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
                 this.Adapter.DeleteCommand.Parameters[21].Value = ((object)(0));
                 this.Adapter.DeleteCommand.Parameters[22].Value = ((string)(Original_gpa));
             }
-            if ((Original_implementation_in_industry.HasValue == true)) {
+            if ((Original_intelectual_and_industryal_property_count.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[24].Value = ((uint)(Original_implementation_in_industry.Value));
+                this.Adapter.DeleteCommand.Parameters[24].Value = ((uint)(Original_intelectual_and_industryal_property_count.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[23].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            if ((Original_implementation_in_study.HasValue == true)) {
+            if ((Original_nir_years.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[26].Value = ((uint)(Original_implementation_in_study.Value));
+                this.Adapter.DeleteCommand.Parameters[26].Value = ((uint)(Original_nir_years.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[25].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            if ((Original_intelectual_and_industryal_property_count.HasValue == true)) {
+            if ((Original_patents_count.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[28].Value = ((uint)(Original_intelectual_and_industryal_property_count.Value));
+                this.Adapter.DeleteCommand.Parameters[28].Value = ((uint)(Original_patents_count.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[27].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[28].Value = global::System.DBNull.Value;
             }
-            if ((Original_nir_years.HasValue == true)) {
+            if ((Original_positive_solutions_on_inventions_and_utility_models_count.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[30].Value = ((uint)(Original_nir_years.Value));
+                this.Adapter.DeleteCommand.Parameters[30].Value = ((uint)(Original_positive_solutions_on_inventions_and_utility_models_count.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[29].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[30].Value = global::System.DBNull.Value;
             }
-            if ((Original_patents_count.HasValue == true)) {
+            if ((Original_publications_count.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[32].Value = ((uint)(Original_patents_count.Value));
+                this.Adapter.DeleteCommand.Parameters[32].Value = ((uint)(Original_publications_count.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[31].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[32].Value = global::System.DBNull.Value;
             }
-            if ((Original_pc_soft_count.HasValue == true)) {
+            if ((Original_requests_on_inventions_and_untity_models_count.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[34].Value = ((uint)(Original_pc_soft_count.Value));
+                this.Adapter.DeleteCommand.Parameters[34].Value = ((uint)(Original_requests_on_inventions_and_untity_models_count.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[33].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[34].Value = global::System.DBNull.Value;
             }
-            if ((Original_positive_solutions_on_inventions_and_utility_models_count.HasValue == true)) {
+            if ((Original_would_u_like_to_study_in_graduate_school.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[36].Value = ((uint)(Original_positive_solutions_on_inventions_and_utility_models_count.Value));
+                this.Adapter.DeleteCommand.Parameters[36].Value = ((byte)(Original_would_u_like_to_study_in_graduate_school.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[35].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[36].Value = global::System.DBNull.Value;
             }
-            if ((Original_publications_count.HasValue == true)) {
+            if ((Original_would_u_like_to_work_in_science_education_field.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[38].Value = ((uint)(Original_publications_count.Value));
+                this.Adapter.DeleteCommand.Parameters[38].Value = ((byte)(Original_would_u_like_to_work_in_science_education_field.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[37].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[38].Value = global::System.DBNull.Value;
             }
-            if ((Original_requests_on_inventions_and_untity_models_count.HasValue == true)) {
+            if ((Original_certificate_on_pc_soft_count.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[40].Value = ((uint)(Original_requests_on_inventions_and_untity_models_count.Value));
+                this.Adapter.DeleteCommand.Parameters[40].Value = ((uint)(Original_certificate_on_pc_soft_count.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[39].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[40].Value = global::System.DBNull.Value;
             }
-            if ((Original_sertificate_on_pc_soft_count.HasValue == true)) {
+            if ((Original_requests_pc_soft_count.HasValue == true)) {
                 this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[42].Value = ((uint)(Original_sertificate_on_pc_soft_count.Value));
+                this.Adapter.DeleteCommand.Parameters[42].Value = ((uint)(Original_requests_pc_soft_count.Value));
             }
             else {
                 this.Adapter.DeleteCommand.Parameters[41].Value = ((object)(1));
                 this.Adapter.DeleteCommand.Parameters[42].Value = global::System.DBNull.Value;
-            }
-            if ((Original_would_u_like_to_study_in_graduate_school.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[44].Value = ((byte)(Original_would_u_like_to_study_in_graduate_school.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[43].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[44].Value = global::System.DBNull.Value;
-            }
-            if ((Original_would_u_like_to_work_in_science_education_field.HasValue == true)) {
-                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(0));
-                this.Adapter.DeleteCommand.Parameters[46].Value = ((byte)(Original_would_u_like_to_work_in_science_education_field.Value));
-            }
-            else {
-                this.Adapter.DeleteCommand.Parameters[45].Value = ((object)(1));
-                this.Adapter.DeleteCommand.Parameters[46].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8017,20 +7923,20 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
                     string awards_for_scientific_work, 
                     global::System.Nullable<byte> division_wants_to_leave_student_in_division, 
                     string gpa, 
-                    global::System.Nullable<uint> implementation_in_industry, 
-                    global::System.Nullable<uint> implementation_in_study, 
                     global::System.Nullable<uint> intelectual_and_industryal_property_count, 
                     global::System.Nullable<uint> nir_years, 
                     global::System.Nullable<uint> patents_count, 
-                    global::System.Nullable<uint> pc_soft_count, 
                     global::System.Nullable<uint> positive_solutions_on_inventions_and_utility_models_count, 
                     global::System.Nullable<uint> publications_count, 
                     global::System.Nullable<uint> requests_on_inventions_and_untity_models_count, 
                     string scince_theme, 
                     string scince_works, 
-                    global::System.Nullable<uint> sertificate_on_pc_soft_count, 
                     global::System.Nullable<byte> would_u_like_to_study_in_graduate_school, 
-                    global::System.Nullable<byte> would_u_like_to_work_in_science_education_field) {
+                    global::System.Nullable<byte> would_u_like_to_work_in_science_education_field, 
+                    global::System.Nullable<uint> certificate_on_pc_soft_count, 
+                    global::System.Nullable<uint> requests_pc_soft_count, 
+                    string implementation_in_industry_txt, 
+                    string implementation_in_study_txt) {
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -8110,89 +8016,89 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             else {
                 this.Adapter.InsertCommand.Parameters[13].Value = ((string)(gpa));
             }
-            if ((implementation_in_industry.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[14].Value = ((uint)(implementation_in_industry.Value));
+            if ((intelectual_and_industryal_property_count.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[14].Value = ((uint)(intelectual_and_industryal_property_count.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((implementation_in_study.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[15].Value = ((uint)(implementation_in_study.Value));
+            if ((nir_years.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[15].Value = ((uint)(nir_years.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((intelectual_and_industryal_property_count.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[16].Value = ((uint)(intelectual_and_industryal_property_count.Value));
+            if ((patents_count.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[16].Value = ((uint)(patents_count.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((nir_years.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[17].Value = ((uint)(nir_years.Value));
+            if ((positive_solutions_on_inventions_and_utility_models_count.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[17].Value = ((uint)(positive_solutions_on_inventions_and_utility_models_count.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((patents_count.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[18].Value = ((uint)(patents_count.Value));
+            if ((publications_count.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[18].Value = ((uint)(publications_count.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((pc_soft_count.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[19].Value = ((uint)(pc_soft_count.Value));
+            if ((requests_on_inventions_and_untity_models_count.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[19].Value = ((uint)(requests_on_inventions_and_untity_models_count.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            if ((positive_solutions_on_inventions_and_utility_models_count.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[20].Value = ((uint)(positive_solutions_on_inventions_and_utility_models_count.Value));
-            }
-            else {
+            if ((scince_theme == null)) {
                 this.Adapter.InsertCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((publications_count.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[21].Value = ((uint)(publications_count.Value));
-            }
             else {
+                this.Adapter.InsertCommand.Parameters[20].Value = ((string)(scince_theme));
+            }
+            if ((scince_works == null)) {
                 this.Adapter.InsertCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((requests_on_inventions_and_untity_models_count.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[22].Value = ((uint)(requests_on_inventions_and_untity_models_count.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[21].Value = ((string)(scince_works));
+            }
+            if ((would_u_like_to_study_in_graduate_school.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[22].Value = ((byte)(would_u_like_to_study_in_graduate_school.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((scince_theme == null)) {
+            if ((would_u_like_to_work_in_science_education_field.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[23].Value = ((byte)(would_u_like_to_work_in_science_education_field.Value));
+            }
+            else {
                 this.Adapter.InsertCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[23].Value = ((string)(scince_theme));
+            if ((certificate_on_pc_soft_count.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[24].Value = ((uint)(certificate_on_pc_soft_count.Value));
             }
-            if ((scince_works == null)) {
+            else {
                 this.Adapter.InsertCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.InsertCommand.Parameters[24].Value = ((string)(scince_works));
-            }
-            if ((sertificate_on_pc_soft_count.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[25].Value = ((uint)(sertificate_on_pc_soft_count.Value));
+            if ((requests_pc_soft_count.HasValue == true)) {
+                this.Adapter.InsertCommand.Parameters[25].Value = ((uint)(requests_pc_soft_count.Value));
             }
             else {
                 this.Adapter.InsertCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            if ((would_u_like_to_study_in_graduate_school.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[26].Value = ((byte)(would_u_like_to_study_in_graduate_school.Value));
-            }
-            else {
+            if ((implementation_in_industry_txt == null)) {
                 this.Adapter.InsertCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            if ((would_u_like_to_work_in_science_education_field.HasValue == true)) {
-                this.Adapter.InsertCommand.Parameters[27].Value = ((byte)(would_u_like_to_work_in_science_education_field.Value));
+            else {
+                this.Adapter.InsertCommand.Parameters[26].Value = ((string)(implementation_in_industry_txt));
+            }
+            if ((implementation_in_study_txt == null)) {
+                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.InsertCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.InsertCommand.Parameters[27].Value = ((string)(implementation_in_study_txt));
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
@@ -8228,20 +8134,20 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
                     string awards_for_scientific_work, 
                     global::System.Nullable<byte> division_wants_to_leave_student_in_division, 
                     string gpa, 
-                    global::System.Nullable<uint> implementation_in_industry, 
-                    global::System.Nullable<uint> implementation_in_study, 
                     global::System.Nullable<uint> intelectual_and_industryal_property_count, 
                     global::System.Nullable<uint> nir_years, 
                     global::System.Nullable<uint> patents_count, 
-                    global::System.Nullable<uint> pc_soft_count, 
                     global::System.Nullable<uint> positive_solutions_on_inventions_and_utility_models_count, 
                     global::System.Nullable<uint> publications_count, 
                     global::System.Nullable<uint> requests_on_inventions_and_untity_models_count, 
                     string scince_theme, 
                     string scince_works, 
-                    global::System.Nullable<uint> sertificate_on_pc_soft_count, 
                     global::System.Nullable<byte> would_u_like_to_study_in_graduate_school, 
                     global::System.Nullable<byte> would_u_like_to_work_in_science_education_field, 
+                    global::System.Nullable<uint> certificate_on_pc_soft_count, 
+                    global::System.Nullable<uint> requests_pc_soft_count, 
+                    string implementation_in_industry_txt, 
+                    string implementation_in_study_txt, 
                     int Original_id, 
                     string Original_name, 
                     string Original_surname, 
@@ -8256,18 +8162,16 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
                     global::System.Nullable<uint> Original_articles_count, 
                     global::System.Nullable<byte> Original_division_wants_to_leave_student_in_division, 
                     string Original_gpa, 
-                    global::System.Nullable<uint> Original_implementation_in_industry, 
-                    global::System.Nullable<uint> Original_implementation_in_study, 
                     global::System.Nullable<uint> Original_intelectual_and_industryal_property_count, 
                     global::System.Nullable<uint> Original_nir_years, 
                     global::System.Nullable<uint> Original_patents_count, 
-                    global::System.Nullable<uint> Original_pc_soft_count, 
                     global::System.Nullable<uint> Original_positive_solutions_on_inventions_and_utility_models_count, 
                     global::System.Nullable<uint> Original_publications_count, 
                     global::System.Nullable<uint> Original_requests_on_inventions_and_untity_models_count, 
-                    global::System.Nullable<uint> Original_sertificate_on_pc_soft_count, 
                     global::System.Nullable<byte> Original_would_u_like_to_study_in_graduate_school, 
-                    global::System.Nullable<byte> Original_would_u_like_to_work_in_science_education_field) {
+                    global::System.Nullable<byte> Original_would_u_like_to_work_in_science_education_field, 
+                    global::System.Nullable<uint> Original_certificate_on_pc_soft_count, 
+                    global::System.Nullable<uint> Original_requests_pc_soft_count) {
             if ((name == null)) {
                 throw new global::System.ArgumentNullException("name");
             }
@@ -8347,89 +8251,89 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
             else {
                 this.Adapter.UpdateCommand.Parameters[13].Value = ((string)(gpa));
             }
-            if ((implementation_in_industry.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[14].Value = ((uint)(implementation_in_industry.Value));
+            if ((intelectual_and_industryal_property_count.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[14].Value = ((uint)(intelectual_and_industryal_property_count.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[14].Value = global::System.DBNull.Value;
             }
-            if ((implementation_in_study.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[15].Value = ((uint)(implementation_in_study.Value));
+            if ((nir_years.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[15].Value = ((uint)(nir_years.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[15].Value = global::System.DBNull.Value;
             }
-            if ((intelectual_and_industryal_property_count.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[16].Value = ((uint)(intelectual_and_industryal_property_count.Value));
+            if ((patents_count.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[16].Value = ((uint)(patents_count.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[16].Value = global::System.DBNull.Value;
             }
-            if ((nir_years.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[17].Value = ((uint)(nir_years.Value));
+            if ((positive_solutions_on_inventions_and_utility_models_count.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[17].Value = ((uint)(positive_solutions_on_inventions_and_utility_models_count.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[17].Value = global::System.DBNull.Value;
             }
-            if ((patents_count.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[18].Value = ((uint)(patents_count.Value));
+            if ((publications_count.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[18].Value = ((uint)(publications_count.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[18].Value = global::System.DBNull.Value;
             }
-            if ((pc_soft_count.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[19].Value = ((uint)(pc_soft_count.Value));
+            if ((requests_on_inventions_and_untity_models_count.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[19].Value = ((uint)(requests_on_inventions_and_untity_models_count.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[19].Value = global::System.DBNull.Value;
             }
-            if ((positive_solutions_on_inventions_and_utility_models_count.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[20].Value = ((uint)(positive_solutions_on_inventions_and_utility_models_count.Value));
-            }
-            else {
+            if ((scince_theme == null)) {
                 this.Adapter.UpdateCommand.Parameters[20].Value = global::System.DBNull.Value;
             }
-            if ((publications_count.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[21].Value = ((uint)(publications_count.Value));
-            }
             else {
+                this.Adapter.UpdateCommand.Parameters[20].Value = ((string)(scince_theme));
+            }
+            if ((scince_works == null)) {
                 this.Adapter.UpdateCommand.Parameters[21].Value = global::System.DBNull.Value;
             }
-            if ((requests_on_inventions_and_untity_models_count.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[22].Value = ((uint)(requests_on_inventions_and_untity_models_count.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[21].Value = ((string)(scince_works));
+            }
+            if ((would_u_like_to_study_in_graduate_school.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[22].Value = ((byte)(would_u_like_to_study_in_graduate_school.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[22].Value = global::System.DBNull.Value;
             }
-            if ((scince_theme == null)) {
+            if ((would_u_like_to_work_in_science_education_field.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[23].Value = ((byte)(would_u_like_to_work_in_science_education_field.Value));
+            }
+            else {
                 this.Adapter.UpdateCommand.Parameters[23].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[23].Value = ((string)(scince_theme));
+            if ((certificate_on_pc_soft_count.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[24].Value = ((uint)(certificate_on_pc_soft_count.Value));
             }
-            if ((scince_works == null)) {
+            else {
                 this.Adapter.UpdateCommand.Parameters[24].Value = global::System.DBNull.Value;
             }
-            else {
-                this.Adapter.UpdateCommand.Parameters[24].Value = ((string)(scince_works));
-            }
-            if ((sertificate_on_pc_soft_count.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[25].Value = ((uint)(sertificate_on_pc_soft_count.Value));
+            if ((requests_pc_soft_count.HasValue == true)) {
+                this.Adapter.UpdateCommand.Parameters[25].Value = ((uint)(requests_pc_soft_count.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[25].Value = global::System.DBNull.Value;
             }
-            if ((would_u_like_to_study_in_graduate_school.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[26].Value = ((byte)(would_u_like_to_study_in_graduate_school.Value));
-            }
-            else {
+            if ((implementation_in_industry_txt == null)) {
                 this.Adapter.UpdateCommand.Parameters[26].Value = global::System.DBNull.Value;
             }
-            if ((would_u_like_to_work_in_science_education_field.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[27].Value = ((byte)(would_u_like_to_work_in_science_education_field.Value));
+            else {
+                this.Adapter.UpdateCommand.Parameters[26].Value = ((string)(implementation_in_industry_txt));
+            }
+            if ((implementation_in_study_txt == null)) {
+                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[27].Value = global::System.DBNull.Value;
+                this.Adapter.UpdateCommand.Parameters[27].Value = ((string)(implementation_in_study_txt));
             }
             this.Adapter.UpdateCommand.Parameters[28].Value = ((int)(Original_id));
             if ((Original_name == null)) {
@@ -8523,101 +8427,85 @@ namespace NIRS_Viewer.nirsDataSetMainTableAdapters {
                 this.Adapter.UpdateCommand.Parameters[49].Value = ((object)(0));
                 this.Adapter.UpdateCommand.Parameters[50].Value = ((string)(Original_gpa));
             }
-            if ((Original_implementation_in_industry.HasValue == true)) {
+            if ((Original_intelectual_and_industryal_property_count.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[52].Value = ((uint)(Original_implementation_in_industry.Value));
+                this.Adapter.UpdateCommand.Parameters[52].Value = ((uint)(Original_intelectual_and_industryal_property_count.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[51].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[52].Value = global::System.DBNull.Value;
             }
-            if ((Original_implementation_in_study.HasValue == true)) {
+            if ((Original_nir_years.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[54].Value = ((uint)(Original_implementation_in_study.Value));
+                this.Adapter.UpdateCommand.Parameters[54].Value = ((uint)(Original_nir_years.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[53].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[54].Value = global::System.DBNull.Value;
             }
-            if ((Original_intelectual_and_industryal_property_count.HasValue == true)) {
+            if ((Original_patents_count.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[56].Value = ((uint)(Original_intelectual_and_industryal_property_count.Value));
+                this.Adapter.UpdateCommand.Parameters[56].Value = ((uint)(Original_patents_count.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[55].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[56].Value = global::System.DBNull.Value;
             }
-            if ((Original_nir_years.HasValue == true)) {
+            if ((Original_positive_solutions_on_inventions_and_utility_models_count.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[58].Value = ((uint)(Original_nir_years.Value));
+                this.Adapter.UpdateCommand.Parameters[58].Value = ((uint)(Original_positive_solutions_on_inventions_and_utility_models_count.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[57].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[58].Value = global::System.DBNull.Value;
             }
-            if ((Original_patents_count.HasValue == true)) {
+            if ((Original_publications_count.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[60].Value = ((uint)(Original_patents_count.Value));
+                this.Adapter.UpdateCommand.Parameters[60].Value = ((uint)(Original_publications_count.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[59].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[60].Value = global::System.DBNull.Value;
             }
-            if ((Original_pc_soft_count.HasValue == true)) {
+            if ((Original_requests_on_inventions_and_untity_models_count.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[62].Value = ((uint)(Original_pc_soft_count.Value));
+                this.Adapter.UpdateCommand.Parameters[62].Value = ((uint)(Original_requests_on_inventions_and_untity_models_count.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[61].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[62].Value = global::System.DBNull.Value;
             }
-            if ((Original_positive_solutions_on_inventions_and_utility_models_count.HasValue == true)) {
+            if ((Original_would_u_like_to_study_in_graduate_school.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[64].Value = ((uint)(Original_positive_solutions_on_inventions_and_utility_models_count.Value));
+                this.Adapter.UpdateCommand.Parameters[64].Value = ((byte)(Original_would_u_like_to_study_in_graduate_school.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[63].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[64].Value = global::System.DBNull.Value;
             }
-            if ((Original_publications_count.HasValue == true)) {
+            if ((Original_would_u_like_to_work_in_science_education_field.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[66].Value = ((uint)(Original_publications_count.Value));
+                this.Adapter.UpdateCommand.Parameters[66].Value = ((byte)(Original_would_u_like_to_work_in_science_education_field.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[65].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[66].Value = global::System.DBNull.Value;
             }
-            if ((Original_requests_on_inventions_and_untity_models_count.HasValue == true)) {
+            if ((Original_certificate_on_pc_soft_count.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[68].Value = ((uint)(Original_requests_on_inventions_and_untity_models_count.Value));
+                this.Adapter.UpdateCommand.Parameters[68].Value = ((uint)(Original_certificate_on_pc_soft_count.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[67].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[68].Value = global::System.DBNull.Value;
             }
-            if ((Original_sertificate_on_pc_soft_count.HasValue == true)) {
+            if ((Original_requests_pc_soft_count.HasValue == true)) {
                 this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[70].Value = ((uint)(Original_sertificate_on_pc_soft_count.Value));
+                this.Adapter.UpdateCommand.Parameters[70].Value = ((uint)(Original_requests_pc_soft_count.Value));
             }
             else {
                 this.Adapter.UpdateCommand.Parameters[69].Value = ((object)(1));
                 this.Adapter.UpdateCommand.Parameters[70].Value = global::System.DBNull.Value;
-            }
-            if ((Original_would_u_like_to_study_in_graduate_school.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[72].Value = ((byte)(Original_would_u_like_to_study_in_graduate_school.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[71].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[72].Value = global::System.DBNull.Value;
-            }
-            if ((Original_would_u_like_to_work_in_science_education_field.HasValue == true)) {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(0));
-                this.Adapter.UpdateCommand.Parameters[74].Value = ((byte)(Original_would_u_like_to_work_in_science_education_field.Value));
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[73].Value = ((object)(1));
-                this.Adapter.UpdateCommand.Parameters[74].Value = global::System.DBNull.Value;
             }
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
