@@ -51,8 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NirsXLS.cs" />
-    <Compile Include="LinqExcelProvider25.cs" />
+    <Compile Include="NirsXLS_Rows.cs" />
+    <Compile Include="LinqExcelProvider.cs" />
+    <Compile Include="NirsXLS_Columns.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,6 +1,7 @@
-﻿//using System;
+﻿using System;
+using System.Linq;
+
 //using System.Collections.Generic;
-//using System.Linq;
 //using System.Text;
 //using System.Drawing;
 
@@ -16,24 +17,26 @@ namespace ConsoleTest
     {
         static void Main(string[] args)
         {
-            ExcelProvider provider = ExcelProvider.Create(@"BaseNIRS.xls");
+            ExcelProvider provider = ExcelProvider.Create(@"FillMe_Rows.xls");
 
-            foreach (NirsXLS nirs_row in (from t in provider.GetSheet<NirsXLS>() where (t.РегN != null) select t))
+            foreach (NirsXLS_Rows nirs_row in (from t in provider.GetSheet<NirsXLS_Rows>() select t))
             {
-                if (nirs_row.РегN == null)
-                    Console.WriteLine("reg n == null");
-                else
-                    Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7}",
-                        nirs_row.РегN,
-                        nirs_row.ФИОстудента,
-                        nirs_row.Факультет,
-                        nirs_row.Кафедра,
-                        nirs_row.Специальност_N_и_название,
-                        nirs_row.Nгруппы,
-                        nirs_row.Датарождения,
-                        nirs_row.Успев
-                        );
+                Console.WriteLine(nirs_row.N.ToString() + " " + nirs_row.Анкета + " " + nirs_row.Студент);
             }
+            //    if (nirs_row.РегN == null)
+            //        Console.WriteLine("reg n == null");
+            //    else
+            //        Console.WriteLine("{0} {1} {2} {3} {4} {5} {6} {7}",
+            //            nirs_row.РегN,
+            //            nirs_row.ФИОстудента,
+            //            nirs_row.Факультет,
+            //            nirs_row.Кафедра,
+            //            nirs_row.Специальност_N_и_название,
+            //            nirs_row.Nгруппы,
+            //            nirs_row.Датарождения,
+            //            nirs_row.Успев
+            //            );
+            //}
 
             //foreach (TestXLS test in (from t in provider.GetSheet<TestXLS>() where t.testA1 == "1" select t))
             //{

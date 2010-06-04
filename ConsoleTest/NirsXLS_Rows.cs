@@ -10,7 +10,7 @@ using System.Linq;
 using System.ComponentModel;
 
 [ExcelSheet(Name = "Анкета")]
-public class NirsXLS : INotifyPropertyChanged
+public class NirsXLS_Rows : INotifyPropertyChanged
 {
 
     private double _n;
