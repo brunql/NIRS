@@ -70,6 +70,7 @@ namespace NIRS
             {
                 cmbStudentFaculty.DataSource = bindFaculty;
                 cmbStudentFaculty.DisplayMember = "name";
+                //cmbStudentFaculty.ValueMember = "id"; why it doesn't work as i want?
 
                 cmbMentorDivision.DataSource = bindDivisionMentor;
                 cmbMentorDivision.DisplayMember = "name";
