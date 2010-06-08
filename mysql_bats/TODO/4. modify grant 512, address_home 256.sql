@@ -1,0 +1,2 @@
+ALTER TABLE `nirs`.`student` MODIFY COLUMN `grant` VARCHAR(512) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL;
+ALTER TABLE `nirs`.`student` MODIFY COLUMN `address_home` VARCHAR(256) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL;

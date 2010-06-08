@@ -153,7 +153,6 @@ namespace NIRS
                     (int)(cmbStudentGroup.SelectedItem as DataRowView)["id"],
                     birthdate,
                     cmbStudentBudget.Text,
-                    ((txtStudentGrant.Text == "") ? "Нет" : txtStudentGrant.Text),
                     txtStudentEmail.Text,
                     txtStudentPhone.Text,
                     txtGPA.Text,
@@ -174,7 +173,9 @@ namespace NIRS
                     Convert.ToUInt32(txtCertificateOnPCSoftCount.Text),
                     Convert.ToUInt32(txtRequestsOnPcSoftCount.Text),
                     txtImplementationInIndustry.Text,
-                    txtImplementationInStudy.Text
+                    txtImplementationInStudy.Text,
+                    2, /* TODO: ADD NIR LEVEL!!! */
+                    txtStudentGrant.Text
                     );
                 bindStudent.Save();
 

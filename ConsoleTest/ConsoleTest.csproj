@@ -51,7 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="NirsXLS_Rows.cs" />
+    <Compile Include="NirsXLS_Rows_Numbers.cs" />
+    <Compile Include="Logs.cs" />
+    <Compile Include="NirsXLS_Rows_Strings.cs" />
     <Compile Include="LinqExcelProvider.cs" />
     <Compile Include="NirsXLS_Columns.cs" />
     <Compile Include="Program.cs" />
@@ -61,6 +63,10 @@
     <ProjectReference Include="..\NIRS_DB\NIRS_DB.csproj">
       <Project>{FBA83269-62A8-4159-B647-541BDA616D56}</Project>
       <Name>NIRS_DB</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NIRS_Viewer\NIRS_Viewer.csproj">
+      <Project>{C0561EE8-5DCA-44D6-B33A-2ED1A2143C31}</Project>
+      <Name>NIRS_Viewer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

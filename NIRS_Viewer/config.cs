@@ -37,9 +37,9 @@ namespace NIRS_Viewer
             get
             {
                 if (nirsDataSet == null)
-                { throw new Exception("property didn't initialize. Use \"Initialize\" method"); }
+                    throw new Exception("property didn't initialize. Use \"Initialize\" method"); 
                 else
-                { return nirsDataSet; }
+                    return nirsDataSet; 
             }
             set { nirsDataSet = value; }
         }
